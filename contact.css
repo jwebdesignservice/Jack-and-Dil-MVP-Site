@@ -77,10 +77,27 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--color-accent-light);
+    color: #ffffff;
     opacity: 0;
     transform: translateY(10px);
     animation: fade-up 0.6s ease forwards;
+}
+
+/* Override section-label color on contact page */
+.contact-page .section-label {
+    color: #ffffff !important;
+}
+
+/* Override section-label dash/line to white on contact page */
+.contact-label::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: #ffffff !important;
 }
 
 .contact-title {

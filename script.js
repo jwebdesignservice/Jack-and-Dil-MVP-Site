@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     revealElements.forEach((el, index) => {
         el.classList.add('reveal-element');
-        el.style.transitionDelay = `${index * 30}ms`;
+        el.style.transitionDelay = `${index * 15}ms`;
         revealObserver.observe(el);
     });
     
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .reveal-element {
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 0.4s ease, transform 0.4s ease;
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
         
         .revealed {
