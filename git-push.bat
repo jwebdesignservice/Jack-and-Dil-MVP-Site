@@ -1,5 +1,5 @@
 @echo off
 git add .
-git commit -m "Add pricing section, fix overflow, gradients, contact styles, and maintain pricing card order"
+git commit -m "Fix About section responsive layout, reorder mobile content, and adjust stats orbital sizing"
 git push
 pause
