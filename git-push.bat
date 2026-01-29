@@ -1,5 +1,5 @@
 @echo off
 git add .
-git commit -m "Fix About section responsive layout, reorder mobile content, and adjust stats orbital sizing"
+git commit -m "Enhance hero graphic with rings, orbiting dots, center glow, and full sentence text ring"
 git push
 pause
