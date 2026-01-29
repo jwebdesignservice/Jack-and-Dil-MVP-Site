@@ -1809,7 +1809,6 @@ ul {
 
     .pricing-card-popular {
         transform: none;
-        order: -1;
     }
 
     .pricing-card-popular:hover {
