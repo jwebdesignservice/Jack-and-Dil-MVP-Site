@@ -457,71 +457,129 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
+    <!-- About Us Section - Minimal Design -->
     <section class="about-section" id="about">
-        <div class="about-bg">
-            <div class="about-watermark">LF</div>
-        </div>
         <div class="container">
             <div class="about-layout">
-                <!-- Left: Stats & Tags -->
-                <div class="about-right">
-                    <!-- Stats Row -->
-                    <div class="about-stats-row">
-                        <div class="about-stat" style="--delay: 0s;">
-                            <span class="about-stat-value" data-count="10">10<span
-                                    class="about-stat-suffix">+</span></span>
-                            <span class="about-stat-label">YEARS EXPERIENCE</span>
-                            <div class="about-stat-line"></div>
+                <!-- Left: Visual Stats Hub -->
+                <div class="about-left-column">
+                    <!-- Main Stats Hub -->
+                    <div class="stats-hub">
+                        <!-- Central Hero Stat -->
+                        <div class="stats-hero">
+                            <div class="stats-hero-glow"></div>
+                            <div class="stats-hero-content">
+                                <span class="stats-hero-number">50<span class="stats-hero-suffix">+</span></span>
+                                <span class="stats-hero-label">MVPs Shipped</span>
+                            </div>
                         </div>
-                        <div class="about-stat" style="--delay: 0.1s;">
-                            <span class="about-stat-value" data-count="50">50<span
-                                    class="about-stat-suffix">+</span></span>
-                            <span class="about-stat-label">MVPS SHIPPED</span>
-                            <div class="about-stat-line"></div>
+
+                        <!-- Orbiting Stats with Icons -->
+                        <div class="stats-orbit-container">
+                            <div class="stat-node stat-node-1">
+                                <div class="stat-node-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                                    </svg>
+                                </div>
+                                <div class="stat-node-content">
+                                    <span class="stat-node-value">14</span>
+                                    <span class="stat-node-label">Days Max</span>
+                                </div>
+                            </div>
+
+                            <div class="stat-node stat-node-2">
+                                <div class="stat-node-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                </div>
+                                <div class="stat-node-content">
+                                    <span class="stat-node-value">10+</span>
+                                    <span class="stat-node-label">Years Exp</span>
+                                </div>
+                            </div>
+
+                            <div class="stat-node stat-node-3">
+                                <div class="stat-node-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22 4 12 14.01 9 11.01" />
+                                    </svg>
+                                </div>
+                                <div class="stat-node-content">
+                                    <span class="stat-node-value">100%</span>
+                                    <span class="stat-node-label">Satisfaction</span>
+                                </div>
+                            </div>
+
+                            <div class="stat-node stat-node-4">
+                                <div class="stat-node-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                        <circle cx="9" cy="7" r="4" />
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                    </svg>
+                                </div>
+                                <div class="stat-node-content">
+                                    <span class="stat-node-value">2</span>
+                                    <span class="stat-node-label">Senior Devs</span>
+                                </div>
+                            </div>
+
+                            <!-- Connecting Lines -->
+                            <svg class="stats-connections" viewBox="0 0 400 400">
+                                <defs>
+                                    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:rgba(168,85,247,0.05)" />
+                                        <stop offset="50%" style="stop-color:rgba(168,85,247,0.2)" />
+                                        <stop offset="100%" style="stop-color:rgba(168,85,247,0.05)" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- Horizontal lines -->
+                                <line x1="0" y1="200" x2="400" y2="200" stroke="rgba(168,85,247,0.1)" stroke-width="1"
+                                    stroke-dasharray="6 6" />
+                                <!-- Vertical lines -->
+                                <line x1="200" y1="0" x2="200" y2="400" stroke="rgba(168,85,247,0.1)" stroke-width="1"
+                                    stroke-dasharray="6 6" />
+                                <!-- Diagonal accent lines -->
+                                <line x1="80" y1="80" x2="320" y2="320" stroke="rgba(168,85,247,0.08)"
+                                    stroke-width="1" />
+                                <line x1="320" y1="80" x2="80" y2="320" stroke="rgba(168,85,247,0.08)"
+                                    stroke-width="1" />
+                            </svg>
                         </div>
                     </div>
 
-                    <!-- Focus Sectors -->
-                    <div class="about-sectors">
-                        <span class="about-sectors-label">FOCUS SECTORS</span>
-                        <div class="about-tags">
-                            <span class="about-tag" style="--i: 0;">SAAS</span>
-                            <span class="about-tag" style="--i: 1;">FINTECH</span>
-                            <span class="about-tag" style="--i: 2;">MARKETPLACE</span>
-                            <span class="about-tag" style="--i: 3;">AI/ML</span>
-                            <span class="about-tag" style="--i: 4;">E-COMMERCE</span>
-                        </div>
-                    </div>
-
-                    <!-- Extra Stats -->
-                    <div class="about-stats-row about-stats-secondary">
-                        <div class="about-stat about-stat-small" style="--delay: 0.2s;">
-                            <span class="about-stat-value">100<span class="about-stat-suffix">%</span></span>
-                            <span class="about-stat-label">SATISFACTION</span>
-                        </div>
-                        <div class="about-stat about-stat-small" style="--delay: 0.3s;">
-                            <span class="about-stat-value">14</span>
-                            <span class="about-stat-label">DAYS MAX</span>
-                        </div>
-                        <div class="about-stat about-stat-small" style="--delay: 0.4s;">
-                            <span class="about-stat-value">2</span>
-                            <span class="about-stat-label">DEVS</span>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Right: Text Content -->
                 <div class="about-text">
-                    <span class="about-label">ABOUT</span>
-                    <h2 class="about-title">Where <span class="text-gradient">Ambition</span> Meets<br>Expertise</h2>
+                    <span class="section-label">ABOUT US</span>
+                    <h2 class="about-title">Where <span class="text-gradient">Ambition</span> Meets Expertise</h2>
                     <p class="about-lead">We're two senior full-stack developers with 10+ years of combined experience,
                         focused on transforming visionary ideas into production-ready MVPs.</p>
                     <p class="about-desc">We combine deep technical expertise with hands-on execution, helping founders
                         navigate everything from product-market fit to launch. Our approach bridges the gap between idea
                         and reality — fast.</p>
-                    <a href="contact.html" class="btn btn-primary about-cta">
-                        <span>Our Story</span>
+
+                    <!-- Tech Tags -->
+                    <div class="tech-tags-row">
+                        <span class="tech-tag">SaaS</span>
+                        <span class="tech-tag">Fintech</span>
+                        <span class="tech-tag">Marketplace</span>
+                        <span class="tech-tag">AI/ML</span>
+                        <span class="tech-tag">E-Commerce</span>
+                    </div>
+
+                    <a href="contact.html" class="btn btn-primary">
+                        <span>Work With Us</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7" />
@@ -548,14 +606,34 @@
 
                     <div class="testimonials-stats-inline">
                         <div class="stat-inline">
+                            <div class="stat-inline-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                                </svg>
+                            </div>
                             <span class="stat-inline-value">50+</span>
                             <span class="stat-inline-label">MVPs Shipped</span>
                         </div>
                         <div class="stat-inline">
+                            <div class="stat-inline-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                            </div>
                             <span class="stat-inline-value">4.9</span>
                             <span class="stat-inline-label">Avg Rating</span>
                         </div>
                         <div class="stat-inline">
+                            <div class="stat-inline-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                    <polyline points="22 4 12 14.01 9 11.01" />
+                                </svg>
+                            </div>
                             <span class="stat-inline-value">100%</span>
                             <span class="stat-inline-label">Recommend</span>
                         </div>

@@ -1,5 +1,5 @@
 @echo off
 git add .
-git commit -m "Integrate Supabase backend for contact form with full database support"
+git commit -m "Redesign About section with orbital stats, clean testimonial stats, and improved layout"
 git push
 pause

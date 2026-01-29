@@ -1,36 +1,36 @@
 // Multi-Step Form Handler
-(function() {
+(function () {
     const form = document.getElementById('multiStepForm');
     const nextBtn = document.getElementById('nextBtn');
     const backBtn = document.getElementById('backBtn');
     const submitBtn = document.getElementById('submitBtn');
-    
+
     let currentStep = 1;
     const totalSteps = 4;
-    
+
     // Initialize form
     function init() {
         updateStepDisplay();
         updateButtons();
-        
+
         // Event listeners
         nextBtn.addEventListener('click', handleNext);
         backBtn.addEventListener('click', handleBack);
         form.addEventListener('submit', handleSubmit);
     }
-    
+
     // Validate current step
     function validateStep(step) {
         const currentStepElement = document.querySelector(`.form-step[data-step="${step}"]`);
         const requiredFields = currentStepElement.querySelectorAll('[required]');
-        
+
         let isValid = true;
-        
+
         requiredFields.forEach(field => {
             if (!field.value.trim()) {
                 isValid = false;
                 field.classList.add('error');
-                
+
                 // Add error styling temporarily
                 setTimeout(() => {
                     field.classList.remove('error');
@@ -39,7 +39,7 @@
                 field.classList.remove('error');
             }
         });
-        
+
         if (!isValid) {
             // Shake animation for invalid form
             currentStepElement.classList.add('shake');
@@ -47,10 +47,10 @@
                 currentStepElement.classList.remove('shake');
             }, 500);
         }
-        
+
         return isValid;
     }
-    
+
     // Handle next button click
     function handleNext() {
         if (validateStep(currentStep)) {
@@ -62,7 +62,7 @@
             }
         }
     }
-    
+
     // Handle back button click
     function handleBack() {
         if (currentStep > 1) {
@@ -72,7 +72,7 @@
             scrollToTop();
         }
     }
-    
+
     // Update step display
     function updateStepDisplay() {
         // Update form steps
@@ -84,7 +84,7 @@
                 step.classList.remove('active');
             }
         });
-        
+
         // Update progress indicators
         document.querySelectorAll('.progress-step').forEach(step => {
             const stepNumber = parseInt(step.getAttribute('data-step'));
@@ -98,7 +98,7 @@
                 step.classList.remove('active', 'completed');
             }
         });
-        
+
         // Update progress lines
         document.querySelectorAll('.progress-line').forEach((line, index) => {
             if (index < currentStep - 1) {
@@ -108,7 +108,7 @@
             }
         });
     }
-    
+
     // Update button visibility
     function updateButtons() {
         // Back button
@@ -117,7 +117,7 @@
         } else {
             backBtn.style.display = 'flex';
         }
-        
+
         // Next button
         if (currentStep === totalSteps) {
             nextBtn.style.display = 'none';
@@ -127,7 +127,7 @@
             submitBtn.style.display = 'none';
         }
     }
-    
+
     // Scroll to top of form
     function scrollToTop() {
         const formWrapper = document.querySelector('.contact-form-wrapper');
@@ -135,11 +135,11 @@
             formWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     }
-    
+
     // Handle form submission
     async function handleSubmit(e) {
         e.preventDefault();
-        
+
         if (validateStep(currentStep)) {
             // Collect form data
             const formData = new FormData(form);
@@ -147,17 +147,17 @@
             formData.forEach((value, key) => {
                 data[key] = value;
             });
-            
+
             console.log('Form submitted:', data);
-            
+
             // Show loading state
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<span>Sending...</span>';
-            
+
             try {
                 // Combine first and last name
                 const fullName = `${data.firstName || ''} ${data.lastName || ''}`.trim();
-                
+
                 // Combine project description and additional info into message
                 const message = [
                     `Project Type: ${data.projectType || 'Not specified'}`,
@@ -171,9 +171,9 @@
                     '',
                     data.howFound ? `How they found us: ${data.howFound}` : ''
                 ].filter(line => line !== undefined && line !== '').join('\n');
-                
+
                 // Submit to Supabase
-                const { data: result, error } = await supabase
+                const { data: result, error } = await supabaseClient
                     .from('contact_submissions')
                     .insert([
                         {
@@ -188,7 +188,7 @@
                             status: 'new'
                         }
                     ]);
-                
+
                 if (error) {
                     console.error('Supabase error:', error);
                     showErrorMessage();
@@ -210,7 +210,7 @@
             }
         }
     }
-    
+
     // Show success message
     function showSuccessMessage() {
         const formWrapper = document.querySelector('.contact-form-wrapper');
@@ -234,7 +234,7 @@
             </div>
         `;
     }
-    
+
     // Show error message
     function showErrorMessage() {
         const formWrapper = document.querySelector('.contact-form-wrapper');
@@ -255,7 +255,7 @@
             </div>
         `;
     }
-    
+
     // Initialize on page load
     if (form) {
         init();
