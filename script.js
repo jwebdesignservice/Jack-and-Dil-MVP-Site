@@ -3,20 +3,20 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
-
+    
     // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
-
+            
             e.preventDefault();
             const target = document.querySelector(href);
-
+            
             if (target) {
                 const navHeight = document.querySelector('.nav')?.offsetHeight || 0;
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
-
+                
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-
+    
     // FAQ Accordion - One open at a time
     const faqItems = document.querySelectorAll('.faq-item');
-
+    
     faqItems.forEach(item => {
         item.addEventListener('toggle', function () {
             if (this.open) {
@@ -39,14 +39,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-
+    
     // Scroll Reveal Animations
     const observerOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.1
     };
-
+    
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -55,17 +55,17 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }, observerOptions);
-
+    
     const revealElements = document.querySelectorAll(
         '.stat-card, .service-card, .comparison-card, .testimonial-card, .faq-item'
     );
-
+    
     revealElements.forEach((el, index) => {
         el.classList.add('reveal-element');
         el.style.transitionDelay = `${index * 15}ms`;
         revealObserver.observe(el);
     });
-
+    
     // Add reveal styles
     const style = document.createElement('style');
     style.textContent = `
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     `;
     document.head.appendChild(style);
-
+    
     // ==========================================================================
     // JOURNEY ROADMAP - Scroll-Triggered Animations
     // ==========================================================================

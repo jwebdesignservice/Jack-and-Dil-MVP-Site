@@ -454,29 +454,79 @@
                         <!-- Road gradient with fade at both ends -->
                         <linearGradient id="roadGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" style="stop-color:rgba(168,85,247,0)" />
-                            <stop offset="5%" style="stop-color:rgba(168,85,247,0)" />
-                            <stop offset="12%" style="stop-color:rgba(168,85,247,0.08)" />
-                            <stop offset="20%" style="stop-color:rgba(168,85,247,0.18)" />
+                            <stop offset="3%" style="stop-color:rgba(168,85,247,0)" />
+                            <stop offset="8%" style="stop-color:rgba(168,85,247,0.05)" />
+                            <stop offset="15%" style="stop-color:rgba(168,85,247,0.15)" />
+                            <stop offset="25%" style="stop-color:rgba(168,85,247,0.2)" />
                             <stop offset="50%" style="stop-color:rgba(168,85,247,0.2)" />
-                            <stop offset="80%" style="stop-color:rgba(168,85,247,0.18)" />
-                            <stop offset="88%" style="stop-color:rgba(168,85,247,0.08)" />
-                            <stop offset="95%" style="stop-color:rgba(168,85,247,0)" />
+                            <stop offset="75%" style="stop-color:rgba(168,85,247,0.2)" />
+                            <stop offset="85%" style="stop-color:rgba(168,85,247,0.15)" />
+                            <stop offset="92%" style="stop-color:rgba(168,85,247,0.05)" />
+                            <stop offset="97%" style="stop-color:rgba(168,85,247,0)" />
                             <stop offset="100%" style="stop-color:rgba(168,85,247,0)" />
                         </linearGradient>
-                        <!-- Progress gradient -->
+                        <!-- Solid road gradient (for dark background layer) -->
+                        <linearGradient id="roadSolidGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:rgba(10,10,11,0)" />
+                            <stop offset="3%" style="stop-color:rgba(10,10,11,0)" />
+                            <stop offset="8%" style="stop-color:rgba(10,10,11,0.3)" />
+                            <stop offset="15%" style="stop-color:rgba(10,10,11,0.7)" />
+                            <stop offset="22%" style="stop-color:rgba(10,10,11,1)" />
+                            <stop offset="78%" style="stop-color:rgba(10,10,11,1)" />
+                            <stop offset="85%" style="stop-color:rgba(10,10,11,0.7)" />
+                            <stop offset="92%" style="stop-color:rgba(10,10,11,0.3)" />
+                            <stop offset="97%" style="stop-color:rgba(10,10,11,0)" />
+                            <stop offset="100%" style="stop-color:rgba(10,10,11,0)" />
+                        </linearGradient>
+                        <!-- Progress gradient with fade -->
                         <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#a855f7" />
+                            <stop offset="0%" style="stop-color:rgba(168,85,247,0)" />
+                            <stop offset="3%" style="stop-color:rgba(168,85,247,0)" />
+                            <stop offset="10%" style="stop-color:rgba(168,85,247,0.5)" />
+                            <stop offset="18%" style="stop-color:#a855f7" />
                             <stop offset="50%" style="stop-color:#f472b6" />
-                            <stop offset="100%" style="stop-color:#a855f7" />
+                            <stop offset="82%" style="stop-color:#a855f7" />
+                            <stop offset="90%" style="stop-color:rgba(168,85,247,0.5)" />
+                            <stop offset="97%" style="stop-color:rgba(168,85,247,0)" />
+                            <stop offset="100%" style="stop-color:rgba(168,85,247,0)" />
+                        </linearGradient>
+                        <!-- Dashes gradient with fade -->
+                        <linearGradient id="dashesGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:rgba(168,85,247,0)" />
+                            <stop offset="3%" style="stop-color:rgba(168,85,247,0)" />
+                            <stop offset="10%" style="stop-color:rgba(168,85,247,0.15)" />
+                            <stop offset="18%" style="stop-color:rgba(168,85,247,0.4)" />
+                            <stop offset="82%" style="stop-color:rgba(168,85,247,0.4)" />
+                            <stop offset="90%" style="stop-color:rgba(168,85,247,0.15)" />
+                            <stop offset="97%" style="stop-color:rgba(168,85,247,0)" />
+                            <stop offset="100%" style="stop-color:rgba(168,85,247,0)" />
                         </linearGradient>
                         <!-- Glow filter -->
                         <filter id="roadGlow" x="-50%" y="-50%" width="200%" height="200%">
-                            <feGaussianBlur stdDeviation="8" result="blur" />
+                            <feGaussianBlur stdDeviation="4" result="blur" />
                             <feComposite in="SourceGraphic" in2="blur" operator="over" />
                         </filter>
+
+                        <!-- Mask to create border-only effect for progress -->
+                        <mask id="progressEdgeMask">
+                            <!-- White outer ring -->
+                            <path
+                                d="M -80,-30 C -60,20 -20,80 50,150 C 120,220 180,280 250,300 C 350,330 350,150 500,150 C 650,150 650,450 800,450 C 950,450 1000,250 1150,250 C 1250,250 1300,350 1350,450 C 1380,510 1400,580 1420,650"
+                                fill="none" stroke="white" stroke-width="66" stroke-linecap="round" />
+                            <!-- Black center to cut out -->
+                            <path
+                                d="M -80,-30 C -60,20 -20,80 50,150 C 120,220 180,280 250,300 C 350,330 350,150 500,150 C 650,150 650,450 800,450 C 950,450 1000,250 1150,250 C 1250,250 1300,350 1350,450 C 1380,510 1400,580 1420,650"
+                                fill="none" stroke="black" stroke-width="56" stroke-linecap="round" />
+                        </mask>
                     </defs>
 
-                    <!-- Background road (curls up to top-left at start, down to bottom-right at end) -->
+                    <!-- Progress road BORDER ONLY - uses mask to show only edges -->
+                    <path class="road-progress"
+                        d="M -80,-30 C -60,20 -20,80 50,150 C 120,220 180,280 250,300 C 350,330 350,150 500,150 C 650,150 650,450 800,450 C 950,450 1000,250 1150,250 C 1250,250 1300,350 1350,450 C 1380,510 1400,580 1420,650"
+                        fill="none" stroke="url(#progressGradient)" stroke-width="66" stroke-linecap="round"
+                        mask="url(#progressEdgeMask)" filter="url(#roadGlow)" />
+
+                    <!-- Semi-transparent road overlay with gradient -->
                     <path class="road-bg"
                         d="M -80,-30 C -60,20 -20,80 50,150 C 120,220 180,280 250,300 C 350,330 350,150 500,150 C 650,150 650,450 800,450 C 950,450 1000,250 1150,250 C 1250,250 1300,350 1350,450 C 1380,510 1400,580 1420,650"
                         fill="none" stroke="url(#roadGradient)" stroke-width="60" stroke-linecap="round" />
@@ -484,14 +534,8 @@
                     <!-- Dashed center line -->
                     <path class="road-dashes"
                         d="M -80,-30 C -60,20 -20,80 50,150 C 120,220 180,280 250,300 C 350,330 350,150 500,150 C 650,150 650,450 800,450 C 950,450 1000,250 1150,250 C 1250,250 1300,350 1350,450 C 1380,510 1400,580 1420,650"
-                        fill="none" stroke="rgba(168,85,247,0.3)" stroke-width="2" stroke-dasharray="20 15"
+                        fill="none" stroke="url(#dashesGradient)" stroke-width="2" stroke-dasharray="20 15"
                         stroke-linecap="round" />
-
-                    <!-- Progress road (animated fill) -->
-                    <path class="road-progress"
-                        d="M -80,-30 C -60,20 -20,80 50,150 C 120,220 180,280 250,300 C 350,330 350,150 500,150 C 650,150 650,450 800,450 C 950,450 1000,250 1150,250 C 1250,250 1300,350 1350,450 C 1380,510 1400,580 1420,650"
-                        fill="none" stroke="url(#progressGradient)" stroke-width="6" stroke-linecap="round"
-                        filter="url(#roadGlow)" />
 
                     <!-- Animated dots along the path -->
                     <circle class="road-dot road-dot-1" r="4" fill="#a855f7">

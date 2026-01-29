@@ -5,7 +5,7 @@ echo PUSHING TO GITHUB
 echo ========================================
 echo.
 git add .
-git commit -m "Add journey roadmap process section with scroll-triggered animations, winding road path, checkpoint cards, and particle effects"
+git commit -m "Update process section: add border-only road animation with edge highlights, fade road ends smoothly, remove bottom progress bar, fix center dashes visibility"
 git push origin main
 echo.
 echo ========================================

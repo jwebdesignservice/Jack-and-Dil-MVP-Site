@@ -1440,32 +1440,16 @@ ul {
     z-index: 1;
 }
 
+.road-bg-solid {
+    /* Fade handled by SVG gradient */
+}
+
 .road-bg {
-    opacity: 0.4;
-    mask: linear-gradient(to right,
-            transparent 0%,
-            black 8%,
-            black 92%,
-            transparent 100%);
-    -webkit-mask: linear-gradient(to right,
-            transparent 0%,
-            black 8%,
-            black 92%,
-            transparent 100%);
+    /* Fade handled by SVG gradient */
 }
 
 .road-dashes {
     animation: dash-flow 2s linear infinite;
-    mask: linear-gradient(to right,
-            transparent 0%,
-            black 8%,
-            black 92%,
-            transparent 100%);
-    -webkit-mask: linear-gradient(to right,
-            transparent 0%,
-            black 8%,
-            black 92%,
-            transparent 100%);
 }
 
 @keyframes dash-flow {
@@ -1478,16 +1462,6 @@ ul {
     stroke-dasharray: 2000;
     stroke-dashoffset: 2000;
     transition: stroke-dashoffset 0.1s ease-out;
-    mask: linear-gradient(to right,
-            transparent 0%,
-            black 10%,
-            black 90%,
-            transparent 100%);
-    -webkit-mask: linear-gradient(to right,
-            transparent 0%,
-            black 10%,
-            black 90%,
-            transparent 100%);
 }
 
 .road-dot {
@@ -3032,7 +3006,7 @@ ul {
 
     .about-text {
         order: 1;
-        text-align: center;
+    text-align: center;
         max-width: 100%;
     }
 
