@@ -1328,194 +1328,422 @@ ul {
 }
 
 /* ==========================================================================
-   PROCESS SECTION
+   PROCESS SECTION - Journey Roadmap Design
    ========================================================================== */
 .process-section {
     padding: var(--space-5xl) 0;
     border-top: 1px solid var(--color-border);
     position: relative;
     overflow: hidden;
+    min-height: 800px;
 }
 
 .process-bg {
     position: absolute;
     inset: 0;
     pointer-events: none;
-}
-
-.process-line {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 1px;
-    height: 100%;
-    background: linear-gradient(to bottom, transparent, var(--color-accent), transparent);
-    opacity: 0.3;
-}
-
-.process-timeline {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-lg);
-    position: relative;
-}
-
-.process-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.process-card-connector {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: var(--space-lg);
-}
-
-.connector-dot {
-    width: 16px;
-    height: 16px;
-    background: var(--color-bg-card);
-    border: 2px solid var(--color-accent);
-    border-radius: 50%;
-    position: relative;
-    z-index: 2;
-    transition: all 0.4s ease;
-    box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.1);
-}
-
-.process-card:hover .connector-dot {
-    background: var(--color-accent);
-    box-shadow: 0 0 20px var(--color-accent), 0 0 0 8px rgba(168, 85, 247, 0.15);
-    transform: scale(1.2);
-}
-
-.connector-dot-final {
-    width: 20px;
-    height: 20px;
-    background: linear-gradient(135deg, var(--color-accent), #f472b6);
-    border: none;
-    box-shadow: 0 0 20px var(--color-accent);
-}
-
-.connector-line {
-    width: 2px;
-    height: 30px;
-    background: linear-gradient(to bottom, var(--color-accent), transparent);
-    opacity: 0.5;
-}
-
-.process-card-content {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
-    padding: var(--space-xl);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
     overflow: hidden;
-    width: 100%;
 }
 
-.process-card-content::before {
-    content: '';
+/* Floating Particles Container */
+.process-particles {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at top center, rgba(168, 85, 247, 0.1), transparent 60%);
+    overflow: hidden;
+}
+
+.process-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--color-accent);
+    border-radius: 50%;
     opacity: 0;
-    transition: opacity 0.4s ease;
+    animation: particle-float 8s ease-in-out infinite;
 }
 
-.process-card:hover .process-card-content::before {
+@keyframes particle-float {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: translateY(100px) scale(0);
+    }
+
+    10% {
+        opacity: 0.6;
+        transform: translateY(80px) scale(1);
+    }
+
+    90% {
+        opacity: 0.6;
+        transform: translateY(-80px) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(0);
+    }
+}
+
+/* Background Glows */
+.process-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.08;
+}
+
+.process-glow-1 {
+    top: 10%;
+    left: -10%;
+    background: var(--color-accent);
+    animation: process-glow-drift 12s ease-in-out infinite;
+}
+
+.process-glow-2 {
+    bottom: 10%;
+    right: -10%;
+    background: #f472b6;
+    animation: process-glow-drift 12s ease-in-out infinite reverse;
+}
+
+@keyframes process-glow-drift {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(30px, 20px);
+    }
+}
+
+/* Journey Container */
+.journey-container {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    margin-top: var(--space-3xl);
+}
+
+/* SVG Road Styling */
+.journey-road-svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.road-bg {
+    opacity: 0.4;
+    mask: linear-gradient(to right,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%);
+    -webkit-mask: linear-gradient(to right,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%);
+}
+
+.road-dashes {
+    animation: dash-flow 2s linear infinite;
+    mask: linear-gradient(to right,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%);
+    -webkit-mask: linear-gradient(to right,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%);
+}
+
+@keyframes dash-flow {
+    to {
+        stroke-dashoffset: -35;
+    }
+}
+
+.road-progress {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    transition: stroke-dashoffset 0.1s ease-out;
+    mask: linear-gradient(to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%);
+    -webkit-mask: linear-gradient(to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%);
+}
+
+.road-dot {
+    filter: drop-shadow(0 0 6px currentColor);
+}
+
+/* Checkpoints Container */
+.journey-checkpoints {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+}
+
+/* Individual Checkpoint Positioning */
+.checkpoint {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkpoint.visible {
     opacity: 1;
+    transform: translateY(0);
 }
 
-.process-card:hover .process-card-content {
-    border-color: rgba(168, 85, 247, 0.3);
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 40px rgba(168, 85, 247, 0.1);
+.checkpoint-1 {
+    left: 4%;
+    top: calc(42% + 200px);
 }
 
-.process-icon {
+.checkpoint-2 {
+    left: 28%;
+    top: 8%;
+}
+
+.checkpoint-3 {
+    left: 52%;
+    top: calc(62% + 200px);
+}
+
+.checkpoint-4 {
+    left: 82%;
+    top: 30%;
+}
+
+/* Checkpoint Marker (The dot on the road) */
+.checkpoint-marker {
+    position: relative;
     width: 56px;
     height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(168, 85, 247, 0.05));
-    border: 1px solid rgba(168, 85, 247, 0.2);
-    border-radius: var(--radius-lg);
-    color: var(--color-accent-light);
-    margin: 0 auto var(--space-lg);
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkpoint:hover .checkpoint-marker {
+    transform: scale(1.15);
+}
+
+.checkpoint-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(168, 85, 247, 0.2);
+    animation: checkpoint-pulse 2.5s ease-out infinite;
+    opacity: 0;
+}
+
+.checkpoint.active .checkpoint-pulse,
+.checkpoint:hover .checkpoint-pulse {
+    opacity: 1;
+}
+
+@keyframes checkpoint-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.checkpoint-ring {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border: 2px solid rgba(168, 85, 247, 0.3);
+    border-radius: 50%;
     transition: all 0.4s ease;
 }
 
-.process-card:hover .process-icon {
-    transform: scale(1.1) rotate(5deg);
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(168, 85, 247, 0.1));
-    box-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
+.checkpoint:hover .checkpoint-ring,
+.checkpoint.active .checkpoint-ring {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
 }
 
-.process-icon-final {
-    background: linear-gradient(135deg, var(--color-accent), #f472b6);
-    border: none;
-    color: var(--color-bg);
-}
-
-.process-number {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--color-accent);
-    letter-spacing: 0.1em;
-    margin-bottom: var(--space-sm);
-    opacity: 0.7;
-}
-
-.process-card h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: var(--space-sm);
-    transition: color 0.3s ease;
-}
-
-.process-card:hover h3 {
-    color: var(--color-accent-light);
-}
-
-.process-card p {
-    font-size: 0.875rem;
-    color: var(--color-text-secondary);
-    line-height: 1.6;
-    margin-bottom: var(--space-lg);
-}
-
-.process-meta {
+.checkpoint-dot {
+    width: 40px;
+    height: 40px;
+    background: var(--color-bg-card);
+    border: 2px solid var(--color-accent);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-sm);
-    flex-wrap: wrap;
+    color: var(--color-accent);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
 }
 
-.process-time {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--color-text-tertiary);
-    background: var(--color-bg);
-    padding: 4px 12px;
-    border-radius: 100px;
+.checkpoint:hover .checkpoint-dot,
+.checkpoint.active .checkpoint-dot {
+    background: linear-gradient(135deg, var(--color-accent), #c084fc);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+}
+
+.checkpoint-check {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    top: -9px;
+    left: 38px;
+    transform: scale(0);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+    z-index: 10;
+}
+
+.checkpoint.completed .checkpoint-check {
+    transform: scale(1);
+}
+
+/* Final Checkpoint Special Styling */
+.checkpoint-marker-final .checkpoint-ring {
+    border-color: rgba(244, 114, 182, 0.4);
+}
+
+.checkpoint-marker-final .checkpoint-dot {
+    border-color: #f472b6;
+    color: #f472b6;
+}
+
+.checkpoint-final:hover .checkpoint-dot,
+.checkpoint-final.active .checkpoint-dot {
+    background: linear-gradient(135deg, #f472b6, var(--color-accent));
+}
+
+.checkpoint-pulse-final {
+    background: rgba(244, 114, 182, 0.2);
+}
+
+.checkpoint-dot-final {
+    width: 44px;
+    height: 44px;
+}
+
+.checkpoint-check-final {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #f472b6, var(--color-accent));
+}
+
+/* Checkpoint Card */
+.checkpoint-card {
+    position: relative;
+    background: var(--color-bg-card);
     border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-lg);
+    margin-top: var(--space-md);
+    width: 200px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
 }
 
-.process-tag {
+.checkpoint:hover .checkpoint-card {
+    border-color: rgba(168, 85, 247, 0.4);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(168, 85, 247, 0.15);
+}
+
+.checkpoint-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.checkpoint:hover .checkpoint-glow {
+    opacity: 1;
+}
+
+.checkpoint-glow-final {
+    background: linear-gradient(90deg, transparent, #f472b6, var(--color-accent), transparent);
+}
+
+.checkpoint-day {
     font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-xs);
+}
+
+.checkpoint-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+    transition: color 0.3s ease;
+}
+
+.checkpoint:hover .checkpoint-card h3 {
+    color: var(--color-accent-light);
+}
+
+.checkpoint-card p {
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin-bottom: var(--space-sm);
+}
+
+.checkpoint-tag {
+    display: inline-block;
+    font-size: 0.625rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
     color: var(--color-accent);
     background: rgba(168, 85, 247, 0.1);
     padding: 4px 10px;
@@ -1523,10 +1751,166 @@ ul {
     border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
-.process-tag-success {
+.checkpoint-tag-success {
     color: #4ade80;
-    background: rgba(34, 197, 94, 0.1);
-    border-color: rgba(34, 197, 94, 0.2);
+    background: rgba(34, 197, 94, 0.15);
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.checkpoint-card-final {
+    border-color: rgba(244, 114, 182, 0.2);
+}
+
+.checkpoint-final:hover .checkpoint-card {
+    border-color: rgba(244, 114, 182, 0.5);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 50px rgba(244, 114, 182, 0.2);
+}
+
+/* Journey Progress Bar */
+.journey-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    height: 4px;
+    background: rgba(168, 85, 247, 0.1);
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.journey-progress-track {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg,
+            transparent,
+            transparent 10px,
+            rgba(168, 85, 247, 0.1) 10px,
+            rgba(168, 85, 247, 0.1) 12px);
+}
+
+.journey-progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--color-accent), #f472b6);
+    border-radius: 100px;
+    transition: width 0.3s ease-out;
+}
+
+.journey-progress-glow {
+    position: absolute;
+    top: -4px;
+    left: 0;
+    height: 12px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--color-accent), #f472b6);
+    border-radius: 100px;
+    filter: blur(8px);
+    opacity: 0.5;
+    transition: width 0.3s ease-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .journey-container {
+        min-height: auto;
+        padding: var(--space-2xl) 0;
+    }
+
+    .journey-road-svg {
+        display: none;
+    }
+
+    .journey-checkpoints {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xl);
+        position: relative;
+    }
+
+    .checkpoint {
+        position: relative;
+        left: auto !important;
+        top: auto !important;
+        flex-direction: row;
+        gap: var(--space-lg);
+        opacity: 1;
+        transform: none;
+    }
+
+    .checkpoint-card {
+        width: 100%;
+        max-width: 400px;
+        text-align: left;
+        margin-top: 0;
+    }
+
+    .checkpoint:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    .checkpoint:nth-child(even) .checkpoint-card {
+        text-align: right;
+    }
+
+    /* Mobile Road Line */
+    .journey-checkpoints::before {
+        content: '';
+        position: absolute;
+        left: 28px;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(to bottom, var(--color-accent), #f472b6);
+        opacity: 0.3;
+        border-radius: 100px;
+    }
+
+    .journey-progress-bar {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .process-section {
+        min-height: auto;
+    }
+
+    .checkpoint {
+        flex-direction: column !important;
+    }
+
+    .checkpoint:nth-child(even) .checkpoint-card {
+        text-align: center;
+    }
+
+    .checkpoint-card {
+        text-align: center;
+    }
+
+    .journey-checkpoints::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .checkpoint-marker {
+        width: 48px;
+        height: 48px;
+    }
+
+    .checkpoint-dot {
+        width: 36px;
+        height: 36px;
+    }
+
+    .checkpoint-ring {
+        width: 42px;
+        height: 42px;
+    }
 }
 
 /* ==========================================================================
