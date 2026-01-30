@@ -1685,7 +1685,7 @@ ul {
    PROCESS SECTION - Journey Roadmap Design
    ========================================================================== */
 .process-section {
-    padding: var(--space-5xl) 0;
+    padding: var(--space-5xl) 0 var(--space-3xl) 0;
     border-top: 1px solid var(--color-border);
     position: relative;
     overflow: hidden;
@@ -2910,7 +2910,7 @@ ul {
    ABOUT US SECTION - Minimal Orbital Design
    ========================================================================== */
 .about-section {
-    padding: var(--space-5xl) 0;
+    padding: var(--space-3xl) 0 var(--space-5xl) 0;
     position: relative;
 }
 
