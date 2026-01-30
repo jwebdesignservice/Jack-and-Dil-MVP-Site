@@ -2,21 +2,124 @@
    LaunchFast — Clean Interactions
    ========================================================================== */
 
+// Preloader with typing animation
+(function initPreloader() {
+    const preloader = document.getElementById('preloader');
+    const wordElement = document.getElementById('preloaderWord');
+    const cursorElement = document.querySelector('.preloader-cursor');
+    const dividerElement = document.getElementById('preloaderDivider');
+    const taglineElement = document.getElementById('preloaderTagline');
+    const starsContainer = document.getElementById('preloaderStars');
+
+    if (!preloader || !wordElement) return;
+
+    // Create floating stars
+    function createPreloaderStars() {
+        if (!starsContainer) return;
+
+        for (let i = 0; i < 30; i++) {
+            const star = document.createElement('div');
+            star.className = 'preloader-star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 4 + 's';
+            star.style.animationDuration = (3 + Math.random() * 2) + 's';
+
+            // Random colors
+            const colors = ['#a855f7', '#c084fc', '#f472b6', '#818cf8'];
+            star.style.background = colors[Math.floor(Math.random() * colors.length)];
+            star.style.boxShadow = `0 0 6px ${star.style.background}, 0 0 12px ${star.style.background}`;
+
+            starsContainer.appendChild(star);
+        }
+    }
+
+    // Typing animation
+    const words = ['Premium.', 'Fast.', "MVP's."];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 120;
+
+    function typeWord() {
+        const currentWord = words[wordIndex];
+
+        if (isDeleting) {
+            // Deleting characters
+            wordElement.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+            typingSpeed = 60; // Faster when deleting
+        } else {
+            // Typing characters
+            wordElement.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+            typingSpeed = 120;
+        }
+
+        // Word complete
+        if (!isDeleting && charIndex === currentWord.length) {
+            // If it's the last word (MVP), keep it and fade out
+            if (wordIndex === words.length - 1) {
+                setTimeout(() => {
+                    fadeOutPreloader();
+                }, 2000);
+                return;
+            }
+
+            // Pause at end of word before deleting
+            typingSpeed = 800;
+            isDeleting = true;
+        }
+
+        // Word deleted
+        if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex++;
+            typingSpeed = 300; // Pause before next word
+        }
+
+        setTimeout(typeWord, typingSpeed);
+    }
+
+    function fadeOutPreloader() {
+        preloader.classList.add('fade-out');
+
+        // Remove preloader from DOM after transition
+        setTimeout(() => {
+            preloader.style.display = 'none';
+            document.body.style.overflow = '';
+        }, 800);
+    }
+
+    // Start preloader
+    document.body.style.overflow = 'hidden';
+    createPreloaderStars();
+
+    // Fade in divider and tagline at the start
+    setTimeout(() => {
+        if (dividerElement) dividerElement.classList.add('fade-in');
+        if (taglineElement) taglineElement.classList.add('fade-in');
+    }, 300);
+
+    // Small delay before starting typing
+    setTimeout(typeWord, 500);
+})();
+
 document.addEventListener('DOMContentLoaded', function () {
-    
+
     // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
-            
+
             e.preventDefault();
             const target = document.querySelector(href);
-            
+
             if (target) {
                 const navHeight = document.querySelector('.nav')?.offsetHeight || 0;
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -24,10 +127,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-    
+
     // FAQ Accordion - One open at a time
     const faqItems = document.querySelectorAll('.faq-item');
-    
+
     faqItems.forEach(item => {
         item.addEventListener('toggle', function () {
             if (this.open) {
@@ -39,14 +142,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-    
+
     // Scroll Reveal Animations
     const observerOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.1
     };
-    
+
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -55,17 +158,17 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }, observerOptions);
-    
+
     const revealElements = document.querySelectorAll(
         '.stat-card, .service-card, .comparison-card, .testimonial-card, .faq-item'
     );
-    
+
     revealElements.forEach((el, index) => {
         el.classList.add('reveal-element');
         el.style.transitionDelay = `${index * 15}ms`;
         revealObserver.observe(el);
     });
-    
+
     // Add reveal styles
     const style = document.createElement('style');
     style.textContent = `
@@ -81,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     `;
     document.head.appendChild(style);
-    
+
     // ==========================================================================
     // JOURNEY ROADMAP - Scroll-Triggered Animations
     // ==========================================================================

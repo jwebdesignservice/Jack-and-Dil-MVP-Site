@@ -16,6 +16,25 @@
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-grid"></div>
+        <div class="preloader-stars" id="preloaderStars"></div>
+        <div class="preloader-content">
+            <div class="preloader-text">
+                <div style="display: inline-flex; align-items: center;">
+                    <span class="preloader-word" id="preloaderWord"></span>
+                    <span class="preloader-cursor">|</span>
+                </div>
+            </div>
+            <div class="preloader-divider" id="preloaderDivider"></div>
+            <p class="preloader-tagline" id="preloaderTagline">Production-ready MVPs without cutting corners. Fast to
+                ship. Built to last.</p>
+        </div>
+        <div class="preloader-glow preloader-glow-1"></div>
+        <div class="preloader-glow preloader-glow-2"></div>
+    </div>
+
     <div class="grid-background"></div>
     <!-- Navigation -->
     <nav class="nav">
@@ -63,7 +82,10 @@
                     </p>
                     <div class="hero-cta">
                         <a href="contact.html" class="btn btn-primary">Book a Free Call</a>
-                        <a href="#services" class="btn btn-outline">See What We Build</a>
+                        <a href="#services" class="btn btn-outline">
+                            <span class="btn-scan-line"></span>
+                            See What We Build
+                        </a>
                     </div>
                 </div>
                 <div class="hero-right">
@@ -672,13 +694,6 @@
                             <div class="checkpoint-tag checkpoint-tag-success">Go Live 🚀</div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Journey Progress Indicator -->
-                <div class="journey-progress-bar">
-                    <div class="journey-progress-track"></div>
-                    <div class="journey-progress-fill" id="journeyProgressFill"></div>
-                    <div class="journey-progress-glow"></div>
                 </div>
             </div>
         </div>
