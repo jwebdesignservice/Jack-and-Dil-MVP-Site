@@ -39,7 +39,7 @@
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let typingSpeed = 120;
+    let typingSpeed = 80;
 
     function typeWord() {
         const currentWord = words[wordIndex];
@@ -48,12 +48,12 @@
             // Deleting characters
             wordElement.textContent = currentWord.substring(0, charIndex - 1);
             charIndex--;
-            typingSpeed = 60; // Faster when deleting
+            typingSpeed = 40; // Faster when deleting
         } else {
             // Typing characters
             wordElement.textContent = currentWord.substring(0, charIndex + 1);
             charIndex++;
-            typingSpeed = 120;
+            typingSpeed = 80;
         }
 
         // Word complete
@@ -191,6 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     initJourneyRoadmap();
     initProcessParticles();
+    initCTAParticles();
 
 });
 
@@ -357,6 +358,52 @@ function initProcessParticles() {
 function createParticle(container, colors, index) {
     const particle = document.createElement('div');
     particle.className = 'process-particle';
+
+    // Random properties
+    const size = Math.random() * 4 + 2;
+    const left = Math.random() * 100;
+    const delay = Math.random() * 8;
+    const duration = Math.random() * 4 + 6;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+
+    particle.style.cssText = `
+        width: ${size}px;
+        height: ${size}px;
+        left: ${left}%;
+        top: ${50 + (Math.random() - 0.5) * 60}%;
+        background: ${color};
+        animation-delay: ${delay}s;
+        animation-duration: ${duration}s;
+        box-shadow: 0 0 ${size * 2}px ${color};
+    `;
+
+    container.appendChild(particle);
+
+    // Recreate particle after animation
+    particle.addEventListener('animationiteration', () => {
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${50 + (Math.random() - 0.5) * 60}%`;
+    });
+}
+
+/* ==========================================================================
+   CTA Particles
+   ========================================================================== */
+function initCTAParticles() {
+    const particlesContainer = document.getElementById('ctaParticles');
+    if (!particlesContainer) return;
+
+    const particleCount = 30;
+    const colors = ['#a855f7', '#c084fc', '#f472b6', '#e879f9'];
+
+    for (let i = 0; i < particleCount; i++) {
+        createCTAParticle(particlesContainer, colors, i);
+    }
+}
+
+function createCTAParticle(container, colors, index) {
+    const particle = document.createElement('div');
+    particle.className = 'cta-particle';
 
     // Random properties
     const size = Math.random() * 4 + 2;
