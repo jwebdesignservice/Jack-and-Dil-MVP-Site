@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000000;
+  color: white;
+  font-family: var(--font-inter);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #F97316;
+  border-radius: 3px;
+}
+
+.pause-on-hover:hover .animate-marquee-left,
+.pause-on-hover:hover .animate-marquee-right {
+  animation-play-state: paused;
+}

@@ -1,13 +1,29 @@
 {
+  "name": "launchfast",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "dependencies": {
-    "@react-three/fiber": "^9.5.0",
-    "@shadergradient/react": "^2.4.20",
-    "camera-controls": "^3.1.0",
-    "ogl": "^1.0.11",
-    "three": "^0.182.0",
-    "three-stdlib": "^2.36.1"
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "framer-motion": "^11.3.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {
-    "@types/three": "^0.182.0"
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8",
+    "autoprefixer": "^10.0.1",
+    "@playwright/test": "^1.45.0"
   }
 }
