@@ -78,8 +78,8 @@ function BuildSVG() {
       <text x="22" y="129" fill="#F97316" fontSize="8.5" fontFamily="monospace">→ Deploying to production...</text>
       <text x="22" y="144" fill="#a78bfa" fontSize="8.5" fontFamily="monospace">✓ Preview URL ready</text>
       <rect x="22" y="149" width="10" height="11" rx="1.5" fill="#F97316" opacity="0.85"/>
-      <rect x="10" y="158" width="260" height="12" fill="rgba(249,115,22,0.06)"/>
-      <motion.rect x="10" y="158" width="0" height="12" fill="url(#bp)"
+      <rect x="10" y="158" width="260" height="12" rx="0" fill="rgba(249,115,22,0.06)" clipPath="url(#progressClip)"/>
+      <motion.rect x="10" y="158" width="0" height="12" fill="url(#bp)" clipPath="url(#progressClip)"
         animate={{ width: [0, 260] }}
         transition={{ duration: 2, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut', repeatDelay: 0.5 }}/>
       <defs>
@@ -87,6 +87,9 @@ function BuildSVG() {
           <stop offset="0%" stopColor="#F97316" stopOpacity="0.6"/>
           <stop offset="100%" stopColor="#a78bfa" stopOpacity="0.6"/>
         </linearGradient>
+        <clipPath id="progressClip">
+          <rect x="10" y="158" width="260" height="12" rx="6"/>
+        </clipPath>
       </defs>
     </svg>
   )
@@ -166,7 +169,7 @@ export default function Process() {
                 className={`flex flex-col lg:flex-row items-center gap-10 relative ${!textLeft ? 'lg:flex-row-reverse' : ''}`}>
 
                 {/* Text side */}
-                <div className="flex-1 w-full lg:max-w-sm lg:mx-auto">
+                <div className="flex-1 w-full lg:max-w-sm lg:mx-auto lg:text-left">
                   <div className="flex items-center gap-3 mb-4">
                     <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center text-xs font-mono font-bold flex-shrink-0 ${step.isLast ? 'border-orange-500 bg-orange-500/20 text-orange-400 shadow-[0_0_20px_rgba(249,115,22,0.3)]' : 'border-orange-500/40 bg-[#0A0A0A] text-orange-500/70'}`}>
                       {step.num}
@@ -194,8 +197,8 @@ export default function Process() {
                   </div>
                 </div>
 
-                {/* SVG side — pushed to outer edge */}
-                <div className={`flex-1 w-full flex py-4 ${textLeft ? 'justify-end' : 'justify-start'}`}>
+                {/* SVG side — centered in its half */}
+                <div className="flex-1 w-full flex py-4 justify-center">
                   <step.SVG />
                 </div>
               </motion.div>

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
+import { SectionLabel } from '@/components/ui/SectionLabel'
 
 type FormData = {
   name: string
@@ -53,17 +54,19 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Background */}
-      <div className="absolute inset-0 opacity-[0.04]"
-        style={{ backgroundImage: 'linear-gradient(rgba(249,115,22,1) 1px, transparent 1px), linear-gradient(90deg, rgba(249,115,22,1) 1px, transparent 1px)', backgroundSize: '60px 60px' }}/>
-      <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 60% 40% at 50% 20%, rgba(249,115,22,0.07) 0%, transparent 70%)' }}/>
+      {/* Dot grid — same as hero */}
+      <div className="absolute inset-0"
+        style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }}/>
+      {/* Orange-to-black gradient */}
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg, rgba(249,115,22,0.1) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 100%)' }}/>
+      <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 50% at 20% 30%, rgba(249,115,22,0.08) 0%, transparent 70%)' }}/>
 
       <div className="container mx-auto px-6 py-32 relative z-10">
 
         {/* Header — centered, above everything */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
           className="text-center mb-16 max-w-2xl mx-auto">
-          <span className="text-orange-500 text-xs font-bold tracking-[0.2em] uppercase">Let&apos;s Build Together</span>
+          <SectionLabel icon={<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>}>Let&apos;s Build Together</SectionLabel>
           <h1 className="text-4xl lg:text-5xl font-semibold text-white mt-4 mb-5">
             Start Your{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">MVP Journey</span>
