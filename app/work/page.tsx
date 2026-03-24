@@ -10,6 +10,7 @@ const projects = [
     title: 'Desert Falcons Collective',
     desc: 'A premium automotive community platform for luxury car enthusiasts across the Middle East. Built with a focus on sleek visuals and member engagement.',
     image: '/Images/work/desertfalcons.png',
+    hoverImage: '/Images/work/desertfalcons-phone.png',
     tags: ['Automotive', 'Community', 'Luxury'],
     services: ['UI/UX Design', 'Next.js', 'Full-Stack'],
     delivery: '12 days',
@@ -152,4 +153,5 @@ export default function WorkPage() {
     </main>
   )
 }
+
 
