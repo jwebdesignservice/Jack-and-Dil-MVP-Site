@@ -143,9 +143,7 @@ export default function Process() {
         ))}
       </div>
 
-      {/* Center vertical line */}
-      <div className="absolute left-1/2 top-0 bottom-0 w-px hidden lg:block -translate-x-1/2"
-        style={{ background: 'linear-gradient(to bottom, transparent, rgba(249,115,22,0.25) 10%, rgba(249,115,22,0.25) 90%, transparent)' }}/>
+
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
@@ -156,54 +154,42 @@ export default function Process() {
           <p className="text-neutral-500 mt-4 max-w-md mx-auto text-sm">Concept to production in 14 days. No surprises, no delays.</p>
         </motion.div>
 
-        {/* Steps */}
-        <div className="space-y-28">
-          {steps.map((step, i) => {
-            const textLeft = i % 2 === 0
-            return (
-              <motion.div key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className={`flex flex-col lg:flex-row items-center gap-10 relative ${!textLeft ? 'lg:flex-row-reverse' : ''}`}>
+        {/* Steps — 2×2 grid, text above SVG, centered */}
+        <div className="grid md:grid-cols-2 gap-16">
+          {steps.map((step, i) => (
+            <motion.div key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="flex flex-col items-center text-center">
 
-                {/* Text side */}
-                <div className="flex-1 w-full lg:max-w-sm lg:mx-auto lg:text-left">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center text-xs font-mono font-bold flex-shrink-0 ${step.isLast ? 'border-orange-500 bg-orange-500/20 text-orange-400 shadow-[0_0_20px_rgba(249,115,22,0.3)]' : 'border-orange-500/40 bg-[#0A0A0A] text-orange-500/70'}`}>
-                      {step.num}
-                    </div>
-                    <span className="text-[10px] font-bold tracking-[0.2em] text-orange-500/50 uppercase font-mono">{step.label}</span>
-                    <span className={`text-[10px] font-mono px-2.5 py-1 rounded-full border ml-auto ${step.isLast ? 'border-orange-500/40 text-orange-400 bg-orange-500/10' : 'border-neutral-800 text-neutral-600'}`}>
-                      {step.day}
-                    </span>
+              {/* Text */}
+              <div className="w-full mb-8">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center text-xs font-mono font-bold flex-shrink-0 ${step.isLast ? 'border-orange-500 bg-orange-500/20 text-orange-400 shadow-[0_0_20px_rgba(249,115,22,0.3)]' : 'border-orange-500/40 bg-[#0A0A0A] text-orange-500/70'}`}>
+                    {step.num}
                   </div>
-                  <h3 className={`text-2xl font-semibold mb-3 ${step.isLast ? 'text-orange-100' : 'text-white'}`}>{step.title}</h3>
-                  <p className="text-neutral-400 text-sm leading-relaxed mb-5">{step.desc}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {step.details.map(d => (
-                      <span key={d} className={`text-[10px] font-mono px-2.5 py-1 rounded border ${step.isLast ? 'border-orange-500/30 text-orange-400/80 bg-orange-500/5' : 'border-neutral-800 text-neutral-600 bg-[#0D0D0D]'}`}>{d}</span>
-                    ))}
-                  </div>
+                  <span className="text-[10px] font-bold tracking-[0.2em] text-orange-500/50 uppercase font-mono">{step.label}</span>
+                  <span className={`text-[10px] font-mono px-2.5 py-1 rounded-full border ${step.isLast ? 'border-orange-500/40 text-orange-400 bg-orange-500/10' : 'border-neutral-800 text-neutral-600'}`}>
+                    {step.day}
+                  </span>
                 </div>
+                <h3 className={`text-2xl font-semibold mb-3 ${step.isLast ? 'text-orange-100' : 'text-white'}`}>{step.title}</h3>
+                <p className="text-neutral-400 text-sm leading-relaxed mb-5 max-w-sm mx-auto">{step.desc}</p>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  {step.details.map(d => (
+                    <span key={d} className={`text-[10px] font-mono px-2.5 py-1 rounded border ${step.isLast ? 'border-orange-500/30 text-orange-400/80 bg-orange-500/5' : 'border-neutral-800 text-neutral-600 bg-[#0D0D0D]'}`}>{d}</span>
+                  ))}
+                </div>
+              </div>
 
-                {/* Center node — absolutely centered on the vertical line */}
-                <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex-shrink-0">
-                  <div className={`w-12 h-12 rounded-full border-2 flex items-center justify-center ${step.isLast ? 'border-orange-500 bg-orange-500/20 shadow-[0_0_24px_rgba(249,115,22,0.4)]' : 'border-orange-500/40 bg-[#060606]'}`}>
-                    {step.isLast
-                      ? <div className="w-4 h-4 rounded-full bg-orange-500 animate-pulse"/>
-                      : <div className="w-3 h-3 rounded-full bg-orange-500/50"/>}
-                  </div>
-                </div>
-
-                {/* SVG side */}
-                <div className={`flex-1 w-full flex py-4 items-center ${textLeft ? 'lg:justify-end lg:pr-16' : 'lg:justify-start lg:pl-16'} justify-center`}>
-                  <step.SVG />
-                </div>
-              </motion.div>
-            )
-          })}
+              {/* SVG below text */}
+              <div className="flex justify-center w-full">
+                <step.SVG />
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
