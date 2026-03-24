@@ -60,7 +60,7 @@ export default function Comparison() {
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="text-center mb-16">
-          <SectionLabel icon={<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>}>Why LaunchFast</SectionLabel>
+          <SectionLabel icon={<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>}>Why FastLaunch</SectionLabel>
           <h2 className="text-4xl lg:text-5xl font-semibold text-white mt-4">The Difference is <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Clear</span></h2>
           <p className="text-orange-200/40 mt-3 text-sm max-w-md mx-auto">Stop burning time and money on bloated agency processes.</p>
         </motion.div>
@@ -157,7 +157,7 @@ export default function Comparison() {
                   <span className="w-2 h-2 rounded-full bg-red-500/50"/>
                   <span className="text-[10px] text-neutral-600">Traditional</span>
                   <span className="w-2 h-2 rounded-full bg-orange-500 ml-2"/>
-                  <span className="text-[10px] text-neutral-600">LaunchFast</span>
+                  <span className="text-[10px] text-neutral-600">FastLaunch</span>
                 </div>
               </div>
             </div>
@@ -182,4 +182,5 @@ export default function Comparison() {
     </section>
   )
 }
+
 

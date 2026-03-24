@@ -49,7 +49,7 @@ export default function About() {
                 <div className="w-2.5 h-2.5 rounded-full bg-red-500/60"/>
                 <div className="w-2.5 h-2.5 rounded-full bg-amber-500/60"/>
                 <div className="w-2.5 h-2.5 rounded-full bg-green-500/60"/>
-                <span className="ml-3 text-[11px] font-mono text-neutral-600">jwebdesign / launchfast</span>
+                <span className="ml-3 text-[11px] font-mono text-neutral-600">jwebdesign / FastLaunch</span>
                 <div className="ml-auto flex items-center gap-1.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"/>
                   <span className="text-[10px] font-mono text-orange-400">active</span>
@@ -151,3 +151,4 @@ export default function About() {
     </section>
   )
 }
+

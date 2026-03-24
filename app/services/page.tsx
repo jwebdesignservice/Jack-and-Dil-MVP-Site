@@ -27,7 +27,7 @@ function DashboardSVG() {
       <circle cx="42" cy="38" r="5" fill="#ef4444" fillOpacity="0.7"/>
       <circle cx="58" cy="38" r="5" fill="#f59e0b" fillOpacity="0.7"/>
       <circle cx="74" cy="38" r="5" fill="#22c55e" fillOpacity="0.7"/>
-      <text x="200" y="43" textAnchor="middle" fill="#4a4a4a" fontSize="10" fontFamily="monospace">dashboard.launchfast.dev</text>
+      <text x="200" y="43" textAnchor="middle" fill="#4a4a4a" fontSize="10" fontFamily="monospace">dashboard.FastLaunch.dev</text>
       {/* Sidebar */}
       <rect x="20" y="56" width="70" height="224" fill="#0A0A0A"/>
       <rect x="28" y="74" width="54" height="7" rx="3" fill="#F97316" fillOpacity="0.8"/>
@@ -447,7 +447,7 @@ export default function ServicesPage() {
         graphic={<GlobeSVG />}
       />
 
-      {/* ── 3. Why LaunchFast ── */}
+      {/* ── 3. Why FastLaunch ── */}
       <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#0A0500', ...invertedDotGrid }}>
         <div className="absolute inset-0 bg-[#0A0500]/70" />
         <div className="container mx-auto px-6 relative z-10">
@@ -457,7 +457,7 @@ export default function ServicesPage() {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
               </svg>
-            }>Why LaunchFast</SectionLabel>
+            }>Why FastLaunch</SectionLabel>
             <h2 className="text-3xl lg:text-5xl font-semibold text-white mt-4">
               The honest comparison
             </h2>
@@ -467,7 +467,7 @@ export default function ServicesPage() {
           <div className="grid lg:grid-cols-3 gap-6">
             {[
               {
-                label: 'LaunchFast',
+                label: 'FastLaunch',
                 highlight: true,
                 items: [
                   '3–14 days to production',
@@ -592,3 +592,4 @@ export default function ServicesPage() {
     </main>
   )
 }
+

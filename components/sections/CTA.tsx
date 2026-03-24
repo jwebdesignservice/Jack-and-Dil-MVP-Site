@@ -87,7 +87,7 @@ export default function CTA() {
 
               <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
                 className="text-neutral-500 text-base max-w-lg mx-auto mb-10 leading-relaxed">
-                Join 50+ founders who launched with LaunchFast. One free call. Zero commitment. Just bring your idea.
+                Join 50+ founders who launched with FastLaunch. One free call. Zero commitment. Just bring your idea.
               </motion.p>
 
               {/* Stats row */}
@@ -110,7 +110,7 @@ export default function CTA() {
               {/* Bottom tech label */}
               <div className="mt-10 flex items-center justify-center gap-2 text-neutral-700 text-xs font-mono">
                 <span className="w-8 h-px bg-neutral-800" />
-                <span>LAUNCHFAST_v2.0 // EST. 2024 // UK</span>
+                <span>FastLaunch_v2.0 // EST. 2024 // UK</span>
                 <span className="w-8 h-px bg-neutral-800" />
               </div>
             </div>
@@ -120,6 +120,7 @@ export default function CTA() {
     </section>
   )
 }
+
 
 
 

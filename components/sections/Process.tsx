@@ -110,7 +110,7 @@ function DesignSVG() {
       <circle cx="44" cy="29" r="5" fill="#f59e0b"/>
       <circle cx="58" cy="29" r="5" fill="#22c55e"/>
       <rect x="80" y="20" width="140" height="16" rx="8" stroke="rgba(249,115,22,0.35)" strokeWidth="1" fill="rgba(0,0,0,0.4)"/>
-      <text x="150" y="31" fill="rgba(249,115,22,0.6)" fontSize="7" fontFamily="monospace" textAnchor="middle">launchfast.dev</text>
+      <text x="150" y="31" fill="rgba(249,115,22,0.6)" fontSize="7" fontFamily="monospace" textAnchor="middle">FastLaunch.dev</text>
       <rect x="22" y="50" width="236" height="10" rx="2" fill="rgba(249,115,22,0.1)" stroke="rgba(249,115,22,0.28)" strokeWidth="0.5"/>
       {[22,100,168].map((x,i)=><rect key={i} x={x+6} y="52" width={i===0?52:40} height="6" rx="1" fill="rgba(249,115,22,0.28)"/>)}
       <rect x="22" y="68" width="134" height="72" rx="3" fill="rgba(249,115,22,0.06)" stroke="rgba(249,115,22,0.32)" strokeWidth="1"/>
@@ -280,6 +280,7 @@ export default function Process() {
     </section>
   )
 }
+
 
 
 

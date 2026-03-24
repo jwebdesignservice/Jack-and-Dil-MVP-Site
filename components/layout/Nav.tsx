@@ -32,7 +32,7 @@ export default function Nav() {
             <svg className="w-7 h-7 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
               <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
             </svg>
-            LaunchFast
+            FastLaunch
           </Link>
 
           <ul className="hidden md:flex items-center gap-8">
@@ -77,4 +77,5 @@ export default function Nav() {
     </nav>
   )
 }
+
 

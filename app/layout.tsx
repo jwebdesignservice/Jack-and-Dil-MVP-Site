@@ -8,7 +8,7 @@ import Footer from '@/components/layout/Footer'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: 'LaunchFast — Production-Ready MVPs',
+  title: 'FastLaunch — Production-Ready MVPs',
   description: 'We build production-ready MVPs for ambitious founders in 3-14 days.',
   icons: { icon: '/icon.svg' },
 }
@@ -83,3 +83,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   )
 }
+
