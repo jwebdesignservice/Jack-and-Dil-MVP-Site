@@ -1,4 +1,5 @@
 'use client'
+import { SectionLabel } from '@/components/ui/SectionLabel'
 import { motion } from 'framer-motion'
 
 function ScopeSVG() {
@@ -147,7 +148,7 @@ export default function Process() {
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="text-center mb-16">
-          <span className="text-orange-500 text-xs font-bold tracking-[0.2em] uppercase">How We Work</span>
+          <SectionLabel icon={<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>}>How We Work</SectionLabel>
           <h2 className="text-4xl lg:text-5xl font-semibold text-white mt-4">The Process</h2>
           <p className="text-neutral-500 mt-4 max-w-md mx-auto text-sm">Concept to production in 14 days. No surprises, no delays.</p>
         </motion.div>
@@ -205,6 +206,8 @@ export default function Process() {
     </section>
   )
 }
+
+
 
 
 

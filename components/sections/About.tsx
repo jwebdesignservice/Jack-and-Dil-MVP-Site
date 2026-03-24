@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
+import { SectionLabel } from '@/components/ui/SectionLabel'
 
 const tags = ['Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Supabase', 'Stripe', 'Vercel', 'Tailwind', 'Prisma']
 
@@ -31,7 +32,7 @@ export default function About() {
       <div className="container mx-auto px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="text-center mb-10">
-          <span className="text-orange-500 text-xs font-bold tracking-[0.2em] uppercase">About Us</span>
+          <SectionLabel icon={<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>}>About Us</SectionLabel>
           <h2 className="text-4xl lg:text-5xl font-semibold text-white mt-4">Who We Are</h2>
           <p className="text-neutral-500 mt-4 max-w-md mx-auto text-sm">Two senior engineers obsessed with shipping. We build fast, we build right.</p>
         </motion.div>

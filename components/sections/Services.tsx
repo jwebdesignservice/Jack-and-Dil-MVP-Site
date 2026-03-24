@@ -1,4 +1,5 @@
 'use client'
+import { SectionLabel } from '@/components/ui/SectionLabel'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import { useState } from 'react'
@@ -101,7 +102,7 @@ export default function Services() {
       <div className="container mx-auto px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
           className="text-center mb-16">
-          <span className="text-orange-500 text-xs font-bold tracking-[0.2em] uppercase">What We Build</span>
+          <SectionLabel icon={<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>}>What We Build</SectionLabel>
           <h2 className="text-4xl lg:text-5xl font-semibold text-white mt-4">Our Services</h2>
           <p className="text-neutral-500 mt-4 max-w-lg mx-auto text-sm">Everything you need to go from idea to live product. Nothing you don&apos;t.</p>
         </motion.div>
@@ -167,5 +168,7 @@ export default function Services() {
     </section>
   )
 }
+
+
 
 

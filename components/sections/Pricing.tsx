@@ -1,4 +1,5 @@
 'use client'
+import { SectionLabel } from '@/components/ui/SectionLabel'
 import { motion } from 'framer-motion'
 import CountUp from '@/components/ui/CountUp'
 import { Button } from '@/components/ui/Button'
@@ -41,7 +42,7 @@ export default function Pricing() {
       <div className="container mx-auto px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="text-center mb-16">
-          <span className="text-orange-500 text-xs font-bold tracking-[0.2em] uppercase">Transparent Pricing</span>
+          <SectionLabel icon={<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>}>Transparent Pricing</SectionLabel>
           <h2 className="text-4xl lg:text-5xl font-semibold text-white mt-4">Simple, Fixed Pricing</h2>
           <p className="text-neutral-500 mt-4 max-w-lg mx-auto">No hourly rates, no surprises. You know exactly what you get.</p>
         </motion.div>
@@ -95,6 +96,8 @@ export default function Pricing() {
     </section>
   )
 }
+
+
 
 
 

@@ -117,7 +117,7 @@ export default function CTA() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-75" />
                   <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-orange-500" />
                 </span>
-                <span className="text-orange-400 text-xs font-mono tracking-widest uppercase">Systems Online</span>
+                <span className="text-orange-400 text-[10px] font-mono font-bold tracking-[0.18em] uppercase">Systems Online</span>
               </motion.div>
 
               <motion.h2 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}

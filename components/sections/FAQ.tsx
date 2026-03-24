@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { SectionLabel } from '@/components/ui/SectionLabel'
 
 const faqs = [
   { q: 'How long does it take to build an MVP?', a: 'Depending on complexity, we deliver in 3-14 days. Simple MVPs can be done in 3-7 days. Complex platforms with multiple integrations take 14 days.' },
@@ -27,7 +28,7 @@ export default function FAQ() {
       <div className="container mx-auto px-6 relative z-10 max-w-3xl">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="text-center mb-16">
-          <span className="text-orange-500 text-xs font-bold tracking-[0.2em] uppercase">FAQ</span>
+          <SectionLabel icon={<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>}>Common Questions</SectionLabel>
           <h2 className="text-4xl lg:text-5xl font-semibold text-white mt-4">Common Questions</h2>
         </motion.div>
 
@@ -56,4 +57,5 @@ export default function FAQ() {
     </section>
   )
 }
+
 
