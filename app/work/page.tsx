@@ -1,12 +1,14 @@
 'use client'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import CTA from '@/components/sections/CTA'
 
 const projects = [
   {
+    slug: 'desert-falcons',
     title: 'Desert Falcons Collective',
     desc: 'A premium automotive community platform for luxury car enthusiasts across the Middle East. Built with a focus on sleek visuals and member engagement.',
     image: '/Images/work/desertfalcons.png',
@@ -17,6 +19,7 @@ const projects = [
     year: '2026',
   },
   {
+    slug: 'memory-market',
     title: 'Memory Market',
     desc: 'A Web3 prediction and memory trading platform. Real-time data feeds, wallet integration, and a custom trading interface built for speed.',
     image: '/Images/work/memorymarket.png',
@@ -27,6 +30,7 @@ const projects = [
     year: '2025',
   },
   {
+    slug: 'aramas-property',
     title: 'Aramas Property',
     desc: 'A modern real estate platform with property listings, advanced search filters, and agent dashboard. Designed for the UK rental market.',
     image: '/Images/work/aramas.png',
@@ -37,6 +41,7 @@ const projects = [
     year: '2025',
   },
   {
+    slug: 'insights-dashboard',
     title: 'Insights Dashboard',
     desc: 'An analytics SaaS dashboard for tracking business KPIs, revenue metrics, and team performance. Clean data visualisation with real-time updates.',
     image: '/Images/work/insights.png',
@@ -89,7 +94,8 @@ export default function WorkPage() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, i) => (
-              <motion.div key={i}
+              <Link key={i} href={`/work/${project.slug}`} className="block">
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -143,6 +149,7 @@ export default function WorkPage() {
                   </div>
                 </div>
               </motion.div>
+              </Link>
             ))}
           </div>
         </div>

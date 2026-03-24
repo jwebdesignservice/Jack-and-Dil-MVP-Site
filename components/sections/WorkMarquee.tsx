@@ -1,16 +1,17 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const works = [
-  { src: '/Images/work/insights.png', label: 'Insights Dashboard', tag: 'Analytics SaaS' },
-  { src: '/Images/work/memorymarket.png', hoverSrc: '/Images/work/memorymarket-phone.png', label: 'Memory Market', tag: 'Web3 / DeFi' },
-  { src: '/Images/work/aramas.png', hoverSrc: '/Images/work/aramas-phone.png', label: 'Aramas Property', tag: 'Real Estate' },
-  { src: '/Images/work/desertfalcons.png', hoverSrc: '/Images/work/desertfalcons-phone.png', label: 'Desert Falcons Collective', tag: 'Automotive / Luxury' },
+  { src: '/Images/work/insights.png', label: 'Insights Dashboard', tag: 'Analytics SaaS', href: '/work/insights-dashboard' },
+  { src: '/Images/work/memorymarket.png', hoverSrc: '/Images/work/memorymarket-phone.png', label: 'Memory Market', tag: 'Web3 / DeFi', href: '/work/memory-market' },
+  { src: '/Images/work/aramas.png', hoverSrc: '/Images/work/aramas-phone.png', label: 'Aramas Property', tag: 'Real Estate', href: '/work/aramas-property' },
+  { src: '/Images/work/desertfalcons.png', hoverSrc: '/Images/work/desertfalcons-phone.png', label: 'Desert Falcons Collective', tag: 'Automotive / Luxury', href: '/work/desert-falcons' },
   // duplicates for seamless loop
-  { src: '/Images/work/insights.png', label: 'Insights Dashboard', tag: 'Analytics SaaS' },
-  { src: '/Images/work/memorymarket.png', hoverSrc: '/Images/work/memorymarket-phone.png', label: 'Memory Market', tag: 'Web3 / DeFi' },
-  { src: '/Images/work/aramas.png', hoverSrc: '/Images/work/aramas-phone.png', label: 'Aramas Property', tag: 'Real Estate' },
-  { src: '/Images/work/desertfalcons.png', hoverSrc: '/Images/work/desertfalcons-phone.png', label: 'Desert Falcons Collective', tag: 'Automotive / Luxury' },
+  { src: '/Images/work/insights.png', label: 'Insights Dashboard', tag: 'Analytics SaaS', href: '/work/insights-dashboard' },
+  { src: '/Images/work/memorymarket.png', hoverSrc: '/Images/work/memorymarket-phone.png', label: 'Memory Market', tag: 'Web3 / DeFi', href: '/work/memory-market' },
+  { src: '/Images/work/aramas.png', hoverSrc: '/Images/work/aramas-phone.png', label: 'Aramas Property', tag: 'Real Estate', href: '/work/aramas-property' },
+  { src: '/Images/work/desertfalcons.png', hoverSrc: '/Images/work/desertfalcons-phone.png', label: 'Desert Falcons Collective', tag: 'Automotive / Luxury', href: '/work/desert-falcons' },
 ]
 
 export default function WorkMarquee() {
@@ -27,7 +28,7 @@ export default function WorkMarquee() {
       <div className="flex group relative z-10">
         <div className="flex gap-6 animate-marquee-left group-hover:[animation-play-state:paused] shrink-0">
           {works.map((item, i) => (
-            <div key={`a-${i}`} className="relative flex-shrink-0 w-[693px] h-[429px] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group/card">
+            <Link key={`a-${i}`} href={item.href} className="relative flex-shrink-0 w-[693px] h-[429px] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group/card block">
               <Image src={item.src} alt={item.label} fill className={`object-cover transition-opacity duration-500 ${item.hoverSrc ? 'group-hover/card:opacity-0' : ''}`}/>
               {item.hoverSrc && <Image src={item.hoverSrc} alt={`${item.label} mobile`} fill className="object-cover opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"/>}
               {/* Overlay */}
@@ -40,13 +41,13 @@ export default function WorkMarquee() {
               <div className="absolute top-3 right-3 w-4 h-4">
                 <span className="absolute top-0 right-0 w-3 h-3 border-t border-r border-orange-500/60"/>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         {/* Duplicate for seamless loop */}
         <div className="flex gap-6 animate-marquee-left group-hover:[animation-play-state:paused] shrink-0">
           {works.map((item, i) => (
-            <div key={`b-${i}`} className="relative flex-shrink-0 w-[693px] h-[429px] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group/card">
+            <Link key={`b-${i}`} href={item.href} className="relative flex-shrink-0 w-[693px] h-[429px] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group/card block">
               <Image src={item.src} alt={item.label} fill className={`object-cover transition-opacity duration-500 ${item.hoverSrc ? 'group-hover/card:opacity-0' : ''}`}/>
               {item.hoverSrc && <Image src={item.hoverSrc} alt={`${item.label} mobile`} fill className="object-cover opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"/>}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"/>
@@ -57,16 +58,10 @@ export default function WorkMarquee() {
               <div className="absolute top-3 right-3 w-4 h-4">
                 <span className="absolute top-0 right-0 w-3 h-3 border-t border-r border-orange-500/60"/>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
     </section>
   )
 }
-
-
-
-
-
-
