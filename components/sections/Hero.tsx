@@ -22,8 +22,8 @@ export default function Hero() {
       {/* Blurred orange circles */}
       <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full opacity-20"
         style={{ background: 'radial-gradient(circle, #F97316, transparent 70%)', filter: 'blur(60px)' }} />
-      <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full opacity-20"
-        style={{ background: 'radial-gradient(circle, #EA580C, transparent 70%)', filter: 'blur(60px)' }} />
+      <div className="absolute -right-40 w-96 h-96 rounded-full opacity-20"
+        style={{ bottom: '60px', background: 'radial-gradient(circle, #EA580C, transparent 70%)', filter: 'blur(60px)' }} />
       {/* Diagonal lines */}
       <svg className="absolute inset-0 w-full h-full opacity-5" viewBox="0 0 100 100" preserveAspectRatio="none">
         <line x1="0" y1="100" x2="100" y2="0" stroke="#F97316" strokeWidth="0.3" />
