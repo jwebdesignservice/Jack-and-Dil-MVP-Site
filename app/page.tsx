@@ -1,9 +1,9 @@
 import Hero from '@/components/sections/Hero'
-import Marquee from '@/components/sections/Marquee'
+import WorkMarquee from '@/components/sections/WorkMarquee'
 import Services from '@/components/sections/Services'
 import Comparison from '@/components/sections/Comparison'
 import Process from '@/components/sections/Process'
-import WorkMarquee from '@/components/sections/WorkMarquee'
+import Marquee from '@/components/sections/Marquee'
 import About from '@/components/sections/About'
 import Pricing from '@/components/sections/Pricing'
 import Testimonials from '@/components/sections/Testimonials'
@@ -14,11 +14,11 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <Marquee />
+      <WorkMarquee />
       <Services />
       <Comparison />
       <Process />
-      <WorkMarquee />
+      <Marquee />
       <About />
       <Pricing />
       <Testimonials />
