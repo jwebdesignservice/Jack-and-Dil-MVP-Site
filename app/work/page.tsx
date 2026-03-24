@@ -28,6 +28,7 @@ const projects = [
     title: 'Aramas Property',
     desc: 'A modern real estate platform with property listings, advanced search filters, and agent dashboard. Designed for the UK rental market.',
     image: '/Images/work/aramas.png',
+    hoverImage: '/Images/work/aramas-phone.png',
     tags: ['Real Estate', 'SaaS', 'Marketplace'],
     services: ['UI/UX Design', 'Next.js', 'Supabase'],
     delivery: '10 days',
@@ -96,14 +97,12 @@ export default function WorkPage() {
                 whileHover={{ boxShadow: '0 12px 40px rgba(249,115,22,0.12), 0 0 0 1px rgba(249,115,22,0.25)' }}>
                 {/* Image */}
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image src={project.image} alt={project.title} fill className="object-cover"/>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-black/20 to-transparent"/>
-                  {/* Hover overlay with CTA */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center">
-                    <span className="bg-orange-500 text-white text-xs font-medium px-5 py-2.5 rounded-lg opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                      View Project →
-                    </span>
-                  </div>
+                  <Image src={project.image} alt={project.title} fill className={`object-cover transition-opacity duration-500 ${project.hoverImage ? 'group-hover:opacity-0' : ''}`}/>
+                  {/* Hover image (Aramas phone) */}
+                  {project.hoverImage && (
+                    <Image src={project.hoverImage} alt={`${project.title} mobile`} fill className="object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"/>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-black/20 to-transparent pointer-events-none"/>
                   {/* Service tags on image */}
                   <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
                     {project.services.map(s => (
@@ -128,12 +127,17 @@ export default function WorkPage() {
                     </div>
                   </div>
                   <p className="text-neutral-500 text-sm leading-relaxed mb-4">{project.desc}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="text-[11px] font-mono px-2.5 py-1 rounded border border-[rgba(249,115,22,0.15)] text-neutral-500 bg-[#111] cursor-default">
-                        {tag}
-                      </span>
-                    ))}
+                  <div className="flex items-center justify-between">
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map(tag => (
+                        <span key={tag} className="text-[11px] font-mono px-2.5 py-1 rounded border border-[rgba(249,115,22,0.15)] text-neutral-500 bg-[#111] cursor-default">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <span className="text-orange-500 text-xs font-medium flex items-center gap-1 opacity-60 group-hover:opacity-100 transition-opacity">
+                      View More <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    </span>
                   </div>
                 </div>
               </motion.div>
