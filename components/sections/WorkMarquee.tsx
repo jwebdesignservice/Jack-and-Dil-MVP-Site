@@ -17,8 +17,8 @@ export default function WorkMarquee() {
   return (
     <section className="py-8 bg-[#050505] border-y border-[rgba(249,115,22,0.1)] overflow-hidden relative" style={{ zIndex: 10000 }}>
       {/* Edge fades */}
-      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#050505] to-transparent z-20 pointer-events-none"/>
-      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#050505] to-transparent z-20 pointer-events-none"/>
+      <div className="absolute left-0 top-0 bottom-0 w-64 bg-gradient-to-r from-[#050505] to-transparent z-20 pointer-events-none"/>
+      <div className="absolute right-0 top-0 bottom-0 w-64 bg-gradient-to-l from-[#050505] to-transparent z-20 pointer-events-none"/>
 
       {/* Scrolling row */}
       <div className="flex group relative z-10">
