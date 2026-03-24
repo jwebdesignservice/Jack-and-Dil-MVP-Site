@@ -61,53 +61,12 @@ export default function CTA() {
               className="absolute -bottom-32 -right-32 w-80 h-80 rounded-full"
               style={{ background: 'radial-gradient(circle, rgba(234,88,12,0.1), transparent 70%)', filter: 'blur(40px)' }} />
 
-            {/* Flowing wave gradient — animated */}
-            <div className="absolute bottom-0 inset-x-0 h-48 overflow-hidden pointer-events-none">
-              <svg viewBox="0 0 1200 200" preserveAspectRatio="none" className="absolute bottom-0 w-full h-full" fill="none">
-                <defs>
-                  <linearGradient id="wg1" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stopColor="#F97316" stopOpacity="0"/>
-                    <stop offset="30%" stopColor="#F97316" stopOpacity="0.35"/>
-                    <stop offset="70%" stopColor="#EA580C" stopOpacity="0.3"/>
-                    <stop offset="100%" stopColor="#F97316" stopOpacity="0"/>
-                  </linearGradient>
-                  <linearGradient id="wg2" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stopColor="#FB923C" stopOpacity="0"/>
-                    <stop offset="50%" stopColor="#FB923C" stopOpacity="0.2"/>
-                    <stop offset="100%" stopColor="#FB923C" stopOpacity="0"/>
-                  </linearGradient>
-                  <filter id="wblur">
-                    <feGaussianBlur stdDeviation="3"/>
-                  </filter>
-                </defs>
-                {/* Layer 1 — main wave */}
-                <motion.path
-                  d="M0 140 C150 100 300 160 500 120 C700 80 900 140 1200 110 L1200 200 L0 200Z"
-                  fill="url(#wg1)"
-                  filter="url(#wblur)"
-                  animate={{ d: [
-                    "M0 140 C150 100 300 160 500 120 C700 80 900 140 1200 110 L1200 200 L0 200Z",
-                    "M0 120 C200 150 350 100 550 140 C750 170 950 110 1200 140 L1200 200 L0 200Z",
-                    "M0 140 C150 100 300 160 500 120 C700 80 900 140 1200 110 L1200 200 L0 200Z",
-                  ]}}
-                  transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-                />
-                {/* Layer 2 — secondary */}
-                <motion.path
-                  d="M0 160 C200 130 400 175 600 145 C800 115 1000 160 1200 135 L1200 200 L0 200Z"
-                  fill="url(#wg2)"
-                  animate={{ d: [
-                    "M0 160 C200 130 400 175 600 145 C800 115 1000 160 1200 135 L1200 200 L0 200Z",
-                    "M0 150 C250 175 450 130 650 165 C850 190 1050 145 1200 165 L1200 200 L0 200Z",
-                    "M0 160 C200 130 400 175 600 145 C800 115 1000 160 1200 135 L1200 200 L0 200Z",
-                  ]}}
-                  transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                />
-              </svg>
-            </div>
-            {/* Dot grid inside card */}
-            <div className="absolute inset-0 opacity-[0.03]"
-              style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,1) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+            {/* Dot grid — same as hero */}
+            <div className="absolute inset-0"
+              style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+            {/* Orange-to-black gradient */}
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(249,115,22,0.18) 0%, rgba(0,0,0,0) 50%, rgba(234,88,12,0.12) 100%)' }}/>
+            <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(249,115,22,0.08) 0%, transparent 70%)' }}/>
 
             <div className="relative z-10 px-12 py-20 text-center">
               {/* Status chip */}
