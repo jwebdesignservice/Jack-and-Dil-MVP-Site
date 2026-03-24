@@ -3,12 +3,12 @@ import Image from 'next/image'
 
 const works = [
   { src: '/Images/work/insights.png', label: 'Insights Dashboard', tag: 'Analytics SaaS' },
-  { src: '/Images/work/memorymarket.png', label: 'Memory Market', tag: 'Web3 / DeFi' },
+  { src: '/Images/work/memorymarket.png', hoverSrc: '/Images/work/memorymarket-phone.png', label: 'Memory Market', tag: 'Web3 / DeFi' },
   { src: '/Images/work/aramas.png', hoverSrc: '/Images/work/aramas-phone.png', label: 'Aramas Property', tag: 'Real Estate' },
   { src: '/Images/work/desertfalcons.png', label: 'Desert Falcons Collective', tag: 'Automotive / Luxury' },
   // duplicates for seamless loop
   { src: '/Images/work/insights.png', label: 'Insights Dashboard', tag: 'Analytics SaaS' },
-  { src: '/Images/work/memorymarket.png', label: 'Memory Market', tag: 'Web3 / DeFi' },
+  { src: '/Images/work/memorymarket.png', hoverSrc: '/Images/work/memorymarket-phone.png', label: 'Memory Market', tag: 'Web3 / DeFi' },
   { src: '/Images/work/aramas.png', hoverSrc: '/Images/work/aramas-phone.png', label: 'Aramas Property', tag: 'Real Estate' },
   { src: '/Images/work/desertfalcons.png', label: 'Desert Falcons Collective', tag: 'Automotive / Luxury' },
 ]
@@ -64,6 +64,7 @@ export default function WorkMarquee() {
     </section>
   )
 }
+
 
 
 

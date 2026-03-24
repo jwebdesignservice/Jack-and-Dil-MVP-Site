@@ -19,6 +19,7 @@ const projects = [
     title: 'Memory Market',
     desc: 'A Web3 prediction and memory trading platform. Real-time data feeds, wallet integration, and a custom trading interface built for speed.',
     image: '/Images/work/memorymarket.png',
+    hoverImage: '/Images/work/memorymarket-phone.png',
     tags: ['Web3', 'DeFi', 'Trading'],
     services: ['Full-Stack', 'API Integration', 'Real-Time'],
     delivery: '14 days',
@@ -151,3 +152,4 @@ export default function WorkPage() {
     </main>
   )
 }
+
