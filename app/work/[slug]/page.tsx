@@ -450,7 +450,9 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="rounded-lg border border-[rgba(249,115,22,0.12)] bg-[#0A0A0A] p-6 hover:border-orange-500/30 transition-colors"
               >
-                <div className="text-3xl mb-4">{card.icon}</div>
+                <div className="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 flex-shrink-0 mb-4">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
                 <h3 className="text-white font-semibold text-base mb-2">{card.title}</h3>
                 <p className="text-neutral-500 text-sm leading-relaxed">{card.desc}</p>
               </motion.div>
@@ -496,7 +498,9 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                 transition={{ duration: 0.4, delay: i * 0.07 }}
                 className="flex gap-4 p-5 rounded-lg border border-[rgba(249,115,22,0.1)] bg-[#0A0A0A] hover:border-orange-500/25 transition-colors group"
               >
-                <div className="text-2xl flex-shrink-0 mt-0.5">{feature.icon}</div>
+                <div className="w-8 h-8 rounded-md bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 flex-shrink-0 mt-0.5">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
                 <div>
                   <h3 className="text-white font-semibold text-sm mb-1.5 group-hover:text-orange-400 transition-colors">{feature.title}</h3>
                   <p className="text-neutral-500 text-sm leading-relaxed">{feature.desc}</p>
