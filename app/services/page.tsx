@@ -340,9 +340,7 @@ export default function ServicesPage() {
         }}
         title="Production-Ready MVPs in 3–14 Days"
         paragraphs={[
-          "Most agencies take 3 months to ship something you could launch tomorrow. We work differently. Our process cuts every non-essential step so your MVP hits production fast — without cutting corners on code quality.",
-          "We build on a proven stack: Next.js, TypeScript, Node.js, PostgreSQL, and Supabase. Not throwaway prototypes — real, scalable architecture you can grow on. Every repo is fully yours from day one.",
-          "You get daily progress updates and see builds every 24 hours. No black-box sprints. If something changes, we adapt — not in two weeks at the next stand-up, but the same day.",
+          "We cut every non-essential step so your MVP hits production fast. Built on Next.js, TypeScript, and Supabase — real scalable architecture, not throwaway prototypes. You see builds daily and own 100% of the code from day one.",
         ]}
         features={[
           ['Next.js + TypeScript frontend', 'PostgreSQL / Supabase database', 'Node.js REST API backend', 'Auth, payments, email built-in'],
@@ -368,11 +366,9 @@ export default function ServicesPage() {
           icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>,
           text: 'UI/UX Design',
         }}
-        title="Interfaces That Convert — Before We Write a Line of Code"
+        title="Interfaces That Convert — Designed Before We Code"
         paragraphs={[
-          "We design before we code. Every project starts with wireframes, user flows, and a clickable prototype. You see exactly how the product works before development begins — catching problems when they're cheap to fix.",
-          "All design work is delivered in Figma. You own the files completely — export to Zeplin, share with future developers, or hand off to your in-house team. No proprietary formats, no dependency on us.",
-          "Mobile-first by default. Every layout is designed at 375px and scaled up — not bolted on at the end. We also set up a minimal design system (colours, type, components) so your product looks consistent as it grows.",
+          "Every project starts with wireframes and a clickable Figma prototype. You see exactly how the product works before development begins. Mobile-first, conversion-optimised, and delivered with a design system so your product stays consistent as it scales.",
         ]}
         features={[
           ['Wireframes for all key screens', 'Interactive Figma prototype', 'Mobile-first responsive layouts', 'User flow diagrams'],
@@ -399,9 +395,7 @@ export default function ServicesPage() {
         }}
         title="Complex Features, Clean Code, Zero Compromise"
         paragraphs={[
-          "When your product needs more than an MVP — real-time features, complex payment flows, third-party integrations — that's when full-stack development makes sense. We take ownership of the whole stack so you don't have to stitch together a frontend dev and a backend dev yourself.",
-          "React and Next.js on the frontend. Node.js on the backend. PostgreSQL with Prisma on the database. REST or GraphQL APIs depending on what fits. Stripe, SendGrid, Twilio, and any other integration you need — we've built them all.",
-          "We ship with tests, code reviews, and a CI/CD pipeline from day one. Not as an afterthought. That means fewer bugs in production and a codebase your future team can actually maintain.",
+          "React/Next.js frontend, Node.js backend, PostgreSQL database. Stripe, SendGrid, Twilio — whatever integrations you need. We ship with tests, CI/CD, and code reviews from day one so your future team can actually maintain it.",
         ]}
         features={[
           ['React / Next.js frontend', 'Node.js + Express / tRPC API', 'PostgreSQL + Prisma ORM', 'Stripe, Twilio, SendGrid'],
@@ -429,9 +423,7 @@ export default function ServicesPage() {
         }}
         title="Ship to Production — Then Keep It Running"
         paragraphs={[
-          "Launching isn't the finish line — it's the starting gun. We set up everything you need to keep your product fast, visible, and recoverable from the moment it goes live. Uptime monitoring, error tracking, performance budgets.",
-          "Deployment to Vercel or AWS with automated CI/CD pipelines. We configure your environments (staging + production), set up rollback strategies, and put alerting in place before we hand over the keys.",
-          "SEO and Core Web Vitals are baked in from the start — not patched in later. Meta tags, Open Graph, structured data, sitemap, robots.txt. We also instrument analytics (Posthog or GA4) so you know what's working from Day 1.",
+          "We deploy to Vercel or AWS with CI/CD, staging environments, and rollback strategies. Uptime monitoring, error tracking, SEO, and analytics are configured before handover — not patched in later.",
         ]}
         features={[
           ['Vercel / AWS deployment', 'Staging + production envs', 'Uptime monitoring (Betterstack)', 'Error tracking (Sentry)'],
