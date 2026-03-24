@@ -70,9 +70,12 @@ export default function Comparison() {
 
             {/* Old Way */}
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-              className="relative rounded-l-2xl overflow-hidden border border-r-0 border-red-500/20 bg-[#0D0000]/80 backdrop-blur-sm p-8">
-              {/* Red tint wash */}
-              <div className="absolute inset-0 bg-gradient-to-br from-red-950/40 to-transparent pointer-events-none"/>
+              className="relative rounded-l-2xl overflow-hidden border border-r-0 border-red-500/30 bg-[#120000]">
+              {/* Strong red tint */}
+              <div className="absolute inset-0 bg-gradient-to-br from-red-900/30 via-red-950/20 to-transparent pointer-events-none"/>
+              {/* Top red accent bar */}
+              <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-red-500/60 to-transparent"/>
+              <div className="p-8">
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-8 rounded-lg bg-red-500/15 border border-red-500/30 flex items-center justify-center">
@@ -90,11 +93,12 @@ export default function Comparison() {
                     </motion.li>
                   ))}
                 </ul>
-                <div className="mt-8 pt-6 border-t border-red-500/10">
-                  <div className="text-3xl font-light text-red-300/60">~180</div>
+                <div className="mt-8 pt-6 border-t border-red-500/15">
+                  <div className="text-3xl font-light text-red-400/50">~180</div>
                   <div className="text-xs text-neutral-600 mt-1">days average</div>
                 </div>
               </div>
+            </div>
             </motion.div>
 
             {/* VS divider */}
@@ -108,10 +112,12 @@ export default function Comparison() {
 
             {/* Fast Way */}
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-              className="relative rounded-r-2xl overflow-hidden border border-l-0 border-orange-500/30 bg-[#0D0800]/80 backdrop-blur-sm p-8"
-              style={{ boxShadow: '0 0 60px rgba(249,115,22,0.08)' }}>
-              <div className="absolute inset-0 bg-gradient-to-bl from-orange-950/40 to-transparent pointer-events-none"/>
-              <div className="relative z-10">
+              className="relative rounded-r-2xl overflow-hidden border border-l-0 border-orange-500/50 bg-[#0D0900]"
+              style={{ boxShadow: '0 0 60px rgba(249,115,22,0.15), inset 0 0 40px rgba(249,115,22,0.04)' }}>
+              <div className="absolute inset-0 bg-gradient-to-bl from-orange-900/20 via-orange-950/15 to-transparent pointer-events-none"/>
+              {/* Top orange accent bar */}
+              <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent"/>
+              <div className="p-8 relative z-10">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-8 rounded-lg bg-orange-500/15 border border-orange-500/30 flex items-center justify-center">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F97316" strokeWidth="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="#F97316"/></svg>
@@ -128,7 +134,7 @@ export default function Comparison() {
                     </motion.li>
                   ))}
                 </ul>
-                <div className="mt-8 pt-6 border-t border-orange-500/15">
+                <div className="mt-8 pt-6 border-t border-orange-500/20">
                   <div className="text-3xl font-light text-orange-400">~14</div>
                   <div className="text-xs text-neutral-600 mt-1">days average</div>
                 </div>

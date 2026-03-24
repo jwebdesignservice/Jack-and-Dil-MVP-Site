@@ -61,24 +61,50 @@ export default function CTA() {
               className="absolute -bottom-32 -right-32 w-80 h-80 rounded-full"
               style={{ background: 'radial-gradient(circle, rgba(234,88,12,0.1), transparent 70%)', filter: 'blur(40px)' }} />
 
-            {/* Wave gradient background */}
-            <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice" fill="none">
-              <defs>
-                <linearGradient id="wave1" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#F97316" stopOpacity="0"/>
-                  <stop offset="40%" stopColor="#F97316" stopOpacity="0.8"/>
-                  <stop offset="100%" stopColor="#EA580C" stopOpacity="0"/>
-                </linearGradient>
-                <linearGradient id="wave2" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#FB923C" stopOpacity="0"/>
-                  <stop offset="60%" stopColor="#FB923C" stopOpacity="0.5"/>
-                  <stop offset="100%" stopColor="#F97316" stopOpacity="0"/>
-                </linearGradient>
-              </defs>
-              <path d="M0 180 C100 140 200 200 400 160 C600 120 700 180 800 150 L800 300 L0 300Z" fill="url(#wave1)"/>
-              <path d="M0 210 C150 170 300 230 500 190 C650 160 750 210 800 180 L800 300 L0 300Z" fill="url(#wave2)" opacity="0.6"/>
-              <path d="M0 240 C200 210 350 260 550 220 C700 185 760 240 800 210 L800 300 L0 300Z" fill="url(#wave1)" opacity="0.3"/>
-            </svg>
+            {/* Flowing wave gradient — animated */}
+            <div className="absolute bottom-0 inset-x-0 h-48 overflow-hidden pointer-events-none">
+              <svg viewBox="0 0 1200 200" preserveAspectRatio="none" className="absolute bottom-0 w-full h-full" fill="none">
+                <defs>
+                  <linearGradient id="wg1" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stopColor="#F97316" stopOpacity="0"/>
+                    <stop offset="30%" stopColor="#F97316" stopOpacity="0.35"/>
+                    <stop offset="70%" stopColor="#EA580C" stopOpacity="0.3"/>
+                    <stop offset="100%" stopColor="#F97316" stopOpacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="wg2" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stopColor="#FB923C" stopOpacity="0"/>
+                    <stop offset="50%" stopColor="#FB923C" stopOpacity="0.2"/>
+                    <stop offset="100%" stopColor="#FB923C" stopOpacity="0"/>
+                  </linearGradient>
+                  <filter id="wblur">
+                    <feGaussianBlur stdDeviation="3"/>
+                  </filter>
+                </defs>
+                {/* Layer 1 — main wave */}
+                <motion.path
+                  d="M0 140 C150 100 300 160 500 120 C700 80 900 140 1200 110 L1200 200 L0 200Z"
+                  fill="url(#wg1)"
+                  filter="url(#wblur)"
+                  animate={{ d: [
+                    "M0 140 C150 100 300 160 500 120 C700 80 900 140 1200 110 L1200 200 L0 200Z",
+                    "M0 120 C200 150 350 100 550 140 C750 170 950 110 1200 140 L1200 200 L0 200Z",
+                    "M0 140 C150 100 300 160 500 120 C700 80 900 140 1200 110 L1200 200 L0 200Z",
+                  ]}}
+                  transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+                />
+                {/* Layer 2 — secondary */}
+                <motion.path
+                  d="M0 160 C200 130 400 175 600 145 C800 115 1000 160 1200 135 L1200 200 L0 200Z"
+                  fill="url(#wg2)"
+                  animate={{ d: [
+                    "M0 160 C200 130 400 175 600 145 C800 115 1000 160 1200 135 L1200 200 L0 200Z",
+                    "M0 150 C250 175 450 130 650 165 C850 190 1050 145 1200 165 L1200 200 L0 200Z",
+                    "M0 160 C200 130 400 175 600 145 C800 115 1000 160 1200 135 L1200 200 L0 200Z",
+                  ]}}
+                  transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+                />
+              </svg>
+            </div>
             {/* Dot grid inside card */}
             <div className="absolute inset-0 opacity-[0.03]"
               style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,1) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
