@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1600" width="800" height="1600">
+  <defs>
+    <!-- Phone body gradient -->
+    <linearGradient id="phoneBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#1E1E1E"/>
+      <stop offset="100%" stopColor="#111111"/>
+    </linearGradient>
+    <!-- Phone edge gradient (side bevel) -->
+    <linearGradient id="phoneSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stopColor="#282828"/>
+      <stop offset="50%" stopColor="#1A1A1A"/>
+      <stop offset="100%" stopColor="#282828"/>
+    </linearGradient>
+    <!-- Screen reflection -->
+    <linearGradient id="phoneScreenReflect" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stopColor="#ffffff" stopOpacity="0.05"/>
+      <stop offset="50%" stopColor="#ffffff" stopOpacity="0"/>
+    </linearGradient>
+    <!-- Drop shadow -->
+    <filter id="phoneShadow" x="-20%" y="-5%" width="140%" height="115%">
+      <feDropShadow dx="0" dy="20" stdDeviation="50" floodColor="#000000" floodOpacity="0.9"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="12" floodColor="#F97316" floodOpacity="0.07"/>
+    </filter>
+    <!-- Screen placeholder pattern -->
+    <pattern id="phonePlaceholder" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <rect width="30" height="30" fill="#0A0A0A"/>
+      <line x1="0" y1="15" x2="30" y2="15" stroke="rgba(249,115,22,0.05)" strokeWidth="0.8"/>
+      <line x1="15" y1="0" x2="15" y2="30" stroke="rgba(249,115,22,0.05)" strokeWidth="0.8"/>
+    </pattern>
+    <!-- Orange accent gradient -->
+    <linearGradient id="phoneOrangeAccent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#F97316" stopOpacity="0"/>
+      <stop offset="40%" stopColor="#F97316"/>
+      <stop offset="60%" stopColor="#EA580C"/>
+      <stop offset="100%" stopColor="#EA580C" stopOpacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ─── PHONE DEVICE ─── -->
+  <g filter="url(#phoneShadow)">
+    <!-- Outer frame (body) -->
+    <rect x="100" y="80" width="600" height="1440" rx="60" fill="url(#phoneBody)" stroke="rgba(255,255,255,0.06)" strokeWidth="1.5"/>
+
+    <!-- Left edge highlight -->
+    <rect x="100" y="80" width="3" height="1440" rx="1.5" fill="rgba(255,255,255,0.05)"/>
+    <!-- Right edge -->
+    <rect x="697" y="80" width="3" height="1440" rx="1.5" fill="rgba(255,255,255,0.03)"/>
+    <!-- Top edge highlight -->
+    <rect x="100" y="80" width="600" height="2" rx="1" fill="rgba(255,255,255,0.08)"/>
+
+    <!-- Screen area -->
+    <rect x="120" y="115" width="560" height="1370" rx="44" fill="#000000"/>
+
+    <!-- ── SCREEN CONTENT AREA (replace with screenshot <image>) ── -->
+    <rect id="screen-content" x="120" y="175" width="560" height="1255" rx="8" fill="url(#phonePlaceholder)"/>
+
+    <!-- Screen content placeholder label -->
+    <text x="400" y="780" fontFamily="Inter, -apple-system, sans-serif" fontSize="22" fill="rgba(249,115,22,0.3)" textAnchor="middle" fontWeight="300" letterSpacing="0.12em">YOUR</text>
+    <text x="400" y="815" fontFamily="Inter, -apple-system, sans-serif" fontSize="22" fill="rgba(249,115,22,0.3)" textAnchor="middle" fontWeight="300" letterSpacing="0.12em">SCREENSHOT</text>
+    <text x="400" y="850" fontFamily="Inter, -apple-system, sans-serif" fontSize="22" fill="rgba(249,115,22,0.3)" textAnchor="middle" fontWeight="300" letterSpacing="0.12em">HERE</text>
+    <text x="400" y="893" fontFamily="Inter, -apple-system, sans-serif" fontSize="13" fill="rgba(255,255,255,0.1)" textAnchor="middle" fontWeight="300">560 × 1255 px</text>
+    <rect x="120" y="175" width="560" height="1255" rx="8" fill="none" stroke="rgba(249,115,22,0.12)" strokeWidth="1.5" strokeDasharray="10 7"/>
+
+    <!-- Screen reflection overlay -->
+    <rect x="120" y="175" width="560" height="1255" rx="8" fill="url(#phoneScreenReflect)"/>
+
+    <!-- Dynamic Island / Pill notch -->
+    <rect x="315" y="140" width="170" height="32" rx="16" fill="#000000"/>
+    <!-- Camera within pill -->
+    <circle cx="451" cy="156" r="9" fill="#0D0D0D"/>
+    <circle cx="451" cy="156" r="5" fill="#060606"/>
+    <circle cx="449" cy="154" r="2" fill="rgba(255,255,255,0.08)"/>
+
+    <!-- Gesture bar -->
+    <rect x="320" y="1415" width="160" height="5" rx="2.5" fill="rgba(255,255,255,0.18)"/>
+
+    <!-- Volume buttons (left side) -->
+    <rect x="97" y="320" width="6" height="80" rx="3" fill="#2A2A2A"/>
+    <rect x="97" y="420" width="6" height="80" rx="3" fill="#2A2A2A"/>
+
+    <!-- Power button (right side) -->
+    <rect x="697" y="350" width="6" height="120" rx="3" fill="#2A2A2A"/>
+
+    <!-- Orange accent on frame (subtle glow line on right edge) -->
+    <rect x="698" y="400" width="2" height="600" rx="1" fill="url(#phoneOrangeAccent)" opacity="0.4"/>
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1500" width="2400" height="1500">
+  <!--
+    Background Concept A: "Orange Glow"
+    Pure black with dramatic orange radial glow.
+    Best for: laptop hero — high drama, matches site's primary energy.
+    Usage: place device mockup centered over this background.
+  -->
+  <defs>
+    <radialGradient id="mainGlow" cx="50%" cy="58%" r="55%">
+      <stop offset="0%" stopColor="#7C2D0A" stopOpacity="0.45"/>
+      <stop offset="35%" stopColor="#F97316" stopOpacity="0.12"/>
+      <stop offset="65%" stopColor="#EA580C" stopOpacity="0.04"/>
+      <stop offset="100%" stopColor="#000000" stopOpacity="0"/>
+    </radialGradient>
+    <radialGradient id="topAccent" cx="30%" cy="20%" r="30%">
+      <stop offset="0%" stopColor="#F97316" stopOpacity="0.07"/>
+      <stop offset="100%" stopColor="#F97316" stopOpacity="0"/>
+    </radialGradient>
+    <radialGradient id="bottomRight" cx="80%" cy="90%" r="35%">
+      <stop offset="0%" stopColor="#EA580C" stopOpacity="0.06"/>
+      <stop offset="100%" stopColor="#EA580C" stopOpacity="0"/>
+    </radialGradient>
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <!-- Base black -->
+  <rect width="2400" height="1500" fill="#000000"/>
+
+  <!-- Main warm center glow -->
+  <rect width="2400" height="1500" fill="url(#mainGlow)"/>
+
+  <!-- Top-left accent blob -->
+  <rect width="2400" height="1500" fill="url(#topAccent)"/>
+
+  <!-- Bottom-right accent -->
+  <rect width="2400" height="1500" fill="url(#bottomRight)"/>
+
+  <!-- Very subtle horizon line (ground plane suggestion) -->
+  <rect x="0" y="1100" width="2400" height="400" fill="url(#mainGlow)" opacity="0.3"/>
+
+  <!-- Thin horizontal light streaks (anamorphic lens effect) -->
+  <rect x="0" y="748" width="2400" height="1" fill="rgba(249,115,22,0.06)"/>
+  <rect x="0" y="749" width="2400" height="2" fill="rgba(249,115,22,0.04)"/>
+  <rect x="0" y="752" width="2400" height="1" fill="rgba(249,115,22,0.02)"/>
+  <!-- Mirrored -->
+  <rect x="0" y="753" width="2400" height="1" fill="rgba(249,115,22,0.02)"/>
+  <rect x="0" y="751" width="2400" height="1" fill="rgba(249,115,22,0.035)"/>
+
+  <!-- Faint circular halo around center -->
+  <circle cx="1200" cy="870" r="500" fill="none" stroke="rgba(249,115,22,0.04)" strokeWidth="1"/>
+  <circle cx="1200" cy="870" r="700" fill="none" stroke="rgba(249,115,22,0.025)" strokeWidth="1"/>
+  <circle cx="1200" cy="870" r="900" fill="none" stroke="rgba(249,115,22,0.015)" strokeWidth="1"/>
+</svg>

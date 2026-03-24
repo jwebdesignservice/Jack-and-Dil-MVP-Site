@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1500" width="2400" height="1500">
+  <defs>
+    <!-- Screen reflection gradient -->
+    <linearGradient id="screenReflect" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#ffffff" stopOpacity="0.06"/>
+      <stop offset="40%" stopColor="#ffffff" stopOpacity="0"/>
+      <stop offset="100%" stopColor="#000000" stopOpacity="0.15"/>
+    </linearGradient>
+    <!-- Laptop body gradient -->
+    <linearGradient id="laptopBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#1C1C1E"/>
+      <stop offset="100%" stopColor="#111111"/>
+    </linearGradient>
+    <!-- Keyboard base gradient -->
+    <linearGradient id="keyboardBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#161616"/>
+      <stop offset="100%" stopColor="#0D0D0D"/>
+    </linearGradient>
+    <!-- Hinge gradient -->
+    <linearGradient id="hingeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stopColor="#111111"/>
+      <stop offset="30%" stopColor="#2A2A2A"/>
+      <stop offset="70%" stopColor="#2A2A2A"/>
+      <stop offset="100%" stopColor="#111111"/>
+    </linearGradient>
+    <!-- Orange accent -->
+    <linearGradient id="orangeAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stopColor="#F97316" stopOpacity="0"/>
+      <stop offset="20%" stopColor="#F97316"/>
+      <stop offset="80%" stopColor="#EA580C"/>
+      <stop offset="100%" stopColor="#EA580C" stopOpacity="0"/>
+    </linearGradient>
+    <!-- Screen bezel gradient -->
+    <linearGradient id="screenBezelTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#222222"/>
+      <stop offset="100%" stopColor="#1A1A1A"/>
+    </linearGradient>
+    <!-- Drop shadow filter -->
+    <filter id="deviceShadow" x="-10%" y="-5%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="30" stdDeviation="60" floodColor="#000000" floodOpacity="0.8"/>
+      <feDropShadow dx="0" dy="10" stdDeviation="20" floodColor="#F97316" floodOpacity="0.06"/>
+    </filter>
+    <!-- Screen placeholder pattern -->
+    <pattern id="screenPlaceholder" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#0A0A0A"/>
+      <line x1="0" y1="20" x2="40" y2="20" stroke="rgba(249,115,22,0.06)" strokeWidth="1"/>
+      <line x1="20" y1="0" x2="20" y2="40" stroke="rgba(249,115,22,0.06)" strokeWidth="1"/>
+    </pattern>
+  </defs>
+
+  <!-- ─── LAPTOP DEVICE ─── -->
+  <g filter="url(#deviceShadow)">
+    <!-- Screen lid outer frame -->
+    <rect x="295" y="95" width="1810" height="1010" rx="14" fill="url(#laptopBody)" stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>
+
+    <!-- Screen bezel (inner dark border) -->
+    <rect x="305" y="105" width="1790" height="990" rx="11" fill="#0E0E0E"/>
+
+    <!-- Camera dot -->
+    <circle cx="1200" cy="140" r="6" fill="#1A1A1A"/>
+    <circle cx="1200" cy="140" r="3" fill="#0A0A0A"/>
+    <circle cx="1198" cy="138" r="1" fill="rgba(255,255,255,0.12)"/>
+
+    <!-- ── SCREEN CONTENT AREA (replace this rect with screenshot <image>) ── -->
+    <rect id="screen-content" x="365" y="165" width="1670" height="895" rx="4" fill="url(#screenPlaceholder)"/>
+
+    <!-- Screen placeholder label -->
+    <text x="1200" y="595" fontFamily="Inter, -apple-system, sans-serif" fontSize="28" fill="rgba(249,115,22,0.3)" textAnchor="middle" fontWeight="300" letterSpacing="0.15em">YOUR SCREENSHOT HERE</text>
+    <text x="1200" y="645" fontFamily="Inter, -apple-system, sans-serif" fontSize="16" fill="rgba(255,255,255,0.1)" textAnchor="middle" fontWeight="300">1670 × 895 px</text>
+    <!-- Dashed border around placeholder -->
+    <rect x="365" y="165" width="1670" height="895" rx="4" fill="none" stroke="rgba(249,115,22,0.15)" strokeWidth="1.5" strokeDasharray="12 8"/>
+
+    <!-- Screen reflection overlay -->
+    <rect x="365" y="165" width="1670" height="895" rx="4" fill="url(#screenReflect)"/>
+
+    <!-- Top edge highlight (lid top) -->
+    <rect x="295" y="95" width="1810" height="1" rx="1" fill="rgba(255,255,255,0.08)"/>
+
+    <!-- Hinge bar -->
+    <rect x="295" y="1100" width="1810" height="18" rx="0" fill="url(#hingeGrad)"/>
+    <!-- Hinge top edge highlight -->
+    <rect x="295" y="1100" width="1810" height="1" fill="rgba(255,255,255,0.05)"/>
+
+    <!-- Keyboard base (trapezoid approximated with rect + transform) -->
+    <polygon points="195,1118 2205,1118 2255,1385 145,1385" fill="url(#keyboardBase)"/>
+
+    <!-- Keyboard base top highlight -->
+    <line x1="195" y1="1118" x2="2205" y2="1118" stroke="rgba(255,255,255,0.04)" strokeWidth="1"/>
+
+    <!-- Trackpad -->
+    <rect x="1050" y="1235" width="300" height="100" rx="6" fill="#131313" stroke="rgba(255,255,255,0.04)" strokeWidth="1"/>
+
+    <!-- Keyboard keys (simplified rows) -->
+    <!-- Row 1 -->
+    <g opacity="0.4">
+      <!-- Simplified keyboard dots suggestion -->
+      <rect x="400" y="1145" width="1600" height="8" rx="2" fill="rgba(255,255,255,0.02)"/>
+      <rect x="420" y="1165" width="1560" height="8" rx="2" fill="rgba(255,255,255,0.02)"/>
+      <rect x="440" y="1185" width="1520" height="8" rx="2" fill="rgba(255,255,255,0.02)"/>
+      <rect x="460" y="1205" width="580" height="8" rx="2" fill="rgba(255,255,255,0.02)"/>
+      <rect x="1360" y="1205" width="580" height="8" rx="2" fill="rgba(255,255,255,0.02)"/>
+    </g>
+
+    <!-- Bottom base bottom edge -->
+    <line x1="145" y1="1385" x2="2255" y2="1385" stroke="rgba(255,255,255,0.03)" strokeWidth="1"/>
+
+    <!-- Orange accent line (thin, at hinge) -->
+    <rect x="295" y="1105" width="1810" height="2" rx="1" fill="url(#orangeAccent)" opacity="0.6"/>
+
+    <!-- Apple/logo placeholder (back of lid center — shown as thin circle) -->
+    <!-- Not visible from front-on; omitted intentionally -->
+
+  </g>
+</svg>

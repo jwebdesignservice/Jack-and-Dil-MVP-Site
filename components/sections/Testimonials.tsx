@@ -4,12 +4,12 @@ import { useState } from 'react'
 import Image from 'next/image'
 
 const testimonials = [
-  { name: 'Sarah Chen', role: 'CEO, Finflow', quote: "LaunchFast delivered our fintech MVP in 11 days. The code quality is exceptional — production-ready from day one.", img: '/images/testimonials/sarah.jpg', color: 'bg-orange-500' },
-  { name: 'Marcus Wright', role: 'Founder, Shopify App', quote: "From idea to paying customers in under 2 weeks. The team's communication was flawless. These guys are in a different league entirely.", img: '/images/testimonials/marcus.jpg', color: 'bg-sky-500' },
-  { name: 'Priya Patel', role: 'CTO, Healthtech', quote: "Best engineering team I've worked with. They understood our vision immediately and delivered without endless back and forth.", img: '/images/testimonials/priya.jpg', color: 'bg-violet-500' },
-  { name: 'James Liu', role: 'Founder, EdTech', quote: "Launched our platform to 500 users on day one. Rock solid product — zero critical bugs post-launch. Genuinely impressed.", img: '/images/testimonials/james.jpg', color: 'bg-emerald-500' },
-  { name: 'Emma Davis', role: 'CEO, AI Startup', quote: "LaunchFast's process is incredibly efficient. 14 days to a fully production-ready AI product. We couldn't have done it without them.", img: '/images/testimonials/emma.jpg', color: 'bg-rose-500' },
-  { name: 'Alex Torres', role: 'Founder, SaaS', quote: "I had tried 3 agencies before. LaunchFast is in a different league. Fast, focused, and the quality is outstanding.", img: '/images/testimonials/alex.jpg', color: 'bg-amber-500' },
+  { name: 'Sarah Chen', role: 'CEO, Finflow', quote: "LaunchFast delivered our fintech MVP in 11 days. The code quality is exceptional — production-ready from day one.", img: '/Images/testimonials/sarah.jpg', color: 'bg-orange-500' },
+  { name: 'Marcus Wright', role: 'Founder, Shopify App', quote: "From idea to paying customers in under 2 weeks. The team's communication was flawless. These guys are in a different league entirely.", img: '/Images/testimonials/marcus.jpg', color: 'bg-sky-500' },
+  { name: 'Priya Patel', role: 'CTO, Healthtech', quote: "Best engineering team I've worked with. They understood our vision immediately and delivered without endless back and forth.", img: '/Images/testimonials/priya.jpg', color: 'bg-violet-500' },
+  { name: 'James Liu', role: 'Founder, EdTech', quote: "Launched our platform to 500 users on day one. Rock solid product — zero critical bugs post-launch. Genuinely impressed.", img: '/Images/testimonials/james.jpg', color: 'bg-emerald-500' },
+  { name: 'Emma Davis', role: 'CEO, AI Startup', quote: "LaunchFast's process is incredibly efficient. 14 days to a fully production-ready AI product. We couldn't have done it without them.", img: '/Images/testimonials/emma.jpg', color: 'bg-rose-500' },
+  { name: 'Alex Torres', role: 'Founder, SaaS', quote: "I had tried 3 agencies before. LaunchFast is in a different league. Fast, focused, and the quality is outstanding.", img: '/Images/testimonials/alex.jpg', color: 'bg-amber-500' },
 ]
 
 function CornerCard({ children, active = false }: { children: React.ReactNode; active?: boolean }) {
@@ -138,3 +138,4 @@ export default function Testimonials() {
     </section>
   )
 }
+

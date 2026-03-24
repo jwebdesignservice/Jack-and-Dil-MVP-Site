@@ -61,6 +61,24 @@ export default function CTA() {
               className="absolute -bottom-32 -right-32 w-80 h-80 rounded-full"
               style={{ background: 'radial-gradient(circle, rgba(234,88,12,0.1), transparent 70%)', filter: 'blur(40px)' }} />
 
+            {/* Wave gradient background */}
+            <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice" fill="none">
+              <defs>
+                <linearGradient id="wave1" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#F97316" stopOpacity="0"/>
+                  <stop offset="40%" stopColor="#F97316" stopOpacity="0.8"/>
+                  <stop offset="100%" stopColor="#EA580C" stopOpacity="0"/>
+                </linearGradient>
+                <linearGradient id="wave2" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#FB923C" stopOpacity="0"/>
+                  <stop offset="60%" stopColor="#FB923C" stopOpacity="0.5"/>
+                  <stop offset="100%" stopColor="#F97316" stopOpacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0 180 C100 140 200 200 400 160 C600 120 700 180 800 150 L800 300 L0 300Z" fill="url(#wave1)"/>
+              <path d="M0 210 C150 170 300 230 500 190 C650 160 750 210 800 180 L800 300 L0 300Z" fill="url(#wave2)" opacity="0.6"/>
+              <path d="M0 240 C200 210 350 260 550 220 C700 185 760 240 800 210 L800 300 L0 300Z" fill="url(#wave1)" opacity="0.3"/>
+            </svg>
             {/* Dot grid inside card */}
             <div className="absolute inset-0 opacity-[0.03]"
               style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,1) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
