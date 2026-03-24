@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import { Button } from '@/components/ui/Button'
 import { useState } from 'react'
 
 const services = [
@@ -102,7 +102,7 @@ export default function Services() {
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
           className="text-center mb-16">
           <span className="text-orange-500 text-xs font-bold tracking-[0.2em] uppercase">What We Build</span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mt-4">Our Services</h2>
+          <h2 className="text-4xl lg:text-5xl font-semibold text-white mt-4">Our Services</h2>
           <p className="text-neutral-500 mt-4 max-w-lg mx-auto text-sm">Everything you need to go from idea to live product. Nothing you don&apos;t.</p>
         </motion.div>
 
@@ -158,10 +158,7 @@ export default function Services() {
                 {/* Divider */}
                 <div className="h-px bg-gradient-to-r from-transparent via-[rgba(249,115,22,0.2)] to-transparent mb-5" />
 
-                <Link href="/contact"
-                  className="inline-flex items-center gap-2 text-orange-500 hover:text-orange-400 text-sm font-medium transition-colors group/link">
-                  <span>Get started →</span>
-                </Link>
+                <Button href="/contact" variant="outline" className="!py-2 !px-4 !text-xs">Get started</Button>
               </div>
             </motion.div>
           ))}
@@ -170,4 +167,5 @@ export default function Services() {
     </section>
   )
 }
+
 

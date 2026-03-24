@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import CountUp from '@/components/ui/CountUp'
-import Link from 'next/link'
+import { Button } from '@/components/ui/Button'
 
 const plans = [
   {
@@ -41,15 +41,15 @@ export default function Pricing() {
       <div className="container mx-auto px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="text-center mb-16">
-          <span className="text-orange-500 text-sm font-semibold tracking-widest uppercase">Transparent Pricing</span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mt-4">Simple, Fixed Pricing</h2>
+          <span className="text-orange-500 text-xs font-bold tracking-[0.2em] uppercase">Transparent Pricing</span>
+          <h2 className="text-4xl lg:text-5xl font-semibold text-white mt-4">Simple, Fixed Pricing</h2>
           <p className="text-neutral-500 mt-4 max-w-lg mx-auto">No hourly rates, no surprises. You know exactly what you get.</p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {plans.map((plan, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-              className={`relative rounded-2xl p-8 ${plan.popular
+              className={`relative rounded-2xl flex flex-col ${plan.popular
                 ? 'bg-[#0D0A00] border-2 border-orange-500/60'
                 : 'bg-[#0A0A0A] border border-[rgba(249,115,22,0.15)]'}`}
               style={plan.popular ? { boxShadow: '0 0 60px rgba(249,115,22,0.15)' } : {}}>
@@ -58,25 +58,26 @@ export default function Pricing() {
                   <span className="bg-orange-500 text-white text-xs font-bold px-4 py-1.5 rounded-full">MOST POPULAR</span>
                 </div>
               )}
-              <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
-              <p className="text-neutral-600 text-sm mb-6">{plan.desc}</p>
-              <div className="text-4xl font-bold text-white mb-1">
-                £<CountUp end={plan.price} duration={1500} />
+              <div className="p-8 flex-1">
+                <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
+                <p className="text-neutral-600 text-sm mb-6">{plan.desc}</p>
+                <div className="text-4xl font-bold text-white mb-1">
+                  £<CountUp end={plan.price} duration={1500} />
+                </div>
+                <div className="text-neutral-600 text-sm mb-8">fixed price</div>
+                <ul className="space-y-3">
+                  {plan.features.map(f => (
+                    <li key={f} className="flex items-start gap-2 text-neutral-400 text-sm">
+                      <span className="text-orange-500 mt-0.5">✓</span> {f}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="text-neutral-600 text-sm mb-8">fixed price</div>
-              <ul className="space-y-3 mb-8">
-                {plan.features.map(f => (
-                  <li key={f} className="flex items-start gap-2 text-neutral-400 text-sm">
-                    <span className="text-orange-500 mt-0.5">✓</span> {f}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/contact"
-                className={`block text-center font-medium py-3 rounded-lg transition-colors ${plan.popular
-                  ? 'bg-orange-500 hover:bg-orange-600 text-white'
-                  : 'border border-orange-500/30 hover:border-orange-500/60 text-orange-500'}`}>
-                Get Started
-              </Link>
+              <div className="p-8 pt-0">
+                <Button href="/contact" variant={plan.popular ? 'primary' : 'outline'} className="w-full justify-center">
+                  Get Started
+                </Button>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -94,5 +95,6 @@ export default function Pricing() {
     </section>
   )
 }
+
 
 

@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import { Button } from '@/components/ui/Button'
 
 export default function CTA() {
   return (
@@ -100,15 +100,8 @@ export default function CTA() {
 
               <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
                 className="flex flex-wrap items-center justify-center gap-4">
-                <Link href="/contact"
-                  className="relative overflow-hidden bg-orange-500 hover:bg-orange-600 text-white font-medium px-10 py-4 rounded-xl text-base transition-colors group">
-                  <span className="relative z-10">Book a Free Call</span>
-                  <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-0 bg-gradient-to-r from-white/10 to-transparent transition-transform duration-300" />
-                </Link>
-                <Link href="#services"
-                  className="border border-[rgba(249,115,22,0.2)] hover:border-orange-500/40 text-white/70 hover:text-white font-medium px-10 py-4 rounded-xl text-base transition-all">
-                  View Services
-                </Link>
+                <Button href="/contact" variant="primary">Book a Free Call</Button>
+                <Button href="#services" variant="outline">View Services</Button>
               </motion.div>
 
               {/* Bottom tech label */}
@@ -124,5 +117,6 @@ export default function CTA() {
     </section>
   )
 }
+
 
 

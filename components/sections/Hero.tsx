@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import HeroDashboard from '@/components/svgs/HeroDashboard'
+import { Button } from '@/components/ui/Button'
 
 const stats = [
   { value: '50+', label: 'MVPs Built' },
@@ -46,10 +46,8 @@ export default function Hero() {
             </motion.div>
 
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-              <span className="text-white">Production-Ready</span>
-              <br />
-              <span className="text-white">MVPs</span>
+              className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
+              <span className="text-white">Production-Ready MVPs</span>
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                 For Ambitious Founders
@@ -57,20 +55,14 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-neutral-400 text-lg lg:text-xl mb-10 max-w-lg leading-relaxed">
-              We build production-grade MVPs that launch in days. No fluff, no delays — just fast, high-quality software that gets you to market.
+              className="text-neutral-400 text-sm lg:text-base mb-10 max-w-lg leading-relaxed">
+              We build production-grade MVPs that launch in days. No fluff, no delays. Fast, high-quality software that gets you to market.
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-wrap gap-4 mb-16">
-              <Link href="/contact" className="relative overflow-hidden bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-4 rounded-lg text-base transition-colors group">
-                <span className="relative z-10">Start Your MVP</span>
-                <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-0 bg-gradient-to-r from-orange-400/20 to-transparent transition-transform duration-300" />
-              </Link>
-              <Link href="/#process" className="relative overflow-hidden border border-orange-500/30 text-white hover:border-orange-500/60 font-medium px-8 py-4 rounded-lg text-base transition-colors group">
-                <span className="relative z-10">See Our Process</span>
-                <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] bg-gradient-to-r from-transparent via-orange-500/10 to-transparent transition-transform duration-700" />
-              </Link>
+              <Button href="/contact" variant="primary">Start Your MVP</Button>
+              <Button href="/#process" variant="outline">See Our Process</Button>
             </motion.div>
 
 
@@ -86,4 +78,5 @@ export default function Hero() {
     </section>
   )
 }
+
 

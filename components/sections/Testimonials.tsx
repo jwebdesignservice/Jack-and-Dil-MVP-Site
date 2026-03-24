@@ -1,95 +1,140 @@
 'use client'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import { useState } from 'react'
+import Image from 'next/image'
 
 const testimonials = [
-  { name: 'Sarah Chen', role: 'CEO, Finflow', quote: "LaunchFast delivered our fintech MVP in 11 days. The code quality is exceptional.", initials: 'SC' },
-  { name: 'Marcus Wright', role: 'Founder, Shopify App', quote: "From idea to paying customers in under 2 weeks. These guys are unreal.", initials: 'MW' },
-  { name: 'Priya Patel', role: 'CTO, Healthtech', quote: "Best engineering team I've worked with. They understood our vision immediately.", initials: 'PP' },
-  { name: 'James Liu', role: 'Founder, EdTech', quote: "Launched our platform to 500 users on day one. The product was rock solid.", initials: 'JL' },
-  { name: 'Emma Davis', role: 'CEO, AI Startup', quote: "LaunchFast's process is so efficient. 14 days to a production-ready AI product.", initials: 'ED' },
-  { name: 'Alex Torres', role: 'Founder, SaaS', quote: "I had tried 3 agencies before. LaunchFast is in a different league entirely.", initials: 'AT' },
+  { name: 'Sarah Chen', role: 'CEO, Finflow', quote: "LaunchFast delivered our fintech MVP in 11 days. The code quality is exceptional — production-ready from day one.", img: '/images/testimonials/sarah.jpg', color: 'bg-orange-500' },
+  { name: 'Marcus Wright', role: 'Founder, Shopify App', quote: "From idea to paying customers in under 2 weeks. The team's communication was flawless. These guys are in a different league entirely.", img: '/images/testimonials/marcus.jpg', color: 'bg-sky-500' },
+  { name: 'Priya Patel', role: 'CTO, Healthtech', quote: "Best engineering team I've worked with. They understood our vision immediately and delivered without endless back and forth.", img: '/images/testimonials/priya.jpg', color: 'bg-violet-500' },
+  { name: 'James Liu', role: 'Founder, EdTech', quote: "Launched our platform to 500 users on day one. Rock solid product — zero critical bugs post-launch. Genuinely impressed.", img: '/images/testimonials/james.jpg', color: 'bg-emerald-500' },
+  { name: 'Emma Davis', role: 'CEO, AI Startup', quote: "LaunchFast's process is incredibly efficient. 14 days to a fully production-ready AI product. We couldn't have done it without them.", img: '/images/testimonials/emma.jpg', color: 'bg-rose-500' },
+  { name: 'Alex Torres', role: 'Founder, SaaS', quote: "I had tried 3 agencies before. LaunchFast is in a different league. Fast, focused, and the quality is outstanding.", img: '/images/testimonials/alex.jpg', color: 'bg-amber-500' },
 ]
 
-function TestimonialCard({ t }: { t: typeof testimonials[0] }) {
+function CornerCard({ children, active = false }: { children: React.ReactNode; active?: boolean }) {
   return (
-    <div className="bg-[#0A0A0A] border border-[rgba(249,115,22,0.1)] rounded-xl p-6 mb-4">
-      <div className="flex gap-0.5 mb-4">
-        {[...Array(5)].map((_, i) => <span key={i} className="text-orange-500 text-sm">★</span>)}
-      </div>
-      <p className="text-neutral-400 text-sm leading-relaxed mb-4">&ldquo;{t.quote}&rdquo;</p>
-      <div className="flex items-center gap-3">
-        <div className="w-9 h-9 rounded-full bg-orange-500/20 border-2 border-orange-500/40 flex items-center justify-center text-orange-500 text-xs font-bold">{t.initials}</div>
-        <div>
-          <div className="text-white text-sm font-semibold">{t.name}</div>
-          <div className="text-neutral-600 text-xs">{t.role}</div>
-        </div>
-      </div>
+    <div className={`relative rounded-2xl p-8 transition-all duration-300 ${active
+      ? 'bg-[#0D0A00] border border-orange-500/35'
+      : 'bg-[#0A0A0A] border border-[rgba(249,115,22,0.1)]'}`}
+      style={active ? { boxShadow: '0 0 40px rgba(249,115,22,0.12)' } : {}}>
+      {/* Corner accents — 4px outside the card corners */}
+      <span className="absolute -top-[4px] -left-[4px] w-5 h-5 border-t-2 border-l-2 border-orange-500 rounded-tl-sm pointer-events-none"/>
+      <span className="absolute -top-[4px] -right-[4px] w-5 h-5 border-t-2 border-r-2 border-orange-500 rounded-tr-sm pointer-events-none"/>
+      <span className="absolute -bottom-[4px] -left-[4px] w-5 h-5 border-b-2 border-l-2 border-orange-500 rounded-bl-sm pointer-events-none"/>
+      <span className="absolute -bottom-[4px] -right-[4px] w-5 h-5 border-b-2 border-r-2 border-orange-500 rounded-br-sm pointer-events-none"/>
+      {children}
     </div>
   )
 }
 
 export default function Testimonials() {
-  const col1 = testimonials.slice(0, 3)
-  const col2 = testimonials.slice(3, 6)
+  const [active, setActive] = useState(2)
+
+  const prev = () => setActive(i => (i - 1 + testimonials.length) % testimonials.length)
+  const next = () => setActive(i => (i + 1) % testimonials.length)
+
+  const getPos = (i: number) => {
+    const diff = (i - active + testimonials.length) % testimonials.length
+    if (diff === 0) return 'center'
+    if (diff === 1) return 'right1'
+    if (diff === 2) return 'right2'
+    if (diff === testimonials.length - 1) return 'left1'
+    if (diff === testimonials.length - 2) return 'left2'
+    return 'hidden'
+  }
 
   return (
     <section id="testimonials" className="py-24 bg-[#080808] relative overflow-hidden">
-      {/* Wave shapes */}
-      <svg className="absolute top-0 left-0 right-0 w-full opacity-5" viewBox="0 0 1440 100" fill="none">
-        <path d="M0 50 Q360 100 720 50 Q1080 0 1440 50 L1440 0 L0 0 Z" fill="#F97316" />
-      </svg>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(249,115,22,0.05),transparent_70%)]"/>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left */}
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <span className="text-orange-500 text-sm font-semibold tracking-widest uppercase">Social Proof</span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mt-4 mb-6">
-              Founders{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Love</span>{' '}
-              LaunchFast
-            </h2>
-            <p className="text-neutral-500 mb-8 leading-relaxed">Don&apos;t take our word for it. Here&apos;s what our clients say about working with us.</p>
-            <div className="grid grid-cols-3 gap-6 mb-8">
-              {[
-                { val: '50+', label: 'MVPs delivered' },
-                { val: '100%', label: 'on-time delivery' },
-                { val: '5★', label: 'average rating' },
-              ].map(s => (
-                <div key={s.label} className="text-center">
-                  <div className="text-2xl font-bold text-orange-500">{s.val}</div>
-                  <div className="text-neutral-600 text-xs mt-1">{s.label}</div>
-                </div>
-              ))}
-            </div>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-3 rounded-lg transition-colors">
-              Join Our Founders
-            </Link>
-          </motion.div>
+        {/* Header */}
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          className="text-center mb-12">
+          <span className="text-orange-500 text-xs font-bold tracking-[0.2em] uppercase">Social Proof</span>
+          <h2 className="text-4xl lg:text-5xl font-semibold text-white mt-4">Founders Who Shipped Fast</h2>
+          <p className="text-neutral-500 mt-4 max-w-md mx-auto text-sm">Real results from founders who trusted us to build their product.</p>
+        </motion.div>
 
-          {/* Right: Two columns */}
-          <div className="hidden lg:grid grid-cols-2 gap-4 max-h-[500px] overflow-hidden relative">
-            <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#080808] to-transparent z-10" />
-            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#080808] to-transparent z-10" />
-            {/* Col 1: scrolls up */}
-            <motion.div animate={{ y: [0, -300] }} transition={{ repeat: Infinity, duration: 12, ease: 'linear' }}>
-              {[...col1, ...col1].map((t, i) => <TestimonialCard key={i} t={t} />)}
-            </motion.div>
-            {/* Col 2: scrolls down */}
-            <motion.div animate={{ y: [-300, 0] }} transition={{ repeat: Infinity, duration: 12, ease: 'linear' }}>
-              {[...col2, ...col2].map((t, i) => <TestimonialCard key={i} t={t} />)}
-            </motion.div>
-          </div>
+        {/* Avatar row */}
+        <div className="flex items-center justify-center gap-3 mb-14 flex-wrap">
+          {testimonials.map((t, i) => (
+            <button key={i} onClick={() => setActive(i)}
+              className={`relative w-12 h-12 rounded-full overflow-hidden transition-all duration-200 ${active === i ? 'ring-2 ring-orange-500 ring-offset-2 ring-offset-[#080808] scale-110' : 'opacity-40 hover:opacity-70'}`}>
+              <Image src={t.img} alt={t.name} fill className="object-cover"/>
+            </button>
+          ))}
+        </div>
 
-          {/* Mobile: single column */}
-          <div className="lg:hidden space-y-4">
-            {testimonials.slice(0, 3).map((t, i) => <TestimonialCard key={i} t={t} />)}
+        {/* Cards carousel — 5 visible */}
+        <div className="relative h-[300px] flex items-center justify-center overflow-hidden">
+          {testimonials.map((t, i) => {
+            const pos = getPos(i)
+            const isCenter = pos === 'center'
+            const isL1 = pos === 'left1'
+            const isL2 = pos === 'left2'
+            const isR1 = pos === 'right1'
+            const isR2 = pos === 'right2'
+            const isHidden = pos === 'hidden'
+
+            const xMap: Record<string,string> = { center:'0%', left1:'-52%', left2:'-100%', right1:'52%', right2:'100%' }
+            const opacityMap: Record<string,number> = { center:1, left1:0.5, left2:0.25, right1:0.5, right2:0.25 }
+            const scaleMap: Record<string,number> = { center:1, left1:0.84, left2:0.72, right1:0.84, right2:0.72 }
+            const zMap: Record<string,number> = { center:30, left1:20, left2:10, right1:20, right2:10 }
+
+            return (
+              <motion.div key={i}
+                className="absolute cursor-pointer select-none w-[480px]"
+                style={{ zIndex: isHidden ? 0 : zMap[pos] }}
+                animate={{
+                  x: isHidden ? 0 : xMap[pos],
+                  opacity: isHidden ? 0 : opacityMap[pos],
+                  scale: isHidden ? 0.6 : scaleMap[pos],
+                  filter: isCenter ? 'blur(0px)' : `blur(${isL1||isR1?'1px':'2px'})`,
+                }}
+                transition={{ duration: 0.4, ease: 'easeInOut' }}
+                onClick={() => !isCenter && setActive(i)}>
+                <CornerCard active={isCenter}>
+                  <div className="flex gap-0.5 mb-4">
+                    {[...Array(5)].map((_, j) => <span key={j} className="text-orange-500 text-sm">★</span>)}
+                  </div>
+                  <p className={`leading-relaxed mb-5 ${isCenter ? 'text-neutral-200 text-sm' : 'text-neutral-500 text-xs'}`}>
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-orange-500/40">
+                      <Image src={t.img} alt={t.name} fill className="object-cover"/>
+                    </div>
+                    <div>
+                      <div className="text-white text-sm font-semibold">{t.name}</div>
+                      <div className="text-neutral-600 text-xs">{t.role}</div>
+                    </div>
+                  </div>
+                </CornerCard>
+              </motion.div>
+            )
+          })}
+        </div>
+
+        {/* Prev / Next */}
+        <div className="flex items-center justify-center gap-5 mt-14">
+          <button onClick={prev}
+            className="w-11 h-11 rounded-full border border-[rgba(249,115,22,0.25)] bg-[#0A0A0A] flex items-center justify-center text-neutral-400 hover:border-orange-500/60 hover:text-white transition-all">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div className="flex gap-2 items-center">
+            {testimonials.map((_, i) => (
+              <button key={i} onClick={() => setActive(i)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${active === i ? 'w-7 bg-orange-500' : 'w-1.5 bg-neutral-700 hover:bg-neutral-500'}`}/>
+            ))}
           </div>
+          <button onClick={next}
+            className="w-11 h-11 rounded-full border border-[rgba(249,115,22,0.25)] bg-[#0A0A0A] flex items-center justify-center text-neutral-400 hover:border-orange-500/60 hover:text-white transition-all">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
         </div>
       </div>
     </section>
   )
 }
-
-

@@ -17,6 +17,20 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-inter)'],
       },
+      maxWidth: {
+        '8xl': '1200px',
+      },
+      container: {
+        center: true,
+        padding: '1.5rem',
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1200px',
+          '2xl': '1200px',
+        },
+      },
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',

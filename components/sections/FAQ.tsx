@@ -27,8 +27,8 @@ export default function FAQ() {
       <div className="container mx-auto px-6 relative z-10 max-w-3xl">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="text-center mb-16">
-          <span className="text-orange-500 text-sm font-semibold tracking-widest uppercase">FAQ</span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mt-4">Common Questions</h2>
+          <span className="text-orange-500 text-xs font-bold tracking-[0.2em] uppercase">FAQ</span>
+          <h2 className="text-4xl lg:text-5xl font-semibold text-white mt-4">Common Questions</h2>
         </motion.div>
 
         <div className="space-y-3">
@@ -56,3 +56,4 @@ export default function FAQ() {
     </section>
   )
 }
+
