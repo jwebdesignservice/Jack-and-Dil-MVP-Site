@@ -4,30 +4,99 @@ import { motion } from 'framer-motion'
 
 function ScopeSVG() {
   return (
-    <svg viewBox="0 0 220 180" fill="none" className="w-full max-w-[360px]">
-      <circle cx="110" cy="90" r="74" stroke="rgba(249,115,22,0.18)" strokeWidth="1" strokeDasharray="4 8"/>
-      <circle cx="110" cy="90" r="54" stroke="rgba(249,115,22,0.4)" strokeWidth="1.5"/>
-      <circle cx="110" cy="90" r="34" stroke="#F97316" strokeWidth="2"/>
-      <circle cx="110" cy="90" r="34" fill="rgba(249,115,22,0.07)"/>
-      <circle cx="110" cy="90" r="14" stroke="#FB923C" strokeWidth="2" fill="rgba(249,115,22,0.18)"/>
-      <circle cx="110" cy="90" r="5" fill="#F97316"/>
-      <line x1="110" y1="8" x2="110" y2="54" stroke="#F97316" strokeWidth="2" strokeLinecap="round"/>
-      <line x1="110" y1="126" x2="110" y2="172" stroke="#F97316" strokeWidth="2" strokeLinecap="round"/>
-      <line x1="28" y1="90" x2="74" y2="90" stroke="#F97316" strokeWidth="2" strokeLinecap="round"/>
-      <line x1="146" y1="90" x2="192" y2="90" stroke="#F97316" strokeWidth="2" strokeLinecap="round"/>
-      <path d="M18 20 L18 36 M18 20 L34 20" stroke="#60a5fa" strokeWidth="2.5" strokeLinecap="round"/>
-      <path d="M202 20 L202 36 M202 20 L186 20" stroke="#60a5fa" strokeWidth="2.5" strokeLinecap="round"/>
-      <path d="M18 160 L18 144 M18 160 L34 160" stroke="#60a5fa" strokeWidth="2.5" strokeLinecap="round"/>
-      <path d="M202 160 L202 144 M202 160 L186 160" stroke="#60a5fa" strokeWidth="2.5" strokeLinecap="round"/>
-      {[0,45,90,135,180,225,270,315].map((deg,i)=>{
-        const r=74,rad=(deg*Math.PI)/180
-        return <line key={i} x1={110+r*Math.cos(rad)} y1={90+r*Math.sin(rad)} x2={110+(r-10)*Math.cos(rad)} y2={90+(r-10)*Math.sin(rad)} stroke="rgba(249,115,22,0.55)" strokeWidth="1.5"/>
-      })}
-      <circle cx="110" cy="8" r="3.5" fill="#60a5fa"/>
-      <circle cx="110" cy="172" r="3.5" fill="#60a5fa"/>
-      <circle cx="28" cy="90" r="3.5" fill="#60a5fa"/>
-      <circle cx="192" cy="90" r="3.5" fill="#60a5fa"/>
-    </svg>
+    <div className="relative w-full max-w-[360px] aspect-[220/180]">
+      <svg viewBox="0 0 220 180" fill="none" className="w-full h-full">
+        <defs>
+          <linearGradient id="scanGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#F97316" stopOpacity="0"/>
+            <stop offset="50%" stopColor="#F97316" stopOpacity="0.15"/>
+            <stop offset="100%" stopColor="#F97316" stopOpacity="0"/>
+          </linearGradient>
+          <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#F97316" stopOpacity="0.3"/>
+            <stop offset="100%" stopColor="#F97316" stopOpacity="0"/>
+          </radialGradient>
+        </defs>
+
+        {/* Center glow */}
+        <circle cx="110" cy="90" r="40" fill="url(#centerGlow)"/>
+
+        {/* Outer ring — rotating dashed */}
+        <motion.circle cx="110" cy="90" r="74" stroke="rgba(249,115,22,0.3)" strokeWidth="1" strokeDasharray="6 10"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+          style={{ transformOrigin: '110px 90px' }}/>
+
+        {/* Middle ring — counter-rotating */}
+        <motion.circle cx="110" cy="90" r="54" stroke="rgba(249,115,22,0.5)" strokeWidth="1.5" strokeDasharray="3 6"
+          animate={{ rotate: -360 }}
+          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+          style={{ transformOrigin: '110px 90px' }}/>
+
+        {/* Inner solid ring */}
+        <circle cx="110" cy="90" r="34" stroke="#F97316" strokeWidth="2" fill="rgba(249,115,22,0.06)"/>
+
+        {/* Core ring — pulsing */}
+        <motion.circle cx="110" cy="90" r="14" stroke="#FB923C" strokeWidth="2" fill="rgba(249,115,22,0.15)"
+          animate={{ r: [14, 16, 14], opacity: [1, 0.7, 1] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}/>
+
+        {/* Center dot — pulsing */}
+        <motion.circle cx="110" cy="90" r="5" fill="#F97316"
+          animate={{ r: [5, 7, 5] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}/>
+        <motion.circle cx="110" cy="90" r="12" fill="none" stroke="#F97316" strokeWidth="1"
+          animate={{ r: [12, 22, 12], opacity: [0.6, 0, 0.6] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeOut' }}/>
+
+        {/* Crosshairs */}
+        <line x1="110" y1="8" x2="110" y2="54" stroke="#F97316" strokeWidth="2" strokeLinecap="round"/>
+        <line x1="110" y1="126" x2="110" y2="172" stroke="#F97316" strokeWidth="2" strokeLinecap="round"/>
+        <line x1="28" y1="90" x2="74" y2="90" stroke="#F97316" strokeWidth="2" strokeLinecap="round"/>
+        <line x1="146" y1="90" x2="192" y2="90" stroke="#F97316" strokeWidth="2" strokeLinecap="round"/>
+
+        {/* Tick marks */}
+        {[0,45,90,135,180,225,270,315].map((deg,i)=>{
+          const r=74,rad=(deg*Math.PI)/180
+          return <line key={i} x1={110+r*Math.cos(rad)} y1={90+r*Math.sin(rad)} x2={110+(r-10)*Math.cos(rad)} y2={90+(r-10)*Math.sin(rad)} stroke="rgba(249,115,22,0.55)" strokeWidth="1.5"/>
+        })}
+
+        {/* Corner brackets — fade in */}
+        <motion.path d="M18 20 L18 36 M18 20 L34 20" stroke="#60a5fa" strokeWidth="2.5" strokeLinecap="round"
+          initial={{ opacity: 0 }} animate={{ opacity: [0, 1, 1, 0.6, 1] }} transition={{ duration: 3, repeat: Infinity }}/>
+        <motion.path d="M202 20 L202 36 M202 20 L186 20" stroke="#60a5fa" strokeWidth="2.5" strokeLinecap="round"
+          initial={{ opacity: 0 }} animate={{ opacity: [0, 1, 1, 0.6, 1] }} transition={{ duration: 3, repeat: Infinity, delay: 0.3 }}/>
+        <motion.path d="M18 160 L18 144 M18 160 L34 160" stroke="#60a5fa" strokeWidth="2.5" strokeLinecap="round"
+          initial={{ opacity: 0 }} animate={{ opacity: [0, 1, 1, 0.6, 1] }} transition={{ duration: 3, repeat: Infinity, delay: 0.6 }}/>
+        <motion.path d="M202 160 L202 144 M202 160 L186 160" stroke="#60a5fa" strokeWidth="2.5" strokeLinecap="round"
+          initial={{ opacity: 0 }} animate={{ opacity: [0, 1, 1, 0.6, 1] }} transition={{ duration: 3, repeat: Infinity, delay: 0.9 }}/>
+
+        {/* Orbiting dots on the outer ring */}
+        <motion.circle r="3.5" fill="#60a5fa"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+          style={{ transformOrigin: '110px 90px', offsetPath: 'circle(74px at 110px 90px)', offsetDistance: '0%' }}>
+        </motion.circle>
+
+        {/* Scanning line — sweeps across */}
+        <motion.rect x="36" y="85" width="148" height="10" fill="url(#scanGrad)" rx="2"
+          animate={{ y: [30, 150, 30] }}
+          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}/>
+
+        {/* Cardinal blue dots — pulsing */}
+        <motion.circle cx="110" cy="8" r="3.5" fill="#60a5fa"
+          animate={{ r: [3.5, 5, 3.5] }} transition={{ duration: 2, repeat: Infinity, delay: 0 }}/>
+        <motion.circle cx="110" cy="172" r="3.5" fill="#60a5fa"
+          animate={{ r: [3.5, 5, 3.5] }} transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}/>
+        <motion.circle cx="28" cy="90" r="3.5" fill="#60a5fa"
+          animate={{ r: [3.5, 5, 3.5] }} transition={{ duration: 2, repeat: Infinity, delay: 1 }}/>
+        <motion.circle cx="192" cy="90" r="3.5" fill="#60a5fa"
+          animate={{ r: [3.5, 5, 3.5] }} transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}/>
+
+        {/* Data labels */}
+        <text x="110" y="174" fill="rgba(249,115,22,0.4)" fontSize="6" fontFamily="monospace" textAnchor="middle" letterSpacing="2">SCANNING</text>
+      </svg>
+    </div>
   )
 }
 
