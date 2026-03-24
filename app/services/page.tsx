@@ -88,7 +88,7 @@ function WireframeSVG() {
       <circle cx="74" cy="38" r="5" fill="#22c55e" fillOpacity="0.7"/>
       {/* URL bar */}
       <rect x="130" y="29" width="180" height="16" rx="8" fill="#1a1a1a" stroke="#2a2a2a" strokeWidth="1"/>
-      <text x="220" y="41" textAnchor="middle" fill="#4a4a4a" fontSize="8" fontFamily="monospace">figma.com/design</text>
+      <text x="220" y="41" textAnchor="middle" fill="#4a4a4a" fontSize="8" fontFamily="monospace">design.fastlaunch.dev</text>
       {/* Wireframe content */}
       {/* Nav bar wireframe */}
       <rect x="36" y="66" width="328" height="24" rx="4" fill="#1a1a1a" stroke="rgba(249,115,22,0.1)" strokeWidth="1"/>
@@ -373,14 +373,14 @@ export default function ServicesPage() {
         }}
         title="Interfaces That Convert — Designed Before We Code"
         paragraphs={[
-          "Every project starts with wireframes and a clickable Figma prototype. You see exactly how the product works before development begins. Mobile-first, conversion-optimised, and delivered with a design system so your product stays consistent as it scales.",
+          "Every project starts with wireframes and clickable prototypes. You see exactly how the product works before development begins. Mobile-first, conversion-optimised, and delivered with a design system so your product stays consistent as it scales.",
         ]}
         features={[
-          ['Wireframes for all key screens', 'Interactive Figma prototype', 'Mobile-first responsive layouts', 'User flow diagrams'],
-          ['Design system (colours + type)', 'Component library in Figma', 'Accessibility (WCAG AA)', 'Handoff-ready specs'],
+          ['Wireframes for all key screens', 'Interactive prototype', 'Mobile-first responsive layouts', 'User flow diagrams'],
+          ['Design system (colours + type)', 'Reusable component library', 'Accessibility (WCAG AA)', 'Handoff-ready specs'],
         ]}
         deliverables={[
-          'Figma file with all screens — desktop + mobile',
+          'Design file with all screens — desktop + mobile',
           'Clickable prototype for user testing or investor demos',
           'Design system: colour tokens, type scale, component set',
           'Annotated handoff specs for developers',
@@ -592,4 +592,6 @@ export default function ServicesPage() {
     </main>
   )
 }
+
+
 
