@@ -154,18 +154,18 @@ export default function Process() {
           <p className="text-neutral-500 mt-4 max-w-md mx-auto text-sm">Concept to production in 14 days. No surprises, no delays.</p>
         </motion.div>
 
-        {/* Steps — 2×2 grid, text above SVG, centered */}
-        <div className="grid md:grid-cols-2 gap-16">
+        {/* Steps — vertical, text above SVG, centered per step */}
+        <div className="space-y-24">
           {steps.map((step, i) => (
             <motion.div key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               className="flex flex-col items-center text-center">
 
               {/* Text */}
-              <div className="w-full mb-8">
+              <div className="w-full max-w-lg mb-10">
                 <div className="flex items-center justify-center gap-3 mb-4">
                   <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center text-xs font-mono font-bold flex-shrink-0 ${step.isLast ? 'border-orange-500 bg-orange-500/20 text-orange-400 shadow-[0_0_20px_rgba(249,115,22,0.3)]' : 'border-orange-500/40 bg-[#0A0A0A] text-orange-500/70'}`}>
                     {step.num}
@@ -176,7 +176,7 @@ export default function Process() {
                   </span>
                 </div>
                 <h3 className={`text-2xl font-semibold mb-3 ${step.isLast ? 'text-orange-100' : 'text-white'}`}>{step.title}</h3>
-                <p className="text-neutral-400 text-sm leading-relaxed mb-5 max-w-sm mx-auto">{step.desc}</p>
+                <p className="text-neutral-400 text-sm leading-relaxed mb-5">{step.desc}</p>
                 <div className="flex flex-wrap gap-2 justify-center">
                   {step.details.map(d => (
                     <span key={d} className={`text-[10px] font-mono px-2.5 py-1 rounded border ${step.isLast ? 'border-orange-500/30 text-orange-400/80 bg-orange-500/5' : 'border-neutral-800 text-neutral-600 bg-[#0D0D0D]'}`}>{d}</span>
@@ -184,7 +184,7 @@ export default function Process() {
                 </div>
               </div>
 
-              {/* SVG below text */}
+              {/* SVG */}
               <div className="flex justify-center w-full">
                 <step.SVG />
               </div>
