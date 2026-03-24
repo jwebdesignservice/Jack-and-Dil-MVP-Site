@@ -89,11 +89,7 @@ export default function Services() {
       {/* Dot grid — continuing from hero */}
       <div className="absolute inset-0"
         style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-      {/* Centered grid lines — fades at edges */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[800px] h-[600px] opacity-[0.06]"
-          style={{ backgroundImage: 'linear-gradient(rgba(249,115,22,1) 1px, transparent 1px), linear-gradient(90deg, rgba(249,115,22,1) 1px, transparent 1px)', backgroundSize: '60px 60px', maskImage: 'radial-gradient(ellipse 50% 50% at 50% 50%, black 20%, transparent 70%)', WebkitMaskImage: 'radial-gradient(ellipse 50% 50% at 50% 50%, black 20%, transparent 70%)' }}/>
-      </div>
+
       {/* Subtle fade to black at bottom */}
       <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none"/>
 
