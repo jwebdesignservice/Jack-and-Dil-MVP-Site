@@ -197,8 +197,8 @@ export default function Process() {
                   </div>
                 </div>
 
-                {/* SVG side — centered in its half */}
-                <div className="flex-1 w-full flex py-4 justify-center">
+                {/* SVG side */}
+                <div className={`flex-1 w-full flex py-4 items-center ${textLeft ? 'lg:justify-end lg:pr-16' : 'lg:justify-start lg:pl-16'} justify-center`}>
                   <step.SVG />
                 </div>
               </motion.div>

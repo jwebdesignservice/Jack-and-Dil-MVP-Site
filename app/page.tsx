@@ -3,6 +3,7 @@ import Marquee from '@/components/sections/Marquee'
 import Services from '@/components/sections/Services'
 import Comparison from '@/components/sections/Comparison'
 import Process from '@/components/sections/Process'
+import WorkMarquee from '@/components/sections/WorkMarquee'
 import About from '@/components/sections/About'
 import Pricing from '@/components/sections/Pricing'
 import Testimonials from '@/components/sections/Testimonials'
@@ -17,6 +18,7 @@ export default function Home() {
       <Services />
       <Comparison />
       <Process />
+      <WorkMarquee />
       <About />
       <Pricing />
       <Testimonials />
