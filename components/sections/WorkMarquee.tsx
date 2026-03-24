@@ -15,7 +15,7 @@ const works = [
 
 export default function WorkMarquee() {
   return (
-    <section className="py-8 bg-[#050505] border-y border-[rgba(249,115,22,0.1)] overflow-hidden relative" style={{ zIndex: 10000 }}>
+    <section className="py-8 overflow-hidden relative" style={{ zIndex: 10000 }}>
       {/* Edge fades */}
       <div className="absolute left-0 top-0 bottom-0 w-64 bg-gradient-to-r from-[#050505] to-transparent z-20 pointer-events-none"/>
       <div className="absolute right-0 top-0 bottom-0 w-64 bg-gradient-to-l from-[#050505] to-transparent z-20 pointer-events-none"/>
@@ -24,7 +24,7 @@ export default function WorkMarquee() {
       <div className="flex group relative z-10">
         <div className="flex gap-6 animate-marquee-left group-hover:[animation-play-state:paused] shrink-0">
           {works.map((item, i) => (
-            <div key={`a-${i}`} className="relative flex-shrink-0 w-[630px] h-[390px] rounded-2xl overflow-hidden border border-[rgba(249,115,22,0.12)] group/card">
+            <div key={`a-${i}`} className="relative flex-shrink-0 w-[693px] h-[429px] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group/card">
               <Image src={item.src} alt={item.label} fill className="object-cover transition-transform duration-500 group-hover/card:scale-105"/>
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"/>
@@ -42,7 +42,7 @@ export default function WorkMarquee() {
         {/* Duplicate for seamless loop */}
         <div className="flex gap-6 animate-marquee-left group-hover:[animation-play-state:paused] shrink-0">
           {works.map((item, i) => (
-            <div key={`b-${i}`} className="relative flex-shrink-0 w-[630px] h-[390px] rounded-2xl overflow-hidden border border-[rgba(249,115,22,0.12)] group/card">
+            <div key={`b-${i}`} className="relative flex-shrink-0 w-[693px] h-[429px] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group/card">
               <Image src={item.src} alt={item.label} fill className="object-cover transition-transform duration-500 group-hover/card:scale-105"/>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"/>
               <div className="absolute bottom-0 left-0 right-0 p-5">
@@ -59,6 +59,7 @@ export default function WorkMarquee() {
     </section>
   )
 }
+
 
 
 
