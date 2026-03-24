@@ -93,13 +93,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="mt-12 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent"/>
-
       </div>
 
       {/* Large "FastLaunch" text — gradient: orange top, fades to black at bottom */}
-      <div className="overflow-hidden -mt-4">
+      <div className="overflow-hidden mt-2 mb-6">
         <div className="text-center leading-none select-none pointer-events-none"
           style={{ fontSize: 'min(18vw, 220px)', fontWeight: 900, letterSpacing: '-0.04em', background: 'linear-gradient(to bottom, rgba(249,115,22,0.25) 0%, rgba(249,115,22,0.08) 50%, rgba(5,5,5,0) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
           FastLaunch

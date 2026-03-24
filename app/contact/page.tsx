@@ -119,7 +119,7 @@ export default function ContactPage() {
                       Full Name *
                     </span>
                   </label>
-                  <input className={inputClass} name="name" value={formData.name} onChange={handleChange} placeholder="Jack Wilson" required/>
+                  <input className={inputClass} name="name" value={formData.name} onChange={handleChange} placeholder="John Smith" required/>
                 </div>
                 <div>
                   <label className={labelClass}>
@@ -128,7 +128,7 @@ export default function ContactPage() {
                       Email Address *
                     </span>
                   </label>
-                  <input className={inputClass} type="email" name="email" value={formData.email} onChange={handleChange} placeholder="jack@company.com" required/>
+                  <input className={inputClass} type="email" name="email" value={formData.email} onChange={handleChange} placeholder="you@company.com" required/>
                 </div>
               </div>
 
@@ -175,10 +175,10 @@ export default function ContactPage() {
                   </label>
                   <select className={inputClass} name="budget" value={formData.budget} onChange={handleChange} required>
                     <option value="" disabled>Select budget</option>
+                    <option>£2,500 – £5,000</option>
                     <option>£5,000 – £10,000</option>
                     <option>£10,000 – £20,000</option>
-                    <option>£20,000 – £50,000</option>
-                    <option>£50,000+</option>
+                    <option>£20,000+</option>
                     <option>Not sure yet</option>
                   </select>
                 </div>
@@ -209,6 +209,24 @@ export default function ContactPage() {
                 </label>
                 <textarea className={inputClass} name="message" value={formData.message} onChange={handleChange} rows={5}
                   placeholder="Describe your product idea — what problem it solves, who the target audience is, and any key features you have in mind..." required/>
+              </div>
+
+              {/* File upload */}
+              <div>
+                <label className={labelClass}>
+                  <span className="flex items-center gap-2">
+                    <svg className="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg>
+                    Attach Project Brief (optional)
+                  </span>
+                </label>
+                <label className="flex items-center justify-center gap-3 w-full border-2 border-dashed border-[rgba(249,115,22,0.2)] hover:border-orange-500/40 rounded-lg px-4 py-6 cursor-pointer transition-colors group">
+                  <svg className="w-5 h-5 text-neutral-600 group-hover:text-orange-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/></svg>
+                  <div>
+                    <span className="text-sm text-neutral-400 group-hover:text-neutral-300 transition-colors">Drop a file here or click to upload</span>
+                    <span className="block text-[10px] text-neutral-600 mt-1">PDF, DOC, DOCX, PNG, JPG — max 10MB</span>
+                  </div>
+                  <input type="file" className="hidden" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.webp" />
+                </label>
               </div>
 
               {/* Divider */}
