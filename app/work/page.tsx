@@ -91,12 +91,11 @@ export default function WorkPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group">
-                {/* Image card */}
-                <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-[rgba(249,115,22,0.12)] mb-6">
+                className="group rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] bg-[#0A0A0A]">
+                {/* Image */}
+                <div className="relative aspect-[16/10] overflow-hidden">
                   <Image src={project.image} alt={project.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105"/>
-                  {/* Dark gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"/>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-black/20 to-transparent"/>
                   {/* Service tags on image */}
                   <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
                     {project.services.map(s => (
@@ -105,25 +104,15 @@ export default function WorkPage() {
                       </span>
                     ))}
                   </div>
-                  {/* Hover overlay with "View Case" */}
-                  <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/10 transition-colors duration-300 flex items-center justify-center">
-                    <motion.span className="bg-orange-500 text-white text-xs font-bold px-5 py-2.5 rounded-lg opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-300">
-                      View Case
-                    </motion.span>
-                  </div>
-                  {/* Corner accent */}
-                  <span className="absolute top-3 right-3 w-5 h-5">
-                    <span className="absolute top-0 right-0 w-4 h-4 border-t border-r border-orange-500/50"/>
-                  </span>
-                  <span className="absolute bottom-3 left-3 w-5 h-5">
-                    <span className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-orange-500/50"/>
-                  </span>
+                  {/* Corner accents */}
+                  <span className="absolute top-3 right-3 w-4 h-4 border-t border-r border-orange-500/50"/>
+                  <span className="absolute bottom-3 left-3 w-4 h-4 border-b border-l border-orange-500/50"/>
                 </div>
 
-                {/* Text content */}
-                <div className="px-1">
+                {/* Text content — connected below image */}
+                <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xl font-semibold text-white group-hover:text-orange-100 transition-colors">{project.title}</h3>
+                    <h3 className="text-xl font-semibold text-white">{project.title}</h3>
                     <div className="flex items-center gap-3 text-[10px] font-mono text-neutral-600">
                       <span>{project.delivery}</span>
                       <span className="w-1 h-1 rounded-full bg-neutral-700"/>
@@ -133,7 +122,7 @@ export default function WorkPage() {
                   <p className="text-neutral-500 text-sm leading-relaxed mb-4">{project.desc}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map(tag => (
-                      <span key={tag} className="text-[11px] font-mono px-2.5 py-1 rounded border border-[rgba(249,115,22,0.15)] text-neutral-500 bg-[#0A0A0A] hover:border-orange-500/40 hover:text-orange-400 transition-colors cursor-default">
+                      <span key={tag} className="text-[11px] font-mono px-2.5 py-1 rounded border border-[rgba(249,115,22,0.15)] text-neutral-500 bg-[#111] cursor-default">
                         {tag}
                       </span>
                     ))}
