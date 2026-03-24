@@ -348,15 +348,13 @@ export default function ServicesPage() {
           "We cut every non-essential step so your MVP hits production fast. Built on Next.js, TypeScript, and Supabase — real scalable architecture, not throwaway prototypes. You see builds daily and own 100% of the code from day one.",
         ]}
         features={[
-          ['Next.js + TypeScript frontend', 'PostgreSQL / Supabase database', 'Node.js REST API backend', 'Auth, payments, email built-in'],
-          ['Daily build previews', 'Production-grade code quality', 'Full git history handed over', 'Deployable on Day 1'],
+          ['Next.js + TypeScript', 'Auth & payments built-in'],
+          ['Daily build previews', '100% code ownership'],
         ]}
         deliverables={[
-          'Deployed production application (Vercel or your infra)',
-          'Full source code — 100% ownership, no lock-in',
-          'Admin dashboard or CMS (if required)',
-          'Environment setup guide + deployment docs',
-          'Post-launch support window (7 days included)',
+          'Deployed production application',
+          'Full source code — no lock-in',
+          'Post-launch support included',
         ]}
         ctaHref="/contact"
         ctaText="Start Your MVP"
@@ -376,15 +374,13 @@ export default function ServicesPage() {
           "Every project starts with wireframes and clickable prototypes. You see exactly how the product works before development begins. Mobile-first, conversion-optimised, and delivered with a design system so your product stays consistent as it scales.",
         ]}
         features={[
-          ['Wireframes for all key screens', 'Interactive prototype', 'Mobile-first responsive layouts', 'User flow diagrams'],
-          ['Design system (colours + type)', 'Reusable component library', 'Accessibility (WCAG AA)', 'Handoff-ready specs'],
+          ['Wireframes + prototypes', 'Mobile-first layouts'],
+          ['Design system included', 'Handoff-ready specs'],
         ]}
         deliverables={[
-          'Design file with all screens — desktop + mobile',
-          'Clickable prototype for user testing or investor demos',
-          'Design system: colour tokens, type scale, component set',
-          'Annotated handoff specs for developers',
-          'Export-ready assets (SVG, PNG, WebP)',
+          'All screens — desktop + mobile',
+          'Clickable prototype for testing or demos',
+          'Export-ready assets',
         ]}
         ctaHref="/contact"
         ctaText="Get a Design Quote"
@@ -403,15 +399,13 @@ export default function ServicesPage() {
           "React/Next.js frontend, Node.js backend, PostgreSQL database. Stripe, SendGrid, Twilio — whatever integrations you need. We ship with tests, CI/CD, and code reviews from day one so your future team can actually maintain it.",
         ]}
         features={[
-          ['React / Next.js frontend', 'Node.js + Express / tRPC API', 'PostgreSQL + Prisma ORM', 'Stripe, Twilio, SendGrid'],
-          ['Jest + Playwright testing', 'GitHub Actions CI/CD', 'REST + GraphQL APIs', 'WebSockets / real-time'],
+          ['React / Next.js frontend', 'Node.js + PostgreSQL backend'],
+          ['Third-party integrations', 'CI/CD + testing included'],
         ]}
         deliverables={[
-          'Full application codebase with test coverage',
-          'CI/CD pipeline (GitHub Actions) — auto-deploy on push',
-          'API documentation (Swagger or Postman collection)',
-          'Database schema + migration scripts',
-          'Third-party integration setup and documentation',
+          'Full codebase with test coverage',
+          'CI/CD pipeline — auto-deploy on push',
+          'API documentation included',
         ]}
         ctaHref="/contact"
         ctaText="Discuss Your Project"
@@ -431,16 +425,13 @@ export default function ServicesPage() {
           "We deploy to Vercel or AWS with CI/CD, staging environments, and rollback strategies. Uptime monitoring, error tracking, SEO, and analytics are configured before handover — not patched in later.",
         ]}
         features={[
-          ['Vercel / AWS deployment', 'Staging + production envs', 'Uptime monitoring (Betterstack)', 'Error tracking (Sentry)'],
-          ['Core Web Vitals optimisation', 'SEO + structured data', 'Analytics (PostHog / GA4)', '2 weeks post-launch support'],
+          ['Vercel / AWS deployment', 'Uptime monitoring'],
+          ['SEO + analytics setup', 'Post-launch support'],
         ]}
         deliverables={[
-          'Production deployment with custom domain + SSL',
-          'Staging environment for safe testing pre-release',
-          'Uptime + error alerting (email/Slack notifications)',
-          'SEO audit report + implementation',
-          'Analytics dashboard configured and verified',
-          'Post-launch support (2 weeks standard, up to 3 months)',
+          'Production deploy with custom domain + SSL',
+          'Monitoring + error tracking configured',
+          'Post-launch support (up to 3 months)',
         ]}
         ctaHref="/contact"
         ctaText="Plan Your Launch"
