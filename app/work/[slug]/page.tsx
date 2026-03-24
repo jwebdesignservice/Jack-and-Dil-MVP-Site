@@ -290,21 +290,11 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       />
 
       {/* ── 1. Hero ── */}
-      <section className="relative min-h-[80vh] flex items-end overflow-hidden">
-        {/* Hero image */}
-        <div className="absolute inset-0">
-          <Image
-            src={project.heroImage}
-            alt={project.title}
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent" />
-        </div>
+      <section className="relative overflow-hidden pt-40 pb-16">
+        <div className="absolute inset-0 bg-black/80" />
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(249,115,22,0.1) 0%, transparent 70%)' }} />
 
-        <div className="container mx-auto px-6 relative z-10 pb-16 pt-40">
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -366,6 +356,18 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                 <div className="text-xs font-mono text-neutral-500 mt-0.5">{stat.label}</div>
               </div>
             ))}
+          </motion.div>
+
+          {/* Hero image — below stats, 95% width */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="mt-14 mx-auto rounded-lg overflow-hidden border border-[rgba(249,115,22,0.15)]"
+            style={{ width: '95%' }}>
+            <div className="relative aspect-[16/9]">
+              <Image src={project.heroImage} alt={project.title} fill className="object-cover" priority/>
+            </div>
           </motion.div>
         </div>
       </section>
