@@ -6,24 +6,24 @@ import { Button } from '@/components/ui/Button'
 
 const plans = [
   {
-    name: 'Sprint',
-    price: 7500,
-    desc: 'Perfect for simple MVPs and landing pages.',
-    features: ['Up to 5 core features', 'Mobile-responsive design', 'Basic auth + database', '7-day delivery', '2 weeks post-launch support'],
+    name: 'Starter',
+    price: 2500,
+    desc: 'Validate your idea fast with a lean MVP.',
+    features: ['Up to 5 core features', 'Mobile-responsive design', 'Basic auth + database', '1–4 day delivery', '2 weeks post-launch support'],
     popular: false,
   },
   {
-    name: 'Launch',
-    price: 15000,
-    desc: 'Our most popular package for full MVPs.',
-    features: ['Up to 12 core features', 'Custom UI/UX design', 'Payments + advanced auth', '14-day delivery', '1 month post-launch support', 'Analytics dashboard'],
+    name: 'Growth',
+    price: 9500,
+    desc: 'The full package for founders ready to ship.',
+    features: ['Up to 12 core features', 'Custom UI/UX design', 'Payments + advanced auth', '4–10 day delivery', '1 month post-launch support', 'Analytics dashboard'],
     popular: true,
   },
   {
-    name: 'Premium',
-    price: 30000,
-    desc: 'Complex products with custom integrations.',
-    features: ['Unlimited features', 'Full design system', 'Complex integrations', '21-day delivery', '3 months post-launch support', 'Dedicated Slack channel'],
+    name: 'Scale',
+    price: 20000,
+    desc: 'Complex products built for serious traction.',
+    features: ['Unlimited features', 'Full design system', 'Complex integrations', '14-day delivery', '3 months post-launch support', 'Dedicated Slack channel'],
     popular: false,
   },
 ]
@@ -96,6 +96,8 @@ export default function Pricing() {
     </section>
   )
 }
+
+
 
 
 

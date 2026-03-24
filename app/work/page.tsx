@@ -1,0 +1,152 @@
+'use client'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { Button } from '@/components/ui/Button'
+import { SectionLabel } from '@/components/ui/SectionLabel'
+import CTA from '@/components/sections/CTA'
+
+const projects = [
+  {
+    title: 'Desert Falcons Collective',
+    desc: 'A premium automotive community platform for luxury car enthusiasts across the Middle East. Built with a focus on sleek visuals and member engagement.',
+    image: '/Images/work/desertfalcons.png',
+    tags: ['Automotive', 'Community', 'Luxury'],
+    services: ['UI/UX Design', 'Next.js', 'Full-Stack'],
+    delivery: '12 days',
+    year: '2026',
+  },
+  {
+    title: 'Memory Market',
+    desc: 'A Web3 prediction and memory trading platform. Real-time data feeds, wallet integration, and a custom trading interface built for speed.',
+    image: '/Images/work/memorymarket.png',
+    tags: ['Web3', 'DeFi', 'Trading'],
+    services: ['Full-Stack', 'API Integration', 'Real-Time'],
+    delivery: '14 days',
+    year: '2025',
+  },
+  {
+    title: 'Aramas Property',
+    desc: 'A modern real estate platform with property listings, advanced search filters, and agent dashboard. Designed for the UK rental market.',
+    image: '/Images/work/aramas.png',
+    tags: ['Real Estate', 'SaaS', 'Marketplace'],
+    services: ['UI/UX Design', 'Next.js', 'Supabase'],
+    delivery: '10 days',
+    year: '2025',
+  },
+  {
+    title: 'Insights Dashboard',
+    desc: 'An analytics SaaS dashboard for tracking business KPIs, revenue metrics, and team performance. Clean data visualisation with real-time updates.',
+    image: '/Images/work/insights.png',
+    tags: ['Analytics', 'SaaS', 'Dashboard'],
+    services: ['UI/UX Design', 'React', 'PostgreSQL'],
+    delivery: '8 days',
+    year: '2025',
+  },
+]
+
+export default function WorkPage() {
+  return (
+    <main className="bg-black">
+      {/* Dot grid */}
+      <div className="fixed inset-0 pointer-events-none z-0"
+        style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }}/>
+
+      {/* Hero */}
+      <section className="relative overflow-hidden pt-40 pb-20">
+        <div className="absolute inset-0 bg-black/75"/>
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(249,115,22,0.12) 0%, transparent 70%)' }}/>
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex justify-center mb-5">
+            <SectionLabel icon={
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+              </svg>
+            }>Case Studies</SectionLabel>
+          </motion.div>
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.5 }}
+            className="text-5xl lg:text-6xl font-semibold text-white mb-5 leading-tight">
+            Work That{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Speaks</span>
+          </motion.h1>
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.5 }}
+            className="text-neutral-400 text-base max-w-lg mx-auto mb-10 leading-relaxed">
+            Real products we&apos;ve shipped for real founders. Every project delivered on time, on budget, production-ready.
+          </motion.p>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+            className="flex flex-wrap items-center justify-center gap-4">
+            <Button href="/contact" variant="primary">Start Your Project</Button>
+            <Button href="/services" variant="outline">View Services</Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Projects Grid */}
+      <section className="relative pb-24">
+        <div className="absolute inset-0 bg-black/80"/>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid md:grid-cols-2 gap-8">
+            {projects.map((project, i) => (
+              <motion.div key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group">
+                {/* Image card */}
+                <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-[rgba(249,115,22,0.12)] mb-6">
+                  <Image src={project.image} alt={project.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105"/>
+                  {/* Dark gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"/>
+                  {/* Service tags on image */}
+                  <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
+                    {project.services.map(s => (
+                      <span key={s} className="text-[10px] font-mono text-white/80 bg-white/10 backdrop-blur-sm border border-white/10 rounded px-2.5 py-1 tracking-wide">
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                  {/* Hover overlay with "View Case" */}
+                  <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/10 transition-colors duration-300 flex items-center justify-center">
+                    <motion.span className="bg-orange-500 text-white text-xs font-bold px-5 py-2.5 rounded-lg opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-300">
+                      View Case
+                    </motion.span>
+                  </div>
+                  {/* Corner accent */}
+                  <span className="absolute top-3 right-3 w-5 h-5">
+                    <span className="absolute top-0 right-0 w-4 h-4 border-t border-r border-orange-500/50"/>
+                  </span>
+                  <span className="absolute bottom-3 left-3 w-5 h-5">
+                    <span className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-orange-500/50"/>
+                  </span>
+                </div>
+
+                {/* Text content */}
+                <div className="px-1">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-xl font-semibold text-white group-hover:text-orange-100 transition-colors">{project.title}</h3>
+                    <div className="flex items-center gap-3 text-[10px] font-mono text-neutral-600">
+                      <span>{project.delivery}</span>
+                      <span className="w-1 h-1 rounded-full bg-neutral-700"/>
+                      <span>{project.year}</span>
+                    </div>
+                  </div>
+                  <p className="text-neutral-500 text-sm leading-relaxed mb-4">{project.desc}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map(tag => (
+                      <span key={tag} className="text-[11px] font-mono px-2.5 py-1 rounded border border-[rgba(249,115,22,0.15)] text-neutral-500 bg-[#0A0A0A] hover:border-orange-500/40 hover:text-orange-400 transition-colors cursor-default">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <CTA />
+    </main>
+  )
+}
