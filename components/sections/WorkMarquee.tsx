@@ -19,9 +19,9 @@ export default function WorkMarquee() {
       {/* Dot grid — continuous from hero/services */}
       <div className="absolute inset-0"
         style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }}/>
-      {/* Edge fades — black to transparent, wider for smoother blend */}
-      <div className="absolute left-0 top-0 bottom-0 w-72 bg-gradient-to-r from-black via-black/80 to-transparent z-20 pointer-events-none"/>
-      <div className="absolute right-0 top-0 bottom-0 w-72 bg-gradient-to-l from-black via-black/80 to-transparent z-20 pointer-events-none"/>
+      {/* Edge fades — pure black fading to transparent */}
+      <div className="absolute left-0 top-0 bottom-0 w-48 z-20 pointer-events-none" style={{ background: 'linear-gradient(to right, black 0%, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.5) 60%, transparent 100%)' }}/>
+      <div className="absolute right-0 top-0 bottom-0 w-48 z-20 pointer-events-none" style={{ background: 'linear-gradient(to left, black 0%, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.5) 60%, transparent 100%)' }}/>
 
       {/* Scrolling row */}
       <div className="flex group relative z-10">
