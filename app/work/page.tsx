@@ -91,7 +91,9 @@ export default function WorkPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] bg-[#0A0A0A]">
+                className="group rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] bg-[#0A0A0A] hover:border-orange-500/40 hover:-translate-y-1 transition-all duration-300"
+                style={{ boxShadow: 'none' }}
+                whileHover={{ boxShadow: '0 12px 40px rgba(249,115,22,0.12), 0 0 0 1px rgba(249,115,22,0.25)' }}>
                 {/* Image */}
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image src={project.image} alt={project.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105"/>
