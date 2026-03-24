@@ -23,10 +23,10 @@ export default function Nav() {
   }, [])
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/90 backdrop-blur-xl' : 'bg-transparent'}`}
-      style={{ borderBottom: '1px solid rgba(249,115,22,0.2)' }}>
+    <nav className={`fixed top-0 left-0 right-0 transition-all duration-300 ${scrolled ? 'bg-black/90 backdrop-blur-xl' : 'bg-transparent'}`}
+      style={{ zIndex: 99999, borderBottom: '1px solid rgba(249,115,22,0.2)' }}>
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16 py-[7px]">
+        <div className="flex items-center justify-between h-20 py-3">
           <Link href="/" className="flex items-center gap-2 text-white font-bold text-xl">
             <svg className="w-7 h-7 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
               <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />

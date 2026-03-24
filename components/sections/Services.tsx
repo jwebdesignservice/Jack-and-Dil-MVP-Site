@@ -85,19 +85,12 @@ export default function Services() {
   const [hovered, setHovered] = useState<number | null>(null)
 
   return (
-    <section id="services" className="py-28 bg-[#080808] relative overflow-hidden">
-      {/* Grid lines */}
-      <div className="absolute inset-0 opacity-[0.04]"
-        style={{ backgroundImage: 'linear-gradient(rgba(249,115,22,1) 1px, transparent 1px), linear-gradient(90deg, rgba(249,115,22,1) 1px, transparent 1px)', backgroundSize: '72px 72px' }} />
-      {/* Corner brackets */}
-      {['top-6 left-6', 'top-6 right-6', 'bottom-6 left-6', 'bottom-6 right-6'].map((pos, i) => (
-        <svg key={i} className={`absolute ${pos} w-8 h-8 text-orange-500/15`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          {i === 0 && <path d="M4 10V4H10" />}
-          {i === 1 && <path d="M20 10V4H14" />}
-          {i === 2 && <path d="M4 14V20H10" />}
-          {i === 3 && <path d="M20 14V20H14" />}
-        </svg>
-      ))}
+    <section id="services" className="py-28 bg-black relative overflow-hidden">
+      {/* Dot grid — continuing from hero */}
+      <div className="absolute inset-0"
+        style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+      {/* Subtle fade to black at bottom */}
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none"/>
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
