@@ -96,8 +96,14 @@ export default function WorkPage() {
                 whileHover={{ boxShadow: '0 12px 40px rgba(249,115,22,0.12), 0 0 0 1px rgba(249,115,22,0.25)' }}>
                 {/* Image */}
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image src={project.image} alt={project.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105"/>
+                  <Image src={project.image} alt={project.title} fill className="object-cover"/>
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-black/20 to-transparent"/>
+                  {/* Hover overlay with CTA */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center">
+                    <span className="bg-orange-500 text-white text-xs font-medium px-5 py-2.5 rounded-lg opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                      View Project →
+                    </span>
+                  </div>
                   {/* Service tags on image */}
                   <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
                     {project.services.map(s => (
