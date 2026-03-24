@@ -249,11 +249,9 @@ function ServiceSection({ id, reverse, label, title, paragraphs, features, deliv
   return (
     <section id={id} className="py-24 bg-black relative overflow-hidden" style={dotGrid}>
       <div className="absolute inset-0 bg-black/80" />
-      {/* Centered grid — fades at edges */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[1000px] h-[700px] opacity-[0.15]"
-          style={{ backgroundImage: 'linear-gradient(rgba(249,115,22,1) 1px, transparent 1px), linear-gradient(90deg, rgba(249,115,22,1) 1px, transparent 1px)', backgroundSize: '60px 60px', maskImage: 'radial-gradient(ellipse 50% 50% at 50% 50%, black 30%, transparent 70%)', WebkitMaskImage: 'radial-gradient(ellipse 50% 50% at 50% 50%, black 30%, transparent 70%)' }}/>
-      </div>
+      {/* Full-width grid */}
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none"
+        style={{ backgroundImage: 'linear-gradient(rgba(249,115,22,1) 1px, transparent 1px), linear-gradient(90deg, rgba(249,115,22,1) 1px, transparent 1px)', backgroundSize: '60px 60px' }}/>
       <div className="container mx-auto px-6 relative z-10">
         <div className={`grid lg:grid-cols-2 gap-16 items-center ${reverse ? 'lg:grid-flow-dense' : ''}`}>
           {/* Text side */}
