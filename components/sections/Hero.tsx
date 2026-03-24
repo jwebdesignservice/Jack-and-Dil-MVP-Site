@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import HeroGraphic from '@/components/svgs/HeroGraphic'
+import HeroDashboard from '@/components/svgs/HeroDashboard'
 
 const stats = [
   { value: '50+', label: 'MVPs Built' },
@@ -63,35 +63,27 @@ export default function Hero() {
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-wrap gap-4 mb-16">
-              <Link href="/contact" className="relative overflow-hidden bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-lg text-base transition-colors group">
+              <Link href="/contact" className="relative overflow-hidden bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-4 rounded-lg text-base transition-colors group">
                 <span className="relative z-10">Start Your MVP</span>
                 <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-0 bg-gradient-to-r from-orange-400/20 to-transparent transition-transform duration-300" />
               </Link>
-              <Link href="/#process" className="relative overflow-hidden border border-orange-500/30 text-white hover:border-orange-500/60 font-semibold px-8 py-4 rounded-lg text-base transition-colors group">
+              <Link href="/#process" className="relative overflow-hidden border border-orange-500/30 text-white hover:border-orange-500/60 font-medium px-8 py-4 rounded-lg text-base transition-colors group">
                 <span className="relative z-10">See Our Process</span>
                 <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] bg-gradient-to-r from-transparent via-orange-500/10 to-transparent transition-transform duration-700" />
               </Link>
             </motion.div>
 
-            {/* Stats */}
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {stats.map((stat, i) => (
-                <div key={i} className="border border-[rgba(249,115,22,0.15)] rounded-xl p-4 bg-[#0A0A0A]/50">
-                  <div className="text-2xl font-bold text-orange-500">{stat.value}</div>
-                  <div className="text-neutral-500 text-sm mt-1">{stat.label}</div>
-                </div>
-              ))}
-            </motion.div>
+
           </div>
 
           {/* Right */}
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }}
             className="hidden lg:block">
-            <HeroGraphic />
+            <HeroDashboard />
           </motion.div>
         </div>
       </div>
     </section>
   )
 }
+

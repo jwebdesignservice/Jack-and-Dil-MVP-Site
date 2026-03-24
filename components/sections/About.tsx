@@ -68,7 +68,7 @@ export default function About() {
                 </span>
               ))}
             </div>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-3 rounded-lg transition-colors">
               Work With Us →
             </Link>
           </motion.div>
@@ -77,3 +77,5 @@ export default function About() {
     </section>
   )
 }
+
+

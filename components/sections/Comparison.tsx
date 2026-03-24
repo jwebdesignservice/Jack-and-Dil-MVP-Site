@@ -24,7 +24,7 @@ export default function Comparison() {
         <div className="grid md:grid-cols-3 gap-8 items-center max-w-5xl mx-auto">
           {/* Old Way */}
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-            className="bg-red-950/20 border border-red-500/20 rounded-2xl p-8">
+            className="bg-[#0D0000] border border-red-500/20 rounded-2xl p-8">
             <h3 className="text-xl font-bold text-red-400 mb-6 text-center">The Old Way</h3>
             <ul className="space-y-4">
               {oldWay.map(item => (
@@ -38,15 +38,14 @@ export default function Comparison() {
 
           {/* VS */}
           <div className="flex items-center justify-center">
-            <motion.div style={{ rotate }}
-              className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-b from-orange-500 to-orange-700 select-none">
+            <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-b from-orange-500 to-orange-700 select-none">
               VS
-            </motion.div>
+            </div>
           </div>
 
           {/* Fast Way */}
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-            className="bg-orange-950/20 border border-orange-500/30 rounded-2xl p-8 relative"
+            className="bg-[#0D0800] border border-orange-500/30 rounded-2xl p-8 relative"
             style={{ boxShadow: '0 0 40px rgba(249,115,22,0.1)' }}>
             <h3 className="text-xl font-bold text-orange-400 mb-6 text-center">The Fast Way</h3>
             <ul className="space-y-4">

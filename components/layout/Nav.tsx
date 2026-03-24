@@ -44,7 +44,7 @@ export default function Nav() {
           </ul>
 
           <div className="hidden md:flex items-center gap-4">
-            <Link href="/contact" className="relative overflow-hidden bg-orange-500 hover:bg-orange-600 text-white font-semibold px-5 py-2 rounded-lg text-sm transition-colors">
+            <Link href="/contact" className="relative overflow-hidden bg-orange-500 hover:bg-orange-600 text-white font-medium px-5 py-2 rounded-lg text-sm transition-colors">
               Book a Call
             </Link>
           </div>
@@ -69,7 +69,7 @@ export default function Nav() {
                 </Link>
               ))}
               <Link href="/contact" onClick={() => setMobileOpen(false)}
-                className="block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-5 py-3 rounded-lg text-center transition-colors">
+                className="block bg-orange-500 hover:bg-orange-600 text-white font-medium px-5 py-3 rounded-lg text-center transition-colors">
                 Book a Call
               </Link>
             </div>
@@ -79,3 +79,4 @@ export default function Nav() {
     </nav>
   )
 }
+

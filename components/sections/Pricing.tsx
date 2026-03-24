@@ -72,7 +72,7 @@ export default function Pricing() {
                 ))}
               </ul>
               <Link href="/contact"
-                className={`block text-center font-semibold py-3 rounded-lg transition-colors ${plan.popular
+                className={`block text-center font-medium py-3 rounded-lg transition-colors ${plan.popular
                   ? 'bg-orange-500 hover:bg-orange-600 text-white'
                   : 'border border-orange-500/30 hover:border-orange-500/60 text-orange-500'}`}>
                 Get Started
@@ -94,3 +94,5 @@ export default function Pricing() {
     </section>
   )
 }
+
+

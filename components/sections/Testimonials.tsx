@@ -63,8 +63,8 @@ export default function Testimonials() {
                 </div>
               ))}
             </div>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
-              Join our clients →
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-3 rounded-lg transition-colors">
+              Join Our Founders
             </Link>
           </motion.div>
 
@@ -91,3 +91,5 @@ export default function Testimonials() {
     </section>
   )
 }
+
+
