@@ -2,15 +2,50 @@
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import Image from 'next/image'
 
 const testimonials = [
-  { name: 'Sarah Chen', role: 'CEO, Finflow', quote: "FastLaunch delivered our fintech MVP in 11 days. The code quality is exceptional — production-ready from day one.", img: '/Images/testimonials/sarah.jpg', color: 'bg-orange-500' },
-  { name: 'Marcus Wright', role: 'Founder, Shopify App', quote: "From idea to paying customers in under 2 weeks. The team's communication was flawless. These guys are in a different league entirely.", img: '/Images/testimonials/marcus.jpg', color: 'bg-sky-500' },
-  { name: 'Priya Patel', role: 'CTO, Healthtech', quote: "Best engineering team I've worked with. They understood our vision immediately and delivered without endless back and forth.", img: '/Images/testimonials/priya.jpg', color: 'bg-violet-500' },
-  { name: 'James Liu', role: 'Founder, EdTech', quote: "Launched our platform to 500 users on day one. Rock solid product — zero critical bugs post-launch. Genuinely impressed.", img: '/Images/testimonials/james.jpg', color: 'bg-emerald-500' },
-  { name: 'Emma Davis', role: 'CEO, AI Startup', quote: "FastLaunch's process is incredibly efficient. 14 days to a fully production-ready AI product. We couldn't have done it without them.", img: '/Images/testimonials/emma.jpg', color: 'bg-rose-500' },
-  { name: 'Alex Torres', role: 'Founder, SaaS', quote: "I had tried 3 agencies before. FastLaunch is in a different league. Fast, focused, and the quality is outstanding.", img: '/Images/testimonials/alex.jpg', color: 'bg-amber-500' },
+  {
+    name: 'Alex Reid',
+    role: 'Founder, Eliminent',
+    quote: "We had a concept that lived entirely in our heads. FastLaunch turned it into a real, playable game with thousands of concurrent users in 8 days. The AI agent is genuinely unsettling — exactly what we wanted.",
+    initials: 'AR',
+    color: 'bg-orange-500',
+  },
+  {
+    name: 'James Hartwell',
+    role: 'Head of Trading, Metalex',
+    quote: "We've tried every metals terminal out there. Metalex is the first one that gives us Bloomberg-level data without the Bloomberg price tag — and it works perfectly on mobile. FastLaunch built it in 2 weeks.",
+    initials: 'JH',
+    color: 'bg-sky-500',
+  },
+  {
+    name: 'Khalid Al-Rashidi',
+    role: 'Founder, Desert Falcons Collective',
+    quote: "FastLaunch delivered something we didn't think was possible in this timeframe. The platform looks like it cost 10x what we paid — our members were blown away on launch day.",
+    initials: 'KA',
+    color: 'bg-violet-500',
+  },
+  {
+    name: 'Zara Okonkwo',
+    role: 'Co-Founder, Memory Market',
+    quote: "We had a concept that most devs told us couldn't ship in under a month. FastLaunch had us live in 9 days with a product that actually works. The on-chain integration is rock solid.",
+    initials: 'ZO',
+    color: 'bg-emerald-500',
+  },
+  {
+    name: 'Ahmed Al-Mansoori',
+    role: 'Director, Aramas Property',
+    quote: "We went from a static brochure site to a full property marketplace in 6 days. The search functionality alone has already converted 3 international buyers in the first week.",
+    initials: 'AA',
+    color: 'bg-rose-500',
+  },
+  {
+    name: 'Compliance Lead',
+    role: 'AMS Tool',
+    quote: "We went from doing this manually to having a full AI-powered compliance tool in 10 days. The risk scoring alone saves our analysts hours every week — and the audit trail means we can demonstrate compliance instantly.",
+    initials: 'CL',
+    color: 'bg-amber-500',
+  },
 ]
 
 function CornerCard({ children, active = false }: { children: React.ReactNode; active?: boolean }) {
@@ -63,7 +98,7 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <button key={i} onClick={() => setActive(i)}
               className={`relative w-12 h-12 rounded-full overflow-hidden transition-all duration-200 ${active === i ? 'ring-2 ring-orange-500 ring-offset-2 ring-offset-[#080808] scale-110' : 'opacity-40 hover:opacity-70'}`}>
-              <Image src={t.img} alt={t.name} fill className="object-cover"/>
+              <div className={`w-full h-full ${t.color} flex items-center justify-center text-white text-sm font-bold`}>{t.initials}</div>
             </button>
           ))}
         </div>
@@ -78,8 +113,8 @@ export default function Testimonials() {
               &ldquo;{testimonials[active].quote}&rdquo;
             </p>
             <div className="flex items-center gap-3">
-              <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-orange-500/40">
-                <Image src={testimonials[active].img} alt={testimonials[active].name} fill className="object-cover"/>
+              <div className={`w-10 h-10 rounded-full flex-shrink-0 ring-2 ring-orange-500/40 ${testimonials[active].color} flex items-center justify-center text-white text-sm font-bold`}>
+                {testimonials[active].initials}
               </div>
               <div>
                 <div className="text-white text-sm font-semibold">{testimonials[active].name}</div>
@@ -126,8 +161,8 @@ export default function Testimonials() {
                     &ldquo;{t.quote}&rdquo;
                   </p>
                   <div className="flex items-center gap-3">
-                    <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-orange-500/40">
-                      <Image src={t.img} alt={t.name} fill className="object-cover"/>
+                    <div className={`w-10 h-10 rounded-full flex-shrink-0 ring-2 ring-orange-500/40 ${t.color} flex items-center justify-center text-white text-sm font-bold`}>
+                      {t.initials}
                     </div>
                     <div>
                       <div className="text-white text-sm font-semibold">{t.name}</div>
