@@ -1,596 +1,435 @@
 'use client'
-import { notFound } from 'next/navigation'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
-import { SectionLabel } from '@/components/ui/SectionLabel'
+import { useParams } from 'next/navigation'
 import { Button } from '@/components/ui/Button'
+import { SectionLabel } from '@/components/ui/SectionLabel'
 import CTA from '@/components/sections/CTA'
-import HeroSlideshow from '@/components/ui/HeroSlideshow'
 
-/* ─── Project Data ─── */
-const projects: Record<string, Project> = {
-  'eliminent': {
-    slug: 'eliminent',
-    title: 'Eliminent',
-    tagline: 'Find the AI among you. Or die trying.',
-    tags: ['Gaming', 'AI', 'Social Deduction', 'Multiplayer'],
-    delivery: '8 days',
-    year: '2026',
-    heroImage: '/Images/work/eliminent-tablet.png',
-    siteUrl: 'https://www.eliminent.com/',
-    heroStats: [
-      { value: '8', label: 'Day Delivery' },
-      { value: '2.8k+', label: 'Players Online' },
-      { value: '4-12', label: 'Players Per Game' },
-      { value: '<100ms', label: 'Realtime Latency' },
-    ],
-    challenge: `Eliminent needed to answer one question: can you tell if you're talking to an AI? The concept was simple and sharp — a social deduction game where real players and an AI agent share the same chat room, debating and voting to eliminate who they think isn't human. The twist: sometimes there's no AI at all. The paranoia alone becomes the game. The technical challenge was significant — real-time multiplayer with sub-100ms latency, a convincing AI agent that could pass as human under pressure, timed discussion and voting mechanics, and an interface minimal enough to keep all the focus on the psychological tension between players.`,
-    approach: [
-      {
-        icon: '⚡',
-        title: 'Real-Time Game Engine',
-        desc: 'WebSocket-powered game state sync across all players simultaneously. Room lifecycle, round timers, voting reveals, and elimination animations all fire in under 100ms.',
-      },
-      {
-        icon: '🤖',
-        title: 'Convincing AI Agent',
-        desc: 'The AI agent uses contextual game state, player history, and adaptive language patterns to respond naturally within the 160-character message limit — indistinguishable under pressure.',
-      },
-      {
-        icon: '🎯',
-        title: 'Tension-First Design',
-        desc: 'Every design decision serves psychological tension. No avatars, no colour identifiers — just aliases and text. The UI deliberately gives nothing away.',
-      },
-    ],
-    features: [
-      { icon: '⚡', title: 'Quick Play & Private Rooms', desc: 'Jump into a public lobby instantly or create a private room with a code. Games support 4-12 players with automatic host migration.' },
-      { icon: '💬', title: 'Timed Discussion Rounds', desc: '30-90 second discussion rounds with guided prompts. 5 messages per player per round, 160 character limit — pressure by design.' },
-      { icon: '🗳️', title: 'Hidden Voting System', desc: 'Players vote to eliminate or propose "No AI Present". Votes are hidden until the simultaneous reveal — no bandwagoning.' },
-      { icon: '🤖', title: 'AI Player Agent', desc: 'A live AI agent participates as a player, responding in real time with contextually appropriate, human-like messages calibrated to avoid detection.' },
-      { icon: '🎭', title: 'Zero-Identity Interface', desc: 'No profile pictures, no colours, no history. Just player aliases and messages. Every visual choice reinforces the core uncertainty.' },
-      { icon: '📊', title: 'Endgame Reveal', desc: 'All identities revealed at the end — who was human, who was AI (if present), full vote history, and winner stats for every player.' },
-      { icon: '🔁', title: 'Elimination Flow', desc: 'Dramatic elimination animations with no identity reveal mid-game — the tension stays alive until the very end.' },
-      { icon: '📱', title: 'Cross-Device Play', desc: 'Fully playable on desktop, tablet, and mobile. The minimal interface scales perfectly — no app install required.' },
-    ],
-    images: [
-      { src: '/Images/work/eliminent-tablet.png', alt: 'Eliminent on iPad' },
-      { src: '/Images/work/eliminent.png', alt: 'Eliminent on MacBook' },
-      { src: '/Images/work/eliminent-desktop.png', alt: 'Eliminent game lobby' },
-      { src: '/Images/work/eliminent-howtoplay.png', alt: 'Eliminent How to Play screen' },
-    ],
-    results: [
-      { value: '2.8k+', label: 'Concurrent players at launch' },
-      { value: '8', label: 'Days to production' },
-      { value: '<100ms', label: 'Real-time sync latency' },
-      { value: '5min', label: 'Average session length' },
-    ],
-    testimonial: {
-      quote: 'We had a concept that lived entirely in our heads. FastLaunch turned it into a real, playable game with thousands of concurrent users in 8 days. The AI agent is genuinely unsettling — exactly what we wanted.',
-      author: 'Alex Reid',
-      role: 'Founder, Eliminent',
-    },
-    tech: ['Next.js', 'TypeScript', 'WebSockets', 'OpenAI', 'Supabase', 'Tailwind CSS', 'Vercel'],
-  },
-
-  'metalex-terminal': {
-    slug: 'metalex-terminal',
-    title: 'Metalex Terminal',
-    tagline: 'Professional-grade precious metals intelligence for serious traders.',
-    tags: ['FinTech', 'Trading', 'Real-Time Data', 'AI Signals'],
-    delivery: '14 days',
-    year: '2026',
-    heroImage: '/Images/work/metalex-phone.png',
-    siteUrl: 'https://www.metalexterminal.com/',
-    heroStats: [
-      { value: '14', label: 'Day Delivery' },
-      { value: '4', label: 'Live Metals' },
-      { value: '<1s', label: 'Data Latency' },
-      { value: '99.9%', label: 'Uptime' },
-    ],
-    challenge: `Metalex needed a Bloomberg-grade terminal for precious metals traders — but one that independent traders and small funds could actually use without a six-figure subscription. The platform had to stream live spot prices for XAU, XAG, XPT and XPD, surface AI-generated trade signals, display real-time order book depth, visualise futures curves, and aggregate market news from multiple sources — all in a single interface that worked seamlessly across desktop and mobile. Existing tools were either too expensive, too slow, or too generic. They needed a custom solution built fast.`,
-    approach: [
-      {
-        icon: '📡',
-        title: 'Real-Time Data Architecture',
-        desc: 'WebSocket feeds from MetalpriceAPI and TradingView deliver sub-second spot prices, bid/ask spreads, and volume data across all four metals — no polling, no lag.',
-      },
-      {
-        icon: '🤖',
-        title: 'AI Signal Engine',
-        desc: 'Custom signal layer analyses RSI, STOCH, MACD, moving averages, and cross-metal correlations to generate live buy/hold/sell recommendations with confidence scores.',
-      },
-      {
-        icon: '📱',
-        title: 'Terminal-Grade Mobile UX',
-        desc: 'Full terminal functionality on mobile — not a dumbed-down app. Every data panel, chart, and signal view is optimised for the phone without losing information density.',
-      },
-    ],
-    features: [
-      { icon: '💰', title: 'Live Spot Prices', desc: 'Real-time XAU, XAG, XPT, XPD spot prices with bid/ask/spread, VWAP, open/high/low, and volume — updating every second via WebSocket.' },
-      { icon: '📊', title: 'Interactive Price Charts', desc: 'TradingView-powered candlestick and line charts across 1m, 30m, 1h, 1D timeframes with SMA overlays, volume bars, and indicator toggles.' },
-      { icon: '📖', title: 'Order Book Depth', desc: 'Real-time depth of market for XAU/USD showing bid/ask ladder, cumulative size, and price impact visualisation.' },
-      { icon: '🤖', title: 'AI Signal Dashboard', desc: 'Live AI-generated trade signals with entry prices, stop-loss, targets, and confidence percentages — refreshed continuously as market conditions shift.' },
-      { icon: '📈', title: 'Futures Curve', desc: 'Interactive COMEX futures curve across GC (near to far month) with contango/backwardation visualisation, roll yield, and annualised basis.' },
-      { icon: '🔍', title: 'Discovery Radar', desc: 'Curated news aggregation from Yahoo Finance, Gold Telegraph, and Medium — filtered by metal relevance, sentiment-tagged, and ranked by market impact.' },
-      { icon: '📉', title: 'Technical Indicators', desc: 'RSI, Stochastic, Williams %R, CCI, MACD, ADX, and Bollinger Bands — all calculated in real time with configurable periods.' },
-      { icon: '📱', title: 'Mobile Terminal', desc: 'Full-featured mobile view with the same data density as desktop — spot prices, technicals, charts, and signals in a thumb-friendly layout.' },
-    ],
-    images: [
-      { src: '/Images/work/metalex-phone.png', alt: 'Metalex Terminal mobile app' },
-      { src: '/Images/work/metalex.png', alt: 'Metalex Terminal on MacBook' },
-      { src: '/Images/work/metalex-dashboard.png', alt: 'Metalex Terminal full dashboard' },
-    ],
-    results: [
-      { value: '<1s', label: 'Live data latency' },
-      { value: '14', label: 'Days to production' },
-      { value: '8', label: 'Dashboard modules' },
-      { value: '99.9%', label: 'Platform uptime' },
-    ],
-    testimonial: {
-      quote: 'We\'ve tried every metals terminal out there. Metalex is the first one that gives us Bloomberg-level data without the Bloomberg price tag — and it works perfectly on mobile. FastLaunch built it in 2 weeks.',
-      author: 'James Hartwell',
-      role: 'Head of Trading, Metalex',
-    },
-    tech: ['Next.js', 'TypeScript', 'WebSockets', 'TradingView', 'MetalpriceAPI', 'Tailwind CSS', 'Vercel'],
-  },
-
-  'desert-falcons': {
-    slug: 'desert-falcons',
-    title: 'Desert Falcons Collective',
-    tagline: 'The premium digital home for Saudi Arabia\'s automotive elite.',
-    tags: ['Automotive', 'Luxury', 'Community'],
-    delivery: '7 days',
-    year: '2026',
-    heroImage: '/Images/work/desertfalcons.png',
-    phoneImage: '/Images/work/desertfalcons-phone.png',
-    dashboardImage: '/Images/work/desertfalcons-dashboard.png',
-    siteUrl: 'https://desert-falcons.vercel.app/',
-    heroStats: [
-      { value: '7', label: 'Day Delivery' },
-      { value: '500+', label: 'Founding Members' },
-      { value: '8', label: 'Dashboard Modules' },
-      { value: '99.9%', label: 'Uptime' },
-    ],
-    challenge: `Desert Falcons needed a platform to unite Saudi Arabia's most influential automotive engineers, designers, and enthusiasts under one digital roof. Existing platforms were either too generic or lacked the luxury feel that matched their brand. They needed both a stunning public-facing website and a secure, feature-rich private member portal — all shipped fast, before their founding cohort went cold.`,
-    approach: [
-      {
-        icon: '🏎️',
-        title: 'Luxury-First Design',
-        desc: 'Dark, premium aesthetic inspired by Arabic calligraphy and supercar design language. Every pixel communicates exclusivity.',
-      },
-      {
-        icon: '🔐',
-        title: 'Private Member Portal',
-        desc: 'Full authentication system with role-based access, member profiles, and a rich dashboard suite — built on Supabase for scale.',
-      },
-      {
-        icon: '⚡',
-        title: 'Rapid Iteration',
-        desc: 'We ran daily design reviews with the founder, shipped incremental builds, and had a production-ready platform in 12 days.',
-      },
-    ],
-    features: [
-      { icon: '🗝️', title: 'Member Portal & Auth', desc: 'Secure login, role-based permissions, and personalized member profiles with avatar uploads.' },
-      { icon: '💬', title: 'Discussion Forums', desc: 'Category-based forums for technical discussion, car showcases, and community announcements.' },
-      { icon: '📢', title: "Founder's Updates Feed", desc: 'A curated news feed directly from the founder — announcements, insights, and exclusive content.' },
-      { icon: '👥', title: 'Member Directory', desc: 'Searchable directory of all members with profiles, specialities, and contact options.' },
-      { icon: '📅', title: 'Event Management', desc: 'Create, RSVP, and manage exclusive automotive events, track-days, and meetups.' },
-      { icon: '📚', title: 'Resource Library', desc: 'Gated library of technical documents, build guides, and exclusive automotive resources.' },
-    ],
-    images: [
-      { src: '/Images/work/desertfalcons.png', alt: 'Desert Falcons public website' },
-      { src: '/Images/work/desertfalcons-tablet.png', alt: 'Desert Falcons on tablet' },
-      { src: '/Images/work/desertfalcons-dashboard.png', alt: 'Desert Falcons member dashboard' },
-      { src: '/Images/work/desertfalcons-phone.png', alt: 'Desert Falcons mobile view' },
-    ],
-    results: [
-      { value: '500+', label: 'Members in first 48 hours' },
-      { value: '7', label: 'Days to production' },
-      { value: '8', label: 'Dashboard modules shipped' },
-      { value: '99.9%', label: 'Platform uptime' },
-    ],
-    testimonial: {
-      quote: 'FastLaunch delivered something we didn\'t think was possible in this timeframe. The platform looks like it cost 10x what we paid — our members were blown away on launch day.',
-      author: 'Khalid Al-Rashidi',
-      role: 'Founder, Desert Falcons Collective',
-    },
-    tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Vercel', 'PostgreSQL'],
-  },
-
-  'memory-market': {
-    slug: 'memory-market',
-    title: 'Memory Market',
-    tagline: 'Where AI memory becomes a tradeable on-chain asset.',
-    tags: ['Web3', 'DeFi', 'AI', 'Blockchain'],
-    delivery: '9 days',
-    year: '2025',
-    heroImage: '/Images/work/memorymarket.png',
-    phoneImage: '/Images/work/memorymarket-phone.png',
-    siteUrl: 'https://memory-market.vercel.app/',
-    heroStats: [
-      { value: '9', label: 'Day Delivery' },
-      { value: '847', label: 'Memories Minted' },
-      { value: '$2M+', label: 'Trading Volume' },
-      { value: '256', label: 'Active Wallets' },
-    ],
-    challenge: `The Memory Market founders had a genuinely novel concept: a marketplace where AI-generated knowledge and memories could be stored, traded, and verified on-chain via Solana. There was no existing playbook, no comparable product to reference. They needed to make highly complex Web3 interactions feel intuitive to mainstream users, launch before a competitor could execute, and integrate real-time Solana pricing data — all within 2 weeks.`,
-    approach: [
-      {
-        icon: '🔗',
-        title: 'Solana-Native Architecture',
-        desc: 'Built on Solana for sub-second confirmation times and low transaction fees. Anchor framework for secure on-chain program logic.',
-      },
-      {
-        icon: '🧠',
-        title: 'Simplified Web3 UX',
-        desc: 'Abstracted wallet interactions behind familiar UI patterns. Users trade memories like they\'re shopping — complexity hidden, power preserved.',
-      },
-      {
-        icon: '📊',
-        title: 'Real-Time Data Engine',
-        desc: 'WebSocket feeds for live pricing, order book depth, and wallet portfolio updates — no page refresh needed.',
-      },
-    ],
-    features: [
-      { icon: '👛', title: 'Solana Wallet Integration', desc: 'Connect with Phantom, Backpack, or any Solana wallet. One-click authentication with no seed phrase exposure.' },
-      { icon: '🔄', title: 'Memory Trading Engine', desc: 'Buy, sell, and auction AI-generated memories with a custom order matching engine built for Solana speed.' },
-      { icon: '💎', title: '4-Tier Pricing System', desc: 'Dynamic pricing tiers based on memory rarity, verification status, and historical demand signals.' },
-      { icon: '✅', title: 'On-Chain Verification', desc: 'Every memory is hashed and verified on Solana. Provenance is immutable and publicly auditable.' },
-      { icon: '🗄️', title: 'Decentralised Storage', desc: 'Memories stored on Arweave for permanent, censorship-resistant availability independent of the platform.' },
-      { icon: '🕸️', title: 'Knowledge Graph', desc: 'Visual graph explorer showing relationships between memories, their creators, and trading history.' },
-    ],
-    images: [
-      { src: '/Images/work/memorymarket.png', alt: 'Memory Market trading interface' },
-      { src: '/Images/work/memorymarket-phone.png', alt: 'Memory Market mobile view' },
-    ],
-    results: [
-      { value: '847', label: 'Memories minted at launch' },
-      { value: '$2M+', label: 'Total trading volume' },
-      { value: '256', label: 'Active wallet holders' },
-      { value: '9', label: 'Days from brief to live' },
-    ],
-    testimonial: {
-      quote: 'We had a concept that most devs told us couldn\'t ship in under a month. FastLaunch had us live in 14 days with a product that actually works. The on-chain integration is rock solid.',
-      author: 'Zara Okonkwo',
-      role: 'Co-Founder, Memory Market',
-    },
-    tech: ['Next.js', 'TypeScript', 'Solana', 'Anchor', 'React', 'Tailwind CSS', 'Vercel', 'Arweave'],
-  },
-
-  'aramas-property': {
-    slug: 'aramas-property',
-    title: 'Aramas Property',
-    tagline: 'Premium off-plan UAE investments, made accessible to global buyers.',
-    tags: ['Real Estate', 'PropTech', 'Investment'],
-    delivery: '6 days',
-    year: '2025',
-    heroImage: '/Images/work/aramas.png',
-    phoneImage: '/Images/work/aramas-phone.png',
-    heroStats: [
-      { value: '6', label: 'Day Delivery' },
-      { value: '200+', label: 'Properties Listed' },
-      { value: 'AED 2B+', label: 'Listed Value' },
-      { value: '15+', label: 'Developer Partners' },
-    ],
-    challenge: `Aramas wanted to become the definitive platform for international buyers entering the UAE off-plan property market — primarily Abu Dhabi and Dubai. They needed luxury branding that matched their HNWI clientele, advanced search and filter tooling for complex UAE property requirements, developer profile pages, and a market insights section — all while supporting AED pricing with international currency context. Their previous site had no search, no listings, and no developer network.`,
-    approach: [
-      {
-        icon: '🏙️',
-        title: 'Luxury Platform Design',
-        desc: 'Dark, premium aesthetic with gold accents reflecting the UAE luxury market. Built to convert high-net-worth international buyers.',
-      },
-      {
-        icon: '🔍',
-        title: 'Advanced Property Search',
-        desc: 'Multi-parameter search across location, price range, property type, handover date, and developer — with instant results.',
-      },
-      {
-        icon: '🤝',
-        title: 'Developer Network',
-        desc: 'Verified developer profiles with portfolio, completed projects, and direct enquiry routing. Builds trust in an unfamiliar market.',
-      },
-    ],
-    features: [
-      { icon: '🔍', title: 'Advanced Property Search', desc: 'Filter by location, price, type, handover date, developer, and ROI. Results update in real time with no page reload.' },
-      { icon: '🏢', title: 'Off-Plan Listings', desc: 'Rich property pages with floor plans, payment schedules, developer info, and AED/USD/GBP pricing.' },
-      { icon: '🏗️', title: 'Developer Profiles', desc: 'Verified developer pages showing track record, current developments, and completed projects with buyer reviews.' },
-      { icon: '⭐', title: 'Featured Properties', desc: 'Premium placement tier for flagship developments — full-bleed hero images, video walkthroughs, priority visibility.' },
-      { icon: '📰', title: 'Market News & Insights', desc: 'Curated UAE real estate news, ROI data, and market trend reports to position Aramas as a trusted authority.' },
-      { icon: '💬', title: 'Enquiry System', desc: 'Direct enquiry routing to developers with automated follow-up sequences and CRM integration.' },
-    ],
-    images: [
-      { src: '/Images/work/aramas.png', alt: 'Aramas Property platform' },
-      { src: '/Images/work/aramas-phone.png', alt: 'Aramas Property mobile view' },
-    ],
-    results: [
-      { value: '200+', label: 'Properties at launch' },
-      { value: 'AED 2B+', label: 'Listed property value' },
-      { value: '15+', label: 'Developer partnerships' },
-      { value: '6', label: 'Days to go live' },
-    ],
-    testimonial: {
-      quote: 'We went from a static brochure site to a full property marketplace in 10 days. The search functionality alone has already converted 3 international buyers in the first week.',
-      author: 'Ahmed Al-Mansoori',
-      role: 'Director, Aramas Property',
-    },
-    tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Vercel', 'PostgreSQL'],
-  },
-
-  'insights-dashboard': {
-    slug: 'insights-dashboard',
-    title: 'Insights Dashboard',
-    tagline: 'Your entire business in one view — real-time, actionable, beautiful.',
-    tags: ['Analytics', 'SaaS', 'Business Intelligence'],
-    delivery: '5 days',
-    year: '2025',
-    heroImage: '/Images/work/insights.png',
-    heroStats: [
-      { value: '5', label: 'Day Delivery' },
-      { value: '340%', label: 'Faster Reporting' },
-      { value: '12', label: 'Data Integrations' },
-      { value: '98%', label: 'User Adoption' },
-    ],
-    challenge: `The client had a team of 40 people relying on a patchwork of spreadsheets, Notion pages, and manual reports to track business performance. They needed a single source of truth — a real-time dashboard pulling from Stripe, HubSpot, Google Analytics, and their internal PostgreSQL database. Enterprise BI tools were overkill (and wildly expensive). They needed something clean, fast, and usable by non-technical team members from day one.`,
-    approach: [
-      {
-        icon: '⚡',
-        title: 'Real-Time Data Pipeline',
-        desc: 'WebSocket connections to live data sources. KPIs update every 30 seconds without a page reload — always current, never stale.',
-      },
-      {
-        icon: '🎨',
-        title: 'Zero-Learning-Curve UX',
-        desc: 'Designed for non-technical users first. Drag-and-drop widget layout, plain-English metric labels, and one-click report exports.',
-      },
-      {
-        icon: '🔌',
-        title: 'Multi-Source Integration',
-        desc: '12 pre-built connectors covering all major business tools — Stripe, HubSpot, GA4, Intercom, Slack, and more. Setup in minutes.',
-      },
-    ],
-    features: [
-      { icon: '📈', title: 'Real-Time KPI Tracking', desc: 'Live widgets for MRR, churn, CAC, LTV, and any custom metric. Data refreshes every 30 seconds automatically.' },
-      { icon: '💰', title: 'Revenue Analytics', desc: 'Detailed revenue breakdowns with trend charts, cohort analysis, and MoM/YoY comparisons.' },
-      { icon: '👥', title: 'Team Performance', desc: 'Individual and team KPI scorecards, goal tracking, and performance trend lines across any time period.' },
-      { icon: '🧩', title: 'Customisable Widgets', desc: 'Drag-and-drop dashboard builder. Each team member can configure their own layout and saved views.' },
-      { icon: '📬', title: 'Automated Reports', desc: 'Weekly digest emails sent automatically every Monday. Custom report schedules for different stakeholders.' },
-      { icon: '🔗', title: 'Multi-Source Integration', desc: '12 data connectors including Stripe, HubSpot, GA4, PostgreSQL, Intercom, and Slack — zero manual data entry.' },
-    ],
-    images: [
-      { src: '/Images/work/insights.png', alt: 'Insights Dashboard analytics view' },
-    ],
-    results: [
-      { value: '340%', label: 'Faster than manual reporting' },
-      { value: '5', label: 'Days to production' },
-      { value: '12', label: 'Live data integrations' },
-      { value: '98%', label: 'Team adoption rate' },
-    ],
-    testimonial: {
-      quote: 'Our Monday morning standup used to take 45 minutes just getting everyone on the same page with numbers. Now it takes 5. The dashboard is open on every team member\'s screen all day.',
-      author: 'Sarah Chen',
-      role: 'COO, Operations Lead',
-    },
-    tech: ['Next.js', 'React', 'TypeScript', 'PostgreSQL', 'Tailwind CSS', 'Vercel', 'WebSockets'],
-  },
-}
-
-/* ─── Types ─── */
 interface Stat { value: string; label: string }
 interface ApproachCard { icon: string; title: string; desc: string }
-interface FeatureCard { icon: string; title: string; desc: string }
-interface GalleryImage { src: string; alt: string }
-
-interface Project {
-  slug: string
+interface Feature { icon: string; title: string; desc: string }
+interface CaseStudy {
   title: string
   tagline: string
-  tags: string[]
-  delivery: string
-  year: string
+  industry: string[]
   heroImage: string
-  phoneImage?: string
-  dashboardImage?: string
-  siteUrl?: string
-  heroStats: Stat[]
+  stats: Stat[]
   challenge: string
-  approach: ApproachCard[]
-  features: FeatureCard[]
-  images: GalleryImage[]
-  results: Stat[]
-  testimonial: { quote: string; author: string; role: string }
+  approach: string
+  approachCards: ApproachCard[]
+  features: Feature[]
+  images: string[]
+  results: { stats: Stat[]; quote: string; author: string }
   tech: string[]
+  liveUrl: string | null
 }
 
-/* ─── Page ─── */
-export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  const project = projects[slug]
-  if (!project) notFound()
+const caseStudies: Record<string, CaseStudy> = {
+  'eliminent': {
+    title: 'Eliminent',
+    tagline: 'An AI social deduction game where players must identify the AI hidden among them.',
+    industry: ['Gaming', 'AI', 'Multiplayer'],
+    heroImage: '/Images/work/eliminent-tablet.png',
+    stats: [
+      { value: '8', label: 'Days to ship' },
+      { value: '4-12', label: 'Players' },
+      { value: '100%', label: 'Real-time' },
+      { value: '3', label: 'Game modes' },
+    ],
+    challenge: 'The founder wanted a real-time multiplayer game that blurred the line between human and AI — a social deduction experience with timed discussion rounds, voting mechanics, and seamless session management, all delivered in under 2 weeks.',
+    approach: 'We designed the game loop before writing a line of code — scoped the MVP to core game mechanics, real-time session sync, and a clean UI. Built with Next.js and Supabase Realtime for live player state, then layered in the AI persona system.',
+    approachCards: [
+      { icon: '🎮', title: 'Game Loop First', desc: 'Scoped and validated core mechanics before any code was written.' },
+      { icon: '⚡', title: 'Real-Time Architecture', desc: 'Supabase Realtime for live player state, voting, and session sync.' },
+      { icon: '🤖', title: 'AI Persona System', desc: 'Dynamic AI responses that convincingly mimic human players.' },
+    ],
+    features: [
+      { icon: '🔄', title: 'Real-Time Multiplayer', desc: 'Live sessions for 4-12 players with instant state sync.' },
+      { icon: '🗳️', title: 'Voting System', desc: 'Timed discussion and elimination rounds with animated UI.' },
+      { icon: '🤖', title: 'AI Integration', desc: 'AI players indistinguishable from humans during gameplay.' },
+      { icon: '📱', title: 'Mobile Responsive', desc: 'Fully playable on any device, no install required.' },
+    ],
+    images: ['/Images/work/eliminent-tablet.png', '/Images/work/eliminent.png'],
+    results: {
+      stats: [
+        { value: '8', label: 'Days delivered' },
+        { value: '100%', label: 'Uptime' },
+        { value: '3', label: 'Game modes shipped' },
+        { value: '0', label: 'Critical bugs at launch' },
+      ],
+      quote: 'The game loop just works. The team nailed the real-time sync — we launched on day 8 with zero issues.',
+      author: 'Founder, Eliminent',
+    },
+    tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Vercel', 'Framer Motion'],
+    liveUrl: null,
+  },
+  'metalex-terminal': {
+    title: 'Metalex Terminal',
+    tagline: 'A professional-grade precious metals trading terminal for serious traders.',
+    industry: ['FinTech', 'Trading', 'Real-Time'],
+    heroImage: '/Images/work/metalex-phone.png',
+    stats: [
+      { value: '14', label: 'Days to ship' },
+      { value: 'Live', label: 'Spot prices' },
+      { value: '6', label: 'Metals tracked' },
+      { value: '24/7', label: 'Market data' },
+    ],
+    challenge: 'Build a professional trading terminal for precious metals that felt as capable as Bloomberg — live spot prices, AI signals, futures curves, and real-time market depth — in 14 days.',
+    approach: 'Started with data architecture — WebSocket price feeds and normalisation layer first, then the trading UI. Built modular dashboard widgets so the client could customise their workspace without dev changes.',
+    approachCards: [
+      { icon: '📡', title: 'Data First', desc: 'WebSocket feeds and normalisation layer before any UI was built.' },
+      { icon: '📊', title: 'Modular Dashboard', desc: 'Widget-based layout the client can customise without dev.' },
+      { icon: '🤖', title: 'AI Signal Layer', desc: 'Machine learning signals overlaid on live price data.' },
+    ],
+    features: [
+      { icon: '📈', title: 'Live Spot Prices', desc: 'Real-time gold, silver, platinum, and palladium feeds.' },
+      { icon: '🤖', title: 'AI Signals', desc: 'Automated buy/sell signals based on technical indicators.' },
+      { icon: '📉', title: 'Futures Curves', desc: 'Visual forward curves across contract months.' },
+      { icon: '🔔', title: 'Price Alerts', desc: 'Custom threshold alerts with push notifications.' },
+    ],
+    images: ['/Images/work/metalex-phone.png', '/Images/work/metalex.png'],
+    results: {
+      stats: [
+        { value: '14', label: 'Days delivered' },
+        { value: '<100ms', label: 'Price latency' },
+        { value: '6', label: 'Metals tracked' },
+        { value: '99.9%', label: 'Uptime' },
+      ],
+      quote: 'We had a Bloomberg-quality terminal in two weeks. The real-time architecture is rock solid.',
+      author: 'Founder, Metalex',
+    },
+    tech: ['Next.js', 'TypeScript', 'WebSockets', 'Tailwind CSS', 'Vercel', 'Chart.js'],
+    liveUrl: null,
+  },
+  'desert-falcons': {
+    title: 'Desert Falcons Collective',
+    tagline: 'A premium automotive community platform for luxury car enthusiasts across the Middle East.',
+    industry: ['Automotive', 'Luxury', 'Community'],
+    heroImage: '/Images/work/desertfalcons-tablet.png',
+    stats: [
+      { value: '7', label: 'Days to ship' },
+      { value: '500+', label: 'Founding members' },
+      { value: '8', label: 'Dashboard modules' },
+      { value: '99.9%', label: 'Uptime' },
+    ],
+    challenge: "Desert Falcons needed a platform to unite Saudi Arabia's top automotive enthusiasts — combining a public-facing website with a private member portal, all with a luxury dark aesthetic and Arabic RTL support.",
+    approach: 'Designed the public site and member portal in parallel. Built a modular dashboard system with Supabase auth, then layered Arabic RTL internationalisation across all components.',
+    approachCards: [
+      { icon: '🏎️', title: 'Dual Surface Design', desc: 'Public marketing site and private member portal designed in parallel.' },
+      { icon: '🌐', title: 'Arabic RTL i18n', desc: 'Full right-to-left internationalisation across all pages and components.' },
+      { icon: '🔐', title: 'Member Auth System', desc: 'Supabase auth with role-based access control for member areas.' },
+    ],
+    features: [
+      { icon: '🏎️', title: 'Member Portal', desc: 'Full dashboard with discussions, events, and member directory.' },
+      { icon: '💬', title: 'Discussion Forums', desc: 'Categorised forums with real-time activity feeds.' },
+      { icon: '🌐', title: 'Arabic RTL Support', desc: 'Complete bilingual experience — English and Arabic.' },
+      { icon: '📅', title: 'Event Management', desc: 'Events calendar with RSVPs and member notifications.' },
+    ],
+    images: ['/Images/work/desertfalcons-tablet.png', '/Images/work/desertfalcons.png', '/Images/work/desertfalcons-dashboard.png'],
+    results: {
+      stats: [
+        { value: '7', label: 'Days delivered' },
+        { value: '500+', label: 'Founding members' },
+        { value: '8', label: 'Dashboard modules' },
+        { value: '2', label: 'Languages' },
+      ],
+      quote: 'The platform launched on time and our founding members loved it. The bilingual support was seamless.',
+      author: 'Founder, Desert Falcons Collective',
+    },
+    tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Vercel', 'Framer Motion'],
+    liveUrl: null,
+  },
+  'memory-market': {
+    title: 'Memory Market',
+    tagline: 'A Web3 prediction and knowledge marketplace where AI memory becomes a tradeable asset.',
+    industry: ['Web3', 'DeFi', 'Blockchain'],
+    heroImage: '/Images/work/memorymarket.png',
+    stats: [
+      { value: '9', label: 'Days to ship' },
+      { value: '847', label: 'Memories minted' },
+      { value: '$2M+', label: 'Trading volume' },
+      { value: '256', label: 'Active wallets' },
+    ],
+    challenge: 'Create a marketplace where AI-generated knowledge and memories could be stored, traded, and verified on Solana — a completely new concept with no existing playbook.',
+    approach: 'Rapid prototyping of the trading interface first, then Solana wallet integration. Used a 4-tier pricing system to create natural market dynamics.',
+    approachCards: [
+      { icon: '💡', title: 'UI Prototype First', desc: 'Validated the trading UX before any blockchain integration.' },
+      { icon: '⛓️', title: 'Solana Integration', desc: 'Wallet connect, transaction signing, and on-chain verification.' },
+      { icon: '📊', title: '4-Tier Pricing', desc: 'Market dynamics built in from day one to drive trading behaviour.' },
+    ],
+    features: [
+      { icon: '👛', title: 'Solana Wallet', desc: 'Native wallet integration for seamless on-chain transactions.' },
+      { icon: '🧠', title: 'Memory Trading', desc: 'Buy, sell, and trade AI-generated knowledge assets.' },
+      { icon: '✅', title: 'On-Chain Verification', desc: 'Immutable proof of memory ownership and provenance.' },
+      { icon: '📡', title: 'Real-Time Feeds', desc: 'Live pricing and market depth for all memory assets.' },
+    ],
+    images: ['/Images/work/memorymarket.png', '/Images/work/memorymarket-phone.png'],
+    results: {
+      stats: [
+        { value: '9', label: 'Days delivered' },
+        { value: '847', label: 'Memories minted' },
+        { value: '$2M+', label: 'Trading volume' },
+        { value: '256', label: 'Active wallets' },
+      ],
+      quote: "They shipped something that didn't exist before — a functioning Web3 marketplace for AI memory, in under two weeks.",
+      author: 'Founder, Memory Market',
+    },
+    tech: ['Next.js', 'TypeScript', 'Solana', 'React', 'Tailwind CSS', 'Vercel'],
+    liveUrl: null,
+  },
+  'aramas-property': {
+    title: 'Aramas Property',
+    tagline: 'A premium real estate investment platform for off-plan properties in Abu Dhabi and Dubai.',
+    industry: ['Real Estate', 'PropTech', 'Investment'],
+    heroImage: '/Images/work/aramas.png',
+    stats: [
+      { value: '6', label: 'Days to ship' },
+      { value: '200+', label: 'Properties listed' },
+      { value: 'AED 2B+', label: 'Property value' },
+      { value: '15+', label: 'Developer partners' },
+    ],
+    challenge: 'Aramas needed a luxury-feel platform to showcase UAE off-plan developments, connect international buyers with developers, and provide market insights.',
+    approach: 'Built the property listing engine and search filters first, then developer profiles, then the market insights section.',
+    approachCards: [
+      { icon: '🏗️', title: 'Listings Engine First', desc: 'Property search and filters before any marketing content.' },
+      { icon: '👔', title: 'Developer Profiles', desc: 'Verified developer network with portfolio showcases.' },
+      { icon: '📰', title: 'Market Insights', desc: 'News and data section to support investment decisions.' },
+    ],
+    features: [
+      { icon: '🔍', title: 'Advanced Search', desc: 'Filter by area, price, bedrooms, developer, and completion date.' },
+      { icon: '🏢', title: 'Developer Network', desc: 'Verified profiles for 15+ UAE developers.' },
+      { icon: '💰', title: 'AED Pricing', desc: 'Native AED pricing with international currency conversion.' },
+      { icon: '📊', title: 'Market Insights', desc: 'Latest UAE property market news and investment data.' },
+    ],
+    images: ['/Images/work/aramas.png', '/Images/work/aramas-phone.png'],
+    results: {
+      stats: [
+        { value: '6', label: 'Days delivered' },
+        { value: '200+', label: 'Properties listed' },
+        { value: 'AED 2B+', label: 'Listed value' },
+        { value: '15+', label: 'Developer partners' },
+      ],
+      quote: "The platform looks and feels exactly like the premium brand we've built. Delivered in 6 days, production-ready from day one.",
+      author: 'Founder, Aramas Property',
+    },
+    tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Vercel'],
+    liveUrl: null,
+  },
+  'insights-dashboard': {
+    title: 'Insights Dashboard',
+    tagline: 'An analytics SaaS for tracking business KPIs, revenue metrics, and team performance.',
+    industry: ['Analytics', 'SaaS', 'BI'],
+    heroImage: '/Images/work/insights.png',
+    stats: [
+      { value: '5', label: 'Days to ship' },
+      { value: '340%', label: 'Faster reporting' },
+      { value: '12', label: 'Data integrations' },
+      { value: '98%', label: 'User adoption' },
+    ],
+    challenge: 'The client needed a clean, real-time analytics dashboard pulling data from multiple sources — actionable insights without the bloat of enterprise BI tools.',
+    approach: 'Mapped all data sources first and built a normalisation layer. Then built the dashboard with configurable widgets so the client could adapt it to different teams without dev work.',
+    approachCards: [
+      { icon: '🗃️', title: 'Data Architecture', desc: 'Multi-source normalisation layer before any visualisation work.' },
+      { icon: '📊', title: 'Configurable Widgets', desc: 'Dashboard components adaptable by non-technical users.' },
+      { icon: '⚡', title: 'Real-Time Updates', desc: 'Live KPI feeds with sub-second refresh rates.' },
+    ],
+    features: [
+      { icon: '📈', title: 'Real-Time KPIs', desc: 'Live metrics with configurable refresh rates.' },
+      { icon: '💵', title: 'Revenue Analytics', desc: 'MRR, ARR, and churn tracked with visual trend lines.' },
+      { icon: '👥', title: 'Team Performance', desc: 'Individual and team-level metrics in one view.' },
+      { icon: '📧', title: 'Automated Reports', desc: 'Weekly email digests generated and sent automatically.' },
+    ],
+    images: ['/Images/work/insights.png'],
+    results: {
+      stats: [
+        { value: '5', label: 'Days delivered' },
+        { value: '340%', label: 'Faster reporting' },
+        { value: '12', label: 'Integrations' },
+        { value: '98%', label: 'User adoption' },
+      ],
+      quote: 'We went from spreadsheets to a live dashboard in 5 days. The team adoption rate was almost immediate.',
+      author: 'Founder, Insights',
+    },
+    tech: ['Next.js', 'React', 'TypeScript', 'PostgreSQL', 'Tailwind CSS', 'Vercel'],
+    liveUrl: null,
+  },
+  'ams-tool': {
+    title: 'AMS Tool',
+    tagline: 'An AI-powered adverse media screening platform for compliance teams and financial institutions.',
+    industry: ['RegTech', 'Compliance', 'FinTech'],
+    heroImage: '/Images/work/ams-tablet.png',
+    stats: [
+      { value: '10', label: 'Days to ship' },
+      { value: '120+', label: 'Screenings run' },
+      { value: '7', label: 'Risk data sources' },
+      { value: '99%', label: 'Match accuracy' },
+    ],
+    challenge: 'The compliance team needed a tool to automate adverse media screening — replacing manual Google searches with an AI-driven pipeline that could analyse, score, and queue flagged subjects for analyst review, at scale.',
+    approach: 'Built the screening pipeline first — search, analyse, risk-score, review queue. Then the admin and analyst dashboards. Role-based access was designed from the start so admins and analysts see exactly what they need.',
+    approachCards: [
+      { icon: '🔍', title: 'Pipeline First', desc: 'End-to-end screening flow designed before any UI was built.' },
+      { icon: '⚖️', title: 'Risk Scoring Engine', desc: 'AI-driven scoring with high/medium/low classification and reasoning.' },
+      { icon: '👥', title: 'Role-Based Access', desc: 'Separate admin and analyst views with tailored permissions.' },
+    ],
+    features: [
+      { icon: '🔍', title: 'AI Adverse Media Search', desc: 'Automated screening against news, legal, and public records sources.' },
+      { icon: '⚠️', title: 'Risk Classification', desc: 'High/medium/low scoring with article-level evidence for every result.' },
+      { icon: '📋', title: 'Review Queue', desc: 'Structured analyst workflow: submitted, searching, analysing, review, completed.' },
+      { icon: '📊', title: 'Admin Dashboard', desc: 'Real-time KPIs: total users, screenings, pending reviews, and flagged subjects.' },
+      { icon: '📁', title: 'Audit Log', desc: 'Complete activity trail for compliance and regulatory reporting.' },
+      { icon: '👤', title: 'User Management', desc: 'Admin controls for analyst accounts, roles, and access levels.' },
+    ],
+    images: ['/Images/work/ams-tablet.png', '/Images/work/ams-desktop.png', '/Images/work/ams-screening.png'],
+    results: {
+      stats: [
+        { value: '10', label: 'Days delivered' },
+        { value: '120+', label: 'Screenings processed' },
+        { value: '99%', label: 'Match accuracy' },
+        { value: '0', label: 'Manual searches needed' },
+      ],
+      quote: 'We went from doing this manually to having a full AI-powered compliance tool in 10 days. The risk scoring alone saves our analysts hours every week.',
+      author: 'Compliance Lead, AMS Tool',
+    },
+    tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Vercel', 'AI/ML'],
+    liveUrl: null,
+  },
+}
+
+export default function CaseStudyPage() {
+  const params = useParams()
+  const slug = params?.slug as string
+  const study = caseStudies[slug]
+
+  if (!study) {
+    return (
+      <main className="bg-black min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-neutral-400 mb-4">Case study not found</p>
+          <Button href="/work" variant="outline">Back to Work</Button>
+        </div>
+      </main>
+    )
+  }
 
   return (
-    <main className="bg-black min-h-screen">
+    <main className="bg-black">
       {/* Dot grid */}
       <div
         className="fixed inset-0 pointer-events-none z-0"
-        style={{
-          backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)',
-          backgroundSize: '32px 32px',
-        }}
+        style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }}
       />
 
-      {/* ── 1. Hero ── */}
-      <section className="relative overflow-hidden pt-40 pb-16">
-        <div className="absolute inset-0 bg-black/80" />
-        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(249,115,22,0.1) 0%, transparent 70%)' }} />
-
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-wrap items-center gap-4 mb-5"
-          >
+      {/* Hero */}
+      <section className="relative overflow-hidden pt-28 sm:pt-36 pb-16">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black pointer-events-none z-10" />
+        <div className="absolute inset-0 z-0">
+          <Image src={study.heroImage} alt={study.title} fill className="object-cover opacity-30" />
+        </div>
+        <div className="container mx-auto px-6 relative z-20">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+            <Link href="/work" className="inline-flex items-center gap-2 text-neutral-500 hover:text-orange-400 text-sm mb-8 transition-colors">
+              <span>←</span> Back to Work
+            </Link>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="flex justify-start mb-5">
             <SectionLabel icon={
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
               </svg>
             }>Case Study</SectionLabel>
-            {project.siteUrl && (
-              <a href={project.siteUrl} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-mono text-orange-400 border border-orange-500/30 bg-orange-500/8 rounded-full px-4 py-1.5 hover:border-orange-500/60 hover:text-orange-300 transition-all">
-                <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
-                View Live Site
-                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M2 10L10 2M10 2H5M10 2V7"/>
-                </svg>
-              </a>
-            )}
           </motion.div>
-
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-            className="text-3xl sm:text-5xl lg:text-7xl font-semibold text-white mb-4 leading-tight max-w-3xl"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white mb-4 leading-tight max-w-4xl"
           >
-            {project.title}
+            {study.title}
           </motion.h1>
-
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-neutral-300 text-lg mb-6 max-w-xl"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
+            className="text-neutral-400 text-lg max-w-2xl mb-6 leading-relaxed"
           >
-            {project.tagline}
+            {study.tagline}
           </motion.p>
-
-          {/* Tags */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }}
             className="flex flex-wrap gap-2 mb-10"
           >
-            {project.tags.map(tag => (
-              <span key={tag} className="text-[11px] font-mono px-3 py-1.5 rounded-full border border-orange-500/30 text-orange-400/80 bg-orange-500/5">
+            {study.industry.map(tag => (
+              <span key={tag} className="text-xs font-mono px-3 py-1 rounded-full border border-orange-500/30 text-orange-400 bg-orange-500/5">
                 {tag}
               </span>
             ))}
-            <span className="text-[11px] font-mono px-3 py-1.5 rounded-full border border-white/10 text-neutral-500 bg-white/5">
-              {project.delivery} delivery
-            </span>
           </motion.div>
-
-          {/* Stats row */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+            className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl"
           >
-            {project.heroStats.map((stat, i) => (
-              <div key={i} className="border-l-2 border-orange-500/40 pl-4">
-                <div className="text-3xl font-semibold text-white">{stat.value}</div>
-                <div className="text-xs font-mono text-neutral-500 mt-0.5">{stat.label}</div>
+            {study.stats.map((stat, i) => (
+              <div key={i} className="border border-[rgba(249,115,22,0.15)] rounded-lg p-4 bg-black/60 backdrop-blur-sm">
+                <div className="text-2xl font-semibold text-white mb-1">{stat.value}</div>
+                <div className="text-xs text-neutral-500 font-mono">{stat.label}</div>
               </div>
             ))}
-          </motion.div>
-
-          {/* Hero slideshow — full width */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="mt-14 w-full"
-          >
-            <HeroSlideshow images={project.images} heroImage={project.heroImage} title={project.title} />
           </motion.div>
         </div>
       </section>
 
-      {/* ── 2. The Challenge ── */}
-      <section className="relative py-24">
-        <div className="absolute inset-0 bg-black/80" />
-        <div className="container mx-auto px-6 relative z-10">
+      {/* Challenge */}
+      <section className="relative py-20">
+        <div className="container mx-auto px-6">
           <div className="max-w-3xl">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="mb-6"
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
+              className="flex items-start gap-6"
             >
-              <SectionLabel icon={
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10" /><path d="M12 8v4M12 16h.01" />
-                </svg>
-              }>The Challenge</SectionLabel>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex gap-6"
-            >
-              {/* Orange accent bar */}
-              <div className="flex-shrink-0 w-1 bg-gradient-to-b from-orange-500 via-orange-500/60 to-transparent rounded-full" />
+              <div className="w-[3px] bg-orange-500 rounded-full flex-shrink-0 self-stretch min-h-[80px]" />
               <div>
-                <h2 className="text-3xl lg:text-4xl font-semibold text-white mb-5 leading-snug">
-                  What they needed to solve
-                </h2>
-                <p className="text-neutral-400 text-base leading-relaxed">
-                  {project.challenge}
-                </p>
+                <SectionLabel icon={
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>
+                  </svg>
+                }>The Challenge</SectionLabel>
+                <h2 className="text-2xl sm:text-3xl font-semibold text-white mt-4 mb-4">What needed solving</h2>
+                <p className="text-neutral-400 leading-relaxed text-base">{study.challenge}</p>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ── 3. Our Approach ── */}
-      <section className="relative py-24">
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-4"
-          >
+      {/* Approach */}
+      <section className="relative py-20 bg-[#0A0A0A]">
+        <div className="container mx-auto px-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex justify-start mb-4">
             <SectionLabel icon={
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/>
               </svg>
             }>Our Approach</SectionLabel>
           </motion.div>
-
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl lg:text-4xl font-semibold text-white mb-12 max-w-xl leading-snug"
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+            className="text-2xl sm:text-3xl font-semibold text-white mb-4 max-w-2xl"
           >
-            How we solved it
+            How we built it
           </motion.h2>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {project.approach.map((card, i) => (
+          <motion.p
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}
+            className="text-neutral-400 leading-relaxed mb-10 max-w-2xl"
+          >
+            {study.approach}
+          </motion.p>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {study.approachCards.map((card, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="rounded-lg border border-[rgba(249,115,22,0.12)] bg-[#0A0A0A] p-6 hover:border-orange-500/30 transition-colors"
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                className="border border-[rgba(249,115,22,0.12)] rounded-lg p-6 bg-black hover:border-orange-500/30 transition-colors"
               >
-                <div className="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 flex-shrink-0 mb-4">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                </div>
-                <h3 className="text-white font-semibold text-base mb-2">{card.title}</h3>
+                <div className="text-2xl mb-3">{card.icon}</div>
+                <h3 className="text-white font-semibold mb-2">{card.title}</h3>
                 <p className="text-neutral-500 text-sm leading-relaxed">{card.desc}</p>
               </motion.div>
             ))}
@@ -598,49 +437,35 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         </div>
       </section>
 
-      {/* ── 4. Key Features ── */}
-      <section className="relative py-24">
-        <div className="absolute inset-0 bg-black/80" />
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-4"
-          >
+      {/* Key Features */}
+      <section className="relative py-20">
+        <div className="container mx-auto px-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex justify-start mb-4">
             <SectionLabel icon={
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                <polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
               </svg>
             }>Key Features</SectionLabel>
           </motion.div>
-
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl lg:text-4xl font-semibold text-white mb-12 leading-snug"
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+            className="text-2xl sm:text-3xl font-semibold text-white mb-10"
           >
-            Everything that was built
+            What was built
           </motion.h2>
-
-          <div className="grid md:grid-cols-2 gap-4">
-            {project.features.map((feature, i) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {study.features.map((feature, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="flex gap-4 p-5 rounded-lg border border-[rgba(249,115,22,0.1)] bg-[#0A0A0A] hover:border-orange-500/25 transition-colors group"
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+                className="border border-[rgba(249,115,22,0.12)] rounded-lg p-5 bg-[#0A0A0A] hover:border-orange-500/25 transition-colors"
               >
-                <div className="w-8 h-8 rounded-md bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 flex-shrink-0 mt-0.5">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <div>
-                  <h3 className="text-white font-semibold text-sm mb-1.5 group-hover:text-orange-400 transition-colors">{feature.title}</h3>
-                  <p className="text-neutral-500 text-sm leading-relaxed">{feature.desc}</p>
+                <div className="flex items-start gap-3">
+                  <span className="text-xl flex-shrink-0 mt-0.5">{feature.icon}</span>
+                  <div>
+                    <h3 className="text-white font-medium mb-1 text-sm">{feature.title}</h3>
+                    <p className="text-neutral-500 text-xs leading-relaxed">{feature.desc}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -648,96 +473,106 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         </div>
       </section>
 
-      {/* ── 6. Results ── */}
-      <section className="relative py-24">
-        <div className="absolute inset-0 bg-black/80" />
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-12"
-          >
+      {/* Screenshots */}
+      <section className="relative py-20 bg-[#0A0A0A]">
+        <div className="container mx-auto px-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex justify-start mb-4">
             <SectionLabel icon={
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" />
+                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
               </svg>
-            }>Results</SectionLabel>
+            }>Screenshots</SectionLabel>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="rounded-2xl overflow-hidden border border-orange-500/20"
-            style={{ background: '#0A0500' }}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+            className="text-2xl sm:text-3xl font-semibold text-white mb-10"
           >
-            {/* Stats grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-orange-500/10">
-              {project.results.map((stat, i) => (
-                <div key={i} className="p-8 text-center" style={{ background: '#0A0500' }}>
-                  <div className="text-2xl sm:text-4xl lg:text-5xl font-semibold text-orange-400 mb-2">{stat.value}</div>
-                  <div className="text-xs font-mono text-neutral-500 uppercase tracking-wider">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* Testimonial */}
-            <div className="p-10 border-t border-orange-500/10">
-              <div className="max-w-2xl mx-auto text-center">
-                <div className="text-3xl text-orange-500/40 font-serif mb-4">"</div>
-                <p className="text-neutral-300 text-base leading-relaxed italic mb-6">
-                  {project.testimonial.quote}
-                </p>
-                <div className="flex flex-col items-center gap-1">
-                  <span className="text-white font-semibold text-sm">{project.testimonial.author}</span>
-                  <span className="text-neutral-600 text-xs font-mono">{project.testimonial.role}</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+            The finished product
+          </motion.h2>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {study.images.map((img, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                className={`relative rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] ${i === 0 && study.images.length === 1 ? 'sm:col-span-2' : ''}`}
+                style={{ aspectRatio: '16/10' }}
+              >
+                <Image src={img} alt={`${study.title} screenshot ${i + 1}`} fill className="object-cover" />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ── 7. Tech Stack ── */}
-      <section className="relative py-20">
-        <div className="absolute inset-0 bg-black/60" />
+      {/* Results */}
+      <section className="relative py-20" style={{ background: '#0A0500' }}>
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(249,115,22,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(249,115,22,0.04) 1px, transparent 1px)',
+            backgroundSize: '40px 40px',
+          }}
+        />
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-8"
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex justify-start mb-4">
             <SectionLabel icon={
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" />
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+              </svg>
+            }>Results</SectionLabel>
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+            className="text-2xl sm:text-3xl font-semibold text-white mb-10"
+          >
+            What we delivered
+          </motion.h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-10">
+            {study.results.stats.map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+                className="text-center border border-orange-500/20 rounded-lg p-5 bg-black/50"
+              >
+                <div className="text-3xl sm:text-4xl font-semibold text-orange-400 mb-2">{stat.value}</div>
+                <div className="text-xs text-neutral-500 font-mono">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+          <motion.blockquote
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="border-l-2 border-orange-500 pl-6 max-w-2xl"
+          >
+            <p className="text-neutral-300 text-base leading-relaxed italic mb-3">&ldquo;{study.results.quote}&rdquo;</p>
+            <cite className="text-neutral-500 text-sm not-italic">— {study.results.author}</cite>
+          </motion.blockquote>
+        </div>
+      </section>
+
+      {/* Tech Stack */}
+      <section className="relative py-20">
+        <div className="container mx-auto px-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex justify-start mb-4">
+            <SectionLabel icon={
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
               </svg>
             }>Tech Stack</SectionLabel>
           </motion.div>
-
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-2xl font-semibold text-white mb-8"
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+            className="text-2xl sm:text-3xl font-semibold text-white mb-8"
           >
             Built with
           </motion.h2>
-
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}
             className="flex flex-wrap gap-3"
           >
-            {project.tech.map(tech => (
+            {study.tech.map((tech, i) => (
               <span
-                key={tech}
-                className="px-4 py-2 rounded-full border border-[rgba(249,115,22,0.2)] bg-[#0A0A0A] text-sm font-mono text-neutral-300 hover:border-orange-500/40 hover:text-orange-400 transition-colors cursor-default"
+                key={i}
+                className="text-sm font-mono px-4 py-2 rounded-lg border border-[rgba(249,115,22,0.2)] text-neutral-300 bg-[#0A0A0A] hover:border-orange-500/40 hover:text-white transition-colors cursor-default"
               >
                 {tech}
               </span>
@@ -746,20 +581,6 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         </div>
       </section>
 
-      {/* Back to work */}
-      <div className="container mx-auto px-6 pb-8 relative z-10">
-        <Link
-          href="/work"
-          className="inline-flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-orange-400 transition-colors"
-        >
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M13 7H1M6 3L2 7l4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          Back to all work
-        </Link>
-      </div>
-
-      {/* ── 8. CTA ── */}
       <CTA />
     </main>
   )

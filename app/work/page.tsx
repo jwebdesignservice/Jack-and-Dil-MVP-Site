@@ -19,6 +19,17 @@ const projects = [
     year: '2026',
   },
   {
+    slug: 'ams-tool',
+    title: 'AMS Tool',
+    desc: 'An AI-powered adverse media screening platform that automates compliance workflows — from search to risk classification to analyst review queue.',
+    image: '/Images/work/ams-tablet.png',
+    hoverImage: '/Images/work/ams-desktop.png',
+    tags: ['RegTech', 'Compliance', 'AI'],
+    services: ['Full-Stack', 'AI Integration', 'UI/UX Design'],
+    delivery: '10 days',
+    year: '2026',
+  },
+  {
     slug: 'metalex-terminal',
     title: 'Metalex Terminal',
     desc: 'A professional-grade precious metals trading terminal with live spot prices, AI signals, futures curves, and real-time market depth — built for serious metals traders.',
