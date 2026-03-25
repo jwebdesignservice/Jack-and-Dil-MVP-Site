@@ -3,12 +3,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const works = [
+  { src: '/Images/work/eliminent.png', hoverSrc: '/Images/work/eliminent-tablet.png', label: 'Eliminent', tag: 'AI / Gaming', href: '/work/eliminent' },
   { src: '/Images/work/metalex-phone.png', hoverSrc: '/Images/work/metalex.png', label: 'Metalex Terminal', tag: 'FinTech / Trading', href: '/work/metalex-terminal' },
   { src: '/Images/work/insights.png', label: 'Insights Dashboard', tag: 'Analytics SaaS', href: '/work/insights-dashboard' },
   { src: '/Images/work/memorymarket.png', hoverSrc: '/Images/work/memorymarket-phone.png', label: 'Memory Market', tag: 'Web3 / DeFi', href: '/work/memory-market' },
   { src: '/Images/work/aramas.png', hoverSrc: '/Images/work/aramas-phone.png', label: 'Aramas Property', tag: 'Real Estate', href: '/work/aramas-property' },
   { src: '/Images/work/desertfalcons.png', hoverSrc: '/Images/work/desertfalcons-phone.png', label: 'Desert Falcons Collective', tag: 'Automotive / Luxury', href: '/work/desert-falcons' },
   // duplicates for seamless loop
+  { src: '/Images/work/eliminent.png', hoverSrc: '/Images/work/eliminent-tablet.png', label: 'Eliminent', tag: 'AI / Gaming', href: '/work/eliminent' },
   { src: '/Images/work/metalex-phone.png', hoverSrc: '/Images/work/metalex.png', label: 'Metalex Terminal', tag: 'FinTech / Trading', href: '/work/metalex-terminal' },
   { src: '/Images/work/insights.png', label: 'Insights Dashboard', tag: 'Analytics SaaS', href: '/work/insights-dashboard' },
   { src: '/Images/work/memorymarket.png', hoverSrc: '/Images/work/memorymarket-phone.png', label: 'Memory Market', tag: 'Web3 / DeFi', href: '/work/memory-market' },

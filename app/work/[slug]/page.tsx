@@ -9,6 +9,69 @@ import HeroSlideshow from '@/components/ui/HeroSlideshow'
 
 /* ─── Project Data ─── */
 const projects: Record<string, Project> = {
+  'eliminent': {
+    slug: 'eliminent',
+    title: 'Eliminent',
+    tagline: 'Find the AI among you. Or die trying.',
+    tags: ['Gaming', 'AI', 'Social Deduction', 'Multiplayer'],
+    delivery: '8 days',
+    year: '2026',
+    heroImage: '/Images/work/eliminent.png',
+    siteUrl: 'https://www.eliminent.com/',
+    heroStats: [
+      { value: '8', label: 'Day Delivery' },
+      { value: '2.8k+', label: 'Players Online' },
+      { value: '4-12', label: 'Players Per Game' },
+      { value: '<100ms', label: 'Realtime Latency' },
+    ],
+    challenge: `Eliminent needed to answer one question: can you tell if you're talking to an AI? The concept was simple and sharp — a social deduction game where real players and an AI agent share the same chat room, debating and voting to eliminate who they think isn't human. The twist: sometimes there's no AI at all. The paranoia alone becomes the game. The technical challenge was significant — real-time multiplayer with sub-100ms latency, a convincing AI agent that could pass as human under pressure, timed discussion and voting mechanics, and an interface minimal enough to keep all the focus on the psychological tension between players.`,
+    approach: [
+      {
+        icon: '⚡',
+        title: 'Real-Time Game Engine',
+        desc: 'WebSocket-powered game state sync across all players simultaneously. Room lifecycle, round timers, voting reveals, and elimination animations all fire in under 100ms.',
+      },
+      {
+        icon: '🤖',
+        title: 'Convincing AI Agent',
+        desc: 'The AI agent uses contextual game state, player history, and adaptive language patterns to respond naturally within the 160-character message limit — indistinguishable under pressure.',
+      },
+      {
+        icon: '🎯',
+        title: 'Tension-First Design',
+        desc: 'Every design decision serves psychological tension. No avatars, no colour identifiers — just aliases and text. The UI deliberately gives nothing away.',
+      },
+    ],
+    features: [
+      { icon: '⚡', title: 'Quick Play & Private Rooms', desc: 'Jump into a public lobby instantly or create a private room with a code. Games support 4-12 players with automatic host migration.' },
+      { icon: '💬', title: 'Timed Discussion Rounds', desc: '30-90 second discussion rounds with guided prompts. 5 messages per player per round, 160 character limit — pressure by design.' },
+      { icon: '🗳️', title: 'Hidden Voting System', desc: 'Players vote to eliminate or propose "No AI Present". Votes are hidden until the simultaneous reveal — no bandwagoning.' },
+      { icon: '🤖', title: 'AI Player Agent', desc: 'A live AI agent participates as a player, responding in real time with contextually appropriate, human-like messages calibrated to avoid detection.' },
+      { icon: '🎭', title: 'Zero-Identity Interface', desc: 'No profile pictures, no colours, no history. Just player aliases and messages. Every visual choice reinforces the core uncertainty.' },
+      { icon: '📊', title: 'Endgame Reveal', desc: 'All identities revealed at the end — who was human, who was AI (if present), full vote history, and winner stats for every player.' },
+      { icon: '🔁', title: 'Elimination Flow', desc: 'Dramatic elimination animations with no identity reveal mid-game — the tension stays alive until the very end.' },
+      { icon: '📱', title: 'Cross-Device Play', desc: 'Fully playable on desktop, tablet, and mobile. The minimal interface scales perfectly — no app install required.' },
+    ],
+    images: [
+      { src: '/Images/work/eliminent.png', alt: 'Eliminent on MacBook' },
+      { src: '/Images/work/eliminent-tablet.png', alt: 'Eliminent on iPad' },
+      { src: '/Images/work/eliminent-desktop.png', alt: 'Eliminent game lobby' },
+      { src: '/Images/work/eliminent-howtoplay.png', alt: 'Eliminent How to Play screen' },
+    ],
+    results: [
+      { value: '2.8k+', label: 'Concurrent players at launch' },
+      { value: '8', label: 'Days to production' },
+      { value: '<100ms', label: 'Real-time sync latency' },
+      { value: '5min', label: 'Average session length' },
+    ],
+    testimonial: {
+      quote: 'We had a concept that lived entirely in our heads. FastLaunch turned it into a real, playable game with thousands of concurrent users in 8 days. The AI agent is genuinely unsettling — exactly what we wanted.',
+      author: 'Alex Reid',
+      role: 'Founder, Eliminent',
+    },
+    tech: ['Next.js', 'TypeScript', 'WebSockets', 'OpenAI', 'Supabase', 'Tailwind CSS', 'Vercel'],
+  },
+
   'metalex-terminal': {
     slug: 'metalex-terminal',
     title: 'Metalex Terminal',

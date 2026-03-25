@@ -8,6 +8,17 @@ import CTA from '@/components/sections/CTA'
 
 const projects = [
   {
+    slug: 'eliminent',
+    title: 'Eliminent',
+    desc: 'An AI-powered social deduction game where 4-12 players must identify the AI hidden among them. Real-time multiplayer, timed discussion rounds, and strategic voting — built to blur the line between human and machine.',
+    image: '/Images/work/eliminent.png',
+    hoverImage: '/Images/work/eliminent-tablet.png',
+    tags: ['Gaming', 'AI', 'Multiplayer'],
+    services: ['Full-Stack', 'Real-Time', 'UI/UX Design'],
+    delivery: '8 days',
+    year: '2026',
+  },
+  {
     slug: 'metalex-terminal',
     title: 'Metalex Terminal',
     desc: 'A professional-grade precious metals trading terminal with live spot prices, AI signals, futures curves, and real-time market depth — built for serious metals traders.',
