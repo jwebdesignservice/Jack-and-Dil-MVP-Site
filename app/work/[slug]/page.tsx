@@ -16,7 +16,7 @@ const projects: Record<string, Project> = {
     tags: ['Gaming', 'AI', 'Social Deduction', 'Multiplayer'],
     delivery: '8 days',
     year: '2026',
-    heroImage: '/Images/work/eliminent.png',
+    heroImage: '/Images/work/eliminent-tablet.png',
     siteUrl: 'https://www.eliminent.com/',
     heroStats: [
       { value: '8', label: 'Day Delivery' },
@@ -53,8 +53,8 @@ const projects: Record<string, Project> = {
       { icon: '📱', title: 'Cross-Device Play', desc: 'Fully playable on desktop, tablet, and mobile. The minimal interface scales perfectly — no app install required.' },
     ],
     images: [
-      { src: '/Images/work/eliminent.png', alt: 'Eliminent on MacBook' },
       { src: '/Images/work/eliminent-tablet.png', alt: 'Eliminent on iPad' },
+      { src: '/Images/work/eliminent.png', alt: 'Eliminent on MacBook' },
       { src: '/Images/work/eliminent-desktop.png', alt: 'Eliminent game lobby' },
       { src: '/Images/work/eliminent-howtoplay.png', alt: 'Eliminent How to Play screen' },
     ],
