@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 
 const simpleLinks = [
-  { href: '/', label: 'Home' },
   { href: '/#pricing', label: 'Pricing' },
   { href: '/#faq', label: 'FAQ' },
 ]
@@ -173,6 +172,14 @@ export default function Nav() {
           </Link>
 
           <ul className="hidden md:flex items-center gap-8">
+            {/* Home */}
+            <li>
+              <Link href="/" className="text-neutral-400 hover:text-white transition-colors text-sm relative group">
+                Home
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-orange-500 transition-all group-hover:w-full" />
+              </Link>
+            </li>
+
             {/* Services mega menu trigger */}
             <li className="relative" onMouseEnter={() => setActiveMenu('services')} onMouseLeave={() => setActiveMenu(null)}>
               <button
@@ -324,6 +331,10 @@ export default function Nav() {
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-black/95 border-t border-[rgba(249,115,22,0.1)] overflow-hidden">
             <div className="container mx-auto px-6 py-6 space-y-1">
+              <Link href="/" onClick={() => setMobileOpen(false)}
+                className="block text-neutral-400 hover:text-white transition-colors py-2.5 text-sm border-b border-[rgba(249,115,22,0.08)] mb-3 pb-3">
+                Home
+              </Link>
               {/* Services section */}
               <div className="pb-3 mb-3 border-b border-[rgba(249,115,22,0.08)]">
                 <div className="text-[10px] font-mono text-orange-500 tracking-widest uppercase mb-3">Services</div>
