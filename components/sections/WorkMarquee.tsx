@@ -9,6 +9,7 @@ const works = [
   { src: '/Images/work/memorymarket.png', hoverSrc: '/Images/work/memorymarket-phone.png', label: 'Memory Market', tag: 'Web3 / DeFi', href: '/work/memory-market' },
   { src: '/Images/work/aramas.png', hoverSrc: '/Images/work/aramas-phone.png', label: 'Aramas Property', tag: 'Real Estate', href: '/work/aramas-property' },
   { src: '/Images/work/desertfalcons.png', hoverSrc: '/Images/work/desertfalcons-phone.png', label: 'Desert Falcons Collective', tag: 'Automotive / Luxury', href: '/work/desert-falcons' },
+  { src: '/Images/work/ams-tablet.png', hoverSrc: '/Images/work/ams-laptop.png', label: 'AMS Tool', tag: 'RegTech / Compliance', href: '/work/ams-tool' },
   // duplicates for seamless loop
   { src: '/Images/work/eliminent-tablet.png', hoverSrc: '/Images/work/eliminent.png', label: 'Eliminent', tag: 'AI / Gaming', href: '/work/eliminent' },
   { src: '/Images/work/metalex-phone.png', hoverSrc: '/Images/work/metalex.png', label: 'Metalex Terminal', tag: 'FinTech / Trading', href: '/work/metalex-terminal' },
@@ -16,6 +17,7 @@ const works = [
   { src: '/Images/work/memorymarket.png', hoverSrc: '/Images/work/memorymarket-phone.png', label: 'Memory Market', tag: 'Web3 / DeFi', href: '/work/memory-market' },
   { src: '/Images/work/aramas.png', hoverSrc: '/Images/work/aramas-phone.png', label: 'Aramas Property', tag: 'Real Estate', href: '/work/aramas-property' },
   { src: '/Images/work/desertfalcons.png', hoverSrc: '/Images/work/desertfalcons-phone.png', label: 'Desert Falcons Collective', tag: 'Automotive / Luxury', href: '/work/desert-falcons' },
+  { src: '/Images/work/ams-tablet.png', hoverSrc: '/Images/work/ams-laptop.png', label: 'AMS Tool', tag: 'RegTech / Compliance', href: '/work/ams-tool' },
 ]
 
 export default function WorkMarquee() {
