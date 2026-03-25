@@ -182,8 +182,9 @@ export default function Nav() {
 
             {/* Services mega menu trigger */}
             <li className="relative" onMouseEnter={() => setActiveMenu('services')} onMouseLeave={() => setActiveMenu(null)}>
-              <button
-                className="flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors text-sm group"
+              <Link
+                href="/services"
+                className="flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors text-sm relative group"
               >
                 Services
                 <svg
@@ -193,13 +194,14 @@ export default function Nav() {
                   <path d="M2 4l4 4 4-4"/>
                 </svg>
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-orange-500 transition-all group-hover:w-full" />
-              </button>
+              </Link>
             </li>
 
             {/* Case Studies mega menu trigger */}
             <li className="relative" onMouseEnter={() => setActiveMenu('cases')} onMouseLeave={() => setActiveMenu(null)}>
-              <button
-                className="flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors text-sm group"
+              <Link
+                href="/work"
+                className="flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors text-sm relative group"
               >
                 Case Studies
                 <svg
@@ -209,7 +211,7 @@ export default function Nav() {
                   <path d="M2 4l4 4 4-4"/>
                 </svg>
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-orange-500 transition-all group-hover:w-full" />
-              </button>
+              </Link>
             </li>
 
             {/* Simple links */}
