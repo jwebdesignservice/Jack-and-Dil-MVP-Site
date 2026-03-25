@@ -20,6 +20,8 @@ const labelClass = "block text-xs font-medium text-neutral-500 mb-2 uppercase tr
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
   const [formData, setFormData] = useState<FormData>({
     name: '', email: '', company: '', projectType: '', budget: '', timeline: '', message: ''
   })
@@ -28,9 +30,23 @@ export default function ContactPage() {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    setError('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      if (!res.ok) throw new Error('Failed to send')
+      setSubmitted(true)
+    } catch {
+      setError('Something went wrong. Please try again or email us directly.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (submitted) {
@@ -233,16 +249,29 @@ export default function ContactPage() {
               <div className="h-px bg-gradient-to-r from-transparent via-[rgba(249,115,22,0.2)] to-transparent"/>
 
               {/* Submit */}
+              {error && (
+                <p className="text-red-400 text-sm text-center">{error}</p>
+              )}
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-2 text-neutral-600 text-xs">
                   <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                   Encrypted & confidential
                 </div>
-                <Button href="/contact" variant="primary">
-                  <span onClick={(e) => { e.preventDefault(); handleSubmit(e as unknown as React.FormEvent) }}>
-                    Submit Brief
-                  </span>
-                </Button>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="group relative inline-flex items-center gap-2 overflow-hidden px-7 py-3.5 rounded-lg text-sm font-medium text-white transition-all duration-300 bg-orange-500 hover:bg-orange-600 disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {loading ? (
+                    <>
+                      <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
+                      </svg>
+                      Sending...
+                    </>
+                  ) : 'Submit Brief'}
+                </button>
               </div>
             </form>
           </div>
