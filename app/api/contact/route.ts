@@ -5,7 +5,7 @@ export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY)
   try {
     const body = await req.json()
-    const { name, email, company, projectType, budget, timeline, message } = body
+    const { name, email, mobile, company, projectType, budget, timeline, message } = body
 
     if (!name || !email || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
@@ -31,6 +31,10 @@ export async function POST(req: NextRequest) {
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #1a1a1a; color: #737373; font-size: 12px; vertical-align: top;">Email</td>
               <td style="padding: 10px 0; border-bottom: 1px solid #1a1a1a; color: #f97316; font-size: 14px;"><a href="mailto:${email}" style="color: #f97316;">${email}</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 0; border-bottom: 1px solid #1a1a1a; color: #737373; font-size: 12px; vertical-align: top;">Mobile</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #1a1a1a; color: #fff; font-size: 14px;"><a href="tel:${mobile}" style="color: #fff;">${mobile || '—'}</a></td>
             </tr>
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #1a1a1a; color: #737373; font-size: 12px; vertical-align: top;">Company</td>
