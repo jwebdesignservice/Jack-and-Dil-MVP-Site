@@ -67,7 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
 
         {/* WhatsApp floating button */}
-        <a href="https://wa.me/447700900000" target="_blank" rel="noopener noreferrer"
+        <a href="https://wa.me/447917328155" target="_blank" rel="noopener noreferrer"
           className="fixed z-[99998] group"
           style={{ bottom: '21px', right: '21px' }}
           aria-label="Chat on WhatsApp">
