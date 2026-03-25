@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
 
     await resend.emails.send({
       from: 'FastLaunch <noreply@fastlaunchmvp.com>',
-      to: ['jwebdesign.service@gmail.com'],
+      to: ['support@fastlaunchmvp.com'],
       replyTo: email,
       subject: `New Project Brief — ${name} (${company || 'No company'})`,
       html: `
