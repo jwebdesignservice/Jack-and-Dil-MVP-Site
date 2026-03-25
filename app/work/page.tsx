@@ -60,7 +60,7 @@ export default function WorkPage() {
         style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }}/>
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-40 pb-20">
+      <section className="relative overflow-hidden pt-28 sm:pt-40 pb-14 sm:pb-20">
         <div className="absolute inset-0 bg-black/75"/>
         <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(249,115,22,0.12) 0%, transparent 70%)' }}/>
         <div className="container mx-auto px-6 relative z-10 text-center">
@@ -72,7 +72,7 @@ export default function WorkPage() {
             }>Case Studies</SectionLabel>
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.5 }}
-            className="text-5xl lg:text-6xl font-semibold text-white mb-5 leading-tight">
+            className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white mb-5 leading-tight">
             Work That{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Speaks</span>
           </motion.h1>

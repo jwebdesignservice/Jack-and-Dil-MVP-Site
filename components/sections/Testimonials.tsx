@@ -91,7 +91,7 @@ export default function Testimonials() {
 
         {/* Cards carousel — desktop: 5 visible */}
         <div className="hidden md:block">
-        <div className="relative max-w-full overflow-hidden min-h-[300px] sm:h-[300px] flex items-center justify-center">
+        <div className="relative max-w-full overflow-hidden min-h-[320px] md:h-[320px] flex items-center justify-center">
           {testimonials.map((t, i) => {
             const pos = getPos(i)
             const isCenter = pos === 'center'

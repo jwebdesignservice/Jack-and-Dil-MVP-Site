@@ -53,7 +53,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black relative overflow-x-hidden">
       {/* Dot grid — same as hero */}
       <div className="absolute inset-0"
         style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }}/>
@@ -61,7 +61,7 @@ export default function ContactPage() {
       <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg, rgba(249,115,22,0.1) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 100%)' }}/>
       <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 50% at 20% 30%, rgba(249,115,22,0.08) 0%, transparent 70%)' }}/>
 
-      <div className="container mx-auto px-6 py-32 relative z-10">
+      <div className="container mx-auto px-6 pt-28 pb-16 relative z-10">
 
         {/* Header — centered, above everything */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
@@ -78,12 +78,12 @@ export default function ContactPage() {
 
         {/* Trust badges row */}
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-          className="flex flex-wrap items-center justify-center gap-6 mb-16">
+          className="flex flex-wrap items-center justify-center gap-4 mb-12">
           {[
             { icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, text: 'Reply within 24 hours' },
             { icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, text: '100% Confidential' },
             { icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/></svg>, text: 'No commitment required' },
-            { icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>, text: 'hello@FastLaunch.dev' },
+            { icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>, text: 'support@fastlaunchmvp.com' },
           ].map((item, i) => (
             <div key={i} className="flex items-center gap-2 text-neutral-500 text-sm">
               <span className="text-orange-500">{item.icon}</span>
@@ -98,7 +98,7 @@ export default function ContactPage() {
           <div className="rounded-2xl border border-[rgba(249,115,22,0.18)] bg-[#0A0A0A] overflow-hidden"
             style={{ boxShadow: '0 0 60px rgba(249,115,22,0.06)' }}>
             {/* Card header */}
-            <div className="px-8 py-5 border-b border-[rgba(249,115,22,0.1)] bg-[#0D0D0D] flex items-center gap-3">
+            <div className="px-4 sm:px-8 py-4 sm:py-5 border-b border-[rgba(249,115,22,0.1)] bg-[#0D0D0D] flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-red-500/60"/>
               <div className="w-2 h-2 rounded-full bg-amber-500/60"/>
               <div className="w-2 h-2 rounded-full bg-green-500/60"/>
@@ -109,7 +109,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="p-8 space-y-6">
+            <form onSubmit={handleSubmit} className="p-4 sm:p-8 space-y-6">
               {/* Row 1 */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -233,9 +233,9 @@ export default function ContactPage() {
               <div className="h-px bg-gradient-to-r from-transparent via-[rgba(249,115,22,0.2)] to-transparent"/>
 
               {/* Submit */}
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-2 text-neutral-600 text-xs">
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                  <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                   Encrypted & confidential
                 </div>
                 <Button href="/contact" variant="primary">

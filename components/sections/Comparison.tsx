@@ -67,11 +67,11 @@ export default function Comparison() {
 
         {/* Main comparison */}
         <div className="max-w-5xl mx-auto">
-          <div className="grid lg:grid-cols-[1fr_80px_1fr] gap-0 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_80px_1fr] gap-0 items-stretch">
 
             {/* Old Way */}
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-              className="relative rounded-2xl sm:rounded-l-2xl overflow-hidden border border-r-0 border-red-500/30 bg-[#120000]">
+              className="relative rounded-t-2xl lg:rounded-tr-none lg:rounded-l-2xl overflow-hidden border border-b-0 lg:border-b lg:border-r-0 border-red-500/30 bg-[#120000]">
               {/* Strong red tint */}
               <div className="absolute inset-0 bg-gradient-to-br from-red-900/30 via-red-950/20 to-transparent pointer-events-none"/>
               {/* Top red accent bar */}
@@ -103,9 +103,11 @@ export default function Comparison() {
             </motion.div>
 
             {/* VS divider */}
-            <div className="flex items-center justify-center relative mt-4 mb-4">
-              <div className="absolute inset-y-0 left-1/2 w-px bg-gradient-to-b from-transparent via-orange-500/40 to-transparent -translate-x-1/2"/>
-              <div className="relative z-10 w-14 h-14 rounded-full bg-[#0A0500] border-2 border-orange-500/50 flex items-center justify-center"
+            <div className="flex items-center justify-center relative">
+              <div className="hidden lg:block absolute inset-y-0 left-1/2 w-px bg-gradient-to-b from-transparent via-orange-500/40 to-transparent -translate-x-1/2"/>
+              {/* Mobile: horizontal line */}
+              <div className="lg:hidden absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent -translate-y-1/2"/>
+              <div className="relative z-10 w-14 h-14 rounded-full bg-[#0A0500] border-2 border-orange-500/50 flex items-center justify-center my-2 lg:my-0"
                 style={{ boxShadow: '0 0 24px rgba(249,115,22,0.25)' }}>
                 <span className="text-sm font-black text-orange-400">VS</span>
               </div>
@@ -113,7 +115,7 @@ export default function Comparison() {
 
             {/* Fast Way */}
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-              className="relative rounded-2xl sm:rounded-r-2xl overflow-hidden border border-l-0 border-orange-500/50 bg-[#0D0900]"
+              className="relative rounded-b-2xl lg:rounded-bl-none lg:rounded-r-2xl overflow-hidden border border-t-0 lg:border-t lg:border-l-0 border-orange-500/50 bg-[#0D0900]"
               style={{ boxShadow: '0 0 60px rgba(249,115,22,0.15), inset 0 0 40px rgba(249,115,22,0.04)' }}>
               <div className="absolute inset-0 bg-gradient-to-bl from-orange-900/20 via-orange-950/15 to-transparent pointer-events-none"/>
               {/* Top orange accent bar */}
@@ -146,7 +148,7 @@ export default function Comparison() {
           {/* Speed comparison bar */}
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}
             className="mt-8 bg-[#0D0800]/60 border border-orange-500/15 rounded-2xl p-6 backdrop-blur-sm">
-            <div className="flex items-end justify-between mb-4">
+            <div className="flex flex-wrap items-end justify-between gap-3 mb-4">
               <div>
                 <span className="text-xs font-mono text-neutral-600 tracking-widest uppercase">Speed comparison</span>
                 <div className="text-2xl font-light text-orange-400 mt-1">12× faster</div>

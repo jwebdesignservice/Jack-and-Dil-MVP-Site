@@ -7,9 +7,9 @@ export default function Footer() {
       <div className="h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-60" />
 
       <div className="container mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-5 gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div className="col-span-2 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 text-white font-bold text-xl mb-4">
               <svg className="w-7 h-7 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -71,9 +71,9 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm">Contact</h4>
             <div className="space-y-3">
-              <a href="mailto:hello@FastLaunch.dev" className="flex items-center gap-2 text-neutral-500 hover:text-orange-400 transition-colors text-sm">
+              <a href="mailto:support@fastlaunchmvp.com" className="flex items-center gap-2 text-neutral-500 hover:text-orange-400 transition-colors text-sm">
                 <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                hello@FastLaunch.dev
+                support@fastlaunchmvp.com
               </a>
               <a href="https://wa.me/447700900000" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-neutral-500 hover:text-[#25D366] transition-colors text-sm">
                 <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
