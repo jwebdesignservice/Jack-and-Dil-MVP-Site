@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const works = [
+  { src: '/Images/work/speedread-laptop.png', hoverSrc: '/Images/work/speedread-phone.png', label: 'Speed Read', tag: 'EdTech / Productivity', href: '/work/speed-read' },
   { src: '/Images/work/eliminent-tablet.png', hoverSrc: '/Images/work/eliminent.png', label: 'Eliminent', tag: 'AI / Gaming', href: '/work/eliminent' },
   { src: '/Images/work/metalex-phone.png', hoverSrc: '/Images/work/metalex.png', label: 'Metalex Terminal', tag: 'FinTech / Trading', href: '/work/metalex-terminal' },
   { src: '/Images/work/insights.png', label: 'Insights Dashboard', tag: 'Analytics SaaS', href: '/work/insights-dashboard' },
@@ -11,6 +12,7 @@ const works = [
   { src: '/Images/work/desertfalcons.png', hoverSrc: '/Images/work/desertfalcons-phone.png', label: 'Desert Falcons Collective', tag: 'Automotive / Luxury', href: '/work/desert-falcons' },
   { src: '/Images/work/aramas.png', hoverSrc: '/Images/work/aramas-phone.png', label: 'Aramas Property', tag: 'Real Estate', href: '/work/aramas-property' },
   // duplicates for seamless loop
+  { src: '/Images/work/speedread-laptop.png', hoverSrc: '/Images/work/speedread-phone.png', label: 'Speed Read', tag: 'EdTech / Productivity', href: '/work/speed-read' },
   { src: '/Images/work/eliminent-tablet.png', hoverSrc: '/Images/work/eliminent.png', label: 'Eliminent', tag: 'AI / Gaming', href: '/work/eliminent' },
   { src: '/Images/work/metalex-phone.png', hoverSrc: '/Images/work/metalex.png', label: 'Metalex Terminal', tag: 'FinTech / Trading', href: '/work/metalex-terminal' },
   { src: '/Images/work/insights.png', label: 'Insights Dashboard', tag: 'Analytics SaaS', href: '/work/insights-dashboard' },

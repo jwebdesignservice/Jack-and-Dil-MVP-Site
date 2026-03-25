@@ -19,6 +19,17 @@ const projects = [
     year: '2026',
   },
   {
+    slug: 'speed-read',
+    title: 'Speed Read',
+    desc: 'An RSVP-powered speed reading tool that eliminates eye movement and subvocalization — training users to read at up to 1200 WPM with a browser extension, story library, and adaptive training mode.',
+    image: '/Images/work/speedread-laptop.png',
+    hoverImage: '/Images/work/speedread-phone.png',
+    tags: ['EdTech', 'Productivity', 'SaaS'],
+    services: ['Full-Stack', 'UI/UX Design', 'Browser Extension'],
+    delivery: '7 days',
+    year: '2026',
+  },
+  {
     slug: 'ams-tool',
     title: 'AMS Tool',
     desc: 'An AI-powered adverse media screening platform that automates compliance workflows — from search to risk classification to analyst review queue.',
