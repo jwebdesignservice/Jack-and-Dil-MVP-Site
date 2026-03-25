@@ -28,7 +28,7 @@ export default function WorkMarquee() {
       <div className="flex group relative z-10">
         <div className="flex gap-6 animate-marquee-left group-hover:[animation-play-state:paused] shrink-0">
           {works.map((item, i) => (
-            <Link key={`a-${i}`} href={item.href} className="relative flex-shrink-0 w-[693px] h-[429px] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group/card block">
+            <Link key={`a-${i}`} href={item.href} className="relative flex-shrink-0 w-[300px] sm:w-[500px] md:w-[693px] h-[185px] sm:h-[310px] md:h-[429px] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group/card block">
               <Image src={item.src} alt={item.label} fill className={`object-cover transition-opacity duration-500 ${item.hoverSrc ? 'group-hover/card:opacity-0' : ''}`}/>
               {item.hoverSrc && <Image src={item.hoverSrc} alt={`${item.label} mobile`} fill className="object-cover opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"/>}
               {/* Overlay */}
@@ -47,7 +47,7 @@ export default function WorkMarquee() {
         {/* Duplicate for seamless loop */}
         <div className="flex gap-6 animate-marquee-left group-hover:[animation-play-state:paused] shrink-0">
           {works.map((item, i) => (
-            <Link key={`b-${i}`} href={item.href} className="relative flex-shrink-0 w-[693px] h-[429px] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group/card block">
+            <Link key={`b-${i}`} href={item.href} className="relative flex-shrink-0 w-[300px] sm:w-[500px] md:w-[693px] h-[185px] sm:h-[310px] md:h-[429px] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group/card block">
               <Image src={item.src} alt={item.label} fill className={`object-cover transition-opacity duration-500 ${item.hoverSrc ? 'group-hover/card:opacity-0' : ''}`}/>
               {item.hoverSrc && <Image src={item.hoverSrc} alt={`${item.label} mobile`} fill className="object-cover opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"/>}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"/>

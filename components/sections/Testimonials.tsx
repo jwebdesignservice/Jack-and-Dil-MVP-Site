@@ -68,8 +68,30 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Cards carousel — 5 visible */}
-        <div className="relative h-[300px] flex items-center justify-center overflow-hidden">
+        {/* Cards carousel — mobile: single full-width card */}
+        <div className="md:hidden px-2 mb-0">
+          <CornerCard active={true}>
+            <div className="flex gap-0.5 mb-4">
+              {[...Array(5)].map((_, j) => <span key={j} className="text-orange-500 text-sm">★</span>)}
+            </div>
+            <p className="leading-relaxed mb-5 text-neutral-200 text-sm">
+              &ldquo;{testimonials[active].quote}&rdquo;
+            </p>
+            <div className="flex items-center gap-3">
+              <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-orange-500/40">
+                <Image src={testimonials[active].img} alt={testimonials[active].name} fill className="object-cover"/>
+              </div>
+              <div>
+                <div className="text-white text-sm font-semibold">{testimonials[active].name}</div>
+                <div className="text-neutral-600 text-xs">{testimonials[active].role}</div>
+              </div>
+            </div>
+          </CornerCard>
+        </div>
+
+        {/* Cards carousel — desktop: 5 visible */}
+        <div className="hidden md:block">
+        <div className="relative max-w-full overflow-hidden min-h-[320px] md:h-[320px] flex items-center justify-center">
           {testimonials.map((t, i) => {
             const pos = getPos(i)
             const isCenter = pos === 'center'
@@ -86,7 +108,7 @@ export default function Testimonials() {
 
             return (
               <motion.div key={i}
-                className="absolute cursor-pointer select-none w-[480px]"
+                className="absolute cursor-pointer select-none w-[90vw] max-w-[480px]"
                 style={{ zIndex: isHidden ? 0 : zMap[pos] }}
                 animate={{
                   x: isHidden ? 0 : xMap[pos],
@@ -116,6 +138,7 @@ export default function Testimonials() {
               </motion.div>
             )
           })}
+        </div>
         </div>
 
         {/* Prev / Next */}

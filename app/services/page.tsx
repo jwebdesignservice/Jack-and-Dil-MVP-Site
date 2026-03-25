@@ -292,7 +292,7 @@ function ServiceSection({ id, reverse, label, title, paragraphs, features, deliv
           {/* Graphic side */}
           <motion.div initial={{ opacity: 0, x: reverse ? -24 : 24 }} whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.15 }}
-            className={`rounded-2xl border border-[rgba(249,115,22,0.12)] bg-[#0D0D0D] p-4 aspect-[4/3] flex items-center justify-center ${reverse ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+            className={`rounded-2xl border border-[rgba(249,115,22,0.12)] bg-[#0D0D0D] p-4 w-full aspect-[4/3] flex items-center justify-center overflow-hidden ${reverse ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
             {graphic}
           </motion.div>
         </div>
@@ -308,7 +308,7 @@ export default function ServicesPage() {
     <main className="bg-black">
 
       {/* ── 1. Hero ── */}
-      <section className="relative overflow-hidden pt-40 pb-28" style={dotGrid}>
+      <section className="relative overflow-hidden pt-28 sm:pt-40 pb-16 sm:pb-28" style={dotGrid}>
         <div className="absolute inset-0 bg-black/75" />
         <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(249,115,22,0.12) 0%, transparent 70%)' }}/>
         <div className="container mx-auto px-6 relative z-10 text-center">
@@ -320,7 +320,7 @@ export default function ServicesPage() {
             }>Our Services</SectionLabel>
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.5 }}
-            className="text-5xl lg:text-7xl font-semibold text-white mb-6 leading-tight">
+            className="text-4xl sm:text-5xl lg:text-7xl font-semibold text-white mb-6 leading-tight">
             Everything You Need to{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Launch</span>
           </motion.h1>
@@ -546,7 +546,7 @@ export default function ServicesPage() {
             No legacy frameworks. No bloat. We pick the stack that ships fast and scales further.
           </motion.p>
 
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
             {[
               { name: 'Next.js', color: '#fff' },
               { name: 'React', color: '#60a5fa' },

@@ -223,12 +223,12 @@ export default function Process() {
           <p className="text-neutral-500 mt-4 max-w-md mx-auto text-sm">Concept to production in 14 days. No surprises, no delays.</p>
         </motion.div>
 
-        {/* Vertical center line */}
+        {/* Vertical center line — desktop only */}
         <div className="absolute left-1/2 top-0 bottom-0 w-px hidden lg:block -translate-x-1/2"
           style={{ background: 'linear-gradient(to bottom, transparent, rgba(249,115,22,0.25) 10%, rgba(249,115,22,0.25) 90%, transparent)' }}/>
 
         {/* Steps */}
-        <div className="space-y-28">
+        <div className="space-y-16 md:space-y-28">
           {steps.map((step, i) => {
             const svgLeft = i % 2 === 0
             return (

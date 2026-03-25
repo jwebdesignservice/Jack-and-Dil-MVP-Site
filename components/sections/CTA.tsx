@@ -68,7 +68,7 @@ export default function CTA() {
             <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(249,115,22,0.18) 0%, rgba(0,0,0,0) 50%, rgba(234,88,12,0.12) 100%)' }}/>
             <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(249,115,22,0.08) 0%, transparent 70%)' }}/>
 
-            <div className="relative z-10 px-12 py-20 text-center">
+            <div className="relative z-10 px-6 sm:px-12 py-12 sm:py-20 text-center">
               {/* Status chip */}
               <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
                 className="inline-flex items-center gap-2 border border-orange-500/20 rounded-full px-4 py-1.5 mb-8 bg-orange-500/5">

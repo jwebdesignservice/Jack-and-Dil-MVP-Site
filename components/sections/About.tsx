@@ -78,6 +78,7 @@ export default function About() {
                   <span className="text-[10px] font-mono text-neutral-600 tracking-widest uppercase">Commit Activity</span>
                   <span className="text-[10px] font-mono text-orange-400">342 contributions</span>
                 </div>
+                <div className="overflow-x-auto max-w-full pb-1">
                 <div className="flex gap-1">
                   {weeks.map((week, w) => (
                     <div key={w} className="flex flex-col gap-1">
@@ -86,6 +87,7 @@ export default function About() {
                       ))}
                     </div>
                   ))}
+                </div>
                 </div>
                 <div className="flex items-center gap-1.5 mt-2">
                   <span className="text-[9px] text-neutral-700">Less</span>
@@ -110,7 +112,7 @@ export default function About() {
                 ))}
               </div>
               {/* Stats */}
-              <div className="grid grid-cols-4 divide-x divide-[rgba(249,115,22,0.08)]">
+              <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-[rgba(249,115,22,0.08)] divide-y sm:divide-y-0">
                 {[
                   { label: 'MVPs Shipped', value: '50+' },
                   { label: 'Avg Delivery', value: '9 days' },
