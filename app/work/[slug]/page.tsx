@@ -53,6 +53,7 @@ const projects: Record<string, Project> = {
     ],
     images: [
       { src: '/Images/work/desertfalcons.png', alt: 'Desert Falcons public website' },
+      { src: '/Images/work/desertfalcons-tablet.png', alt: 'Desert Falcons on tablet' },
       { src: '/Images/work/desertfalcons-dashboard.png', alt: 'Desert Falcons member dashboard' },
       { src: '/Images/work/desertfalcons-phone.png', alt: 'Desert Falcons mobile view' },
     ],
