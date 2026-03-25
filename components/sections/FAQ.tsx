@@ -17,8 +17,8 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="py-24 bg-black relative overflow-hidden">
-      {/* Large decorative ? */}
-      <div className="absolute right-10 top-1/2 -translate-y-1/2 text-[300px] font-black text-orange-500/[0.02] select-none pointer-events-none font-mono leading-none">
+      {/* Large decorative ? — hidden on mobile to prevent overflow */}
+      <div className="absolute right-10 top-1/2 -translate-y-1/2 text-[300px] font-black text-orange-500/[0.02] select-none pointer-events-none font-mono leading-none hidden md:block">
         ?
       </div>
       {/* Dot matrix */}

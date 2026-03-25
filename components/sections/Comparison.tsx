@@ -35,8 +35,8 @@ export default function Comparison() {
       <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
       <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#060606] to-transparent z-10 pointer-events-none" />
 
-      {/* Large decorative "VS" watermark */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+      {/* Large decorative "VS" watermark — hidden on mobile to prevent overflow */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 hidden md:flex">
         <span className="text-[320px] font-black text-orange-500/[0.04] leading-none select-none tracking-tighter">VS</span>
       </div>
 
@@ -148,7 +148,7 @@ export default function Comparison() {
           {/* Speed comparison bar */}
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}
             className="mt-8 bg-[#0D0800]/60 border border-orange-500/15 rounded-2xl p-6 backdrop-blur-sm">
-            <div className="flex flex-wrap items-end justify-between gap-3 mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-4">
               <div>
                 <span className="text-xs font-mono text-neutral-600 tracking-widest uppercase">Speed comparison</span>
                 <div className="text-2xl font-light text-orange-400 mt-1">12× faster</div>

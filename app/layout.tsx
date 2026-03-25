@@ -23,8 +23,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-black text-white antialiased">
         {/* Google Tag Manager (noscript) */}
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJKCWBW5" height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}/></noscript>
-        {/* Floating dots — left gutter only */}
-        <div className="fixed top-0 bottom-0 pointer-events-none overflow-hidden" style={{ left: 0, width: 'calc(50% - 600px)', zIndex: 8 }}>
+        {/* Floating dots — left gutter only (hidden below xl to prevent negative-width overflow) */}
+        <div className="fixed top-0 bottom-0 pointer-events-none overflow-hidden hidden xl:block" style={{ left: 0, width: 'calc(50% - 600px)', zIndex: 8 }}>
           {[...Array(7)].map((_, i) => (
             <div key={i} className="absolute rounded-full"
               style={{
@@ -39,8 +39,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               }}/>
           ))}
         </div>
-        {/* Floating dots — right gutter only */}
-        <div className="fixed top-0 bottom-0 pointer-events-none overflow-hidden" style={{ right: 0, width: 'calc(50% - 600px)', zIndex: 8 }}>
+        {/* Floating dots — right gutter only (hidden below xl to prevent negative-width overflow) */}
+        <div className="fixed top-0 bottom-0 pointer-events-none overflow-hidden hidden xl:block" style={{ right: 0, width: 'calc(50% - 600px)', zIndex: 8 }}>
           {[...Array(7)].map((_, i) => (
             <div key={i} className="absolute rounded-full"
               style={{

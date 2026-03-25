@@ -112,7 +112,7 @@ export default function About() {
                 ))}
               </div>
               {/* Stats */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-[rgba(249,115,22,0.08)]">
+              <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-[rgba(249,115,22,0.08)] divide-y sm:divide-y-0">
                 {[
                   { label: 'MVPs Shipped', value: '50+' },
                   { label: 'Avg Delivery', value: '9 days' },

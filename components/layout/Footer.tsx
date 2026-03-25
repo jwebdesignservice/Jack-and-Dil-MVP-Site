@@ -96,9 +96,9 @@ export default function Footer() {
       </div>
 
       {/* Large "FastLaunch" text — gradient: orange top, fades to black at bottom */}
-      <div className="overflow-hidden mt-2 mb-6">
-        <div className="text-center leading-none select-none pointer-events-none"
-          style={{ fontSize: 'min(18vw, 220px)', fontWeight: 900, letterSpacing: '-0.04em', background: 'linear-gradient(to bottom, rgba(249,115,22,0.25) 0%, rgba(249,115,22,0.08) 50%, rgba(5,5,5,0) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+      <div className="overflow-hidden mt-2 mb-6 max-w-full">
+        <div className="text-center leading-none select-none pointer-events-none whitespace-nowrap"
+          style={{ fontSize: 'min(16vw, 220px)', fontWeight: 900, letterSpacing: '-0.04em', background: 'linear-gradient(to bottom, rgba(249,115,22,0.25) 0%, rgba(249,115,22,0.08) 50%, rgba(5,5,5,0) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
           FastLaunch
         </div>
       </div>

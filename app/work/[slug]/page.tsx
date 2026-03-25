@@ -312,7 +312,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.5 }}
-            className="text-5xl lg:text-7xl font-semibold text-white mb-4 leading-tight max-w-3xl"
+            className="text-3xl sm:text-5xl lg:text-7xl font-semibold text-white mb-4 leading-tight max-w-3xl"
           >
             {project.title}
           </motion.h1>
@@ -596,7 +596,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-orange-500/10">
               {project.results.map((stat, i) => (
                 <div key={i} className="p-8 text-center" style={{ background: '#0A0500' }}>
-                  <div className="text-4xl lg:text-5xl font-semibold text-orange-400 mb-2">{stat.value}</div>
+                  <div className="text-2xl sm:text-4xl lg:text-5xl font-semibold text-orange-400 mb-2">{stat.value}</div>
                   <div className="text-xs font-mono text-neutral-500 uppercase tracking-wider">{stat.label}</div>
                 </div>
               ))}

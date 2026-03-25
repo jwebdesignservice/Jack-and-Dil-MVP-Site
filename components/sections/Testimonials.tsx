@@ -108,7 +108,7 @@ export default function Testimonials() {
 
             return (
               <motion.div key={i}
-                className="absolute cursor-pointer select-none w-[480px]"
+                className="absolute cursor-pointer select-none w-[90vw] max-w-[480px]"
                 style={{ zIndex: isHidden ? 0 : zMap[pos] }}
                 animate={{
                   x: isHidden ? 0 : xMap[pos],

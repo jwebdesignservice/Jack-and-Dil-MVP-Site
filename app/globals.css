@@ -56,7 +56,7 @@ body {
   position: relative;
   width: 100%;
   max-width: 600px;
-  height: 600px;
+  height: min(600px, 80vw);
   display: flex;
   align-items: center;
   justify-content: center;
