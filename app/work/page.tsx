@@ -26,7 +26,7 @@ const projects = [
     hoverImage: '/Images/work/desertfalcons-phone.png',
     tags: ['Automotive', 'Community', 'Luxury'],
     services: ['UI/UX Design', 'Next.js', 'Full-Stack'],
-    delivery: '12 days',
+    delivery: '7 days',
     year: '2026',
   },
   {
@@ -37,7 +37,7 @@ const projects = [
     hoverImage: '/Images/work/memorymarket-phone.png',
     tags: ['Web3', 'DeFi', 'Trading'],
     services: ['Full-Stack', 'API Integration', 'Real-Time'],
-    delivery: '14 days',
+    delivery: '9 days',
     year: '2025',
   },
   {
@@ -48,7 +48,7 @@ const projects = [
     hoverImage: '/Images/work/aramas-phone.png',
     tags: ['Real Estate', 'SaaS', 'Marketplace'],
     services: ['UI/UX Design', 'Next.js', 'Supabase'],
-    delivery: '10 days',
+    delivery: '6 days',
     year: '2025',
   },
   {
@@ -58,7 +58,7 @@ const projects = [
     image: '/Images/work/insights.png',
     tags: ['Analytics', 'SaaS', 'Dashboard'],
     services: ['UI/UX Design', 'React', 'PostgreSQL'],
-    delivery: '8 days',
+    delivery: '5 days',
     year: '2025',
   },
 ]
