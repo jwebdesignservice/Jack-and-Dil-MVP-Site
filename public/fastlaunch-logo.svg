@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="64" viewBox="0 0 280 64">
+  <rect width="280" height="64" fill="#000000"/>
+  <!-- Lightning bolt icon -->
+  <path d="M21.3 10L11 25.7h6.5l-.8 10.3L27 20.3h-6.5L21.3 10z" fill="#F97316"/>
+  <!-- FastLaunch wordmark -->
+  <text x="42" y="40" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="700" fill="#ffffff" letter-spacing="-0.5">FastLaunch</text>
+</svg>

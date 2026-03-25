@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 
@@ -167,9 +168,7 @@ export default function Nav() {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20 py-3">
           <Link href="/" className="flex items-center gap-2 text-white font-bold text-xl">
-            <svg className="w-7 h-7 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-            </svg>
+            <Image src="/logo.png" alt="FastLaunch" width={32} height={32} className="rounded-md" />
             FastLaunch
           </Link>
 
