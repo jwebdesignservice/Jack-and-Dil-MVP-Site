@@ -14,12 +14,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background: #000000;
   color: white;
   font-family: var(--font-inter);
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {

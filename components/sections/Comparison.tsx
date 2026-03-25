@@ -71,7 +71,7 @@ export default function Comparison() {
 
             {/* Old Way */}
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-              className="relative rounded-l-2xl overflow-hidden border border-r-0 border-red-500/30 bg-[#120000]">
+              className="relative rounded-2xl sm:rounded-l-2xl overflow-hidden border border-r-0 border-red-500/30 bg-[#120000]">
               {/* Strong red tint */}
               <div className="absolute inset-0 bg-gradient-to-br from-red-900/30 via-red-950/20 to-transparent pointer-events-none"/>
               {/* Top red accent bar */}
@@ -103,7 +103,7 @@ export default function Comparison() {
             </motion.div>
 
             {/* VS divider */}
-            <div className="flex items-center justify-center relative">
+            <div className="flex items-center justify-center relative mt-4 mb-4">
               <div className="absolute inset-y-0 left-1/2 w-px bg-gradient-to-b from-transparent via-orange-500/40 to-transparent -translate-x-1/2"/>
               <div className="relative z-10 w-14 h-14 rounded-full bg-[#0A0500] border-2 border-orange-500/50 flex items-center justify-center"
                 style={{ boxShadow: '0 0 24px rgba(249,115,22,0.25)' }}>
@@ -113,7 +113,7 @@ export default function Comparison() {
 
             {/* Fast Way */}
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-              className="relative rounded-r-2xl overflow-hidden border border-l-0 border-orange-500/50 bg-[#0D0900]"
+              className="relative rounded-2xl sm:rounded-r-2xl overflow-hidden border border-l-0 border-orange-500/50 bg-[#0D0900]"
               style={{ boxShadow: '0 0 60px rgba(249,115,22,0.15), inset 0 0 40px rgba(249,115,22,0.04)' }}>
               <div className="absolute inset-0 bg-gradient-to-bl from-orange-900/20 via-orange-950/15 to-transparent pointer-events-none"/>
               {/* Top orange accent bar */}

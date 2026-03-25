@@ -228,7 +228,7 @@ export default function Process() {
           style={{ background: 'linear-gradient(to bottom, transparent, rgba(249,115,22,0.25) 10%, rgba(249,115,22,0.25) 90%, transparent)' }}/>
 
         {/* Steps */}
-        <div className="space-y-28">
+        <div className="space-y-16 md:space-y-28">
           {steps.map((step, i) => {
             const svgLeft = i % 2 === 0
             return (
