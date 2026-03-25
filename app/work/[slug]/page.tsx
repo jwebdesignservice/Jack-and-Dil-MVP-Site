@@ -1,11 +1,11 @@
 'use client'
 import { notFound } from 'next/navigation'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import Link from 'next/link'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { Button } from '@/components/ui/Button'
 import CTA from '@/components/sections/CTA'
+import HeroSlideshow from '@/components/ui/HeroSlideshow'
 
 /* ─── Project Data ─── */
 const projects: Record<string, Project> = {
@@ -358,16 +358,14 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             ))}
           </motion.div>
 
-          {/* Hero image — below stats, 95% width */}
+          {/* Hero slideshow — full width */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="mt-14 mx-auto rounded-lg overflow-hidden border border-[rgba(249,115,22,0.15)]"
-            style={{ width: '95%' }}>
-            <div className="relative aspect-[16/9]">
-              <Image src={project.heroImage} alt={project.title} fill className="object-cover" priority/>
-            </div>
+            className="mt-14 w-full"
+          >
+            <HeroSlideshow images={project.images} heroImage={project.heroImage} title={project.title} />
           </motion.div>
         </div>
       </section>
@@ -505,62 +503,6 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                   <h3 className="text-white font-semibold text-sm mb-1.5 group-hover:text-orange-400 transition-colors">{feature.title}</h3>
                   <p className="text-neutral-500 text-sm leading-relaxed">{feature.desc}</p>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 5. Screenshots Gallery ── */}
-      <section className="relative py-24">
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-4"
-          >
-            <SectionLabel icon={
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" />
-              </svg>
-            }>Screenshots</SectionLabel>
-          </motion.div>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl lg:text-4xl font-semibold text-white mb-12 leading-snug"
-          >
-            The finished product
-          </motion.h2>
-
-          <div className={`grid gap-6 ${project.images.length === 1 ? 'grid-cols-1' : project.images.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-2 lg:grid-cols-3'}`}>
-            {project.images.map((img, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`relative rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group ${project.images.length === 1 ? 'aspect-[16/9]' : 'aspect-[16/10]'}`}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-xs font-mono text-white/70">{img.alt}</span>
-                </div>
-                {/* Corner accents */}
-                <span className="absolute top-3 right-3 w-4 h-4 border-t border-r border-orange-500/40" />
-                <span className="absolute bottom-3 left-3 w-4 h-4 border-b border-l border-orange-500/40" />
               </motion.div>
             ))}
           </div>
