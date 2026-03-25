@@ -17,6 +17,7 @@ const projects: Record<string, Project> = {
     delivery: '14 days',
     year: '2026',
     heroImage: '/Images/work/metalex-phone.png',
+    siteUrl: 'https://www.metalexterminal.com/',
     heroStats: [
       { value: '14', label: 'Day Delivery' },
       { value: '4', label: 'Live Metals' },
@@ -80,6 +81,7 @@ const projects: Record<string, Project> = {
     heroImage: '/Images/work/desertfalcons.png',
     phoneImage: '/Images/work/desertfalcons-phone.png',
     dashboardImage: '/Images/work/desertfalcons-dashboard.png',
+    siteUrl: 'https://desert-falcons.vercel.app/',
     heroStats: [
       { value: '12', label: 'Day Delivery' },
       { value: '500+', label: 'Founding Members' },
@@ -141,6 +143,7 @@ const projects: Record<string, Project> = {
     year: '2025',
     heroImage: '/Images/work/memorymarket.png',
     phoneImage: '/Images/work/memorymarket-phone.png',
+    siteUrl: 'https://memory-market.vercel.app/',
     heroStats: [
       { value: '14', label: 'Day Delivery' },
       { value: '847', label: 'Memories Minted' },
@@ -324,6 +327,7 @@ interface Project {
   heroImage: string
   phoneImage?: string
   dashboardImage?: string
+  siteUrl?: string
   heroStats: Stat[]
   challenge: string
   approach: ApproachCard[]
@@ -361,13 +365,23 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-5"
+            className="flex flex-wrap items-center gap-4 mb-5"
           >
             <SectionLabel icon={
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
               </svg>
             }>Case Study</SectionLabel>
+            {project.siteUrl && (
+              <a href={project.siteUrl} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs font-mono text-orange-400 border border-orange-500/30 bg-orange-500/8 rounded-full px-4 py-1.5 hover:border-orange-500/60 hover:text-orange-300 transition-all">
+                <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
+                View Live Site
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M2 10L10 2M10 2H5M10 2V7"/>
+                </svg>
+              </a>
+            )}
           </motion.div>
 
           <motion.h1
