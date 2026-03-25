@@ -8,6 +8,17 @@ import CTA from '@/components/sections/CTA'
 
 const projects = [
   {
+    slug: 'metalex-terminal',
+    title: 'Metalex Terminal',
+    desc: 'A professional-grade precious metals trading terminal with live spot prices, AI signals, futures curves, and real-time market depth — built for serious metals traders.',
+    image: '/Images/work/metalex-phone.png',
+    hoverImage: '/Images/work/metalex.png',
+    tags: ['FinTech', 'Trading', 'Real-Time'],
+    services: ['Full-Stack', 'Real-Time Data', 'UI/UX Design'],
+    delivery: '14 days',
+    year: '2026',
+  },
+  {
     slug: 'desert-falcons',
     title: 'Desert Falcons Collective',
     desc: 'A premium automotive community platform for luxury car enthusiasts across the Middle East. Built with a focus on sleek visuals and member engagement.',

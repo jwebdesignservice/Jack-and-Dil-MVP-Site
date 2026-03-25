@@ -9,6 +9,67 @@ import HeroSlideshow from '@/components/ui/HeroSlideshow'
 
 /* ─── Project Data ─── */
 const projects: Record<string, Project> = {
+  'metalex-terminal': {
+    slug: 'metalex-terminal',
+    title: 'Metalex Terminal',
+    tagline: 'Professional-grade precious metals intelligence for serious traders.',
+    tags: ['FinTech', 'Trading', 'Real-Time Data', 'AI Signals'],
+    delivery: '14 days',
+    year: '2026',
+    heroImage: '/Images/work/metalex-phone.png',
+    heroStats: [
+      { value: '14', label: 'Day Delivery' },
+      { value: '4', label: 'Live Metals' },
+      { value: '<1s', label: 'Data Latency' },
+      { value: '99.9%', label: 'Uptime' },
+    ],
+    challenge: `Metalex needed a Bloomberg-grade terminal for precious metals traders — but one that independent traders and small funds could actually use without a six-figure subscription. The platform had to stream live spot prices for XAU, XAG, XPT and XPD, surface AI-generated trade signals, display real-time order book depth, visualise futures curves, and aggregate market news from multiple sources — all in a single interface that worked seamlessly across desktop and mobile. Existing tools were either too expensive, too slow, or too generic. They needed a custom solution built fast.`,
+    approach: [
+      {
+        icon: '📡',
+        title: 'Real-Time Data Architecture',
+        desc: 'WebSocket feeds from MetalpriceAPI and TradingView deliver sub-second spot prices, bid/ask spreads, and volume data across all four metals — no polling, no lag.',
+      },
+      {
+        icon: '🤖',
+        title: 'AI Signal Engine',
+        desc: 'Custom signal layer analyses RSI, STOCH, MACD, moving averages, and cross-metal correlations to generate live buy/hold/sell recommendations with confidence scores.',
+      },
+      {
+        icon: '📱',
+        title: 'Terminal-Grade Mobile UX',
+        desc: 'Full terminal functionality on mobile — not a dumbed-down app. Every data panel, chart, and signal view is optimised for the phone without losing information density.',
+      },
+    ],
+    features: [
+      { icon: '💰', title: 'Live Spot Prices', desc: 'Real-time XAU, XAG, XPT, XPD spot prices with bid/ask/spread, VWAP, open/high/low, and volume — updating every second via WebSocket.' },
+      { icon: '📊', title: 'Interactive Price Charts', desc: 'TradingView-powered candlestick and line charts across 1m, 30m, 1h, 1D timeframes with SMA overlays, volume bars, and indicator toggles.' },
+      { icon: '📖', title: 'Order Book Depth', desc: 'Real-time depth of market for XAU/USD showing bid/ask ladder, cumulative size, and price impact visualisation.' },
+      { icon: '🤖', title: 'AI Signal Dashboard', desc: 'Live AI-generated trade signals with entry prices, stop-loss, targets, and confidence percentages — refreshed continuously as market conditions shift.' },
+      { icon: '📈', title: 'Futures Curve', desc: 'Interactive COMEX futures curve across GC (near to far month) with contango/backwardation visualisation, roll yield, and annualised basis.' },
+      { icon: '🔍', title: 'Discovery Radar', desc: 'Curated news aggregation from Yahoo Finance, Gold Telegraph, and Medium — filtered by metal relevance, sentiment-tagged, and ranked by market impact.' },
+      { icon: '📉', title: 'Technical Indicators', desc: 'RSI, Stochastic, Williams %R, CCI, MACD, ADX, and Bollinger Bands — all calculated in real time with configurable periods.' },
+      { icon: '📱', title: 'Mobile Terminal', desc: 'Full-featured mobile view with the same data density as desktop — spot prices, technicals, charts, and signals in a thumb-friendly layout.' },
+    ],
+    images: [
+      { src: '/Images/work/metalex-phone.png', alt: 'Metalex Terminal mobile app' },
+      { src: '/Images/work/metalex.png', alt: 'Metalex Terminal on MacBook' },
+      { src: '/Images/work/metalex-dashboard.png', alt: 'Metalex Terminal full dashboard' },
+    ],
+    results: [
+      { value: '<1s', label: 'Live data latency' },
+      { value: '14', label: 'Days to production' },
+      { value: '8', label: 'Dashboard modules' },
+      { value: '99.9%', label: 'Platform uptime' },
+    ],
+    testimonial: {
+      quote: 'We\'ve tried every metals terminal out there. Metalex is the first one that gives us Bloomberg-level data without the Bloomberg price tag — and it works perfectly on mobile. FastLaunch built it in 2 weeks.',
+      author: 'James Hartwell',
+      role: 'Head of Trading, Metalex',
+    },
+    tech: ['Next.js', 'TypeScript', 'WebSockets', 'TradingView', 'MetalpriceAPI', 'Tailwind CSS', 'Vercel'],
+  },
+
   'desert-falcons': {
     slug: 'desert-falcons',
     title: 'Desert Falcons Collective',
