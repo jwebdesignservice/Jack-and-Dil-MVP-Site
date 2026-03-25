@@ -175,9 +175,8 @@ export default function Nav() {
 
           <ul className="hidden md:flex items-center gap-8">
             {/* Services mega menu trigger */}
-            <li className="relative">
+            <li className="relative" onMouseEnter={() => setActiveMenu('services')} onMouseLeave={() => setActiveMenu(null)}>
               <button
-                onClick={() => setActiveMenu(activeMenu === 'services' ? null : 'services')}
                 className="flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors text-sm group"
               >
                 Services
@@ -192,9 +191,8 @@ export default function Nav() {
             </li>
 
             {/* Case Studies mega menu trigger */}
-            <li className="relative">
+            <li className="relative" onMouseEnter={() => setActiveMenu('cases')} onMouseLeave={() => setActiveMenu(null)}>
               <button
-                onClick={() => setActiveMenu(activeMenu === 'cases' ? null : 'cases')}
                 className="flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors text-sm group"
               >
                 Case Studies
@@ -240,6 +238,8 @@ export default function Nav() {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
             className="absolute left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-[rgba(249,115,22,0.15)]"
+            onMouseEnter={() => setActiveMenu('services')}
+            onMouseLeave={() => setActiveMenu(null)}
           >
             <div className="container mx-auto px-6 py-8">
               <div className="flex items-center gap-2 mb-6">
@@ -283,6 +283,8 @@ export default function Nav() {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
             className="absolute left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-[rgba(249,115,22,0.15)]"
+            onMouseEnter={() => setActiveMenu('cases')}
+            onMouseLeave={() => setActiveMenu(null)}
           >
             <div className="container mx-auto px-6 py-8">
               <div className="flex items-center gap-2 mb-6">
