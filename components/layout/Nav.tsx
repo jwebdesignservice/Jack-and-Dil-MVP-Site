@@ -245,7 +245,7 @@ export default function Nav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
-            className="absolute left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-[rgba(249,115,22,0.15)]"
+            className="absolute left-1/2 -translate-x-1/2 w-full max-w-[1200px] bg-black/95 backdrop-blur-xl border border-[rgba(249,115,22,0.15)] rounded-b-xl"
             onMouseEnter={() => setActiveMenu('services')}
             onMouseLeave={() => setActiveMenu(null)}
           >
@@ -290,7 +290,7 @@ export default function Nav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
-            className="absolute left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-[rgba(249,115,22,0.15)]"
+            className="absolute left-1/2 -translate-x-1/2 w-full max-w-[1200px] bg-black/95 backdrop-blur-xl border border-[rgba(249,115,22,0.15)] rounded-b-xl"
             onMouseEnter={() => setActiveMenu('cases')}
             onMouseLeave={() => setActiveMenu(null)}
           >
