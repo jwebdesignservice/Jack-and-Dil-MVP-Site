@@ -23,7 +23,7 @@ const projects = [
     title: 'AMS Tool',
     desc: 'An AI-powered adverse media screening platform that automates compliance workflows — from search to risk classification to analyst review queue.',
     image: '/Images/work/ams-tablet.png',
-    hoverImage: '/Images/work/ams-desktop.png',
+    hoverImage: '/Images/work/ams-laptop.png',
     tags: ['RegTech', 'Compliance', 'AI'],
     services: ['Full-Stack', 'AI Integration', 'UI/UX Design'],
     delivery: '10 days',
