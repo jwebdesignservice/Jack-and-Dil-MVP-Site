@@ -4,6 +4,7 @@ import Script from 'next/script'
 import './globals.css'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
+import CookieBanner from '@/components/ui/CookieBanner'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         {children}
         <Footer />
+        <CookieBanner />
 
         {/* WhatsApp floating button */}
         <a href="https://wa.me/447917328155" target="_blank" rel="noopener noreferrer"
