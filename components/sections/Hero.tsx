@@ -36,12 +36,14 @@ export default function Hero() {
           {/* Left */}
           <div>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <div className="inline-flex items-center gap-2 border border-orange-500/30 rounded-full px-4 py-1.5 mb-8">
+              <div className="inline-flex items-center gap-3 border border-orange-500/30 rounded-full px-4 py-1.5 mb-8">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500" />
                 </span>
                 <span className="text-orange-400 text-sm font-medium">⚡ Now accepting projects Q1 2026</span>
+                <span className="w-px h-3.5 bg-orange-500/30" />
+                <span className="text-white text-sm font-semibold">67% built in 4–5 days</span>
               </div>
             </motion.div>
 
