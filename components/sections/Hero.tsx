@@ -47,10 +47,10 @@ export default function Hero() {
 
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight mb-6">
-              <span className="text-white">Production-Ready MVPs</span>
+              <span className="text-white">Production Ready MVP&apos;s.</span>
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                For Ambitious Founders
+                Built, Shipped and Live in 3–14 Days.
               </span>
             </motion.h1>
 
