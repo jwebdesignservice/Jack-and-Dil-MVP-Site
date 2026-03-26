@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button'
 
 const stats = [
   { value: '50+', label: 'MVPs Built' },
-  { value: '3-14', label: 'Days' },
+  { value: '67%', label: 'Built in 4–5 Days' },
   { value: '100%', label: 'Ownership' },
   { value: '24/7', label: 'Support' },
 ]
