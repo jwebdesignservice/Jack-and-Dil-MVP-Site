@@ -41,7 +41,7 @@ export default function Hero() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500" />
                 </span>
-                <span className="text-orange-400 text-sm font-medium">67% of MVP&apos;s Built in 4–5 Days</span>
+                <span className="text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-white">67% of MVP&apos;s Built in 4–5 Days</span>
               </div>
             </motion.div>
 
