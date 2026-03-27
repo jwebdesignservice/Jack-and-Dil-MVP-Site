@@ -140,6 +140,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeMenu, setActiveMenu] = useState<'services' | 'cases' | null>(null)
+  const [mobileExpanded, setMobileExpanded] = useState<'services' | 'cases' | null>(null)
   const menuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -331,42 +332,90 @@ export default function Nav() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black/95 border-t border-[rgba(249,115,22,0.1)] overflow-hidden">
-            <div className="container mx-auto px-6 py-6 space-y-1">
+            className="md:hidden bg-black/95 border-t border-[rgba(249,115,22,0.1)] overflow-hidden max-h-[80vh] overflow-y-auto">
+            <div className="px-6 py-4 space-y-1">
+
+              {/* Home */}
               <Link href="/" onClick={() => setMobileOpen(false)}
-                className="block text-neutral-400 hover:text-white transition-colors py-2.5 text-sm border-b border-[rgba(249,115,22,0.08)] mb-3 pb-3">
+                className="flex items-center justify-between text-neutral-400 hover:text-white transition-colors py-3 text-sm border-b border-[rgba(249,115,22,0.08)]">
                 Home
               </Link>
-              {/* Services section */}
-              <div className="pb-3 mb-3 border-b border-[rgba(249,115,22,0.08)]">
-                <div className="text-[10px] font-mono text-orange-500 tracking-widest uppercase mb-3">Services</div>
-                {servicesItems.map(item => (
-                  <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-3 py-2.5 text-neutral-400 hover:text-white transition-colors">
-                    <span className="text-orange-500/70">{item.icon}</span>
-                    <span className="text-sm">{item.title}</span>
-                  </Link>
-                ))}
+
+              {/* Services accordion */}
+              <div className="border-b border-[rgba(249,115,22,0.08)]">
+                <button
+                  onClick={() => setMobileExpanded(mobileExpanded === 'services' ? null : 'services')}
+                  className="flex items-center justify-between w-full text-neutral-400 hover:text-white transition-colors py-3 text-sm"
+                >
+                  <span>Services</span>
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5"
+                    className={`transition-transform duration-200 ${mobileExpanded === 'services' ? 'rotate-180' : ''}`}>
+                    <path d="M2 4l4 4 4-4"/>
+                  </svg>
+                </button>
+                <AnimatePresence>
+                  {mobileExpanded === 'services' && (
+                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2 }} className="overflow-hidden">
+                      <div className="pb-2 pl-2 space-y-0.5">
+                        {servicesItems.map(item => (
+                          <Link key={item.href} href={item.href} onClick={() => { setMobileOpen(false); setMobileExpanded(null) }}
+                            className="flex items-center gap-3 py-2 text-neutral-500 hover:text-white transition-colors">
+                            <span className="text-orange-500/60 flex-shrink-0">{item.icon}</span>
+                            <span className="text-sm">{item.title}</span>
+                          </Link>
+                        ))}
+                        <Link href="/services" onClick={() => { setMobileOpen(false); setMobileExpanded(null) }}
+                          className="flex items-center gap-1.5 py-2 text-orange-500 text-xs font-mono hover:text-orange-400 transition-colors">
+                          View all services →
+                        </Link>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-              {/* Case studies section */}
-              <div className="pb-3 mb-3 border-b border-[rgba(249,115,22,0.08)]">
-                <div className="text-[10px] font-mono text-orange-500 tracking-widest uppercase mb-3">Case Studies</div>
-                {caseStudyItems.map(item => (
-                  <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-3 py-2.5 text-neutral-400 hover:text-white transition-colors">
-                    <span className="text-orange-500/70">{item.icon}</span>
-                    <span className="text-sm">{item.title}</span>
-                  </Link>
-                ))}
+
+              {/* Case Studies accordion */}
+              <div className="border-b border-[rgba(249,115,22,0.08)]">
+                <button
+                  onClick={() => setMobileExpanded(mobileExpanded === 'cases' ? null : 'cases')}
+                  className="flex items-center justify-between w-full text-neutral-400 hover:text-white transition-colors py-3 text-sm"
+                >
+                  <span>Case Studies</span>
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5"
+                    className={`transition-transform duration-200 ${mobileExpanded === 'cases' ? 'rotate-180' : ''}`}>
+                    <path d="M2 4l4 4 4-4"/>
+                  </svg>
+                </button>
+                <AnimatePresence>
+                  {mobileExpanded === 'cases' && (
+                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2 }} className="overflow-hidden">
+                      <div className="pb-2 pl-2 space-y-0.5">
+                        {caseStudyItems.map(item => (
+                          <Link key={item.href} href={item.href} onClick={() => { setMobileOpen(false); setMobileExpanded(null) }}
+                            className="flex items-center gap-3 py-2 text-neutral-500 hover:text-white transition-colors">
+                            <span className="text-orange-500/60 flex-shrink-0">{item.icon}</span>
+                            <span className="text-sm">{item.title}</span>
+                          </Link>
+                        ))}
+                        <Link href="/work" onClick={() => { setMobileOpen(false); setMobileExpanded(null) }}
+                          className="flex items-center gap-1.5 py-2 text-orange-500 text-xs font-mono hover:text-orange-400 transition-colors">
+                          View all case studies →
+                        </Link>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
+
               {/* Simple links */}
               {simpleLinks.map(link => (
                 <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)}
-                  className="block text-neutral-400 hover:text-white transition-colors py-2.5 text-sm">
+                  className="block text-neutral-400 hover:text-white transition-colors py-3 text-sm border-b border-[rgba(249,115,22,0.08)]">
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-3">
+
+              <div className="pt-4 pb-2">
                 <Button href="/contact" variant="primary" className="w-full justify-center">Book a Call</Button>
               </div>
             </div>
