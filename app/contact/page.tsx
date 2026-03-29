@@ -23,6 +23,7 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [dialCode, setDialCode] = useState('+44')
   const [formData, setFormData] = useState<FormData>({
     name: '', email: '', mobile: '', company: '', projectType: '', budget: '', timeline: '', message: ''
   })
@@ -39,7 +40,7 @@ export default function ContactPage() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, mobile: formData.mobile ? `${dialCode} ${formData.mobile}` : '' }),
       })
       if (!res.ok) throw new Error('Failed to send')
       setSubmitted(true)
@@ -157,7 +158,60 @@ export default function ContactPage() {
                     Mobile Number *
                   </span>
                 </label>
-                <input className={inputClass} type="tel" name="mobile" value={formData.mobile} onChange={handleChange} placeholder="+44 7700 900000" required/>
+                <div className="flex gap-2">
+                  <select
+                    value={dialCode}
+                    onChange={e => setDialCode(e.target.value)}
+                    className="bg-[#0A0A0A] border border-[rgba(249,115,22,0.2)] rounded-lg px-3 py-3 text-white focus:outline-none focus:border-orange-500/60 transition-colors text-sm flex-shrink-0 w-[110px]"
+                  >
+                    <option value="+44">🇬🇧 +44</option>
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+1-CA">🇨🇦 +1</option>
+                    <option value="+61">🇦🇺 +61</option>
+                    <option value="+64">🇳🇿 +64</option>
+                    <option value="+353">🇮🇪 +353</option>
+                    <option value="+33">🇫🇷 +33</option>
+                    <option value="+49">🇩🇪 +49</option>
+                    <option value="+31">🇳🇱 +31</option>
+                    <option value="+32">🇧🇪 +32</option>
+                    <option value="+41">🇨🇭 +41</option>
+                    <option value="+46">🇸🇪 +46</option>
+                    <option value="+47">🇳🇴 +47</option>
+                    <option value="+45">🇩🇰 +45</option>
+                    <option value="+358">🇫🇮 +358</option>
+                    <option value="+34">🇪🇸 +34</option>
+                    <option value="+39">🇮🇹 +39</option>
+                    <option value="+351">🇵🇹 +351</option>
+                    <option value="+48">🇵🇱 +48</option>
+                    <option value="+971">🇦🇪 +971</option>
+                    <option value="+966">🇸🇦 +966</option>
+                    <option value="+974">🇶🇦 +974</option>
+                    <option value="+91">🇮🇳 +91</option>
+                    <option value="+92">🇵🇰 +92</option>
+                    <option value="+880">🇧🇩 +880</option>
+                    <option value="+94">🇱🇰 +94</option>
+                    <option value="+65">🇸🇬 +65</option>
+                    <option value="+60">🇲🇾 +60</option>
+                    <option value="+234">🇳🇬 +234</option>
+                    <option value="+233">🇬🇭 +233</option>
+                    <option value="+254">🇰🇪 +254</option>
+                    <option value="+27">🇿🇦 +27</option>
+                    <option value="+55">🇧🇷 +55</option>
+                    <option value="+52">🇲🇽 +52</option>
+                    <option value="+86">🇨🇳 +86</option>
+                    <option value="+81">🇯🇵 +81</option>
+                    <option value="+82">🇰🇷 +82</option>
+                  </select>
+                  <input
+                    className={`${inputClass} flex-1`}
+                    type="tel"
+                    name="mobile"
+                    value={formData.mobile}
+                    onChange={handleChange}
+                    placeholder="7700 900000"
+                    required
+                  />
+                </div>
               </div>
 
               {/* Row 2 */}
