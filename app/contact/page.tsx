@@ -16,7 +16,7 @@ type FormData = {
   message: string
 }
 
-const inputClass = "w-full bg-[#0A0A0A] border border-[rgba(249,115,22,0.2)] rounded-lg px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:border-orange-500/60 transition-colors text-sm"
+const inputClass = "w-full bg-[#0A0A0A] border border-[rgba(249,115,22,0.2)] rounded-lg px-4 py-3 h-[48px] text-white placeholder-neutral-600 focus:outline-none focus:border-orange-500/60 transition-colors text-sm"
 const labelClass = "block text-xs font-medium text-neutral-500 mb-2 uppercase tracking-widest"
 
 export default function ContactPage() {
@@ -162,7 +162,7 @@ export default function ContactPage() {
                   <select
                     value={dialCode}
                     onChange={e => setDialCode(e.target.value)}
-                    className="bg-[#0A0A0A] border border-[rgba(249,115,22,0.2)] rounded-lg px-3 py-3 text-white focus:outline-none focus:border-orange-500/60 transition-colors text-sm flex-shrink-0 w-[110px]"
+                    className="bg-[#0A0A0A] border border-[rgba(249,115,22,0.2)] rounded-lg px-3 h-[48px] text-white focus:outline-none focus:border-orange-500/60 transition-colors text-sm flex-shrink-0 w-[110px]"
                   >
                     <option value="+44">🇬🇧 +44</option>
                     <option value="+1">🇺🇸 +1</option>
@@ -318,7 +318,7 @@ export default function ContactPage() {
               {error && (
                 <p className="text-red-400 text-sm text-center">{error}</p>
               )}
-              <div className="flex flex-wrap items-center justify-between gap-4">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div className="flex items-center gap-2 text-neutral-600 text-xs">
                   <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                   Encrypted & confidential
@@ -326,7 +326,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="group relative inline-flex items-center gap-2 overflow-hidden px-7 py-3.5 rounded-lg text-sm font-medium text-white transition-all duration-300 bg-orange-500 hover:bg-orange-600 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="group relative inline-flex items-center justify-center gap-2 overflow-hidden w-full sm:w-auto px-7 py-3.5 rounded-lg text-sm font-medium text-white transition-all duration-300 bg-orange-500 hover:bg-orange-600 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <>
