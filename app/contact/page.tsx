@@ -289,7 +289,7 @@ export default function ContactPage() {
                     Tell Us About Your Idea *
                   </span>
                 </label>
-                <textarea className={inputClass} name="message" value={formData.message} onChange={handleChange} rows={5}
+                <textarea className={inputClass + " !h-auto"} name="message" value={formData.message} onChange={handleChange} rows={5}
                   placeholder="Describe your product idea — what problem it solves, who the target audience is, and any key features you have in mind..." required/>
               </div>
 
