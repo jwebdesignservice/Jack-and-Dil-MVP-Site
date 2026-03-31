@@ -42,8 +42,8 @@ export default function About() {
           style={{ boxShadow: '0 0 40px rgba(249,115,22,0.08)' }}>
           <div className="grid lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-[rgba(249,115,22,0.1)]">
 
-            {/* Left: Team graphic — no outer card, just inner content */}
-            <div>
+            {/* Left: Team graphic — no outer card, just inner content (order-2 on mobile so text comes first) */}
+            <div className="order-2 lg:order-1">
               {/* Card top bar */}
               <div className="flex items-center gap-2 px-5 py-4 border-b border-[rgba(249,115,22,0.1)] bg-[#0D0D0D]">
                 <div className="w-2.5 h-2.5 rounded-full bg-red-500/60"/>
@@ -127,8 +127,8 @@ export default function About() {
               </div>
             </div>
 
-            {/* Right: Text */}
-            <div className="p-8 lg:p-10 flex flex-col justify-center bg-[#0D0D0D]">
+            {/* Right: Text (order-1 on mobile so text comes first) */}
+            <div className="p-8 lg:p-10 flex flex-col justify-center bg-[#0D0D0D] order-1 lg:order-2">
               <h2 className="text-3xl lg:text-4xl font-semibold text-white mb-5">
                 Built by Developers,{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">For Founders</span>

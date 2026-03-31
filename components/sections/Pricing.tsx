@@ -7,21 +7,21 @@ import { Button } from '@/components/ui/Button'
 const plans = [
   {
     name: 'Starter',
-    price: 2500,
+    priceRange: '£2,500 – £5,000',
     desc: 'Validate your idea fast with a lean MVP.',
     features: ['Up to 5 core features', 'Mobile-responsive design', 'Basic auth + database', '1–4 day delivery', '2 weeks post-launch support'],
     popular: false,
   },
   {
     name: 'Growth',
-    price: 9500,
+    priceRange: '£5,000 – £10,000',
     desc: 'The full package for founders ready to ship.',
     features: ['Up to 12 core features', 'Custom UI/UX design', 'Payments + advanced auth', '4–10 day delivery', '1 month post-launch support', 'Analytics dashboard'],
     popular: true,
   },
   {
     name: 'Scale',
-    price: 20000,
+    priceRange: '£10,000 – £20,000',
     desc: 'Complex products built for serious traction.',
     features: ['Unlimited features', 'Full design system', 'Complex integrations', '14-day delivery', '3 months post-launch support', 'Dedicated Slack channel'],
     popular: false,
@@ -62,8 +62,8 @@ export default function Pricing() {
               <div className="p-8 flex-1">
                 <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
                 <p className="text-neutral-600 text-sm mb-6">{plan.desc}</p>
-                <div className="text-4xl font-bold text-white mb-1">
-                  £<CountUp end={plan.price} duration={1500} />
+                <div className="text-3xl font-bold text-white mb-1">
+                  {plan.priceRange}
                 </div>
                 <div className="text-neutral-600 text-sm mb-8">fixed price</div>
                 <ul className="space-y-3">

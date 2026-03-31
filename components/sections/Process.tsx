@@ -237,7 +237,7 @@ export default function Process() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className={`flex flex-col lg:flex-row items-center gap-10 relative ${!svgLeft ? 'lg:flex-row-reverse' : ''}`}>
+                className={`flex flex-col-reverse lg:flex-row items-center gap-10 relative ${!svgLeft ? 'lg:flex-row-reverse' : ''}`}>
 
                 {/* SVG side */}
                 <div className="flex-1 w-full flex justify-center py-4">
