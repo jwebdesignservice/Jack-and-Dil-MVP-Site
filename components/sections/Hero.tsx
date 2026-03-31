@@ -12,7 +12,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-16">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-16 pb-4 md:pb-0">
       {/* Dot grid */}
       <div className="absolute inset-0"
         style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
@@ -47,8 +47,8 @@ export default function Hero() {
 
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6">
-              <span className="text-white block">Production Ready MVP&apos;s.</span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 block">
+              <span className="text-white">Production Ready MVP&apos;s. </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                 Built, Shipped and Live in 3–14 Days.
               </span>
             </motion.h1>

@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRef, useState, useEffect } from 'react'
 
 const works = [
   { src: '/Images/work/speedread-laptop.png', hoverSrc: '/Images/work/speedread-phone.png', label: 'Speed Read', tag: 'EdTech / Productivity', href: '/work/speed-read' },
@@ -11,18 +12,92 @@ const works = [
   { src: '/Images/work/ams-tablet.png', hoverSrc: '/Images/work/ams-laptop.png', label: 'AMS Tool', tag: 'RegTech / Compliance', href: '/work/ams-tool' },
   { src: '/Images/work/desertfalcons.png', hoverSrc: '/Images/work/desertfalcons-phone.png', label: 'Desert Falcons Collective', tag: 'Automotive / Luxury', href: '/work/desert-falcons' },
   { src: '/Images/work/aramas.png', hoverSrc: '/Images/work/aramas-phone.png', label: 'Aramas Property', tag: 'Real Estate', href: '/work/aramas-property' },
-  // duplicates for seamless loop
-  { src: '/Images/work/speedread-laptop.png', hoverSrc: '/Images/work/speedread-phone.png', label: 'Speed Read', tag: 'EdTech / Productivity', href: '/work/speed-read' },
-  { src: '/Images/work/eliminent-tablet.png', hoverSrc: '/Images/work/eliminent.png', label: 'Eliminent', tag: 'AI / Gaming', href: '/work/eliminent' },
-  { src: '/Images/work/metalex-phone.png', hoverSrc: '/Images/work/metalex.png', label: 'Metalex Terminal', tag: 'FinTech / Trading', href: '/work/metalex-terminal' },
-  { src: '/Images/work/insights.png', label: 'Insights Dashboard', tag: 'Analytics SaaS', href: '/work/insights-dashboard' },
-  { src: '/Images/work/memorymarket.png', hoverSrc: '/Images/work/memorymarket-phone.png', label: 'Memory Market', tag: 'Web3 / DeFi', href: '/work/memory-market' },
-  { src: '/Images/work/ams-tablet.png', hoverSrc: '/Images/work/ams-laptop.png', label: 'AMS Tool', tag: 'RegTech / Compliance', href: '/work/ams-tool' },
-  { src: '/Images/work/desertfalcons.png', hoverSrc: '/Images/work/desertfalcons-phone.png', label: 'Desert Falcons Collective', tag: 'Automotive / Luxury', href: '/work/desert-falcons' },
-  { src: '/Images/work/aramas.png', hoverSrc: '/Images/work/aramas-phone.png', label: 'Aramas Property', tag: 'Real Estate', href: '/work/aramas-property' },
 ]
 
+// Duplicates for seamless desktop marquee
+const marqueeWorks = [...works, ...works]
+
 export default function WorkMarquee() {
+  const [isMobile, setIsMobile] = useState(false)
+  const sliderRef = useRef<HTMLDivElement>(null)
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  const scrollToSlide = (index: number) => {
+    if (sliderRef.current) {
+      const slideWidth = sliderRef.current.offsetWidth * 0.9 + 16 // 90vw + gap
+      sliderRef.current.scrollTo({ left: slideWidth * index, behavior: 'smooth' })
+      setCurrentSlide(index)
+    }
+  }
+
+  const handleScroll = () => {
+    if (sliderRef.current) {
+      const slideWidth = sliderRef.current.offsetWidth * 0.9 + 16
+      const newIndex = Math.round(sliderRef.current.scrollLeft / slideWidth)
+      setCurrentSlide(newIndex)
+    }
+  }
+
+  // Mobile: Swipeable slider
+  if (isMobile) {
+    return (
+      <section className="py-8 overflow-hidden relative bg-black" style={{ zIndex: 10000 }}>
+        {/* Dot grid */}
+        <div className="absolute inset-0"
+          style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }}/>
+        
+        {/* Slider container */}
+        <div 
+          ref={sliderRef}
+          onScroll={handleScroll}
+          className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-[5vw]"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {works.map((item, i) => (
+            <Link 
+              key={i} 
+              href={item.href} 
+              className="relative flex-shrink-0 w-[90vw] aspect-[693/429] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] snap-center block"
+            >
+              <Image src={item.src} alt={item.label} fill className="object-cover"/>
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"/>
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <div className="text-[10px] font-mono text-orange-400/80 tracking-widest uppercase mb-1">{item.tag}</div>
+                <div className="text-white font-semibold text-sm">{item.label}</div>
+              </div>
+              {/* Orange corner accent */}
+              <div className="absolute top-3 right-3 w-4 h-4">
+                <span className="absolute top-0 right-0 w-3 h-3 border-t border-r border-orange-500/60"/>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Dots indicator */}
+        <div className="flex justify-center gap-2 mt-4">
+          {works.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => scrollToSlide(i)}
+              className={`w-2 h-2 rounded-full transition-all ${
+                currentSlide === i ? 'bg-orange-500 w-4' : 'bg-neutral-600'
+              }`}
+            />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  // Desktop: Original marquee
   return (
     <section className="py-8 overflow-hidden relative bg-black" style={{ zIndex: 10000 }}>
       {/* Dot grid — continuous from hero/services */}
@@ -35,8 +110,8 @@ export default function WorkMarquee() {
       {/* Scrolling row */}
       <div className="flex group relative z-10">
         <div className="flex gap-6 animate-marquee-left group-hover:[animation-play-state:paused] shrink-0">
-          {works.map((item, i) => (
-            <Link key={`a-${i}`} href={item.href} className="relative flex-shrink-0 w-[300px] sm:w-[500px] md:w-[693px] h-[185px] sm:h-[310px] md:h-[429px] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group/card block">
+          {marqueeWorks.map((item, i) => (
+            <Link key={`a-${i}`} href={item.href} className="relative flex-shrink-0 w-[500px] md:w-[693px] h-[310px] md:h-[429px] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group/card block">
               <Image src={item.src} alt={item.label} fill className={`object-cover transition-opacity duration-500 ${item.hoverSrc ? 'group-hover/card:opacity-0' : ''}`}/>
               {item.hoverSrc && <Image src={item.hoverSrc} alt={`${item.label} mobile`} fill className="object-cover opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"/>}
               {/* Overlay */}
@@ -54,8 +129,8 @@ export default function WorkMarquee() {
         </div>
         {/* Duplicate for seamless loop */}
         <div className="flex gap-6 animate-marquee-left group-hover:[animation-play-state:paused] shrink-0">
-          {works.map((item, i) => (
-            <Link key={`b-${i}`} href={item.href} className="relative flex-shrink-0 w-[300px] sm:w-[500px] md:w-[693px] h-[185px] sm:h-[310px] md:h-[429px] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group/card block">
+          {marqueeWorks.map((item, i) => (
+            <Link key={`b-${i}`} href={item.href} className="relative flex-shrink-0 w-[500px] md:w-[693px] h-[310px] md:h-[429px] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group/card block">
               <Image src={item.src} alt={item.label} fill className={`object-cover transition-opacity duration-500 ${item.hoverSrc ? 'group-hover/card:opacity-0' : ''}`}/>
               {item.hoverSrc && <Image src={item.hoverSrc} alt={`${item.label} mobile`} fill className="object-cover opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"/>}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"/>
