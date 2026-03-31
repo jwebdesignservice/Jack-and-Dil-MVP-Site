@@ -167,9 +167,9 @@ export default function Nav() {
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20 py-3">
-          <Link href="/" className="flex items-center gap-2 text-white font-bold text-xl">
+          <Link href="/" className="flex items-center gap-2 text-white font-bold text-xl flex-shrink-0">
             <Image src="/logo.png" alt="FastLaunch" width={32} height={32} className="rounded-md" />
-            FastLaunch
+            <span className="hidden sm:inline">FastLaunch</span>
           </Link>
 
           <ul className="hidden md:flex items-center gap-8">
