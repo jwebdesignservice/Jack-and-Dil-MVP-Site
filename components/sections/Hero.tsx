@@ -34,7 +34,7 @@ export default function Hero() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left */}
-          <div>
+          <div className="text-center lg:text-left">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <div className="inline-flex items-center gap-3 border border-orange-500/30 rounded-full px-4 py-1.5 mb-8">
                 <span className="relative flex h-2 w-2">
@@ -46,7 +46,7 @@ export default function Hero() {
             </motion.div>
 
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6">
+              className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6">
               <span className="text-white">Production Ready MVP&apos;s. </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                 Built, Shipped and Live in 3–14 Days.
@@ -54,12 +54,12 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-neutral-400 text-sm lg:text-base mb-10 max-w-lg leading-relaxed">
+              className="text-neutral-400 text-sm lg:text-base mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
               We build production-grade MVPs that launch in days. No fluff, no delays. Fast, high-quality software that gets you to market.
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-wrap gap-4 mb-16">
+              className="flex flex-wrap gap-4 mb-16 justify-center lg:justify-start">
               <Button href="/contact" variant="primary">Start Your MVP</Button>
               <Button href="/#process" variant="outline">See Our Process</Button>
             </motion.div>
