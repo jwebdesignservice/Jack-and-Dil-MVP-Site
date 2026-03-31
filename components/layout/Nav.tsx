@@ -172,7 +172,7 @@ export default function Nav() {
             <span className="hidden sm:inline">FastLaunch</span>
           </Link>
 
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden lg:flex items-center gap-8">
             {/* Home */}
             <li>
               <Link href="/" className="text-neutral-400 hover:text-white transition-colors text-sm relative group">
@@ -226,11 +226,11 @@ export default function Nav() {
             ))}
           </ul>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4">
             <Button href="/contact" variant="primary">Book a Call</Button>
           </div>
 
-          <button className="md:hidden text-white p-2" onClick={() => setMobileOpen(!mobileOpen)}>
+          <button className="lg:hidden text-white p-2" onClick={() => setMobileOpen(!mobileOpen)}>
             <div className={`w-5 h-0.5 bg-white mb-1 transition-transform ${mobileOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
             <div className={`w-5 h-0.5 bg-white mb-1 transition-opacity ${mobileOpen ? 'opacity-0' : ''}`} />
             <div className={`w-5 h-0.5 bg-white transition-transform ${mobileOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
@@ -332,7 +332,7 @@ export default function Nav() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black/95 border-t border-[rgba(249,115,22,0.1)] overflow-hidden max-h-[80vh] overflow-y-auto">
+            className="lg:hidden bg-black/95 border-t border-[rgba(249,115,22,0.1)] overflow-hidden max-h-[80vh] overflow-y-auto">
             <div className="px-6 py-4 space-y-1">
 
               {/* Home */}
