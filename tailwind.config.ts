@@ -22,10 +22,14 @@ const config: Config = {
       },
       container: {
         center: true,
-        padding: '1.5rem',
+        padding: {
+          DEFAULT: '1.25rem',
+          md: '1.5rem',
+          lg: '1.5rem',
+        },
         screens: {
-          sm: '640px',
-          md: '768px',
+          sm: '100%',
+          md: '100%',
           lg: '1024px',
           xl: '1200px',
           '2xl': '1200px',
