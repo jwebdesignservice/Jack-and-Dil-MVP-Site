@@ -34,8 +34,8 @@ const config: Config = {
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',
-        'marquee-left': 'marquee-left 30s linear infinite',
-        'marquee-right': 'marquee-right 30s linear infinite',
+        'marquee-left': 'marquee-left 60s linear infinite',
+        'marquee-right': 'marquee-right 60s linear infinite',
         'pulse-ring': 'pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite',
         'scan-line': 'scan-line 2s linear infinite',
         'gradient-sweep': 'gradient-sweep 3s linear infinite',
