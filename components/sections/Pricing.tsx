@@ -51,7 +51,7 @@ export default function Pricing() {
           {plans.map((plan, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
               className={`relative rounded-2xl flex flex-col ${plan.popular
-                ? 'mt-6 bg-[#0D0A00] border-2 border-orange-500/60'
+                ? 'bg-[#0D0A00] border-2 border-orange-500/60'
                 : 'bg-[#0A0A0A] border border-[rgba(249,115,22,0.15)]'}`}
               style={plan.popular ? { boxShadow: '0 0 60px rgba(249,115,22,0.15)' } : {}}>
               {plan.popular && (
