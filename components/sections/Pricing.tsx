@@ -47,7 +47,7 @@ export default function Pricing() {
           <p className="text-neutral-500 mt-4 max-w-lg mx-auto">No hourly rates, no surprises. You know exactly what you get.</p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {plans.map((plan, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
               className={`relative rounded-2xl flex flex-col ${plan.popular
