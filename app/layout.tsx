@@ -182,8 +182,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJKCWBW5"
             height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}/>
         </noscript>
-        {/* Google Tag Manager — main script (beforeInteractive = injected into <head> as early as possible) */}
-        <Script id="gtm" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KJKCWBW5');` }}/>
+        {/* Google Tag Manager — afterInteractive = loaded after page is interactive, doesn't block FCP/LCP */}
+        <Script id="gtm" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KJKCWBW5');` }}/>
         {/* Floating dots — left gutter only (hidden below xl to prevent negative-width overflow) */}
         <div className="fixed top-0 bottom-0 pointer-events-none overflow-hidden hidden xl:block" style={{ left: 0, width: 'calc(50% - 600px)', zIndex: 8 }}>
           {[...Array(7)].map((_, i) => (

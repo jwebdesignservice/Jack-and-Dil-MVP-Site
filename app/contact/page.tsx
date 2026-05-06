@@ -137,7 +137,7 @@ export default function ContactPage() {
                       Full Name *
                     </span>
                   </label>
-                  <input className={inputClass} name="name" value={formData.name} onChange={handleChange} placeholder="John Smith" required/>
+                  <input className={inputClass} name="name" value={formData.name} onChange={handleChange} placeholder="John Smith" required aria-label="Full Name" autoComplete="name"/>
                 </div>
                 <div>
                   <label className={labelClass}>
@@ -146,7 +146,7 @@ export default function ContactPage() {
                       Email Address *
                     </span>
                   </label>
-                  <input className={inputClass} type="email" name="email" value={formData.email} onChange={handleChange} placeholder="you@company.com" required/>
+                  <input className={inputClass} type="email" name="email" value={formData.email} onChange={handleChange} placeholder="you@company.com" required aria-label="Email Address" autoComplete="email"/>
                 </div>
               </div>
 
@@ -162,6 +162,7 @@ export default function ContactPage() {
                   <select
                     value={dialCode}
                     onChange={e => setDialCode(e.target.value)}
+                    aria-label="International dialling code"
                     className="bg-[#0A0A0A] border border-[rgba(249,115,22,0.2)] rounded-lg px-3 h-[48px] text-white focus:outline-none focus:border-orange-500/60 transition-colors text-sm flex-shrink-0 w-[110px]"
                   >
                     <option value="+44">🇬🇧 +44</option>
@@ -210,6 +211,8 @@ export default function ContactPage() {
                     onChange={handleChange}
                     placeholder="7700 900000"
                     required
+                    aria-label="Mobile Number"
+                    autoComplete="tel-national"
                   />
                 </div>
               </div>
@@ -223,7 +226,7 @@ export default function ContactPage() {
                       Company *
                     </span>
                   </label>
-                  <input className={inputClass} name="company" value={formData.company} onChange={handleChange} placeholder="Acme Inc." required/>
+                  <input className={inputClass} name="company" value={formData.company} onChange={handleChange} placeholder="Acme Inc." required aria-label="Company" autoComplete="organization"/>
                 </div>
                 <div>
                   <label className={labelClass}>
@@ -232,7 +235,7 @@ export default function ContactPage() {
                       Product Type *
                     </span>
                   </label>
-                  <select className={inputClass} name="projectType" value={formData.projectType} onChange={handleChange} required>
+                  <select className={inputClass} name="projectType" value={formData.projectType} onChange={handleChange} required aria-label="Product Type">
                     <option value="" disabled>Select type</option>
                     <option>SaaS Platform</option>
                     <option>Marketplace</option>
@@ -255,7 +258,7 @@ export default function ContactPage() {
                       Budget Range *
                     </span>
                   </label>
-                  <select className={inputClass} name="budget" value={formData.budget} onChange={handleChange} required>
+                  <select className={inputClass} name="budget" value={formData.budget} onChange={handleChange} required aria-label="Budget Range">
                     <option value="" disabled>Select budget</option>
                     <option>£2,500 – £5,000</option>
                     <option>£5,000 – £10,000</option>
@@ -271,7 +274,7 @@ export default function ContactPage() {
                       Timeline *
                     </span>
                   </label>
-                  <select className={inputClass} name="timeline" value={formData.timeline} onChange={handleChange} required>
+                  <select className={inputClass} name="timeline" value={formData.timeline} onChange={handleChange} required aria-label="Timeline">
                     <option value="" disabled>Select timeline</option>
                     <option>ASAP (1–2 weeks)</option>
                     <option>Within 1 month</option>
@@ -290,7 +293,7 @@ export default function ContactPage() {
                   </span>
                 </label>
                 <textarea className={inputClass + " !h-auto"} name="message" value={formData.message} onChange={handleChange} rows={5}
-                  placeholder="Describe your product idea — what problem it solves, who the target audience is, and any key features you have in mind..." required/>
+                  placeholder="Describe your product idea — what problem it solves, who the target audience is, and any key features you have in mind..." required aria-label="Tell us about your idea"/>
               </div>
 
               {/* File upload */}
@@ -307,7 +310,7 @@ export default function ContactPage() {
                     <span className="text-sm text-neutral-400 group-hover:text-neutral-300 transition-colors">Drop a file here or click to upload</span>
                     <span className="block text-[10px] text-neutral-600 mt-1">PDF, DOC, DOCX, PNG, JPG — max 10MB</span>
                   </div>
-                  <input type="file" className="hidden" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.webp" />
+                  <input type="file" className="hidden" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.webp" aria-label="Attach project brief (optional)"/>
                 </label>
               </div>
 

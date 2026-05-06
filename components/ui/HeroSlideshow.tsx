@@ -84,13 +84,13 @@ export default function HeroSlideshow({ images, heroImage, title }: HeroSlidesho
         {/* Prev/Next arrows — only show if >1 slide */}
         {allSlides.length > 1 && (
           <>
-            <button onClick={prev}
+            <button onClick={prev} type="button" aria-label="Previous slide"
               className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 border border-[rgba(249,115,22,0.3)] flex items-center justify-center text-white hover:border-orange-500/60 hover:bg-black/80 transition-all z-10">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
             </button>
-            <button onClick={next}
+            <button onClick={next} type="button" aria-label="Next slide"
               className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 border border-[rgba(249,115,22,0.3)] flex items-center justify-center text-white hover:border-orange-500/60 hover:bg-black/80 transition-all z-10">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
             </button>
           </>
         )}
@@ -98,9 +98,11 @@ export default function HeroSlideshow({ images, heroImage, title }: HeroSlidesho
 
       {/* Dot indicators — only if >1 slide */}
       {allSlides.length > 1 && (
-        <div className="flex items-center justify-center gap-2 mt-4">
+        <div className="flex items-center justify-center gap-2 mt-4" role="tablist" aria-label="Hero slides">
           {allSlides.map((_, i) => (
-            <button key={i} onClick={() => goTo(i)}
+            <button key={i} onClick={() => goTo(i)} type="button" role="tab"
+              aria-selected={i === current}
+              aria-label={`Go to slide ${i + 1}`}
               className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? 'w-7 bg-orange-500' : 'w-1.5 bg-neutral-700 hover:bg-neutral-500'}`} />
           ))}
         </div>

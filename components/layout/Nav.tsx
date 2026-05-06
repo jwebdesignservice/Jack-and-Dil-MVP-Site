@@ -230,7 +230,14 @@ export default function Nav() {
             <Button href="/contact" variant="primary">Book a Call</Button>
           </div>
 
-          <button className="lg:hidden text-white p-2" onClick={() => setMobileOpen(!mobileOpen)}>
+          <button
+            className="lg:hidden text-white p-2"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav-menu"
+            type="button"
+          >
             <div className={`w-5 h-0.5 bg-white mb-1 transition-transform ${mobileOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
             <div className={`w-5 h-0.5 bg-white mb-1 transition-opacity ${mobileOpen ? 'opacity-0' : ''}`} />
             <div className={`w-5 h-0.5 bg-white transition-transform ${mobileOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />

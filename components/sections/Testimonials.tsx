@@ -96,7 +96,9 @@ export default function Testimonials() {
         {/* Avatar row */}
         <div className="flex items-center justify-center gap-3 mb-14 flex-wrap">
           {testimonials.map((t, i) => (
-            <button key={i} onClick={() => setActive(i)}
+            <button key={i} onClick={() => setActive(i)} type="button"
+              aria-label={`Show testimonial from ${t.initials}`}
+              aria-pressed={active === i}
               className={`relative w-12 h-12 rounded-full overflow-hidden transition-all duration-200 ${active === i ? 'ring-2 ring-orange-500 ring-offset-2 ring-offset-[#080808] scale-110' : 'opacity-40 hover:opacity-70'}`}>
               <div className={`w-full h-full ${t.color} flex items-center justify-center text-white text-sm font-bold`}>{t.initials}</div>
             </button>
@@ -177,20 +179,22 @@ export default function Testimonials() {
         </div>
 
         {/* Prev / Next */}
-        <div className="flex items-center justify-center gap-5 mt-14">
-          <button onClick={prev}
+        <div className="flex items-center justify-center gap-5 mt-14" role="group" aria-label="Testimonial carousel controls">
+          <button onClick={prev} type="button" aria-label="Previous testimonial"
             className="w-11 h-11 rounded-full border border-[rgba(249,115,22,0.25)] bg-[#0A0A0A] flex items-center justify-center text-neutral-400 hover:border-orange-500/60 hover:text-white transition-all">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
           </button>
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2 items-center" role="tablist" aria-label="Select testimonial">
             {testimonials.map((_, i) => (
-              <button key={i} onClick={() => setActive(i)}
+              <button key={i} onClick={() => setActive(i)} type="button" role="tab"
+                aria-selected={active === i}
+                aria-label={`Go to testimonial ${i + 1}`}
                 className={`h-1.5 rounded-full transition-all duration-300 ${active === i ? 'w-7 bg-orange-500' : 'w-1.5 bg-neutral-700 hover:bg-neutral-500'}`}/>
             ))}
           </div>
-          <button onClick={next}
+          <button onClick={next} type="button" aria-label="Next testimonial"
             className="w-11 h-11 rounded-full border border-[rgba(249,115,22,0.25)] bg-[#0A0A0A] flex items-center justify-center text-neutral-400 hover:border-orange-500/60 hover:text-white transition-all">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
           </button>
         </div>
       </div>

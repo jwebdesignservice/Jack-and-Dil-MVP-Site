@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 export default function HeroGraphic() {
   const orbitChars = 'SHIP FAST, BUILT TO LAST. • PREMIUM QUALITY, NO COMPROMISE. • '.split('')
@@ -56,10 +57,17 @@ export default function HeroGraphic() {
         </div>
       </div>
 
-      {/* Centre image */}
+      {/* Centre image — LCP element, marked priority for fast load */}
       <div className="hero-center-image">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/Images/Hero illustration.png" alt="MVP Dashboard Illustration" />
+        <Image
+          src="/Images/Hero illustration.png"
+          alt="Fast Launch — production-ready MVP dashboard illustration"
+          width={600}
+          height={600}
+          priority
+          fetchPriority="high"
+          sizes="(max-width: 768px) 100vw, 600px"
+        />
       </div>
     </div>
   )

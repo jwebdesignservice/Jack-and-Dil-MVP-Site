@@ -82,11 +82,15 @@ export default function WorkMarquee() {
         </div>
 
         {/* Dots indicator */}
-        <div className="flex justify-center gap-2 mt-4">
+        <div className="flex justify-center gap-2 mt-4" role="tablist" aria-label="Featured work slides">
           {works.map((_, i) => (
             <button
               key={i}
               onClick={() => scrollToSlide(i)}
+              type="button"
+              role="tab"
+              aria-selected={currentSlide === i}
+              aria-label={`Go to slide ${i + 1}`}
               className={`w-2 h-2 rounded-full transition-all ${
                 currentSlide === i ? 'bg-orange-500 w-4' : 'bg-neutral-600'
               }`}
