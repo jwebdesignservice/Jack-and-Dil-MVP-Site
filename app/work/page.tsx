@@ -96,9 +96,34 @@ const projects = [
   },
 ]
 
+// JSON-LD: ItemList of all case studies + BreadcrumbList for /work
+const SITE_URL = 'https://fastlaunchmvp.com'
+const itemListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: projects.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    url: `${SITE_URL}/work/${p.slug}`,
+    name: p.title,
+  })),
+}
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+    { '@type': 'ListItem', position: 2, name: 'Work', item: `${SITE_URL}/work` },
+  ],
+}
+
 export default function WorkPage() {
   return (
     <main className="bg-black">
+      {/* SEO: page-specific JSON-LD (rendered inline because this is a client component) */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}/>
+
       {/* Dot grid */}
       <div className="fixed inset-0 pointer-events-none z-0"
         style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }}/>

@@ -2,8 +2,23 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions — FastLaunch',
-  description: 'Terms and conditions for using FastLaunch services.',
+  title: 'Terms & Conditions',
+  description: 'Terms and conditions for using Fast Launch services and the fastlaunchmvp.com website.',
+  alternates: { canonical: '/terms' },
+  openGraph: {
+    type: 'article',
+    url: 'https://fastlaunchmvp.com/terms',
+    siteName: 'Fast Launch',
+    title: 'Terms & Conditions — Fast Launch',
+    description: 'Terms and conditions for using Fast Launch services.',
+    images: ['https://fastlaunchmvp.com/Images/Hero%20illustration.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms & Conditions — Fast Launch',
+    description: 'Terms and conditions for using Fast Launch services.',
+  },
+  robots: { index: true, follow: true },
 }
 
 export default function TermsAndConditions() {

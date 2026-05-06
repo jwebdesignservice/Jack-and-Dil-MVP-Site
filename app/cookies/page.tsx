@@ -2,8 +2,23 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Cookie Policy — FastLaunch',
-  description: 'How FastLaunch uses cookies on its website.',
+  title: 'Cookie Policy',
+  description: 'How Fast Launch uses cookies on fastlaunchmvp.com — what we collect, why, and how to control them.',
+  alternates: { canonical: '/cookies' },
+  openGraph: {
+    type: 'article',
+    url: 'https://fastlaunchmvp.com/cookies',
+    siteName: 'Fast Launch',
+    title: 'Cookie Policy — Fast Launch',
+    description: 'How Fast Launch uses cookies on its website.',
+    images: ['https://fastlaunchmvp.com/Images/Hero%20illustration.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cookie Policy — Fast Launch',
+    description: 'How Fast Launch uses cookies on its website.',
+  },
+  robots: { index: true, follow: true },
 }
 
 export default function CookiePolicy() {

@@ -12,11 +12,26 @@ const faqs = [
   { q: 'How do payments work?', a: '50% upfront, 50% on delivery. We accept bank transfer and card via Stripe.' },
 ]
 
+// JSON-LD: FAQPage schema (helps Google show rich FAQ snippets in search)
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+}
+
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
     <section id="faq" className="py-24 bg-black relative overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Large decorative ? — hidden on mobile to prevent overflow */}
       <div className="absolute right-10 top-1/2 -translate-y-1/2 text-[300px] font-black text-orange-500/[0.02] select-none pointer-events-none font-mono leading-none hidden md:block">
         ?

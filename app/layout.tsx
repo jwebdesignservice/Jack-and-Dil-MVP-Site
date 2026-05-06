@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
@@ -6,17 +6,176 @@ import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import CookieBanner from '@/components/ui/CookieBanner'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
+
+const SITE_URL = 'https://fastlaunchmvp.com'
+const SITE_NAME = 'Fast Launch'
+const DEFAULT_TITLE = 'Fast Launch — Premium custom websites & MVPs shipped in 3–14 days'
+const DEFAULT_DESCRIPTION =
+  'Fast Launch is a UK web studio building premium, conversion-focused custom websites and production-ready MVPs in 3–14 days. No agencies, no retainers — fully owned by you.'
+const DEFAULT_OG_IMAGE = `${SITE_URL}/Images/Hero%20illustration.png`
+
+export const viewport: Viewport = {
+  themeColor: '#F26B1A',
+  colorScheme: 'dark',
+  width: 'device-width',
+  initialScale: 1,
+}
 
 export const metadata: Metadata = {
-  title: 'FastLaunch — Production-Ready MVPs',
-  description: 'We build production-ready MVPs for ambitious founders in 3-14 days.',
-  icons: { icon: '/icon.svg' },
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: DEFAULT_TITLE,
+    template: '%s | Fast Launch',
+  },
+  description: DEFAULT_DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: 'Jack Wilson', url: SITE_URL }],
+  creator: 'Jack Wilson',
+  publisher: 'Fast Launch',
+  generator: 'Next.js',
+  keywords: [
+    'custom websites',
+    'web design',
+    'web development',
+    'MVP development',
+    'startup websites',
+    'Next.js development',
+    'fast website delivery',
+    'premium websites',
+    'web studio UK',
+    'freelance web developer',
+    'conversion-focused websites',
+    'no-retainer web design',
+    'product launch',
+    'startup MVP',
+    'Fast Launch',
+    'Jack Wilson web developer',
+  ],
+  category: 'Web Design & Development',
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/icon.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [{ url: '/icon.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: ['/icon.svg'],
+  },
+  manifest: '/manifest.webmanifest',
+  openGraph: {
+    type: 'website',
+    locale: 'en_GB',
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    images: [
+      {
+        url: DEFAULT_OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: 'Fast Launch — Premium custom websites & MVPs shipped in 3–14 days',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
+    creator: '@fastlaunchmvp',
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  verification: {
+    // Add real Google / Bing verification tokens here when you set them up:
+    // google: 'xxxx',
+    // other: { 'msvalidate.01': 'xxxx' },
+  },
+}
+
+// ── Structured Data: Organization + WebSite ────────────────────────────────
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${SITE_URL}#organization`,
+  name: SITE_NAME,
+  alternateName: 'Fast Launch MVP',
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.png`,
+  description: DEFAULT_DESCRIPTION,
+  email: 'support@fastlaunch.com',
+  telephone: '+44 7917 328155',
+  founder: { '@type': 'Person', name: 'Jack Wilson' },
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'GB',
+  },
+  areaServed: 'Worldwide',
+  sameAs: [
+    'https://www.linkedin.com/company/fastlaunchmvp',
+    'https://www.instagram.com/fastlaunchmvp',
+    'https://www.tiktok.com/@fastlaunchmvp',
+  ],
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      email: 'support@fastlaunch.com',
+      areaServed: 'Worldwide',
+      availableLanguage: ['English'],
+    },
+  ],
+}
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE_URL}#website`,
+  url: SITE_URL,
+  name: SITE_NAME,
+  description: DEFAULT_DESCRIPTION,
+  publisher: { '@id': `${SITE_URL}#organization` },
+  inLanguage: 'en-GB',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en-GB" className={inter.variable}>
+      <head>
+        {/* JSON-LD: Organization + WebSite (root-level structured data) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        {/* Preconnect for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+      </head>
       <body className="bg-black text-white antialiased">
         {/* Google Tag Manager — noscript fallback (must be first thing inside body) */}
         <noscript>
@@ -69,7 +228,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CookieBanner />
 
         {/* WhatsApp floating button */}
-        <a href="https://wa.me/447917328155" target="_blank" rel="noopener noreferrer"
+        <a href="https://wa.me/447917328155?text=Hi%2C%20I%27m%20interested%20in%20your%20MVP%20services" target="_blank" rel="noopener noreferrer"
           className="fixed z-[99998] group"
           style={{ bottom: '21px', right: '21px' }}
           aria-label="Chat on WhatsApp">

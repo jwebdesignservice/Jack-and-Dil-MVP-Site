@@ -2,8 +2,23 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — FastLaunch',
-  description: 'How FastLaunch collects, uses and protects your personal data.',
+  title: 'Privacy Policy',
+  description: 'How Fast Launch collects, uses and protects your personal data when you use fastlaunchmvp.com.',
+  alternates: { canonical: '/privacy-policy' },
+  openGraph: {
+    type: 'article',
+    url: 'https://fastlaunchmvp.com/privacy-policy',
+    siteName: 'Fast Launch',
+    title: 'Privacy Policy — Fast Launch',
+    description: 'How Fast Launch collects, uses and protects your personal data.',
+    images: ['https://fastlaunchmvp.com/Images/Hero%20illustration.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy — Fast Launch',
+    description: 'How Fast Launch collects, uses and protects your personal data.',
+  },
+  robots: { index: true, follow: true },
 }
 
 export default function PrivacyPolicy() {
