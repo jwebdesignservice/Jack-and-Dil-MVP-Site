@@ -177,15 +177,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://www.googletagmanager.com" />
       </head>
       <body className="bg-black text-white antialiased">
+        {/* Skip-to-content link for keyboard / screen reader users */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100000] focus:px-4 focus:py-2 focus:bg-orange-500 focus:text-black focus:rounded focus:font-medium focus:outline focus:outline-2 focus:outline-white"
+        >
+          Skip to main content
+        </a>
+
         {/* Google Tag Manager — noscript fallback (must be first thing inside body) */}
         <noscript>
-          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJKCWBW5"
-            height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}/>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KJKCWBW5"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+            title="Google Tag Manager"
+          />
         </noscript>
         {/* Google Tag Manager — afterInteractive = loaded after page is interactive, doesn't block FCP/LCP */}
         <Script id="gtm" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KJKCWBW5');` }}/>
         {/* Floating dots — left gutter only (hidden below xl to prevent negative-width overflow) */}
-        <div className="fixed top-0 bottom-0 pointer-events-none overflow-hidden hidden xl:block" style={{ left: 0, width: 'calc(50% - 600px)', zIndex: 8 }}>
+        <div aria-hidden="true" className="fixed top-0 bottom-0 pointer-events-none overflow-hidden hidden xl:block" style={{ left: 0, width: 'calc(50% - 600px)', zIndex: 8 }}>
           {[...Array(7)].map((_, i) => (
             <div key={i} className="absolute rounded-full"
               style={{
@@ -201,7 +214,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           ))}
         </div>
         {/* Floating dots — right gutter only (hidden below xl to prevent negative-width overflow) */}
-        <div className="fixed top-0 bottom-0 pointer-events-none overflow-hidden hidden xl:block" style={{ right: 0, width: 'calc(50% - 600px)', zIndex: 8 }}>
+        <div aria-hidden="true" className="fixed top-0 bottom-0 pointer-events-none overflow-hidden hidden xl:block" style={{ right: 0, width: 'calc(50% - 600px)', zIndex: 8 }}>
           {[...Array(7)].map((_, i) => (
             <div key={i} className="absolute rounded-full"
               style={{
@@ -218,12 +231,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
 
         {/* Fixed vertical side lines — must be last in DOM to overlay section backgrounds */}
-        <div className="fixed top-0 bottom-0 w-[1px] pointer-events-none hidden xl:block"
+        <div aria-hidden="true" className="fixed top-0 bottom-0 w-[1px] pointer-events-none hidden xl:block"
           style={{ left: 'calc(50% - 620px)', zIndex: 9999, background: 'linear-gradient(to bottom, transparent 0%, rgba(249,115,22,0.25) 15%, rgba(249,115,22,0.25) 85%, transparent 100%)' }} />
-        <div className="fixed top-0 bottom-0 w-[1px] pointer-events-none hidden xl:block"
+        <div aria-hidden="true" className="fixed top-0 bottom-0 w-[1px] pointer-events-none hidden xl:block"
           style={{ right: 'calc(50% - 620px)', zIndex: 9999, background: 'linear-gradient(to bottom, transparent 0%, rgba(249,115,22,0.25) 15%, rgba(249,115,22,0.25) 85%, transparent 100%)' }} />
         <Nav />
-        {children}
+        <div id="main-content">{children}</div>
         <Footer />
         <CookieBanner />
 

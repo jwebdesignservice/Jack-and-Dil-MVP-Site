@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 
@@ -142,6 +143,12 @@ export default function Nav() {
   const [activeMenu, setActiveMenu] = useState<'services' | 'cases' | null>(null)
   const [mobileExpanded, setMobileExpanded] = useState<'services' | 'cases' | null>(null)
   const menuRef = useRef<HTMLDivElement>(null)
+  const pathname = usePathname()
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/'
+    if (href.startsWith('/#')) return false // anchor links — no active state
+    return pathname?.startsWith(href) ?? false
+  }
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -161,21 +168,27 @@ export default function Nav() {
 
   return (
     <nav
+      aria-label="Primary navigation"
       className={`fixed top-0 left-0 right-0 transition-all duration-300 ${scrolled ? 'bg-black/90 backdrop-blur-xl' : 'bg-transparent'}`}
       style={{ zIndex: 99999, borderBottom: '1px solid rgba(249,115,22,0.2)' }}
       ref={menuRef}
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20 py-3">
-          <Link href="/" className="flex items-center gap-2 text-white font-bold text-xl flex-shrink-0">
-            <Image src="/logo.png" alt="FastLaunch" width={32} height={32} className="rounded-md" />
+          <Link
+            href="/"
+            aria-label="Fast Launch — home"
+            aria-current={isActive('/') ? 'page' : undefined}
+            className="flex items-center gap-2 text-white font-bold text-xl flex-shrink-0"
+          >
+            <Image src="/logo.png" alt="" width={32} height={32} className="rounded-md" />
             <span className="hidden sm:inline">FastLaunch</span>
           </Link>
 
           <ul className="hidden lg:flex items-center gap-8">
             {/* Home */}
             <li>
-              <Link href="/" className="text-neutral-400 hover:text-white transition-colors text-sm relative group">
+              <Link href="/" aria-current={isActive('/') ? 'page' : undefined} className="text-neutral-400 hover:text-white transition-colors text-sm relative group">
                 Home
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-orange-500 transition-all group-hover:w-full" />
               </Link>
@@ -185,10 +198,14 @@ export default function Nav() {
             <li className="relative" onMouseEnter={() => setActiveMenu('services')} onMouseLeave={() => setActiveMenu(null)}>
               <Link
                 href="/services"
+                aria-current={isActive('/services') ? 'page' : undefined}
+                aria-haspopup="menu"
+                aria-expanded={activeMenu === 'services'}
                 className="flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors text-sm relative group"
               >
                 Services
                 <svg
+                  aria-hidden="true"
                   width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5"
                   className={`transition-transform duration-200 ${activeMenu === 'services' ? 'rotate-180' : ''}`}
                 >
@@ -202,10 +219,14 @@ export default function Nav() {
             <li className="relative" onMouseEnter={() => setActiveMenu('cases')} onMouseLeave={() => setActiveMenu(null)}>
               <Link
                 href="/work"
+                aria-current={isActive('/work') ? 'page' : undefined}
+                aria-haspopup="menu"
+                aria-expanded={activeMenu === 'cases'}
                 className="flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors text-sm relative group"
               >
                 Case Studies
                 <svg
+                  aria-hidden="true"
                   width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5"
                   className={`transition-transform duration-200 ${activeMenu === 'cases' ? 'rotate-180' : ''}`}
                 >
@@ -280,7 +301,7 @@ export default function Nav() {
                     </div>
                     <div>
                       <div className="text-white text-sm font-medium mb-0.5 group-hover:text-orange-400 transition-colors">{item.title}</div>
-                      <div className="text-neutral-600 text-xs leading-relaxed">{item.desc}</div>
+                      <div className="text-neutral-500 text-xs leading-relaxed">{item.desc}</div>
                     </div>
                   </Link>
                 ))}
@@ -325,7 +346,7 @@ export default function Nav() {
                     </div>
                     <div>
                       <div className="text-white text-sm font-medium mb-0.5 group-hover:text-orange-400 transition-colors">{item.title}</div>
-                      <div className="text-neutral-600 text-xs leading-relaxed">{item.desc}</div>
+                      <div className="text-neutral-500 text-xs leading-relaxed">{item.desc}</div>
                     </div>
                   </Link>
                 ))}

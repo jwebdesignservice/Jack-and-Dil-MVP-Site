@@ -174,10 +174,10 @@ export default function WorkPage() {
                 whileHover={{ boxShadow: '0 12px 40px rgba(249,115,22,0.12), 0 0 0 1px rgba(249,115,22,0.25)' }}>
                 {/* Image */}
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image src={project.image} alt={project.title} fill className={`object-cover transition-opacity duration-500 ${project.hoverImage ? 'group-hover:opacity-0' : ''}`}/>
+                  <Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" className={`object-cover transition-opacity duration-500 ${project.hoverImage ? 'group-hover:opacity-0' : ''}`}/>
                   {/* Hover image (Aramas phone) */}
                   {project.hoverImage && (
-                    <Image src={project.hoverImage} alt={`${project.title} mobile`} fill className="object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"/>
+                    <Image src={project.hoverImage} alt={`${project.title} mobile`} fill sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" className="object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"/>
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-black/20 to-transparent pointer-events-none"/>
                   {/* Service tags on image */}
@@ -197,7 +197,7 @@ export default function WorkPage() {
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-xl font-semibold text-white">{project.title}</h3>
-                    <div className="flex items-center gap-3 text-[10px] font-mono text-neutral-600">
+                    <div className="flex items-center gap-3 text-[10px] font-mono text-neutral-500">
                       <span>{project.delivery}</span>
                       <span className="w-1 h-1 rounded-full bg-neutral-700"/>
                       <span>{project.year}</span>

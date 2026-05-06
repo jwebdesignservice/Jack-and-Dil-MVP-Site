@@ -260,7 +260,7 @@ export default function Process() {
                       {step.num}
                     </div>
                     <span className="text-[10px] font-bold tracking-[0.2em] text-orange-500/50 uppercase font-mono">{step.label}</span>
-                    <span className={`text-[10px] font-mono px-2.5 py-1 rounded-full border ${step.isLast ? 'border-orange-500/40 text-orange-400 bg-orange-500/10' : 'border-neutral-800 text-neutral-600'}`}>
+                    <span className={`text-[10px] font-mono px-2.5 py-1 rounded-full border ${step.isLast ? 'border-orange-500/40 text-orange-400 bg-orange-500/10' : 'border-neutral-800 text-neutral-500'}`}>
                       {step.day}
                     </span>
                   </div>
@@ -268,7 +268,7 @@ export default function Process() {
                   <p className="text-neutral-400 text-sm leading-relaxed mb-5 max-w-sm">{step.desc}</p>
                   <div className="flex flex-wrap gap-2 justify-center">
                     {step.details.map(d => (
-                      <span key={d} className={`text-[10px] font-mono px-2.5 py-1 rounded border ${step.isLast ? 'border-orange-500/30 text-orange-400/80 bg-orange-500/5' : 'border-neutral-800 text-neutral-600 bg-[#0D0D0D]'}`}>{d}</span>
+                      <span key={d} className={`text-[10px] font-mono px-2.5 py-1 rounded border ${step.isLast ? 'border-orange-500/30 text-orange-400/80 bg-orange-500/5' : 'border-neutral-800 text-neutral-500 bg-[#0D0D0D]'}`}>{d}</span>
                     ))}
                   </div>
                 </div>

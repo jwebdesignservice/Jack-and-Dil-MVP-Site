@@ -66,7 +66,7 @@ export default function WorkMarquee() {
               href={item.href} 
               className="relative flex-shrink-0 w-[90vw] aspect-[693/429] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] snap-center block"
             >
-              <Image src={item.src} alt={item.label} fill className="object-cover"/>
+              <Image src={item.src} alt={item.label} fill sizes="90vw" className="object-cover"/>
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"/>
               <div className="absolute bottom-0 left-0 right-0 p-5">
@@ -116,8 +116,8 @@ export default function WorkMarquee() {
         <div className="flex gap-6 animate-marquee-left group-hover:[animation-play-state:paused] shrink-0">
           {marqueeWorks.map((item, i) => (
             <Link key={`a-${i}`} href={item.href} className="relative flex-shrink-0 w-[500px] md:w-[693px] h-[310px] md:h-[429px] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group/card block">
-              <Image src={item.src} alt={item.label} fill className={`object-cover transition-opacity duration-500 ${item.hoverSrc ? 'group-hover/card:opacity-0' : ''}`}/>
-              {item.hoverSrc && <Image src={item.hoverSrc} alt={`${item.label} mobile`} fill className="object-cover opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"/>}
+              <Image src={item.src} alt={item.label} fill sizes="(max-width: 768px) 500px, 693px" className={`object-cover transition-opacity duration-500 ${item.hoverSrc ? 'group-hover/card:opacity-0' : ''}`}/>
+              {item.hoverSrc && <Image src={item.hoverSrc} alt={`${item.label} mobile`} fill sizes="(max-width: 768px) 500px, 693px" className="object-cover opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"/>}
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"/>
               <div className="absolute bottom-0 left-0 right-0 p-5">
@@ -135,8 +135,8 @@ export default function WorkMarquee() {
         <div className="flex gap-6 animate-marquee-left group-hover:[animation-play-state:paused] shrink-0">
           {marqueeWorks.map((item, i) => (
             <Link key={`b-${i}`} href={item.href} className="relative flex-shrink-0 w-[500px] md:w-[693px] h-[310px] md:h-[429px] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group/card block">
-              <Image src={item.src} alt={item.label} fill className={`object-cover transition-opacity duration-500 ${item.hoverSrc ? 'group-hover/card:opacity-0' : ''}`}/>
-              {item.hoverSrc && <Image src={item.hoverSrc} alt={`${item.label} mobile`} fill className="object-cover opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"/>}
+              <Image src={item.src} alt={item.label} fill sizes="(max-width: 768px) 500px, 693px" className={`object-cover transition-opacity duration-500 ${item.hoverSrc ? 'group-hover/card:opacity-0' : ''}`}/>
+              {item.hoverSrc && <Image src={item.hoverSrc} alt={`${item.label} mobile`} fill sizes="(max-width: 768px) 500px, 693px" className="object-cover opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"/>}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"/>
               <div className="absolute bottom-0 left-0 right-0 p-5">
                 <div className="text-[10px] font-mono text-orange-400/80 tracking-widest uppercase mb-1">{item.tag}</div>

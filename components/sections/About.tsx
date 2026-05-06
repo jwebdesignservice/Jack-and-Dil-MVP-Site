@@ -49,7 +49,7 @@ export default function About() {
                 <div className="w-2.5 h-2.5 rounded-full bg-red-500/60"/>
                 <div className="w-2.5 h-2.5 rounded-full bg-amber-500/60"/>
                 <div className="w-2.5 h-2.5 rounded-full bg-green-500/60"/>
-                <span className="ml-3 text-[11px] font-mono text-neutral-600">jwebdesign / FastLaunch</span>
+                <span className="ml-3 text-[11px] font-mono text-neutral-500">jwebdesign / FastLaunch</span>
                 <div className="ml-auto flex items-center gap-1.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"/>
                   <span className="text-[10px] font-mono text-orange-400">active</span>
@@ -65,17 +65,17 @@ export default function About() {
                     <div className={`w-8 h-8 rounded-full ${dev.color} flex items-center justify-center text-white text-xs font-bold`}>{dev.initials}</div>
                     <div>
                       <div className="text-white text-xs font-medium">{dev.name}</div>
-                      <div className="text-neutral-600 text-[10px]">{dev.role}</div>
+                      <div className="text-neutral-500 text-[10px]">{dev.role}</div>
                     </div>
                     <div className="ml-1 w-1.5 h-1.5 rounded-full bg-green-400"/>
                   </div>
                 ))}
-                <div className="ml-auto text-[10px] font-mono text-neutral-600">10+ yrs combined</div>
+                <div className="ml-auto text-[10px] font-mono text-neutral-500">10+ yrs combined</div>
               </div>
               {/* Commit graph */}
               <div className="px-5 py-4 border-b border-[rgba(249,115,22,0.08)]">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] font-mono text-neutral-600 tracking-widest uppercase">Commit Activity</span>
+                  <span className="text-[10px] font-mono text-neutral-500 tracking-widest uppercase">Commit Activity</span>
                   <span className="text-[10px] font-mono text-orange-400">342 contributions</span>
                 </div>
                 <div className="overflow-x-auto max-w-full pb-1">
@@ -90,14 +90,14 @@ export default function About() {
                 </div>
                 </div>
                 <div className="flex items-center gap-1.5 mt-2">
-                  <span className="text-[9px] text-neutral-700">Less</span>
+                  <span className="text-[9px] text-neutral-500">Less</span>
                   {commitColors.map((c, i) => <div key={i} className={`w-2.5 h-2.5 rounded-sm ${c}`}/>)}
-                  <span className="text-[9px] text-neutral-700">More</span>
+                  <span className="text-[9px] text-neutral-500">More</span>
                 </div>
               </div>
               {/* Recent commits */}
               <div className="px-5 py-4 border-b border-[rgba(249,115,22,0.08)] space-y-3">
-                <span className="text-[10px] font-mono text-neutral-600 tracking-widest uppercase">Recent Commits</span>
+                <span className="text-[10px] font-mono text-neutral-500 tracking-widest uppercase">Recent Commits</span>
                 {[
                   { hash: 'a3f9c2', msg: 'feat: add stripe payment flow', time: '2h ago', author: 'JW' },
                   { hash: 'b71e4d', msg: 'fix: auth token refresh logic', time: '5h ago', author: 'DM' },
@@ -106,7 +106,7 @@ export default function About() {
                   <div key={i} className="flex items-center gap-3">
                     <span className="text-[10px] font-mono text-orange-500/50 w-12 flex-shrink-0">{c.hash}</span>
                     <span className="text-[11px] text-neutral-400 flex-1 truncate">{c.msg}</span>
-                    <span className="text-[10px] font-mono text-neutral-700 flex-shrink-0">{c.time}</span>
+                    <span className="text-[10px] font-mono text-neutral-500 flex-shrink-0">{c.time}</span>
                     <div className={`w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-white text-[9px] font-bold ${c.author === 'JW' ? 'bg-orange-500' : 'bg-sky-500'}`}>{c.author}</div>
                   </div>
                 ))}
@@ -121,7 +121,7 @@ export default function About() {
                 ].map((s, i) => (
                   <div key={i} className="px-4 py-4 text-center">
                     <div className="text-sm font-semibold text-orange-400">{s.value}</div>
-                    <div className="text-[10px] text-neutral-700 mt-0.5">{s.label}</div>
+                    <div className="text-[10px] text-neutral-500 mt-0.5">{s.label}</div>
                   </div>
                 ))}
               </div>

@@ -512,7 +512,7 @@ export default function ServicesPage() {
                 <ul className="space-y-2.5">
                   {col.items.map((item, j) => (
                     <li key={j} className="flex items-start gap-2.5 text-sm">
-                      <span className={col.highlight ? 'text-orange-500' : 'text-neutral-600'}>
+                      <span className={col.highlight ? 'text-orange-500' : 'text-neutral-500'}>
                         {col.highlight ? '✓' : '–'}
                       </span>
                       <span className={col.highlight ? 'text-neutral-300' : 'text-neutral-500'}>{item}</span>

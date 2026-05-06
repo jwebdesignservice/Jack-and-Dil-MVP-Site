@@ -96,7 +96,7 @@ export default function Comparison() {
                 </ul>
                 <div className="mt-8 pt-6 border-t border-red-500/15">
                   <div className="text-3xl font-light text-red-400/50">~180</div>
-                  <div className="text-xs text-neutral-600 mt-1">days average</div>
+                  <div className="text-xs text-neutral-500 mt-1">days average</div>
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@ export default function Comparison() {
                 </ul>
                 <div className="mt-8 pt-6 border-t border-orange-500/20">
                   <div className="text-3xl font-light text-orange-400">~14</div>
-                  <div className="text-xs text-neutral-600 mt-1">days average</div>
+                  <div className="text-xs text-neutral-500 mt-1">days average</div>
                 </div>
               </div>
             </motion.div>
@@ -150,16 +150,16 @@ export default function Comparison() {
             className="mt-8 bg-[#0D0800]/60 border border-orange-500/15 rounded-2xl p-6 backdrop-blur-sm">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-4">
               <div>
-                <span className="text-xs font-mono text-neutral-600 tracking-widest uppercase">Speed comparison</span>
+                <span className="text-xs font-mono text-neutral-500 tracking-widest uppercase">Speed comparison</span>
                 <div className="text-2xl font-light text-orange-400 mt-1">12× faster</div>
               </div>
               <div className="text-right">
-                <div className="text-xs text-neutral-600 mb-1">14 days vs 6 months</div>
+                <div className="text-xs text-neutral-500 mb-1">14 days vs 6 months</div>
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-red-500/50"/>
-                  <span className="text-[10px] text-neutral-600">Traditional</span>
+                  <span className="text-[10px] text-neutral-500">Traditional</span>
                   <span className="w-2 h-2 rounded-full bg-orange-500 ml-2"/>
-                  <span className="text-[10px] text-neutral-600">FastLaunch</span>
+                  <span className="text-[10px] text-neutral-500">FastLaunch</span>
                 </div>
               </div>
             </div>

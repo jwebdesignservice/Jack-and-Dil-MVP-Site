@@ -217,7 +217,7 @@ export default function HeroDashboard() {
             <span className="text-orange-400 text-xs font-medium">New MVP Shipped</span>
           </div>
           <p className="text-neutral-500 text-[10px] leading-relaxed">HealthFlow dashboard deployed to production</p>
-          <p className="text-neutral-700 text-[9px] mt-1.5">2 mins ago</p>
+          <p className="text-neutral-500 text-[9px] mt-1.5">2 mins ago</p>
         </motion.div>
 
         {/* Floating deploy badge */}

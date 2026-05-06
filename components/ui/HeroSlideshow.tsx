@@ -71,6 +71,7 @@ export default function HeroSlideshow({ images, heroImage, title }: HeroSlidesho
               src={allSlides[current].src}
               alt={allSlides[current].alt}
               fill
+              sizes="(max-width: 768px) 100vw, 800px"
               className="object-cover"
               priority={current === 0}
             />

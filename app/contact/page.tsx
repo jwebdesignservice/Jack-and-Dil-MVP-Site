@@ -16,7 +16,7 @@ type FormData = {
   message: string
 }
 
-const inputClass = "w-full bg-[#0A0A0A] border border-[rgba(249,115,22,0.2)] rounded-lg px-4 py-3 h-[48px] text-white placeholder-neutral-600 focus:outline-none focus:border-orange-500/60 transition-colors text-sm"
+const inputClass = "w-full bg-[#0A0A0A] border border-[rgba(249,115,22,0.2)] rounded-lg px-4 py-3 h-[48px] text-white placeholder-neutral-500 focus:outline-none focus:border-orange-500/60 transition-colors text-sm"
 const labelClass = "block text-xs font-medium text-neutral-500 mb-2 uppercase tracking-widest"
 
 export default function ContactPage() {
@@ -120,7 +120,7 @@ export default function ContactPage() {
               <div className="w-2 h-2 rounded-full bg-red-500/60"/>
               <div className="w-2 h-2 rounded-full bg-amber-500/60"/>
               <div className="w-2 h-2 rounded-full bg-green-500/60"/>
-              <span className="ml-3 text-[11px] font-mono text-neutral-600">new_project_brief.json</span>
+              <span className="ml-3 text-[11px] font-mono text-neutral-500">new_project_brief.json</span>
               <div className="ml-auto flex items-center gap-1.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"/>
                 <span className="text-[10px] font-mono text-orange-400/70">secure</span>
@@ -305,10 +305,10 @@ export default function ContactPage() {
                   </span>
                 </label>
                 <label className="flex items-center justify-center gap-3 w-full border-2 border-dashed border-[rgba(249,115,22,0.2)] hover:border-orange-500/40 rounded-lg px-4 py-6 cursor-pointer transition-colors group">
-                  <svg className="w-5 h-5 text-neutral-600 group-hover:text-orange-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/></svg>
+                  <svg className="w-5 h-5 text-neutral-500 group-hover:text-orange-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/></svg>
                   <div>
                     <span className="text-sm text-neutral-400 group-hover:text-neutral-300 transition-colors">Drop a file here or click to upload</span>
-                    <span className="block text-[10px] text-neutral-600 mt-1">PDF, DOC, DOCX, PNG, JPG — max 10MB</span>
+                    <span className="block text-[10px] text-neutral-500 mt-1">PDF, DOC, DOCX, PNG, JPG — max 10MB</span>
                   </div>
                   <input type="file" className="hidden" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.webp" aria-label="Attach project brief (optional)"/>
                 </label>
@@ -322,7 +322,7 @@ export default function ContactPage() {
                 <p className="text-red-400 text-sm text-center">{error}</p>
               )}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                <div className="flex items-center gap-2 text-neutral-600 text-xs">
+                <div className="flex items-center gap-2 text-neutral-500 text-xs">
                   <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                   Encrypted & confidential
                 </div>

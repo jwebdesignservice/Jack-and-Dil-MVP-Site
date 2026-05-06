@@ -130,7 +130,7 @@ export default function Services() {
                     )}
                   </div>
                 </div>
-                <span className="text-[10px] font-mono text-neutral-600 border border-neutral-800 rounded px-2 py-1 tracking-wide">
+                <span className="text-[10px] font-mono text-neutral-500 border border-neutral-800 rounded px-2 py-1 tracking-wide">
                   {svc.detail}
                 </span>
               </div>

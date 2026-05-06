@@ -118,7 +118,7 @@ export default function CTA() {
               </motion.div>
 
               {/* Bottom tech label */}
-              <div className="mt-10 flex items-center justify-center gap-2 text-neutral-700 text-xs font-mono">
+              <div className="mt-10 flex items-center justify-center gap-2 text-neutral-500 text-xs font-mono">
                 <span className="w-8 h-px bg-neutral-800" />
                 <span>FastLaunch_v2.0 // EST. 2024 // UK</span>
                 <span className="w-8 h-px bg-neutral-800" />

@@ -120,7 +120,7 @@ export default function Testimonials() {
               </div>
               <div>
                 <div className="text-white text-sm font-semibold">{testimonials[active].name}</div>
-                <div className="text-neutral-600 text-xs">{testimonials[active].role}</div>
+                <div className="text-neutral-500 text-xs">{testimonials[active].role}</div>
               </div>
             </div>
           </CornerCard>
@@ -168,7 +168,7 @@ export default function Testimonials() {
                     </div>
                     <div>
                       <div className="text-white text-sm font-semibold">{t.name}</div>
-                      <div className="text-neutral-600 text-xs">{t.role}</div>
+                      <div className="text-neutral-500 text-xs">{t.role}</div>
                     </div>
                   </div>
                 </CornerCard>

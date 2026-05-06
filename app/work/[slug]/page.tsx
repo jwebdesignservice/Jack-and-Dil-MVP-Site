@@ -827,7 +827,7 @@ export default function CaseStudyPage() {
                 </p>
                 <div className="flex flex-col items-center gap-1">
                   <span className="text-white font-semibold text-sm">{project.testimonial.author}</span>
-                  <span className="text-neutral-600 text-xs font-mono">{project.testimonial.role}</span>
+                  <span className="text-neutral-500 text-xs font-mono">{project.testimonial.role}</span>
                 </div>
               </div>
             </div>

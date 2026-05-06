@@ -105,7 +105,7 @@ export default function Footer() {
 
       {/* Line + Copyright — below the large text */}
       <div className="h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent mx-6"/>
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-neutral-600 text-sm py-6 px-6">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-neutral-500 text-sm py-6 px-6">
         <span>© 2026 FastLaunch. All rights reserved.</span>
         <div className="flex items-center gap-4">
           <Link href="/privacy-policy" className="hover:text-neutral-400 transition-colors">Privacy Policy</Link>
