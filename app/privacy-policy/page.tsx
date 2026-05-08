@@ -67,9 +67,9 @@ export default function PrivacyPolicy() {
             <h2 className="text-white text-xl font-semibold mb-3">4. Legal Basis for Processing</h2>
             <p>We process your data under the following legal bases:</p>
             <ul className="list-disc pl-6 mt-3 space-y-1">
-              <li><strong className="text-white">Legitimate interest</strong> — responding to your enquiry and running our business</li>
-              <li><strong className="text-white">Consent</strong> — for non-essential cookies and analytics</li>
-              <li><strong className="text-white">Contract</strong> — where we have entered into an agreement with you</li>
+              <li><strong className="text-white">Legitimate interest</strong>: responding to your enquiry and running our business</li>
+              <li><strong className="text-white">Consent</strong>: for non-essential cookies and analytics</li>
+              <li><strong className="text-white">Contract</strong>: where we have entered into an agreement with you</li>
             </ul>
           </section>
 
@@ -77,9 +77,9 @@ export default function PrivacyPolicy() {
             <h2 className="text-white text-xl font-semibold mb-3">5. Third-Party Services</h2>
             <p>We use the following third-party services that may process your data:</p>
             <ul className="list-disc pl-6 mt-3 space-y-1">
-              <li><strong className="text-white">Resend</strong> — email delivery for contact form submissions</li>
-              <li><strong className="text-white">Google Analytics / GTM</strong> — website analytics (anonymised)</li>
-              <li><strong className="text-white">Vercel</strong> — website hosting and deployment</li>
+              <li><strong className="text-white">Resend</strong>: email delivery for contact form submissions</li>
+              <li><strong className="text-white">Google Analytics / GTM</strong>: website analytics (anonymised)</li>
+              <li><strong className="text-white">Vercel</strong>: website hosting and deployment</li>
             </ul>
           </section>
 

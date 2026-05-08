@@ -57,9 +57,9 @@ export default function CookiePolicy() {
                 </div>
                 <p className="text-sm">We use Google Analytics (via Google Tag Manager) to understand how visitors use our site. This data is anonymised and aggregated. These cookies are only set with your consent.</p>
                 <ul className="list-disc pl-5 mt-2 space-y-1 text-xs text-neutral-500">
-                  <li><strong className="text-neutral-400">_ga</strong> — distinguishes users (expires 2 years)</li>
-                  <li><strong className="text-neutral-400">_ga_*</strong> — maintains session state (expires 2 years)</li>
-                  <li><strong className="text-neutral-400">_gid</strong> — distinguishes users (expires 24 hours)</li>
+                  <li><strong className="text-neutral-400">_ga</strong>: distinguishes users (expires 2 years)</li>
+                  <li><strong className="text-neutral-400">_ga_*</strong>: maintains session state (expires 2 years)</li>
+                  <li><strong className="text-neutral-400">_gid</strong>: distinguishes users (expires 24 hours)</li>
                 </ul>
               </div>
 
@@ -69,7 +69,7 @@ export default function CookiePolicy() {
                 </div>
                 <p className="text-sm">We store your cookie consent preference so we don&apos;t ask you every time you visit.</p>
                 <ul className="list-disc pl-5 mt-2 space-y-1 text-xs text-neutral-500">
-                  <li><strong className="text-neutral-400">fl_cookie_consent</strong> — stores your cookie choice (expires 12 months)</li>
+                  <li><strong className="text-neutral-400">fl_cookie_consent</strong>: stores your cookie choice (expires 12 months)</li>
                 </ul>
               </div>
             </div>

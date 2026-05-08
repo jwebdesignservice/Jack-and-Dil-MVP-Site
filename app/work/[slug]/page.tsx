@@ -112,11 +112,11 @@ const projects: Record<string, Project> = {
       { value: '<1s', label: 'Data Latency' },
       { value: '99.9%', label: 'Uptime' },
     ],
-    challenge: `Metalex needed a Bloomberg-grade terminal for precious metals traders — but one that independent traders and small funds could actually use without a six-figure subscription. The platform had to stream live spot prices for XAU, XAG, XPT and XPD, surface AI-generated trade signals, display real-time order book depth, visualise futures curves, and aggregate market news from multiple sources — all in a single interface that worked seamlessly across desktop and mobile. Existing tools were either too expensive, too slow, or too generic. They needed a custom solution built fast.`,
+    challenge: `Metalex needed a Bloomberg-grade terminal for precious metals traders, but one that independent traders and small funds could actually use without a six-figure subscription. The platform had to stream live spot prices for XAU, XAG, XPT and XPD, surface AI-generated trade signals, display real-time order book depth, visualise futures curves, and aggregate market news from multiple sources, all in a single interface that worked equally well on desktop and mobile. Existing tools were either too expensive, too slow, or too generic. They needed a custom solution built fast.`,
     approach: [
       {
         title: 'Real-Time Data Architecture',
-        desc: 'WebSocket feeds from MetalpriceAPI and TradingView deliver sub-second spot prices, bid/ask spreads, and volume data across all four metals — no polling, no lag.',
+        desc: 'WebSocket feeds from MetalpriceAPI and TradingView deliver sub-second spot prices, bid/ask spreads, and volume data across all four metals. No polling, no lag.',
       },
       {
         title: 'AI Signal Engine',
@@ -124,18 +124,18 @@ const projects: Record<string, Project> = {
       },
       {
         title: 'Terminal-Grade Mobile UX',
-        desc: 'Full terminal functionality on mobile — not a dumbed-down app. Every data panel, chart, and signal view is optimised for the phone without losing information density.',
+        desc: 'Full terminal functionality on mobile, not a dumbed-down app. Every data panel, chart, and signal view is optimised for the phone without losing information density.',
       },
     ],
     features: [
-      { title: 'Live Spot Prices', desc: 'Real-time XAU, XAG, XPT, XPD spot prices with bid/ask/spread, VWAP, open/high/low, and volume — updating every second via WebSocket.' },
+      { title: 'Live Spot Prices', desc: 'Real-time XAU, XAG, XPT, XPD spot prices with bid/ask/spread, VWAP, open/high/low, and volume. Updating every second via WebSocket.' },
       { title: 'Interactive Price Charts', desc: 'TradingView-powered candlestick and line charts across 1m, 30m, 1h, 1D timeframes with SMA overlays, volume bars, and indicator toggles.' },
       { title: 'Order Book Depth', desc: 'Real-time depth of market for XAU/USD showing bid/ask ladder, cumulative size, and price impact visualisation.' },
-      { title: 'AI Signal Dashboard', desc: 'Live AI-generated trade signals with entry prices, stop-loss, targets, and confidence percentages — refreshed continuously as market conditions shift.' },
+      { title: 'AI Signal Dashboard', desc: 'Live AI-generated trade signals with entry prices, stop-loss, targets, and confidence percentages. Refreshed continuously as market conditions shift.' },
       { title: 'Futures Curve', desc: 'Interactive COMEX futures curve across GC (near to far month) with contango/backwardation visualisation, roll yield, and annualised basis.' },
-      { title: 'Discovery Radar', desc: 'Curated news aggregation from Yahoo Finance, Gold Telegraph, and Medium — filtered by metal relevance, sentiment-tagged, and ranked by market impact.' },
-      { title: 'Technical Indicators', desc: 'RSI, Stochastic, Williams %R, CCI, MACD, ADX, and Bollinger Bands — all calculated in real time with configurable periods.' },
-      { title: 'Mobile Terminal', desc: 'Full-featured mobile view with the same data density as desktop — spot prices, technicals, charts, and signals in a thumb-friendly layout.' },
+      { title: 'Discovery Radar', desc: 'Curated news aggregation from Yahoo Finance, Gold Telegraph, and Medium. Filtered by metal relevance, sentiment-tagged, and ranked by market impact.' },
+      { title: 'Technical Indicators', desc: 'RSI, Stochastic, Williams %R, CCI, MACD, ADX, and Bollinger Bands, all calculated in real time with configurable periods.' },
+      { title: 'Mobile Terminal', desc: 'Full-featured mobile view with the same data density as desktop: spot prices, technicals, charts, and signals in a thumb-friendly layout.' },
     ],
     images: [
       { src: '/Images/work/metalex-phone.webp', alt: 'Metalex Terminal mobile app' },
@@ -149,7 +149,7 @@ const projects: Record<string, Project> = {
       { value: '99.9%', label: 'Platform uptime' },
     ],
     testimonial: {
-      quote: "We've tried every metals terminal out there. Metalex is the first one that gives us Bloomberg-level data without the Bloomberg price tag — and it works perfectly on mobile. FastLaunch built it in 2 weeks.",
+      quote: "We've tried every metals terminal out there. Metalex is the first one that gives us Bloomberg-level data without the Bloomberg price tag, and it works perfectly on mobile. FastLaunch built it in 2 weeks.",
       author: 'James Hartwell',
       role: 'Head of Trading, Metalex',
     },
@@ -173,7 +173,7 @@ const projects: Record<string, Project> = {
       { value: '8', label: 'Dashboard Modules' },
       { value: '99.9%', label: 'Uptime' },
     ],
-    challenge: `Desert Falcons needed a platform to unite Saudi Arabia's most influential automotive engineers, designers, and enthusiasts under one digital roof. Existing platforms were either too generic or lacked the luxury feel that matched their brand. They needed both a stunning public-facing website and a secure, feature-rich private member portal — all shipped fast, before their founding cohort went cold.`,
+    challenge: `Desert Falcons needed a platform to unite Saudi Arabia's most influential automotive engineers, designers, and enthusiasts under one digital roof. Existing platforms were either too generic or lacked the luxury feel that matched their brand. They needed both a stunning public-facing website and a secure, feature-rich private member portal, all shipped fast, before their founding cohort went cold.`,
     approach: [
       {
         title: 'Luxury-First Design',
@@ -181,7 +181,7 @@ const projects: Record<string, Project> = {
       },
       {
         title: 'Private Member Portal',
-        desc: 'Full authentication system with role-based access, member profiles, and a rich dashboard suite — built on Supabase for scale.',
+        desc: 'Full authentication system with role-based access, member profiles, and a rich dashboard suite, built on Supabase for scale.',
       },
       {
         title: 'Rapid Iteration',
@@ -191,7 +191,7 @@ const projects: Record<string, Project> = {
     features: [
       { title: 'Member Portal & Auth', desc: 'Secure login, role-based permissions, and personalized member profiles with avatar uploads.' },
       { title: 'Discussion Forums', desc: 'Category-based forums for technical discussion, car showcases, and community announcements.' },
-      { title: "Founder's Updates Feed", desc: 'A curated news feed directly from the founder — announcements, insights, and exclusive content.' },
+      { title: "Founder's Updates Feed", desc: 'A curated news feed directly from the founder: announcements, insights, and exclusive content.' },
       { title: 'Member Directory', desc: 'Searchable directory of all members with profiles, specialities, and contact options.' },
       { title: 'Event Management', desc: 'Create, RSVP, and manage exclusive automotive events, track-days, and meetups.' },
       { title: 'Resource Library', desc: 'Gated library of technical documents, build guides, and exclusive automotive resources.' },
@@ -209,7 +209,7 @@ const projects: Record<string, Project> = {
       { value: '99.9%', label: 'Platform uptime' },
     ],
     testimonial: {
-      quote: "FastLaunch delivered something we didn't think was possible in this timeframe. The platform looks like it cost 10x what we paid — our members were blown away on launch day.",
+      quote: "FastLaunch delivered something we didn't think was possible in this timeframe. The platform looks like it cost 10x what we paid. Our members were blown away on launch day.",
       author: 'Khalid Al-Rashidi',
       role: 'Founder, Desert Falcons Collective',
     },
@@ -232,7 +232,7 @@ const projects: Record<string, Project> = {
       { value: '$2M+', label: 'Trading Volume' },
       { value: '256', label: 'Active Wallets' },
     ],
-    challenge: `The Memory Market founders had a genuinely novel concept: a marketplace where AI-generated knowledge and memories could be stored, traded, and verified on-chain via Solana. There was no existing playbook, no comparable product to reference. They needed to make highly complex Web3 interactions feel intuitive to mainstream users, launch before a competitor could execute, and integrate real-time Solana pricing data — all within 2 weeks.`,
+    challenge: `The Memory Market founders had a genuinely novel concept: a marketplace where AI-generated knowledge and memories could be stored, traded, and verified on-chain via Solana. There was no existing playbook, no comparable product to reference. They needed to make highly complex Web3 interactions feel intuitive to mainstream users, launch before a competitor could execute, and integrate real-time Solana pricing data, all within 2 weeks.`,
     approach: [
       {
         title: 'Solana-Native Architecture',
@@ -240,11 +240,11 @@ const projects: Record<string, Project> = {
       },
       {
         title: 'Simplified Web3 UX',
-        desc: "Abstracted wallet interactions behind familiar UI patterns. Users trade memories like they're shopping — complexity hidden, power preserved.",
+        desc: "Abstracted wallet interactions behind familiar UI patterns. Users trade memories like they're shopping. Complexity hidden, power preserved.",
       },
       {
         title: 'Real-Time Data Engine',
-        desc: 'WebSocket feeds for live pricing, order book depth, and wallet portfolio updates — no page refresh needed.',
+        desc: 'WebSocket feeds for live pricing, order book depth, and wallet portfolio updates. No page refresh needed.',
       },
     ],
     features: [
@@ -288,7 +288,7 @@ const projects: Record<string, Project> = {
       { value: 'AED 2B+', label: 'Listed Value' },
       { value: '15+', label: 'Developer Partners' },
     ],
-    challenge: `Aramas wanted to become the definitive platform for international buyers entering the UAE off-plan property market — primarily Abu Dhabi and Dubai. They needed luxury branding that matched their HNWI clientele, advanced search and filter tooling for complex UAE property requirements, developer profile pages, and a market insights section — all while supporting AED pricing with international currency context. Their previous site had no search, no listings, and no developer network.`,
+    challenge: `Aramas wanted to become the definitive platform for international buyers entering the UAE off-plan property market, primarily Abu Dhabi and Dubai. They needed luxury branding that matched their HNWI clientele, advanced search and filter tooling for complex UAE property requirements, developer profile pages, and a market insights section, all while supporting AED pricing with international currency context. Their previous site had no search, no listings, and no developer network.`,
     approach: [
       {
         title: 'Luxury Platform Design',
@@ -296,7 +296,7 @@ const projects: Record<string, Project> = {
       },
       {
         title: 'Advanced Property Search',
-        desc: 'Multi-parameter search across location, price range, property type, handover date, and developer — with instant results.',
+        desc: 'Multi-parameter search across location, price range, property type, handover date, and developer, with instant results.',
       },
       {
         title: 'Developer Network',
@@ -307,7 +307,7 @@ const projects: Record<string, Project> = {
       { title: 'Advanced Property Search', desc: 'Filter by location, price, type, handover date, developer, and ROI. Results update in real time with no page reload.' },
       { title: 'Off-Plan Listings', desc: 'Rich property pages with floor plans, payment schedules, developer info, and AED/USD/GBP pricing.' },
       { title: 'Developer Profiles', desc: 'Verified developer pages showing track record, current developments, and completed projects with buyer reviews.' },
-      { title: 'Featured Properties', desc: 'Premium placement tier for flagship developments — full-bleed hero images, video walkthroughs, priority visibility.' },
+      { title: 'Featured Properties', desc: 'Premium placement tier for flagship developments: full-bleed hero images, video walkthroughs, priority visibility.' },
       { title: 'Market News & Insights', desc: 'Curated UAE real estate news, ROI data, and market trend reports to position Aramas as a trusted authority.' },
       { title: 'Enquiry System', desc: 'Direct enquiry routing to developers with automated follow-up sequences and CRM integration.' },
     ],
@@ -332,7 +332,7 @@ const projects: Record<string, Project> = {
   'insights-dashboard': {
     slug: 'insights-dashboard',
     title: 'Insights Dashboard',
-    tagline: 'Your entire business in one view — real-time, actionable, beautiful.',
+    tagline: 'Your entire business in one view. Real-time, actionable, beautiful.',
     tags: ['Analytics', 'SaaS', 'Business Intelligence'],
     delivery: '5 days',
     year: '2025',
@@ -343,11 +343,11 @@ const projects: Record<string, Project> = {
       { value: '12', label: 'Data Integrations' },
       { value: '98%', label: 'User Adoption' },
     ],
-    challenge: `The client had a team of 40 people relying on a patchwork of spreadsheets, Notion pages, and manual reports to track business performance. They needed a single source of truth — a real-time dashboard pulling from Stripe, HubSpot, Google Analytics, and their internal PostgreSQL database. Enterprise BI tools were overkill (and wildly expensive). They needed something clean, fast, and usable by non-technical team members from day one.`,
+    challenge: `The client had a team of 40 people relying on a patchwork of spreadsheets, Notion pages, and manual reports to track business performance. They needed a single source of truth: a real-time dashboard pulling from Stripe, HubSpot, Google Analytics, and their internal PostgreSQL database. Enterprise BI tools were overkill (and wildly expensive). They needed something clean, fast, and usable by non-technical team members from day one.`,
     approach: [
       {
         title: 'Real-Time Data Pipeline',
-        desc: 'WebSocket connections to live data sources. KPIs update every 30 seconds without a page reload — always current, never stale.',
+        desc: 'WebSocket connections to live data sources. KPIs update every 30 seconds without a page reload. Always current, never stale.',
       },
       {
         title: 'Zero-Learning-Curve UX',
@@ -355,7 +355,7 @@ const projects: Record<string, Project> = {
       },
       {
         title: 'Multi-Source Integration',
-        desc: '12 pre-built connectors covering all major business tools — Stripe, HubSpot, GA4, Intercom, Slack, and more. Setup in minutes.',
+        desc: '12 pre-built connectors covering all major business tools: Stripe, HubSpot, GA4, Intercom, Slack, and more. Setup in minutes.',
       },
     ],
     features: [
@@ -364,7 +364,7 @@ const projects: Record<string, Project> = {
       { title: 'Team Performance', desc: 'Individual and team KPI scorecards, goal tracking, and performance trend lines across any time period.' },
       { title: 'Customisable Widgets', desc: 'Drag-and-drop dashboard builder. Each team member can configure their own layout and saved views.' },
       { title: 'Automated Reports', desc: 'Weekly digest emails sent automatically every Monday. Custom report schedules for different stakeholders.' },
-      { title: 'Multi-Source Integration', desc: '12 data connectors including Stripe, HubSpot, GA4, PostgreSQL, Intercom, and Slack — zero manual data entry.' },
+      { title: 'Multi-Source Integration', desc: '12 data connectors including Stripe, HubSpot, GA4, PostgreSQL, Intercom, and Slack. Zero manual data entry.' },
     ],
     images: [
       { src: '/Images/work/insights.webp', alt: 'Insights Dashboard analytics view' },
@@ -386,7 +386,7 @@ const projects: Record<string, Project> = {
   'ams-tool': {
     slug: 'ams-tool',
     title: 'AMS Tool',
-    tagline: 'AI-powered adverse media screening — from manual searches to automated compliance workflows.',
+    tagline: 'AI-powered adverse media screening, from manual searches to automated compliance workflows.',
     tags: ['RegTech', 'Compliance', 'FinTech', 'AI'],
     delivery: '10 days',
     year: '2026',
@@ -397,15 +397,15 @@ const projects: Record<string, Project> = {
       { value: '7', label: 'Risk Data Sources' },
       { value: '99%', label: 'Match Accuracy' },
     ],
-    challenge: `The compliance team was spending hours every week manually Googling subject names, combing through news results, and copy-pasting findings into spreadsheets. The process was slow, inconsistent, and not audit-ready. They needed a purpose-built adverse media screening tool — one that could automate the search pipeline, classify risk at the article level, and create a structured review queue that analysts could work through systematically.`,
+    challenge: `The compliance team was spending hours every week manually Googling subject names, combing through news results, and copy-pasting findings into spreadsheets. The process was slow, inconsistent, and not audit-ready. They needed a purpose-built adverse media screening tool: one that could automate the search pipeline, classify risk at the article level, and create a structured review queue that analysts could work through systematically.`,
     approach: [
       {
         title: 'Pipeline-First Architecture',
-        desc: 'Designed the end-to-end screening flow — submit, search, analyse, risk-score, review queue — before a single UI component was built.',
+        desc: 'Designed the end-to-end screening flow (submit, search, analyse, risk-score, review queue) before a single UI component was built.',
       },
       {
         title: 'AI Risk Scoring Engine',
-        desc: 'Each article is classified high/medium/low by an AI layer that analyses relevance, severity, and entity matching — with reasoning shown to the analyst.',
+        desc: 'Each article is classified high/medium/low by an AI layer that analyses relevance, severity, and entity matching, with reasoning shown to the analyst.',
       },
       {
         title: 'Role-Based Access Design',
@@ -415,9 +415,9 @@ const projects: Record<string, Project> = {
     features: [
       { title: 'AI Adverse Media Search', desc: 'Automated screening against news, legal, and public records sources. Results returned in seconds, not hours.' },
       { title: 'Risk Classification', desc: 'High/medium/low scoring with article-level evidence and AI reasoning for every flagged result.' },
-      { title: 'Structured Review Queue', desc: 'Five-stage workflow — submitted, searching, analysing, review, completed — with clear analyst handoff at each stage.' },
-      { title: 'Admin Dashboard', desc: 'Real-time KPIs: total users, screenings run, pending reviews, and flagged subjects — at a glance.' },
-      { title: 'Audit Log', desc: 'Complete, timestamped activity trail for every action — built for regulatory review and compliance reporting.' },
+      { title: 'Structured Review Queue', desc: 'Five-stage workflow (submitted, searching, analysing, review, completed) with clear analyst handoff at each stage.' },
+      { title: 'Admin Dashboard', desc: 'Real-time KPIs: total users, screenings run, pending reviews, and flagged subjects, at a glance.' },
+      { title: 'Audit Log', desc: 'Complete, timestamped activity trail for every action. Built for regulatory review and compliance reporting.' },
       { title: 'User Management', desc: 'Admin controls for analyst accounts, role assignment, and access levels across the organisation.' },
     ],
     images: [
@@ -433,7 +433,7 @@ const projects: Record<string, Project> = {
       { value: '0', label: 'Manual searches needed' },
     ],
     testimonial: {
-      quote: 'We went from doing this manually to having a full AI-powered compliance tool in 10 days. The risk scoring alone saves our analysts hours every week — and the audit trail means we can demonstrate compliance instantly.',
+      quote: 'We went from doing this manually to having a full AI-powered compliance tool in 10 days. The risk scoring alone saves our analysts hours every week, and the audit trail means we can demonstrate compliance instantly.',
       author: 'Compliance Lead',
       role: 'AMS Tool',
     },
@@ -455,11 +455,11 @@ const projects: Record<string, Project> = {
       { value: '85%', label: 'Retention Rate' },
       { value: '2-3×', label: 'Speed Increase' },
     ],
-    challenge: `The founder had a clear vision: a science-backed speed reading tool that used RSVP (Rapid Serial Visual Presentation) to eliminate the two biggest bottlenecks in reading — saccadic eye movement and subvocalization. Every existing tool on the market was either cluttered, poorly designed, or buried behind a paywall. The goal was a clean, minimal web app with a browser extension, adaptive training mode, and a curated story library — shipped in a week.`,
+    challenge: `The founder had a clear vision: a science-backed speed reading tool that used RSVP (Rapid Serial Visual Presentation) to eliminate the two biggest bottlenecks in reading: saccadic eye movement and subvocalization. Every existing tool on the market was either cluttered, poorly designed, or buried behind a paywall. The goal was a clean, minimal web app with a browser extension, adaptive training mode, and a curated story library, shipped in a week.`,
     approach: [
       {
         title: 'Engine Before UI',
-        desc: 'The RSVP word-flash engine was built and tuned first — timing precision, focal point rendering, and smooth transitions — before any layout work began.',
+        desc: 'The RSVP word-flash engine was built and tuned first (timing precision, focal point rendering, and smooth transitions) before any layout work began.',
       },
       {
         title: 'Adaptive Training Mode',
@@ -467,16 +467,16 @@ const projects: Record<string, Project> = {
       },
       {
         title: 'Browser Extension Integration',
-        desc: 'Built a companion browser extension that injects the RSVP reader into any webpage — so users can speed-read articles, docs, and emails in context.',
+        desc: 'Built a companion browser extension that injects the RSVP reader into any webpage, so users can speed-read articles, docs, and emails in context.',
       },
     ],
     features: [
-      { title: 'RSVP Reader', desc: 'Words flash at a fixed focal point — zero eye movement, zero tracking, maximum speed. Adjustable from 100 to 1200 WPM.' },
+      { title: 'RSVP Reader', desc: 'Words flash at a fixed focal point. Zero eye movement, zero tracking, maximum speed. Adjustable from 100 to 1200 WPM.' },
       { title: 'Training Mode', desc: 'Auto-ramps from your starting speed to your target WPM across the session. Builds reading endurance progressively.' },
-      { title: 'Story Library', desc: '10 curated content categories — science, history, philosophy, business, and more. Start reading immediately with no upload needed.' },
+      { title: 'Story Library', desc: '10 curated content categories: science, history, philosophy, business, and more. Start reading immediately with no upload needed.' },
       { title: 'Browser Extension', desc: 'Speed read any text on any website. One keyboard shortcut (Alt+S) activates the reader in-context on any page.' },
       { title: 'Progress Tracking', desc: 'Words read, average WPM, and peak speed tracked across every session. See improvement over time.' },
-      { title: 'Dark Mode', desc: 'Automatic theme detection. Light for daytime, dark for low-light — no manual toggle needed.' },
+      { title: 'Dark Mode', desc: 'Automatic theme detection. Light for daytime, dark for low-light. No manual toggle needed.' },
     ],
     images: [
       { src: '/Images/work/speedread-laptop.webp', alt: 'Speed Read on laptop' },
@@ -491,7 +491,7 @@ const projects: Record<string, Project> = {
       { value: '3×', label: 'Average speed increase' },
     ],
     testimonial: {
-      quote: "I went from 250 WPM to over 600 in two weeks of daily training. The app is beautifully simple — it just gets out of the way and lets you read. Best productivity tool I've used this year.",
+      quote: "I went from 250 WPM to over 600 in two weeks of daily training. The app is beautifully simple. It just gets out of the way and lets you read. Best productivity tool I've used this year.",
       author: 'Early User',
       role: 'Speed Read',
     },

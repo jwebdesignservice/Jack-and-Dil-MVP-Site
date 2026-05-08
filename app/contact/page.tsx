@@ -87,10 +87,10 @@ export default function ContactPage() {
           <SectionLabel icon={<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>}>Let&apos;s Build Together</SectionLabel>
           <h1 className="text-4xl lg:text-5xl font-semibold text-white mt-4 mb-5">
             Start Your{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">MVP Journey</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">MVP Build</span>
           </h1>
           <p className="text-neutral-400 text-base leading-relaxed">
-            Tell us about your vision. We&apos;ll get back to you within 24 hours to schedule a free discovery call. No commitment — just a conversation.
+            Tell us about your vision. We&apos;ll get back to you within 24 hours to schedule a free discovery call. No commitment, just a conversation.
           </p>
         </motion.div>
 
@@ -293,7 +293,7 @@ export default function ContactPage() {
                   </span>
                 </label>
                 <textarea className={inputClass + " !h-auto"} name="message" value={formData.message} onChange={handleChange} rows={5}
-                  placeholder="Describe your product idea — what problem it solves, who the target audience is, and any key features you have in mind..." required aria-label="Tell us about your idea"/>
+                  placeholder="Describe your product idea: what problem it solves, who the target audience is, and any key features you have in mind..." required aria-label="Tell us about your idea"/>
               </div>
 
               {/* File upload */}
@@ -308,7 +308,7 @@ export default function ContactPage() {
                   <svg className="w-5 h-5 text-neutral-500 group-hover:text-orange-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/></svg>
                   <div>
                     <span className="text-sm text-neutral-400 group-hover:text-neutral-300 transition-colors">Drop a file here or click to upload</span>
-                    <span className="block text-[10px] text-neutral-500 mt-1">PDF, DOC, DOCX, PNG, JPG — max 10MB</span>
+                    <span className="block text-[10px] text-neutral-500 mt-1">PDF, DOC, DOCX, PNG, JPG, max 10MB</span>
                   </div>
                   <input type="file" className="hidden" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.webp" aria-label="Attach project brief (optional)"/>
                 </label>
