@@ -8,9 +8,9 @@ export default function HeroDashboard() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="relative"
+        className="relative isolate"
       >
-        <svg viewBox="0 0 580 500" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full drop-shadow-2xl">
+        <svg viewBox="0 0 580 500" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full drop-shadow-2xl relative z-0">
           <defs>
             <filter id="glow-orange" x="-40%" y="-40%" width="180%" height="180%">
               <feGaussianBlur stdDeviation="4" result="blur"/>
