@@ -188,15 +188,15 @@ export default function HeroDashboard() {
           {/* ── BOTTOM STAT CARDS ── */}
           {[
             { x: 56,  label: 'Total MVPs',    value: '50+',   sub: 'Since 2022',      color: '#F97316' },
-            { x: 196, label: 'Avg Delivery',  value: '9 days',sub: '↓ 3 days YoY',   color: '#4ade80' },
-            { x: 336, label: 'Satisfaction',  value: '100%',  sub: 'NPS Score: 94',   color: '#F97316' },
-            { x: 416, label: 'Uptime',        value: '99.9%', sub: 'Last 12 months',  color: '#60a5fa' },
+            { x: 180, label: 'Avg Delivery',  value: '9 days',sub: '↓ 3 days YoY',   color: '#4ade80' },
+            { x: 304, label: 'Satisfaction',  value: '100%',  sub: 'NPS Score: 94',   color: '#F97316' },
+            { x: 428, label: 'Uptime',        value: '99.9%', sub: 'Last 12 months',  color: '#60a5fa' },
           ].map((card, i) => (
             <g key={i}>
-              <rect x={card.x} y="380" width="126" height="70" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)" strokeWidth="0.5"/>
-              <text x={card.x + 16} y="400" fill="#555" fontSize="9" fontFamily="Inter, sans-serif" fontWeight="400" letterSpacing="0.06em">{card.label.toUpperCase()}</text>
-              <text x={card.x + 16} y="424" fill={card.color} fontSize="18" fontFamily="Inter, sans-serif" fontWeight="300">{card.value}</text>
-              <text x={card.x + 16} y="440" fill="#3a3a3a" fontSize="9" fontFamily="Inter, sans-serif">{card.sub}</text>
+              <rect x={card.x} y="380" width="110" height="70" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)" strokeWidth="0.5"/>
+              <text x={card.x + 14} y="400" fill="#555" fontSize="9" fontFamily="Inter, sans-serif" fontWeight="400" letterSpacing="0.06em">{card.label.toUpperCase()}</text>
+              <text x={card.x + 14} y="424" fill={card.color} fontSize="17" fontFamily="Inter, sans-serif" fontWeight="300">{card.value}</text>
+              <text x={card.x + 14} y="440" fill="#3a3a3a" fontSize="9" fontFamily="Inter, sans-serif">{card.sub}</text>
             </g>
           ))}
 
@@ -206,10 +206,10 @@ export default function HeroDashboard() {
           ))}
         </svg>
 
-        {/* Floating notification — top-right, lifted above main card */}
+        {/* Floating notification — top-right, sits on top */}
         <motion.div
-          className="glass-card absolute -right-6 top-6 !rounded-xl px-4 py-3 w-52 z-30"
-          style={{ boxShadow: '0 20px 50px -12px rgba(0,0,0,0.85), 0 0 0 1px rgba(249,115,22,0.10)' }}
+          className="glass-card-strong absolute -right-2 top-20 !rounded-xl px-4 py-3 w-52 z-30"
+          style={{ boxShadow: '0 24px 60px -12px rgba(0,0,0,0.95), 0 0 0 1px rgba(249,115,22,0.12)' }}
           animate={{ y: [0, -8, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
         >
@@ -221,10 +221,10 @@ export default function HeroDashboard() {
           <p className="text-neutral-500 text-[9px] mt-1.5">2 mins ago</p>
         </motion.div>
 
-        {/* Floating deploy badge — bottom-left corner, clear of stat row */}
+        {/* Floating deploy badge — original spot, sits on top */}
         <motion.div
-          className="glass-card absolute -left-6 -bottom-4 !rounded-xl px-4 py-3 z-30"
-          style={{ boxShadow: '0 20px 50px -12px rgba(0,0,0,0.85), 0 0 0 1px rgba(249,115,22,0.10)' }}
+          className="glass-card-strong absolute -left-2 bottom-28 !rounded-xl px-4 py-3 z-30"
+          style={{ boxShadow: '0 24px 60px -12px rgba(0,0,0,0.95), 0 0 0 1px rgba(249,115,22,0.12)' }}
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
         >
