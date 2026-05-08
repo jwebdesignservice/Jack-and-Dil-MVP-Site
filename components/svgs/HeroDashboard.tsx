@@ -54,8 +54,8 @@ export default function HeroDashboard() {
           {/* Background glow */}
           <ellipse cx="290" cy="250" rx="280" ry="240" fill="url(#bgGlow)"/>
 
-          {/* ── MAIN CARD ── */}
-          <rect x="40" y="20" width="500" height="370" rx="14" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" strokeWidth="1"/>
+          {/* ── MAIN CARD — height shrunk so the bottom income card row sits OUTSIDE this panel ── */}
+          <rect x="40" y="20" width="500" height="350" rx="14" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" strokeWidth="1"/>
 
           {/* Top bar */}
           <rect x="40" y="20" width="500" height="48" rx="14" fill="rgba(255,255,255,0.04)"/>
@@ -200,24 +200,39 @@ export default function HeroDashboard() {
             </g>
           ))}
 
-          {/* Corner accents */}
-          {[[44,24],[536,24],[44,386],[536,386]].map(([x,y],i) => (
+          {/* Corner accents — now on the trimmed main panel */}
+          {[[44,24],[536,24],[44,366],[536,366]].map(([x,y],i) => (
             <circle key={i} cx={x} cy={y} r="2" fill="rgba(249,115,22,0.25)"/>
           ))}
         </svg>
-      </motion.div>
 
-      {/* Bottom row — both panels aligned along the bottom, BELOW the income cards */}
-      <div className="flex items-stretch gap-4 mt-5">
-        {/* Deploy badge */}
+        {/* Floating notification — original spot, on top of main panel */}
         <motion.div
-          className="rounded-xl px-4 py-3 border border-orange-500/30 flex-shrink-0"
+          className="absolute -right-2 top-20 rounded-xl px-4 py-3 w-52 z-50 border border-orange-500/30"
           style={{
             background: '#0A0A0A',
-            boxShadow: '0 16px 40px -12px rgba(0,0,0,0.85), 0 0 0 1px rgba(249,115,22,0.18), inset 0 1px 0 0 rgba(255,255,255,0.08)',
+            boxShadow: '0 24px 60px -8px rgba(0,0,0,0.95), 0 0 0 1px rgba(249,115,22,0.20), inset 0 1px 0 0 rgba(255,255,255,0.08)',
           }}
-          animate={{ y: [0, -3, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <div className="flex items-center gap-2 mb-1.5">
+            <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse flex-shrink-0"/>
+            <span className="text-orange-400 text-xs font-medium">New MVP Shipped</span>
+          </div>
+          <p className="text-neutral-500 text-[10px] leading-relaxed">HealthFlow dashboard deployed to production</p>
+          <p className="text-neutral-500 text-[9px] mt-1.5">2 mins ago</p>
+        </motion.div>
+
+        {/* Floating deploy badge — original spot, on top of main panel */}
+        <motion.div
+          className="absolute -left-2 bottom-28 rounded-xl px-4 py-3 z-50 border border-orange-500/30"
+          style={{
+            background: '#0A0A0A',
+            boxShadow: '0 24px 60px -8px rgba(0,0,0,0.95), 0 0 0 1px rgba(249,115,22,0.20), inset 0 1px 0 0 rgba(255,255,255,0.08)',
+          }}
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
         >
           <div className="flex items-center gap-3">
             <div className="w-7 h-7 rounded-lg bg-orange-500/20 border border-orange-500/40 flex items-center justify-center flex-shrink-0">
@@ -231,25 +246,7 @@ export default function HeroDashboard() {
             </div>
           </div>
         </motion.div>
-
-        {/* New MVP Shipped notification */}
-        <motion.div
-          className="flex-1 rounded-xl px-4 py-3 border border-orange-500/30"
-          style={{
-            background: '#0A0A0A',
-            boxShadow: '0 16px 40px -12px rgba(0,0,0,0.85), 0 0 0 1px rgba(249,115,22,0.18), inset 0 1px 0 0 rgba(255,255,255,0.08)',
-          }}
-          animate={{ y: [0, -3, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-        >
-          <div className="flex items-center gap-2 mb-1">
-            <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse flex-shrink-0"/>
-            <span className="text-orange-400 text-xs font-medium">New MVP Shipped</span>
-            <span className="ml-auto text-neutral-500 text-[9px]">2 mins ago</span>
-          </div>
-          <p className="text-neutral-500 text-[10px] leading-relaxed">HealthFlow dashboard deployed to production</p>
-        </motion.div>
-      </div>
+      </motion.div>
     </div>
   )
 }
