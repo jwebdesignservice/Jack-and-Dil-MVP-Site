@@ -207,46 +207,49 @@ export default function HeroDashboard() {
         </svg>
       </motion.div>
 
-      {/* Floating notification — top-right, sibling of dashboard motion.div, z-50 wins */}
-      <motion.div
-        className="absolute -right-2 top-20 rounded-xl px-4 py-3 w-52 z-50 border border-orange-500/30 pointer-events-none"
-        style={{
-          background: '#0A0A0A',
-          boxShadow: '0 24px 60px -8px rgba(0,0,0,0.95), 0 0 0 1px rgba(249,115,22,0.20), inset 0 1px 0 0 rgba(255,255,255,0.08)',
-        }}
-        animate={{ y: [0, -8, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-      >
-        <div className="flex items-center gap-2 mb-1.5">
-          <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse flex-shrink-0"/>
-          <span className="text-orange-400 text-xs font-medium">New MVP Shipped</span>
-        </div>
-        <p className="text-neutral-500 text-[10px] leading-relaxed">HealthFlow dashboard deployed to production</p>
-        <p className="text-neutral-500 text-[9px] mt-1.5">2 mins ago</p>
-      </motion.div>
+      {/* Bottom row — both panels aligned along the bottom, BELOW the income cards */}
+      <div className="flex items-stretch gap-4 mt-5">
+        {/* Deploy badge */}
+        <motion.div
+          className="rounded-xl px-4 py-3 border border-orange-500/30 flex-shrink-0"
+          style={{
+            background: '#0A0A0A',
+            boxShadow: '0 16px 40px -12px rgba(0,0,0,0.85), 0 0 0 1px rgba(249,115,22,0.18), inset 0 1px 0 0 rgba(255,255,255,0.08)',
+          }}
+          animate={{ y: [0, -3, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <div className="flex items-center gap-3">
+            <div className="w-7 h-7 rounded-lg bg-orange-500/20 border border-orange-500/40 flex items-center justify-center flex-shrink-0">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F97316" strokeWidth="2">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+            </div>
+            <div>
+              <p className="text-white text-[11px] font-medium">Deployed</p>
+              <p className="text-neutral-500 text-[10px]">vercel.app ✓</p>
+            </div>
+          </div>
+        </motion.div>
 
-      {/* Floating deploy badge — sibling, z-50 wins */}
-      <motion.div
-        className="absolute -left-2 bottom-28 rounded-xl px-4 py-3 z-50 border border-orange-500/30 pointer-events-none"
-        style={{
-          background: '#0A0A0A',
-          boxShadow: '0 24px 60px -8px rgba(0,0,0,0.95), 0 0 0 1px rgba(249,115,22,0.20), inset 0 1px 0 0 rgba(255,255,255,0.08)',
-        }}
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-      >
-        <div className="flex items-center gap-3">
-          <div className="w-7 h-7 rounded-lg bg-orange-500/20 border border-orange-500/40 flex items-center justify-center flex-shrink-0">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F97316" strokeWidth="2">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-            </svg>
+        {/* New MVP Shipped notification */}
+        <motion.div
+          className="flex-1 rounded-xl px-4 py-3 border border-orange-500/30"
+          style={{
+            background: '#0A0A0A',
+            boxShadow: '0 16px 40px -12px rgba(0,0,0,0.85), 0 0 0 1px rgba(249,115,22,0.18), inset 0 1px 0 0 rgba(255,255,255,0.08)',
+          }}
+          animate={{ y: [0, -3, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+        >
+          <div className="flex items-center gap-2 mb-1">
+            <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse flex-shrink-0"/>
+            <span className="text-orange-400 text-xs font-medium">New MVP Shipped</span>
+            <span className="ml-auto text-neutral-500 text-[9px]">2 mins ago</span>
           </div>
-          <div>
-            <p className="text-white text-[11px] font-medium">Deployed</p>
-            <p className="text-neutral-500 text-[10px]">vercel.app ✓</p>
-          </div>
-        </div>
-      </motion.div>
+          <p className="text-neutral-500 text-[10px] leading-relaxed">HealthFlow dashboard deployed to production</p>
+        </motion.div>
+      </div>
     </div>
   )
 }
