@@ -185,10 +185,6 @@ export default function HeroDashboard() {
             </g>
           ))}
 
-          {/* Corner accents — now on the trimmed main panel */}
-          {[[44,24],[536,24],[44,366],[536,366]].map(([x,y],i) => (
-            <circle key={i} cx={x} cy={y} r="2" fill="rgba(249,115,22,0.25)"/>
-          ))}
         </svg>
 
         {/* Floating notification — original spot, on top of main panel */}
