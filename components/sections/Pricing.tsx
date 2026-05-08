@@ -33,8 +33,6 @@ const badges = ['Secure Payments', 'Fixed Price', 'No Hidden Fees', '100% Owners
 export default function Pricing() {
   return (
     <section id="pricing" className="py-24 relative overflow-hidden">
-      {/* Radial gradient center */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(249,115,22,0.06),transparent_70%)]" />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}

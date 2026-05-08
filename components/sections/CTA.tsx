@@ -5,44 +5,6 @@ import { Button } from '@/components/ui/Button'
 export default function CTA() {
   return (
     <section className="py-28 relative overflow-hidden">
-      {/* Circuit-style background lines */}
-      <svg className="absolute inset-0 w-full h-full opacity-[0.06]" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" fill="none">
-        {/* Horizontal traces */}
-        <line x1="0" y1="80" x2="240" y2="80" stroke="#F97316" strokeWidth="1"/>
-        <circle cx="240" cy="80" r="3" fill="#F97316"/>
-        <line x1="240" y1="80" x2="240" y2="160" stroke="#F97316" strokeWidth="1"/>
-        <line x1="240" y1="160" x2="560" y2="160" stroke="#F97316" strokeWidth="1"/>
-        <circle cx="560" cy="160" r="3" fill="#F97316"/>
-        <line x1="560" y1="160" x2="560" y2="80" stroke="#F97316" strokeWidth="1"/>
-        <line x1="560" y1="80" x2="800" y2="80" stroke="#F97316" strokeWidth="1"/>
-        {/* Bottom traces */}
-        <line x1="0" y1="320" x2="160" y2="320" stroke="#F97316" strokeWidth="1"/>
-        <circle cx="160" cy="320" r="3" fill="#F97316"/>
-        <line x1="160" y1="320" x2="160" y2="240" stroke="#F97316" strokeWidth="1"/>
-        <line x1="160" y1="240" x2="400" y2="240" stroke="#F97316" strokeWidth="1"/>
-        <circle cx="400" cy="240" r="3" fill="#F97316"/>
-        <line x1="400" y1="240" x2="640" y2="240" stroke="#F97316" strokeWidth="1"/>
-        <line x1="640" y1="240" x2="640" y2="320" stroke="#F97316" strokeWidth="1"/>
-        <line x1="640" y1="320" x2="800" y2="320" stroke="#F97316" strokeWidth="1"/>
-        {/* Node dots */}
-        <circle cx="120" cy="80" r="2" fill="#F97316"/>
-        <circle cx="680" cy="80" r="2" fill="#F97316"/>
-        <circle cx="320" cy="320" r="2" fill="#F97316"/>
-        <circle cx="480" cy="320" r="2" fill="#F97316"/>
-      </svg>
-
-      {/* Corner scan lines */}
-      {['top-0 left-0', 'top-0 right-0', 'bottom-0 left-0', 'bottom-0 right-0'].map((pos, i) => (
-        <div key={i} className={`absolute ${pos} w-20 h-20 pointer-events-none`}>
-          <svg viewBox="0 0 80 80" fill="none" className="w-full h-full">
-            <path
-              d={i === 0 ? 'M4 20 L4 4 L20 4' : i === 1 ? 'M76 20 L76 4 L60 4' : i === 2 ? 'M4 60 L4 76 L20 76' : 'M76 60 L76 76 L60 76'}
-              stroke="rgba(249,115,22,0.4)" strokeWidth="1.5" strokeLinecap="round"
-            />
-          </svg>
-        </div>
-      ))}
-
       <div className="container mx-auto px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="relative rounded-3xl overflow-hidden p-[1px]"

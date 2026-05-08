@@ -32,10 +32,6 @@ export default function FAQ() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      {/* Large decorative ? — hidden on mobile to prevent overflow */}
-      <div className="absolute right-10 top-1/2 -translate-y-1/2 text-[300px] font-black text-orange-500/[0.02] select-none pointer-events-none font-mono leading-none hidden md:block">
-        ?
-      </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-3xl">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}

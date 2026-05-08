@@ -21,37 +21,6 @@ const fastWay = [
 export default function Comparison() {
   return (
     <section className="relative overflow-hidden">
-      {/* Subtle orange-tinted darken so video shows through */}
-      <div className="absolute inset-0 bg-black/40" />
-
-      {/* Orange radial bloom */}
-      <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(249,115,22,0.12) 0%, transparent 70%)' }} />
-
-      {/* Top/bottom fade */}
-      <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
-      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#060606] to-transparent z-10 pointer-events-none" />
-
-      {/* Large decorative "VS" watermark — hidden on mobile to prevent overflow */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 hidden md:flex">
-        <span className="text-[320px] font-black text-orange-500/[0.04] leading-none select-none tracking-tighter">VS</span>
-      </div>
-
-      {/* Circuit traces */}
-      <svg className="absolute inset-0 w-full h-full opacity-[0.08] pointer-events-none" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" fill="none">
-        <line x1="0" y1="150" x2="300" y2="150" stroke="#F97316" strokeWidth="1"/>
-        <circle cx="300" cy="150" r="4" fill="#F97316"/>
-        <line x1="300" y1="150" x2="300" y2="300" stroke="#F97316" strokeWidth="1"/>
-        <line x1="300" y1="300" x2="500" y2="300" stroke="#F97316" strokeWidth="1"/>
-        <line x1="900" y1="150" x2="1200" y2="150" stroke="#F97316" strokeWidth="1"/>
-        <circle cx="900" cy="150" r="4" fill="#F97316"/>
-        <line x1="900" y1="150" x2="900" y2="300" stroke="#F97316" strokeWidth="1"/>
-        <line x1="700" y1="300" x2="900" y2="300" stroke="#F97316" strokeWidth="1"/>
-        <line x1="0" y1="450" x2="200" y2="450" stroke="#F97316" strokeWidth="1"/>
-        <circle cx="200" cy="450" r="3" fill="#F97316"/>
-        <line x1="1000" y1="450" x2="1200" y2="450" stroke="#F97316" strokeWidth="1"/>
-        <circle cx="1000" cy="450" r="3" fill="#F97316"/>
-      </svg>
-
       <div className="container mx-auto px-6 relative z-20 py-28">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}

@@ -6,12 +6,6 @@ import { Button } from '@/components/ui/Button'
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-16 pb-4 md:pb-0">
-      {/* Diagonal lines */}
-      <svg className="absolute inset-0 w-full h-full opacity-5" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <line x1="0" y1="100" x2="100" y2="0" stroke="#F97316" strokeWidth="0.3" />
-        <line x1="-20" y1="100" x2="80" y2="0" stroke="#F97316" strokeWidth="0.2" />
-        <line x1="20" y1="100" x2="120" y2="0" stroke="#F97316" strokeWidth="0.2" />
-      </svg>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
