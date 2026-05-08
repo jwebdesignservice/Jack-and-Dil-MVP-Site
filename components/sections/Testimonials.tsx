@@ -79,7 +79,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section id="testimonials" className="py-24 bg-[#080808] relative overflow-hidden">
+    <section id="testimonials" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(249,115,22,0.05),transparent_70%)]"/>
 
       <div className="container mx-auto px-6 relative z-10">

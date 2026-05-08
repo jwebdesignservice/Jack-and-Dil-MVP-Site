@@ -21,8 +21,8 @@ const fastWay = [
 export default function Comparison() {
   return (
     <section className="relative overflow-hidden">
-      {/* Full orange-tinted inverted background */}
-      <div className="absolute inset-0 bg-[#0A0500]" />
+      {/* Subtle orange-tinted darken so video shows through */}
+      <div className="absolute inset-0 bg-black/40" />
 
       {/* Dramatic grid */}
       <div className="absolute inset-0 opacity-[0.07]"

@@ -5,6 +5,7 @@ import './globals.css'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import CookieBanner from '@/components/ui/CookieBanner'
+import PageVideoBg from '@/components/ui/PageVideoBg'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
 
@@ -177,6 +178,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://www.googletagmanager.com" />
       </head>
       <body className="bg-black text-white antialiased">
+        {/* Page-wide background video — sits behind every section so glass cards have something to blur */}
+        <PageVideoBg />
         {/* Skip-to-content link for keyboard / screen reader users */}
         <a
           href="#main-content"

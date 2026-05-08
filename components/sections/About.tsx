@@ -19,10 +19,10 @@ const commitColors = ['bg-neutral-800/60', 'bg-orange-500/25', 'bg-orange-500/55
 
 export default function About() {
   return (
-    <section id="about" className="pt-32 pb-24 bg-[#0A0500] relative overflow-hidden">
-      {/* Top/bottom section fades */}
-      <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-[#060606] to-transparent pointer-events-none z-10" />
-      <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
+    <section id="about" className="pt-32 pb-24 relative overflow-hidden">
+      {/* Soft section divider fades */}
+      <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-black/60 to-transparent pointer-events-none z-10" />
+      <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-black/60 to-transparent pointer-events-none z-10" />
       {/* Orange radial bloom */}
       <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(249,115,22,0.08) 0%, transparent 70%)' }} />
       {/* Grid */}

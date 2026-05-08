@@ -5,26 +5,10 @@ import { Button } from '@/components/ui/Button'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-16 pb-4 md:pb-0">
-      {/* Background video */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover opacity-60"
-        autoPlay
-        loop
-        muted
-        playsInline
-        poster="/Images/Hero illustration.webp"
-      >
-        <source src="/hero-bg.mp4" type="video/mp4" />
-      </video>
-      {/* Darken + tint overlay for text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/85" />
-      {/* Subtle orange wash to keep brand */}
-      <div className="absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse at 30% 40%, rgba(249,115,22,0.08), transparent 60%)' }} />
-      {/* Dot grid */}
-      <div className="absolute inset-0 opacity-60"
-        style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.12) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-16 pb-4 md:pb-0">
+      {/* Subtle dot grid on top of video */}
+      <div className="absolute inset-0 opacity-30"
+        style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.18) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
       {/* Diagonal lines */}
       <svg className="absolute inset-0 w-full h-full opacity-5" viewBox="0 0 100 100" preserveAspectRatio="none">
         <line x1="0" y1="100" x2="100" y2="0" stroke="#F97316" strokeWidth="0.3" />

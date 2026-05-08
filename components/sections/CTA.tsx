@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/Button'
 
 export default function CTA() {
   return (
-    <section className="py-28 bg-black relative overflow-hidden">
+    <section className="py-28 relative overflow-hidden">
       {/* Circuit-style background lines */}
       <svg className="absolute inset-0 w-full h-full opacity-[0.06]" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" fill="none">
         {/* Horizontal traces */}

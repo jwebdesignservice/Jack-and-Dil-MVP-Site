@@ -85,13 +85,10 @@ export default function Services() {
   const [hovered, setHovered] = useState<number | null>(null)
 
   return (
-    <section id="services" className="py-28 bg-black relative overflow-hidden">
-      {/* Dot grid — continuing from hero */}
-      <div className="absolute inset-0"
+    <section id="services" className="py-28 relative overflow-hidden">
+      {/* Subtle dot grid */}
+      <div className="absolute inset-0 opacity-50"
         style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-
-      {/* Subtle fade to black at bottom */}
-      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none"/>
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
