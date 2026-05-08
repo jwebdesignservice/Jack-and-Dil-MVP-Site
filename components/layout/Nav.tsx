@@ -1,6 +1,5 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -182,12 +181,17 @@ export default function Nav() {
             className="flex items-center gap-2 text-white font-bold text-xl flex-shrink-0"
           >
             <span className="relative flex h-8 w-8 items-center justify-center">
+              {/* Pulsing bolt — same path, behind, animates outward */}
               <svg viewBox="0 0 38 38" aria-hidden="true"
                 className="absolute inset-0 w-full h-full animate-ping"
-                style={{ filter: 'blur(2px)' }}>
-                <path d="M21.3 10L11 25.7h6.5l-.8 10.3L27 20.3h-6.5L21.3 10z" fill="#F97316" fillOpacity="0.7"/>
+                style={{ filter: 'blur(1.5px)' }}>
+                <path d="M21.3 10L11 25.7h6.5l-.8 10.3L27 20.3h-6.5L21.3 10z" fill="#F97316" fillOpacity="0.6"/>
               </svg>
-              <Image src="/logo.png" alt="" width={32} height={32} className="relative rounded-md" />
+              {/* Static bolt on top (the real logo, transparent bg) */}
+              <svg viewBox="0 0 38 38" aria-hidden="true"
+                className="relative w-full h-full drop-shadow-[0_0_6px_rgba(249,115,22,0.55)]">
+                <path d="M21.3 10L11 25.7h6.5l-.8 10.3L27 20.3h-6.5L21.3 10z" fill="#F97316"/>
+              </svg>
             </span>
             <span className="hidden sm:inline">FastLaunch</span>
           </Link>
