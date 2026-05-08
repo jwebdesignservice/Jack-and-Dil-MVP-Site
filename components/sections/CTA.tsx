@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/Button'
 
 export default function CTA() {
   return (
-    <section className="py-28 relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="relative rounded-3xl overflow-hidden p-[1px]"

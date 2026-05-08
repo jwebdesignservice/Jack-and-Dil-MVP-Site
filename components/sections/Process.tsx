@@ -203,7 +203,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="pt-20 pb-28 relative overflow-hidden">
+    <section id="process" className="py-16 relative overflow-hidden">
 
 
       <div className="container mx-auto px-6 relative z-10">

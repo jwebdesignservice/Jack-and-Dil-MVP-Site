@@ -79,7 +79,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section id="testimonials" className="py-24 relative overflow-hidden">
+    <section id="testimonials" className="py-16 relative overflow-hidden">
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}

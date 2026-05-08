@@ -21,7 +21,7 @@ const fastWay = [
 export default function Comparison() {
   return (
     <section className="relative overflow-hidden">
-      <div className="container mx-auto px-6 relative z-20 py-28">
+      <div className="container mx-auto px-6 relative z-20 py-16">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="text-center mb-16">

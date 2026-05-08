@@ -15,7 +15,7 @@ const services = [
     borderHover: 'hover:border-orange-500/50',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
-        <rect width="48" height="48" rx="12" fill="#F97316" fillOpacity="0.1"/>
+        <rect width="48" height="48" rx="12" fill="#F97316" fillOpacity="0.32" stroke="#F97316" strokeOpacity="0.6" strokeWidth="1"/>
         <path d="M24 10 L30 22 H24 L24 38 L18 26 H24 L24 10Z" fill="#F97316"/>
         <circle cx="36" cy="14" r="3" fill="#F97316" fillOpacity="0.5"/>
         <circle cx="12" cy="34" r="3" fill="#F97316" fillOpacity="0.5"/>
@@ -34,7 +34,7 @@ const services = [
     borderHover: 'hover:border-sky-500/40',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
-        <rect width="48" height="48" rx="12" fill="#F97316" fillOpacity="0.1"/>
+        <rect width="48" height="48" rx="12" fill="#F97316" fillOpacity="0.32" stroke="#F97316" strokeOpacity="0.6" strokeWidth="1"/>
         <rect x="10" y="10" width="28" height="20" rx="2" stroke="#F97316" strokeWidth="1.5" fill="none"/>
         <rect x="14" y="14" width="8" height="6" rx="1" fill="#F97316" fillOpacity="0.4"/>
         <rect x="26" y="14" width="8" height="2" rx="0.5" fill="#F97316" fillOpacity="0.3"/>
@@ -55,7 +55,7 @@ const services = [
     borderHover: 'hover:border-orange-500/50',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
-        <rect width="48" height="48" rx="12" fill="#F97316" fillOpacity="0.15"/>
+        <rect width="48" height="48" rx="12" fill="#F97316" fillOpacity="0.4" stroke="#F97316" strokeOpacity="0.7" strokeWidth="1"/>
         <path d="M16 20 L10 24 L16 28" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M32 20 L38 24 L32 28" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M28 16 L20 32" stroke="#F97316" strokeWidth="2" strokeLinecap="round" fillOpacity="0.6"/>
@@ -72,7 +72,7 @@ const services = [
     borderHover: 'hover:border-emerald-500/30',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
-        <rect width="48" height="48" rx="12" fill="#F97316" fillOpacity="0.1"/>
+        <rect width="48" height="48" rx="12" fill="#F97316" fillOpacity="0.32" stroke="#F97316" strokeOpacity="0.6" strokeWidth="1"/>
         <path d="M12 32 L18 24 L24 28 L30 18 L36 22" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <circle cx="36" cy="22" r="3" fill="#F97316" fillOpacity="0.8"/>
         <line x1="12" y1="36" x2="36" y2="36" stroke="#F97316" strokeOpacity="0.2" strokeWidth="1"/>
@@ -85,7 +85,7 @@ export default function Services() {
   const [hovered, setHovered] = useState<number | null>(null)
 
   return (
-    <section id="services" className="py-28 relative overflow-hidden">
+    <section id="services" className="py-16 relative overflow-hidden">
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
