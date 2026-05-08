@@ -1,7 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
@@ -182,9 +181,10 @@ export default function Nav() {
             className="flex items-center gap-2 text-white font-bold text-xl flex-shrink-0"
           >
             <span className="relative flex h-8 w-8 items-center justify-center">
-              <span aria-hidden="true" className="absolute inset-0 rounded-md bg-orange-500/35 animate-ping" />
-              <span aria-hidden="true" className="absolute inset-0 rounded-md ring-1 ring-orange-500/40" />
-              <Image src="/logo.png" alt="" width={32} height={32} className="relative rounded-md" />
+              <span aria-hidden="true" className="absolute inset-0 rounded-full bg-orange-500/25 blur-md animate-ping" />
+              <svg viewBox="0 0 38 38" className="relative w-7 h-7 drop-shadow-[0_0_10px_rgba(249,115,22,0.6)]" aria-hidden="true">
+                <path d="M21.3 10L11 25.7h6.5l-.8 10.3L27 20.3h-6.5L21.3 10z" fill="#F97316"/>
+              </svg>
             </span>
             <span className="hidden sm:inline">FastLaunch</span>
           </Link>
@@ -298,7 +298,7 @@ export default function Nav() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setActiveMenu(null)}
-                    className="glass-card !rounded-lg flex items-start gap-3 p-4 hover:!border-orange-500/30 transition-all group"
+                    className="flex items-start gap-3 p-4 rounded-lg backdrop-blur-md bg-white/[0.04] border border-white/15 hover:border-orange-500/40 hover:bg-white/[0.07] transition-all group shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
                   >
                     <div className="w-9 h-9 rounded-md bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 flex-shrink-0 group-hover:bg-orange-500/15 transition-colors">
                       {item.icon}
@@ -343,7 +343,7 @@ export default function Nav() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setActiveMenu(null)}
-                    className="glass-card !rounded-lg flex items-start gap-3 p-4 hover:!border-orange-500/30 transition-all group"
+                    className="flex items-start gap-3 p-4 rounded-lg backdrop-blur-md bg-white/[0.04] border border-white/15 hover:border-orange-500/40 hover:bg-white/[0.07] transition-all group shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
                   >
                     <div className="w-9 h-9 rounded-md bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 flex-shrink-0 group-hover:bg-orange-500/15 transition-colors">
                       {item.icon}
