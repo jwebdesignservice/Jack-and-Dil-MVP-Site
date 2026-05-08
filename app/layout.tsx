@@ -180,6 +180,37 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-transparent text-white antialiased">
         {/* Page-wide background video — sits behind every section so glass cards have something to blur */}
         <PageVideoBg />
+
+        {/* Floating orange orbs — spread across viewport, drift upward */}
+        <div aria-hidden="true" className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+          {[
+            { l: 8,  s: 5, o: 0.55, d: 0,    dur: 11 },
+            { l: 18, s: 4, o: 0.40, d: 1.5,  dur: 13 },
+            { l: 27, s: 6, o: 0.65, d: 3,    dur: 10 },
+            { l: 38, s: 3, o: 0.35, d: 0.8,  dur: 14 },
+            { l: 48, s: 5, o: 0.50, d: 2.2,  dur: 12 },
+            { l: 58, s: 4, o: 0.40, d: 4,    dur: 13 },
+            { l: 68, s: 6, o: 0.60, d: 1.2,  dur: 11 },
+            { l: 78, s: 4, o: 0.45, d: 3.4,  dur: 14 },
+            { l: 88, s: 5, o: 0.55, d: 0.5,  dur: 12 },
+            { l: 95, s: 3, o: 0.35, d: 2.7,  dur: 13 },
+          ].map((p, i) => (
+            <div
+              key={i}
+              className="absolute rounded-full"
+              style={{
+                width: `${p.s}px`,
+                height: `${p.s}px`,
+                left: `${p.l}%`,
+                bottom: '-20px',
+                background: '#F97316',
+                opacity: p.o,
+                boxShadow: '0 0 10px #F97316',
+                animation: `floatUp ${p.dur}s linear ${p.d}s infinite`,
+              }}
+            />
+          ))}
+        </div>
         {/* Skip-to-content link for keyboard / screen reader users */}
         <a
           href="#main-content"
