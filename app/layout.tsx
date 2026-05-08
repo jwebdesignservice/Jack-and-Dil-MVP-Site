@@ -10,10 +10,10 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'sw
 
 const SITE_URL = 'https://fastlaunchmvp.com'
 const SITE_NAME = 'Fast Launch'
-const DEFAULT_TITLE = 'Fast Launch — Premium custom websites & MVPs shipped in 3–14 days'
+const DEFAULT_TITLE = 'Fast Launch | Premium custom websites and MVPs in 6 days'
 const DEFAULT_DESCRIPTION =
-  'Fast Launch is a UK web studio building premium, conversion-focused custom websites and production-ready MVPs in 3–14 days. No agencies, no retainers — fully owned by you.'
-const DEFAULT_OG_IMAGE = `${SITE_URL}/Images/Hero%20illustration.png`
+  'Fast Launch is a UK web studio building premium, conversion-focused custom websites and production-ready MVPs in 6 days. No agencies, no retainers, fully owned by you.'
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`
 
 export const viewport: Viewport = {
   themeColor: '#F26B1A',
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
         url: DEFAULT_OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: 'Fast Launch — Premium custom websites & MVPs shipped in 3–14 days',
+        alt: 'Fast Launch | Premium custom websites and MVPs in 6 days',
       },
     ],
   },
