@@ -86,9 +86,6 @@ export default function Services() {
 
   return (
     <section id="services" className="py-28 relative overflow-hidden">
-      {/* Subtle dot grid */}
-      <div className="absolute inset-0 opacity-50"
-        style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}

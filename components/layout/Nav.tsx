@@ -274,7 +274,7 @@ export default function Nav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
-            className="absolute inset-x-0 mx-auto w-full max-w-[1200px] bg-black/95 backdrop-blur-xl border border-[rgba(249,115,22,0.15)] rounded-b-xl"
+            className="glass-card-strong absolute inset-x-0 mx-auto w-full max-w-[1200px] !rounded-t-none rounded-b-xl"
             onMouseEnter={() => setActiveMenu('services')}
             onMouseLeave={() => setActiveMenu(null)}
           >
@@ -294,7 +294,7 @@ export default function Nav() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setActiveMenu(null)}
-                    className="flex items-start gap-3 p-4 rounded-lg border border-[rgba(249,115,22,0.08)] bg-[#0A0A0A] hover:border-orange-500/30 hover:bg-[#0F0F0F] transition-all group"
+                    className="glass-card !rounded-lg flex items-start gap-3 p-4 hover:!border-orange-500/30 transition-all group"
                   >
                     <div className="w-9 h-9 rounded-md bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 flex-shrink-0 group-hover:bg-orange-500/15 transition-colors">
                       {item.icon}
@@ -319,7 +319,7 @@ export default function Nav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
-            className="absolute inset-x-0 mx-auto w-full max-w-[1200px] bg-black/95 backdrop-blur-xl border border-[rgba(249,115,22,0.15)] rounded-b-xl"
+            className="glass-card-strong absolute inset-x-0 mx-auto w-full max-w-[1200px] !rounded-t-none rounded-b-xl"
             onMouseEnter={() => setActiveMenu('cases')}
             onMouseLeave={() => setActiveMenu(null)}
           >
@@ -339,7 +339,7 @@ export default function Nav() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setActiveMenu(null)}
-                    className="flex items-start gap-3 p-4 rounded-lg border border-[rgba(249,115,22,0.08)] bg-[#0A0A0A] hover:border-orange-500/30 hover:bg-[#0F0F0F] transition-all group"
+                    className="glass-card !rounded-lg flex items-start gap-3 p-4 hover:!border-orange-500/30 transition-all group"
                   >
                     <div className="w-9 h-9 rounded-md bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 flex-shrink-0 group-hover:bg-orange-500/15 transition-colors">
                       {item.icon}
@@ -360,7 +360,7 @@ export default function Nav() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-black/95 border-t border-[rgba(249,115,22,0.1)] overflow-hidden max-h-[80vh] overflow-y-auto">
+            className="lg:hidden bg-black/60 backdrop-blur-xl border-t border-white/10 overflow-hidden max-h-[80vh] overflow-y-auto">
             <div className="px-6 py-4 space-y-1">
 
               {/* Home */}

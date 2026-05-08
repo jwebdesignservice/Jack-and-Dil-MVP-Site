@@ -33,9 +33,6 @@ const badges = ['Secure Payments', 'Fixed Price', 'No Hidden Fees', '100% Owners
 export default function Pricing() {
   return (
     <section id="pricing" className="py-24 relative overflow-hidden">
-      {/* Orange grid lines */}
-      <div className="absolute inset-0 opacity-[0.04]"
-        style={{ backgroundImage: 'linear-gradient(rgba(249,115,22,1) 1px, transparent 1px), linear-gradient(90deg, rgba(249,115,22,1) 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
       {/* Radial gradient center */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(249,115,22,0.06),transparent_70%)]" />
 

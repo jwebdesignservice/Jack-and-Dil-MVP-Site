@@ -61,9 +61,6 @@ export default function CTA() {
               className="absolute -bottom-32 -right-32 w-80 h-80 rounded-full"
               style={{ background: 'radial-gradient(circle, rgba(234,88,12,0.1), transparent 70%)', filter: 'blur(40px)' }} />
 
-            {/* Dot grid — same as hero */}
-            <div className="absolute inset-0"
-              style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
             {/* Orange-to-black gradient */}
             <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(249,115,22,0.18) 0%, rgba(0,0,0,0) 50%, rgba(234,88,12,0.12) 100%)' }}/>
             <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(249,115,22,0.08) 0%, transparent 70%)' }}/>

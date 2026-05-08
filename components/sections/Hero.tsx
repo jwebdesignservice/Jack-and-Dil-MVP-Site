@@ -6,9 +6,6 @@ import { Button } from '@/components/ui/Button'
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-16 pb-4 md:pb-0">
-      {/* Subtle dot grid on top of video */}
-      <div className="absolute inset-0 opacity-30"
-        style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.18) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
       {/* Diagonal lines */}
       <svg className="absolute inset-0 w-full h-full opacity-5" viewBox="0 0 100 100" preserveAspectRatio="none">
         <line x1="0" y1="100" x2="100" y2="0" stroke="#F97316" strokeWidth="0.3" />
@@ -31,12 +28,12 @@ export default function Hero() {
             </motion.div>
 
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6">
-              <span className="block text-white">Production Ready MVP&apos;s.</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold leading-[1.1] mb-6">
+              <span className="block whitespace-nowrap text-white">Production Ready MVP&apos;s.</span>
+              <span className="block whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                 Built, Shipped and Live
               </span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+              <span className="block whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                 in 3–14 Days.
               </span>
             </motion.h1>

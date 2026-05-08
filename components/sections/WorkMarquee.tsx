@@ -49,10 +49,6 @@ export default function WorkMarquee() {
   if (isMobile) {
     return (
       <section className="py-8 overflow-hidden relative" style={{ zIndex: 10000 }}>
-        {/* Dot grid */}
-        <div className="absolute inset-0"
-          style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }}/>
-        
         {/* Slider container */}
         <div 
           ref={sliderRef}
@@ -104,9 +100,6 @@ export default function WorkMarquee() {
   // Desktop: Original marquee
   return (
     <section className="py-8 overflow-hidden relative" style={{ zIndex: 10000 }}>
-      {/* Dot grid — continuous from hero/services */}
-      <div className="absolute inset-0"
-        style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }}/>
       {/* Edge fades — pure black fading to transparent */}
       <div className="absolute left-0 top-0 bottom-0 w-48 z-20 pointer-events-none" style={{ background: 'linear-gradient(to right, black 0%, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.5) 60%, transparent 100%)' }}/>
       <div className="absolute right-0 top-0 bottom-0 w-48 z-20 pointer-events-none" style={{ background: 'linear-gradient(to left, black 0%, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.5) 60%, transparent 100%)' }}/>

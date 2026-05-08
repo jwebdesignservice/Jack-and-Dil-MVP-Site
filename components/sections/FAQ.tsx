@@ -36,9 +36,6 @@ export default function FAQ() {
       <div className="absolute right-10 top-1/2 -translate-y-1/2 text-[300px] font-black text-orange-500/[0.02] select-none pointer-events-none font-mono leading-none hidden md:block">
         ?
       </div>
-      {/* Dot matrix */}
-      <div className="absolute inset-0 opacity-[0.03]"
-        style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,1) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
 
       <div className="container mx-auto px-6 relative z-10 max-w-3xl">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}

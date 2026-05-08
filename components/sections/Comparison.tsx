@@ -24,10 +24,6 @@ export default function Comparison() {
       {/* Subtle orange-tinted darken so video shows through */}
       <div className="absolute inset-0 bg-black/40" />
 
-      {/* Dramatic grid */}
-      <div className="absolute inset-0 opacity-[0.07]"
-        style={{ backgroundImage: 'linear-gradient(rgba(249,115,22,1) 1px, transparent 1px), linear-gradient(90deg, rgba(249,115,22,1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
-
       {/* Orange radial bloom */}
       <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(249,115,22,0.12) 0%, transparent 70%)' }} />
 
