@@ -38,8 +38,7 @@ export default function About() {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-          className="rounded-2xl border border-[rgba(249,115,22,0.2)] bg-[#0A0A0A] overflow-hidden"
-          style={{ boxShadow: '0 0 40px rgba(249,115,22,0.08)' }}>
+          className="glass-card-strong overflow-hidden">
           <div className="grid lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-[rgba(249,115,22,0.1)]">
 
             {/* Left: Team graphic — no outer card, just inner content (order-2 on mobile so text comes first) */}
@@ -128,7 +127,7 @@ export default function About() {
             </div>
 
             {/* Right: Text (order-1 on mobile so text comes first) */}
-            <div className="p-8 lg:p-10 flex flex-col justify-center bg-[#0D0D0D] order-1 lg:order-2">
+            <div className="p-8 lg:p-10 flex flex-col justify-center bg-white/[0.02] order-1 lg:order-2">
               <h2 className="text-3xl lg:text-4xl font-semibold text-white mb-5">
                 Built by Developers,{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">For Founders</span>
@@ -138,7 +137,7 @@ export default function About() {
               </p>
               <div className="flex flex-wrap gap-2 mb-8">
                 {tags.map(tag => (
-                  <span key={tag} className="bg-[#111] border border-[rgba(249,115,22,0.15)] text-neutral-400 text-xs px-3 py-1.5 rounded-full font-medium hover:border-orange-500/40 hover:text-orange-400 transition-colors cursor-default">
+                  <span key={tag} className="glass-pill text-neutral-300 text-xs px-3 py-1.5 rounded-full font-medium hover:!border-orange-500/50 hover:text-orange-300 transition-colors cursor-default">
                     {tag}
                   </span>
                 ))}

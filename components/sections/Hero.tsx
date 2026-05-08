@@ -3,13 +3,6 @@ import { motion } from 'framer-motion'
 import HeroDashboard from '@/components/svgs/HeroDashboard'
 import { Button } from '@/components/ui/Button'
 
-const stats = [
-  { value: '50+', label: 'MVPs Built' },
-  { value: '67%', label: 'Built in 4–5 Days' },
-  { value: '100%', label: 'Ownership' },
-  { value: '24/7', label: 'Support' },
-]
-
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-16 pb-4 md:pb-0">
@@ -67,31 +60,9 @@ export default function Hero() {
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-wrap gap-4 mb-10 justify-center lg:justify-start">
+              className="flex flex-wrap gap-4 mb-16 justify-center lg:justify-start">
               <Button href="/contact" variant="primary">Start Your MVP</Button>
               <Button href="/#process" variant="outline">See Our Process</Button>
-            </motion.div>
-
-            {/* Glass stat panel — hench-style stacked rows */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.45 }}
-              className="glass-card-strong divide-y divide-white/[0.06] max-w-md mx-auto lg:mx-0"
-            >
-              {stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="flex items-baseline justify-between px-5 py-4"
-                >
-                  <span className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-                    {s.value}
-                  </span>
-                  <span className="text-[11px] md:text-xs uppercase tracking-[0.14em] text-neutral-400">
-                    {s.label}
-                  </span>
-                </div>
-              ))}
             </motion.div>
           </div>
 

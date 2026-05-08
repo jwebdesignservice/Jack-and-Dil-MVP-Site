@@ -50,7 +50,7 @@ export default function FAQ() {
         <div className="space-y-3">
           {faqs.map((faq, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
-              className={`border rounded-xl overflow-hidden transition-colors ${open === i ? 'border-orange-500/40 bg-[#0A0A0A]' : 'border-[rgba(249,115,22,0.1)] bg-[#080808]'}`}>
+              className={`glass-card overflow-hidden transition-colors !rounded-xl ${open === i ? '!border-orange-500/40' : ''}`}>
               <button className="w-full flex items-center justify-between px-6 py-5 text-left"
                 onClick={() => setOpen(open === i ? null : i)}>
                 <span className={`font-medium transition-colors ${open === i ? 'text-white' : 'text-neutral-300'}`}>{faq.q}</span>

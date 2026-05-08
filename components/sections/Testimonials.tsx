@@ -50,10 +50,8 @@ const testimonials = [
 
 function CornerCard({ children, active = false }: { children: React.ReactNode; active?: boolean }) {
   return (
-    <div className={`relative rounded-2xl p-8 transition-all duration-300 ${active
-      ? 'bg-[#0D0A00] border border-orange-500/35'
-      : 'bg-[#0A0A0A] border border-[rgba(249,115,22,0.1)]'}`}
-      style={active ? { boxShadow: '0 0 40px rgba(249,115,22,0.12)' } : {}}>
+    <div className={`glass-card relative p-8 transition-all duration-300 ${active ? '!border-orange-500/35' : ''}`}
+      style={active ? { boxShadow: '0 16px 50px -16px rgba(249,115,22,0.30), inset 0 1px 0 0 rgba(255,255,255,0.08)' } : undefined}>
       {/* Corner accents — 4px outside the card corners */}
       <span className="absolute -top-[4px] -left-[4px] w-5 h-5 border-t-2 border-l-2 border-orange-500 rounded-tl-sm pointer-events-none"/>
       <span className="absolute -top-[4px] -right-[4px] w-5 h-5 border-t-2 border-r-2 border-orange-500 rounded-tr-sm pointer-events-none"/>
@@ -181,7 +179,7 @@ export default function Testimonials() {
         {/* Prev / Next */}
         <div className="flex items-center justify-center gap-5 mt-14" role="group" aria-label="Testimonial carousel controls">
           <button onClick={prev} type="button" aria-label="Previous testimonial"
-            className="w-11 h-11 rounded-full border border-[rgba(249,115,22,0.25)] bg-[#0A0A0A] flex items-center justify-center text-neutral-400 hover:border-orange-500/60 hover:text-white transition-all">
+            className="glass-pill w-11 h-11 rounded-full flex items-center justify-center text-neutral-400 hover:!border-orange-500/60 hover:text-white transition-all">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
           </button>
           <div className="flex gap-2 items-center" role="tablist" aria-label="Select testimonial">
@@ -193,7 +191,7 @@ export default function Testimonials() {
             ))}
           </div>
           <button onClick={next} type="button" aria-label="Next testimonial"
-            className="w-11 h-11 rounded-full border border-[rgba(249,115,22,0.25)] bg-[#0A0A0A] flex items-center justify-center text-neutral-400 hover:border-orange-500/60 hover:text-white transition-all">
+            className="glass-pill w-11 h-11 rounded-full flex items-center justify-center text-neutral-400 hover:!border-orange-500/60 hover:text-white transition-all">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
           </button>
         </div>

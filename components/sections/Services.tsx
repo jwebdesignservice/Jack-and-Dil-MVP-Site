@@ -110,8 +110,8 @@ export default function Services() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
-              className={`group relative rounded-2xl border border-[rgba(249,115,22,0.1)] ${svc.borderHover} bg-[#0D0D0D] p-8 transition-all duration-300 overflow-hidden cursor-default`}
-              style={{ boxShadow: hovered === i ? '0 0 40px rgba(249,115,22,0.08), inset 0 0 40px rgba(249,115,22,0.03)' : 'none' }}>
+              className="group glass-card relative p-8 transition-all duration-300 overflow-hidden cursor-default hover:-translate-y-0.5 hover:border-orange-500/30"
+              style={{ boxShadow: hovered === i ? '0 12px 40px -12px rgba(249,115,22,0.18), inset 0 1px 0 0 rgba(255,255,255,0.08)' : undefined }}>
 
               {/* Gradient wash on hover */}
               <div className={`absolute inset-0 bg-gradient-to-br ${svc.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
