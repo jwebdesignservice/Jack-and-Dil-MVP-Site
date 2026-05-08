@@ -161,7 +161,7 @@ const websiteJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={inter.variable}>
+    <html lang="en-GB" className={`${inter.variable} bg-black`}>
       <head>
         {/* JSON-LD: Organization + WebSite (root-level structured data) */}
         <script
@@ -177,7 +177,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
       </head>
-      <body className="bg-black text-white antialiased">
+      <body className="bg-transparent text-white antialiased">
         {/* Page-wide background video — sits behind every section so glass cards have something to blur */}
         <PageVideoBg />
         {/* Skip-to-content link for keyboard / screen reader users */}

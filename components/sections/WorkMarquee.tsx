@@ -103,7 +103,7 @@ export default function WorkMarquee() {
 
   // Desktop: Original marquee
   return (
-    <section className="py-8 overflow-hidden relative bg-black" style={{ zIndex: 10000 }}>
+    <section className="py-8 overflow-hidden relative" style={{ zIndex: 10000 }}>
       {/* Dot grid — continuous from hero/services */}
       <div className="absolute inset-0"
         style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }}/>
