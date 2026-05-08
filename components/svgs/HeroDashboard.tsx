@@ -206,9 +206,10 @@ export default function HeroDashboard() {
           ))}
         </svg>
 
-        {/* Floating notification */}
+        {/* Floating notification — top-right, lifted above main card */}
         <motion.div
-          className="glass-card absolute -right-2 top-20 !rounded-xl px-4 py-3 shadow-2xl w-52"
+          className="glass-card absolute -right-6 top-6 !rounded-xl px-4 py-3 w-52 z-30"
+          style={{ boxShadow: '0 20px 50px -12px rgba(0,0,0,0.85), 0 0 0 1px rgba(249,115,22,0.10)' }}
           animate={{ y: [0, -8, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
         >
@@ -220,14 +221,15 @@ export default function HeroDashboard() {
           <p className="text-neutral-500 text-[9px] mt-1.5">2 mins ago</p>
         </motion.div>
 
-        {/* Floating deploy badge */}
+        {/* Floating deploy badge — bottom-left corner, clear of stat row */}
         <motion.div
-          className="glass-card absolute -left-2 bottom-28 !rounded-xl px-4 py-3 shadow-2xl"
+          className="glass-card absolute -left-6 -bottom-4 !rounded-xl px-4 py-3 z-30"
+          style={{ boxShadow: '0 20px 50px -12px rgba(0,0,0,0.85), 0 0 0 1px rgba(249,115,22,0.10)' }}
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
         >
           <div className="flex items-center gap-3">
-            <div className="w-7 h-7 rounded-lg bg-orange-500/15 flex items-center justify-center flex-shrink-0">
+            <div className="w-7 h-7 rounded-lg bg-orange-500/20 border border-orange-500/40 flex items-center justify-center flex-shrink-0">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F97316" strokeWidth="2">
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
               </svg>

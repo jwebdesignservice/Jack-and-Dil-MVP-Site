@@ -183,7 +183,7 @@ export default function Nav() {
           >
             <span className="relative flex h-8 w-8 items-center justify-center isolate">
               {/* Pulsing bolt — animates outward behind logo */}
-              <svg viewBox="0 0 38 38" aria-hidden="true"
+              <svg viewBox="0 4 38 38" aria-hidden="true"
                 className="absolute inset-0 w-full h-full animate-ping"
                 style={{ filter: 'blur(1.5px)' }}>
                 <path d="M21.3 10L11 25.7h6.5l-.8 10.3L27 20.3h-6.5L21.3 10z" fill="#F97316" fillOpacity="0.7"/>
