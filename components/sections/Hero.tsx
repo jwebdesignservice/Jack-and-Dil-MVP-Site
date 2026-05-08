@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-16 pb-4 md:pb-0">
+    <section className="relative overflow-hidden pt-28 md:pt-32 pb-8 md:pb-12">
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
