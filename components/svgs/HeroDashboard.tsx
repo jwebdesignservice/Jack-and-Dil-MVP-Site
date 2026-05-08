@@ -206,10 +206,13 @@ export default function HeroDashboard() {
           ))}
         </svg>
 
-        {/* Floating notification — top-right, sits on top */}
+        {/* Floating notification — top-right, OPAQUE, clearly above main panel */}
         <motion.div
-          className="glass-card-strong absolute -right-2 top-20 !rounded-xl px-4 py-3 w-52 z-30"
-          style={{ boxShadow: '0 24px 60px -12px rgba(0,0,0,0.95), 0 0 0 1px rgba(249,115,22,0.12)' }}
+          className="absolute -right-2 top-20 rounded-xl px-4 py-3 w-52 z-50 isolate border border-orange-500/30"
+          style={{
+            background: '#0A0A0A',
+            boxShadow: '0 24px 60px -8px rgba(0,0,0,0.95), 0 0 0 1px rgba(249,115,22,0.20), inset 0 1px 0 0 rgba(255,255,255,0.08)',
+          }}
           animate={{ y: [0, -8, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
         >
@@ -221,10 +224,13 @@ export default function HeroDashboard() {
           <p className="text-neutral-500 text-[9px] mt-1.5">2 mins ago</p>
         </motion.div>
 
-        {/* Floating deploy badge — original spot, sits on top */}
+        {/* Floating deploy badge — original spot, OPAQUE on top */}
         <motion.div
-          className="glass-card-strong absolute -left-2 bottom-28 !rounded-xl px-4 py-3 z-30"
-          style={{ boxShadow: '0 24px 60px -12px rgba(0,0,0,0.95), 0 0 0 1px rgba(249,115,22,0.12)' }}
+          className="absolute -left-2 bottom-28 rounded-xl px-4 py-3 z-50 isolate border border-orange-500/30"
+          style={{
+            background: '#0A0A0A',
+            boxShadow: '0 24px 60px -8px rgba(0,0,0,0.95), 0 0 0 1px rgba(249,115,22,0.20), inset 0 1px 0 0 rgba(255,255,255,0.08)',
+          }}
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
         >
