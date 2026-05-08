@@ -32,7 +32,7 @@ const badges = ['Secure Payments', 'Fixed Price', 'No Hidden Fees', '100% Owners
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-16 relative overflow-hidden">
+    <section id="pricing" className="py-10 md:py-16 relative overflow-hidden">
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}

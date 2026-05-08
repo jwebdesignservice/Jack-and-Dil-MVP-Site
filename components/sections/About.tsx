@@ -19,7 +19,7 @@ const commitColors = ['bg-neutral-800/60', 'bg-orange-500/25', 'bg-orange-500/55
 
 export default function About() {
   return (
-    <section id="about" className="py-16 relative overflow-hidden">
+    <section id="about" className="py-10 md:py-16 relative overflow-hidden">
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
