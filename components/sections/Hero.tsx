@@ -13,17 +13,25 @@ const stats = [
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-16 pb-4 md:pb-0">
-      {/* Dot grid */}
+      {/* Background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover opacity-60"
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster="/Images/Hero illustration.webp"
+      >
+        <source src="/hero-bg.mp4" type="video/mp4" />
+      </video>
+      {/* Darken + tint overlay for text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/85" />
+      {/* Subtle orange wash to keep brand */}
       <div className="absolute inset-0"
-        style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-      {/* Breathing animation overlay */}
-      <div className="absolute inset-0 animate-breathe"
-        style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(249,115,22,0.03) 0%, transparent 70%)' }} />
-      {/* Blurred orange circles */}
-      <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full opacity-20"
-        style={{ background: 'radial-gradient(circle, #F97316, transparent 70%)', filter: 'blur(60px)' }} />
-      <div className="absolute -right-40 w-96 h-96 rounded-full opacity-20"
-        style={{ bottom: '60px', background: 'radial-gradient(circle, #EA580C, transparent 70%)', filter: 'blur(60px)' }} />
+        style={{ background: 'radial-gradient(ellipse at 30% 40%, rgba(249,115,22,0.08), transparent 60%)' }} />
+      {/* Dot grid */}
+      <div className="absolute inset-0 opacity-60"
+        style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.12) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
       {/* Diagonal lines */}
       <svg className="absolute inset-0 w-full h-full opacity-5" viewBox="0 0 100 100" preserveAspectRatio="none">
         <line x1="0" y1="100" x2="100" y2="0" stroke="#F97316" strokeWidth="0.3" />
@@ -36,7 +44,7 @@ export default function Hero() {
           {/* Left */}
           <div className="text-center lg:text-left">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <div className="inline-flex items-center gap-3 border border-orange-500/30 rounded-full px-4 py-1.5 mb-8">
+              <div className="glass-pill inline-flex items-center gap-3 rounded-full px-4 py-1.5 mb-8">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500" />
@@ -59,12 +67,32 @@ export default function Hero() {
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-wrap gap-4 mb-16 justify-center lg:justify-start">
+              className="flex flex-wrap gap-4 mb-10 justify-center lg:justify-start">
               <Button href="/contact" variant="primary">Start Your MVP</Button>
               <Button href="/#process" variant="outline">See Our Process</Button>
             </motion.div>
 
-
+            {/* Glass stat panel — hench-style stacked rows */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
+              className="glass-card-strong divide-y divide-white/[0.06] max-w-md mx-auto lg:mx-0"
+            >
+              {stats.map((s) => (
+                <div
+                  key={s.label}
+                  className="flex items-baseline justify-between px-5 py-4"
+                >
+                  <span className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+                    {s.value}
+                  </span>
+                  <span className="text-[11px] md:text-xs uppercase tracking-[0.14em] text-neutral-400">
+                    {s.label}
+                  </span>
+                </div>
+              ))}
+            </motion.div>
           </div>
 
           {/* Right */}
@@ -77,5 +105,3 @@ export default function Hero() {
     </section>
   )
 }
-
-
