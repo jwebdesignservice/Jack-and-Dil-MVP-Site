@@ -125,7 +125,7 @@ export default function HeroDashboard() {
           <rect x="284" y="84" width="240" height="150" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)" strokeWidth="0.5"/>
           <text x="300" y="108" fill="#888" fontSize="10" fontFamily="Inter, sans-serif" fontWeight="400" letterSpacing="0.05em">GROWTH</text>
           <text x="300" y="128" fill="#ffffff" fontSize="18" fontFamily="Inter, sans-serif" fontWeight="300">+24%</text>
-          <text x="340" y="128" fill="#4ade80" fontSize="10" fontFamily="Inter, sans-serif" fontWeight="400"> MoM</text>
+          <text x="358" y="128" fill="#4ade80" fontSize="10" fontFamily="Inter, sans-serif" fontWeight="400">MoM</text>
 
           {/* Grid lines */}
           {[0,1,2].map(i => (
@@ -224,9 +224,9 @@ export default function HeroDashboard() {
           <p className="text-neutral-500 text-[9px] mt-1.5">2 mins ago</p>
         </motion.div>
 
-        {/* Floating deploy badge — original spot, on top of main panel */}
+        {/* Floating deploy badge — moved up so it sits clear of the income card row below */}
         <motion.div
-          className="absolute -left-2 bottom-28 rounded-xl px-4 py-3 z-50 border border-orange-500/30"
+          className="absolute -left-2 bottom-48 rounded-xl px-4 py-3 z-50 border border-orange-500/30"
           style={{
             background: '#0A0A0A',
             boxShadow: '0 24px 60px -8px rgba(0,0,0,0.95), 0 0 0 1px rgba(249,115,22,0.20), inset 0 1px 0 0 rgba(255,255,255,0.08)',
