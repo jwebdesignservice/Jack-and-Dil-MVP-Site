@@ -180,7 +180,7 @@ export default function Nav() {
             aria-current={isActive('/') ? 'page' : undefined}
             className="flex items-center gap-2 text-white font-bold text-xl flex-shrink-0"
           >
-            <span className="relative flex h-8 w-8 items-center justify-center">
+            <span className="relative flex h-10 w-10 items-center justify-center">
               {/* Pulsing copy — same bolt, animates outward */}
               <svg viewBox="0 4 38 38" aria-hidden="true"
                 className="absolute inset-0 w-full h-full animate-ping"

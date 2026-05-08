@@ -10,7 +10,7 @@ export default function HeroDashboard() {
         transition={{ duration: 0.8, delay: 0.3 }}
         className="relative z-0"
       >
-        <svg viewBox="0 0 580 500" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+        <svg viewBox="0 0 580 380" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
           <defs>
             <filter id="glow-orange" x="-40%" y="-40%" width="180%" height="180%">
               <feGaussianBlur stdDeviation="4" result="blur"/>
@@ -185,21 +185,6 @@ export default function HeroDashboard() {
             </g>
           ))}
 
-          {/* ── BOTTOM STAT CARDS ── */}
-          {[
-            { x: 56,  label: 'Total MVPs',    value: '50+',   sub: 'Since 2022',      color: '#F97316' },
-            { x: 180, label: 'Avg Delivery',  value: '9 days',sub: '↓ 3 days YoY',   color: '#4ade80' },
-            { x: 304, label: 'Satisfaction',  value: '100%',  sub: 'NPS Score: 94',   color: '#F97316' },
-            { x: 428, label: 'Uptime',        value: '99.9%', sub: 'Last 12 months',  color: '#60a5fa' },
-          ].map((card, i) => (
-            <g key={i}>
-              <rect x={card.x} y="380" width="110" height="70" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)" strokeWidth="0.5"/>
-              <text x={card.x + 14} y="400" fill="#555" fontSize="9" fontFamily="Inter, sans-serif" fontWeight="400" letterSpacing="0.06em">{card.label.toUpperCase()}</text>
-              <text x={card.x + 14} y="424" fill={card.color} fontSize="17" fontFamily="Inter, sans-serif" fontWeight="300">{card.value}</text>
-              <text x={card.x + 14} y="440" fill="#3a3a3a" fontSize="9" fontFamily="Inter, sans-serif">{card.sub}</text>
-            </g>
-          ))}
-
           {/* Corner accents — now on the trimmed main panel */}
           {[[44,24],[536,24],[44,366],[536,366]].map(([x,y],i) => (
             <circle key={i} cx={x} cy={y} r="2" fill="rgba(249,115,22,0.25)"/>
@@ -247,6 +232,33 @@ export default function HeroDashboard() {
           </div>
         </motion.div>
       </motion.div>
+
+      {/* Income card row — full-width, evenly spaced, same visual + motion as Deploy badge */}
+      <div className="grid grid-cols-4 gap-3 mt-4">
+        {[
+          { label: 'Total MVPs',   value: '50+',    sub: 'Since 2022',     color: 'text-orange-400' },
+          { label: 'Avg Delivery', value: '9 days', sub: '↓ 3 days YoY',  color: 'text-green-400' },
+          { label: 'Satisfaction', value: '100%',   sub: 'NPS Score: 94',  color: 'text-orange-400' },
+          { label: 'Uptime',       value: '99.9%',  sub: 'Last 12 months', color: 'text-sky-400' },
+        ].map((s, i) => (
+          <motion.div
+            key={s.label}
+            className="rounded-xl px-4 py-3 border border-orange-500/30"
+            style={{
+              background: '#0A0A0A',
+              boxShadow: '0 16px 40px -12px rgba(0,0,0,0.85), 0 0 0 1px rgba(249,115,22,0.18), inset 0 1px 0 0 rgba(255,255,255,0.08)',
+            }}
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: i * 0.4 }}
+          >
+            <div className="text-[9px] font-medium tracking-[0.08em] text-neutral-500 uppercase mb-1">
+              {s.label}
+            </div>
+            <div className={`text-lg font-light ${s.color} mb-0.5`}>{s.value}</div>
+            <div className="text-[9px] text-neutral-500">{s.sub}</div>
+          </motion.div>
+        ))}
+      </div>
     </div>
   )
 }
