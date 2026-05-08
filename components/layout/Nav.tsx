@@ -182,9 +182,12 @@ export default function Nav() {
             className="flex items-center gap-2 text-white font-bold text-xl flex-shrink-0"
           >
             <span className="relative flex h-8 w-8 items-center justify-center">
-              <span aria-hidden="true" className="absolute inset-0 rounded-full bg-orange-500/40 blur-lg animate-ping" />
-              <span aria-hidden="true" className="absolute inset-0 rounded-full bg-orange-500/20 blur-md" />
-              <Image src="/logo.png" alt="" width={32} height={32} className="relative rounded-md drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]" />
+              <svg viewBox="0 0 38 38" aria-hidden="true"
+                className="absolute inset-0 w-full h-full animate-ping"
+                style={{ filter: 'blur(2px)' }}>
+                <path d="M21.3 10L11 25.7h6.5l-.8 10.3L27 20.3h-6.5L21.3 10z" fill="#F97316" fillOpacity="0.7"/>
+              </svg>
+              <Image src="/logo.png" alt="" width={32} height={32} className="relative rounded-md" />
             </span>
             <span className="hidden sm:inline">FastLaunch</span>
           </Link>
