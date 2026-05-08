@@ -1,0 +1,54 @@
+# Fast Launch
+
+> Fast Launch is a UK web studio building premium, conversion-focused custom websites and production-ready MVPs in 3-14 days. No agencies, no retainers, fully owned by you.
+
+Fast Launch (fastlaunchmvp.com) is run by Jack Wilson. We ship modern, scalable products on Next.js, TypeScript, Supabase, PostgreSQL and Vercel. Every engagement is fixed-scope, fixed-price, with daily build previews and 100% code ownership from day one.
+
+## Core URLs
+
+- [Home](https://fastlaunchmvp.com/): Overview, positioning, services, pricing, testimonials, FAQ.
+- [Services](https://fastlaunchmvp.com/services): MVP development, UI/UX design, full-stack development, launch & scale — with deliverables and tech stack.
+- [Work](https://fastlaunchmvp.com/work): Selected case studies of shipped products.
+- [Contact](https://fastlaunchmvp.com/contact): Project brief intake form. Reply within 24 hours.
+
+## Services
+
+- Production-Ready MVPs in 3-14 days (Next.js + TypeScript, auth & payments, daily build previews, 100% code ownership).
+- UI/UX Design (wireframes, clickable prototypes, mobile-first layouts, design systems).
+- Full-Stack Development (React/Next.js frontend, Node.js + PostgreSQL backend, Stripe/SendGrid/Twilio integrations, CI/CD + tests).
+- Launch & Scale (Vercel/AWS deploys, uptime monitoring, error tracking, SEO + analytics, post-launch support).
+
+## Case Studies
+
+- [Eliminent](https://fastlaunchmvp.com/work/eliminent): AI-powered social deduction game. Real-time multiplayer, 4-12 players, sub-100ms latency. Shipped in 8 days.
+- [Metalex Terminal](https://fastlaunchmvp.com/work/metalex-terminal): Professional-grade precious metals trading terminal with live spot prices, AI signals, futures curves. Shipped in 14 days.
+- [Desert Falcons Collective](https://fastlaunchmvp.com/work/desert-falcons): Premium automotive community platform for the Middle East luxury car scene. Shipped in 7 days.
+- [Memory Market](https://fastlaunchmvp.com/work/memory-market): Web3 marketplace where AI memory becomes a tradeable on-chain asset on Solana. Shipped in 9 days.
+- [Aramas Property](https://fastlaunchmvp.com/work/aramas-property): UAE off-plan property marketplace with advanced search and developer profiles. Shipped in 6 days.
+- [Insights Dashboard](https://fastlaunchmvp.com/work/insights-dashboard): Real-time business KPI dashboard pulling from Stripe, HubSpot, GA4, PostgreSQL. Shipped in 5 days.
+- [AMS Tool](https://fastlaunchmvp.com/work/ams-tool): AI-powered adverse media screening platform for compliance teams. Shipped in 10 days.
+- [Speed Read](https://fastlaunchmvp.com/work/speed-read): RSVP-powered speed reading tool with browser extension. Shipped in 7 days.
+
+## Positioning
+
+- 3-14 days to production vs. 3-6 month agency timelines.
+- Fixed-scope, fixed-price packages. No retainers. No hourly billing surprises.
+- Direct line to the developer building it. No account managers.
+- Modern stack only: Next.js, TypeScript, React, Supabase, PostgreSQL, Tailwind, Vercel.
+- 100% code ownership and IP transfer on delivery.
+- Post-launch support included. Money-back guarantee.
+
+## Contact
+
+- Website: https://fastlaunchmvp.com
+- Email: support@fastlaunch.com
+- WhatsApp: +44 7917 328155
+- LinkedIn: https://www.linkedin.com/company/fastlaunchmvp
+- Instagram: https://www.instagram.com/fastlaunchmvp
+
+## Optional
+
+- [Privacy Policy](https://fastlaunchmvp.com/privacy-policy)
+- [Terms & Conditions](https://fastlaunchmvp.com/terms)
+- [Cookie Policy](https://fastlaunchmvp.com/cookies)
+- [Sitemap](https://fastlaunchmvp.com/sitemap.xml)
