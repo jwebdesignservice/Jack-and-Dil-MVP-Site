@@ -13,17 +13,19 @@ interface ButtonProps {
 export function Button({ href, children, variant = 'primary', className = '' }: ButtonProps) {
   if (variant === 'primary') {
     return (
-      <Link href={href} className={`group relative inline-flex items-center gap-2 overflow-hidden px-7 py-3.5 rounded-lg text-sm font-medium text-white transition-all duration-300 ${className}`}>
-        {/* Base bg */}
-        <span className="absolute inset-0 bg-orange-500 transition-all duration-300 group-hover:bg-orange-600" />
+      <Link href={href} className={`group relative inline-flex items-center gap-2 overflow-hidden px-7 py-3.5 rounded-lg text-sm font-medium text-white transition-all duration-300 border border-orange-500/40 group-hover:border-orange-500/70 ${className}`}
+        style={{
+          backgroundColor: 'rgba(249, 115, 22, 0.18)',
+          backdropFilter: 'blur(18px) saturate(160%)',
+          WebkitBackdropFilter: 'blur(18px) saturate(160%)',
+          boxShadow: 'inset 0 1px 0 0 rgba(255,255,255,0.15), 0 8px 28px -8px rgba(249,115,22,0.4)',
+        }}>
+        {/* Hover lift bg */}
+        <span className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/15 transition-all duration-300" />
         {/* Scan line sweep on hover */}
-        <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-500 ease-in-out skew-x-12" />
-        {/* Corner brackets — top-left */}
-        <span className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/0 group-hover:border-white/40 transition-all duration-300 rounded-tl-sm" />
-        {/* Corner brackets — bottom-right */}
-        <span className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/0 group-hover:border-white/40 transition-all duration-300 rounded-br-sm" />
+        <span className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-500 ease-in-out skew-x-12" />
         {/* Glow on hover */}
-        <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg shadow-[0_0_24px_rgba(249,115,22,0.5)]" />
+        <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg shadow-[0_0_28px_rgba(249,115,22,0.55)]" />
         <span className="relative z-10">{children}</span>
         {/* Arrow */}
         <svg className="relative z-10 w-3.5 h-3.5 translate-x-0 group-hover:translate-x-1 transition-transform duration-200" viewBox="0 0 14 14" fill="none">

@@ -32,15 +32,20 @@ export default function Hero() {
 
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6">
-              <span className="text-white">Production Ready MVP&apos;s. </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                Built, Shipped and Live in 3–14 Days.
+              <span className="block text-white">Production Ready MVP&apos;s.</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                Built, Shipped and Live
+              </span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                in 3–14 Days.
               </span>
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
               className="text-neutral-400 text-sm lg:text-base mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              We build production-grade MVPs that launch in days. No fluff, no delays. Fast, high-quality software that gets you to market.
+              We build production-grade MVPs that launch in days. No fluff, no delays.
+              <br />
+              Fast, high-quality software that gets you to market.
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
