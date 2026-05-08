@@ -209,9 +209,9 @@ export default function HeroDashboard() {
           <p className="text-neutral-500 text-[9px] mt-1.5">2 mins ago</p>
         </motion.div>
 
-        {/* Floating deploy badge — moved up so it sits clear of the income card row below */}
+        {/* Floating deploy badge — original spot */}
         <motion.div
-          className="absolute -left-2 bottom-48 rounded-xl px-4 py-3 z-50 border border-orange-500/30"
+          className="absolute -left-2 bottom-28 rounded-xl px-4 py-3 z-50 border border-orange-500/30"
           style={{
             background: '#0A0A0A',
             boxShadow: '0 24px 60px -8px rgba(0,0,0,0.95), 0 0 0 1px rgba(249,115,22,0.20), inset 0 1px 0 0 rgba(255,255,255,0.08)',
@@ -233,8 +233,8 @@ export default function HeroDashboard() {
         </motion.div>
       </motion.div>
 
-      {/* Income card row — full-width, evenly spaced, same visual + motion as Deploy badge */}
-      <div className="grid grid-cols-4 gap-3 mt-4">
+      {/* Income card row — aligned to main card span (x=40 to x=540 in viewBox), evenly spaced */}
+      <div className="grid grid-cols-4 gap-3 mt-4 mx-[6.9%]">
         {[
           { label: 'Total MVPs',   value: '50+',    sub: 'Since 2022',     color: 'text-orange-400' },
           { label: 'Avg Delivery', value: '9 days', sub: '↓ 3 days YoY',  color: 'text-green-400' },
