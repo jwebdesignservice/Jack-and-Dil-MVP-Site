@@ -181,7 +181,11 @@ export default function Nav() {
             aria-current={isActive('/') ? 'page' : undefined}
             className="flex items-center gap-2 text-white font-bold text-xl flex-shrink-0"
           >
-            <Image src="/logo.png" alt="" width={32} height={32} className="rounded-md" />
+            <span className="relative flex h-8 w-8 items-center justify-center">
+              <span aria-hidden="true" className="absolute inset-0 rounded-md bg-orange-500/35 animate-ping" />
+              <span aria-hidden="true" className="absolute inset-0 rounded-md ring-1 ring-orange-500/40" />
+              <Image src="/logo.png" alt="" width={32} height={32} className="relative rounded-md" />
+            </span>
             <span className="hidden sm:inline">FastLaunch</span>
           </Link>
 
