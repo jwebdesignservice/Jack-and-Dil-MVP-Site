@@ -8,7 +8,7 @@ const services = [
   {
     num: '01',
     title: 'MVP Development',
-    description: 'Zero to production in as little as 3 days. We scope tight, build fast, and ship clean — no technical debt from day one.',
+    description: 'Zero to production in as little as 3 days. We scope tight, build fast, and ship clean. No technical debt from day one.',
     features: ['Next.js + TypeScript', 'Database & API layer', 'Auth & Payments', 'Deployed to Vercel'],
     detail: 'avg. 7 days to ship',
     color: 'from-orange-500/20 to-transparent',
@@ -27,7 +27,7 @@ const services = [
   {
     num: '02',
     title: 'UI/UX Design',
-    description: 'Interfaces that convert. We design with real users in mind — clean flows, clear hierarchy, and pixel-perfect execution.',
+    description: 'Interfaces that convert. We design with real users in mind: clean flows, clear hierarchy, and pixel-perfect execution.',
     features: ['Figma prototypes', 'Mobile-first responsive', 'Design system setup', 'Interaction design'],
     detail: 'design + dev in sync',
     color: 'from-sky-500/10 to-transparent',
@@ -47,7 +47,7 @@ const services = [
   {
     num: '03',
     title: 'Full-Stack Development',
-    description: 'End-to-end engineering. Scalable architecture, clean APIs, real-time features — production-grade code that grows with you.',
+    description: 'End-to-end engineering. Scalable architecture, clean APIs, real-time features. Production-grade code that grows with you.',
     features: ['React / Next.js frontend', 'Node.js + PostgreSQL', 'REST & GraphQL APIs', 'Cloud infrastructure'],
     detail: 'most requested',
     badge: 'POPULAR',
@@ -65,7 +65,7 @@ const services = [
   {
     num: '04',
     title: 'Launch & Scale',
-    description: 'Go live with confidence. CI/CD, monitoring, SEO — everything set up so you can focus on growth, not infrastructure.',
+    description: 'Go live with confidence. CI/CD, monitoring, SEO: everything set up so you can focus on growth, not infrastructure.',
     features: ['CI/CD pipeline', 'Uptime monitoring', 'SEO + Core Web Vitals', '90-day support included'],
     detail: 'from deploy to growth',
     color: 'from-emerald-500/10 to-transparent',

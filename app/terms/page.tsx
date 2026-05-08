@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: 'Fast Launch',
     title: 'Terms & Conditions — Fast Launch',
     description: 'Terms and conditions for using Fast Launch services.',
-    images: ['https://fastlaunchmvp.com/Images/Hero%20illustration.png'],
+    images: ['https://fastlaunchmvp.com/Images/Hero%20illustration.webp'],
   },
   twitter: {
     card: 'summary_large_image',

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: [
       {
-        url: `${SITE_URL}/Images/Hero%20illustration.png`,
+        url: `${SITE_URL}/Images/Hero%20illustration.webp`,
         width: 1200,
         height: 630,
         alt: 'Fast Launch services — custom websites, MVPs, e-commerce, dashboards',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: TITLE,
     description: DESCRIPTION,
-    images: [`${SITE_URL}/Images/Hero%20illustration.png`],
+    images: [`${SITE_URL}/Images/Hero%20illustration.webp`],
   },
   keywords: [
     'web design services',

@@ -326,7 +326,7 @@ export default function ServicesPage() {
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.5 }}
             className="text-neutral-400 text-base lg:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-            From wireframe to production in days — not months. We handle design, development, and deployment so you can focus on your users.
+            From wireframe to production in days, not months. We handle design, development, and deployment so you can focus on your users.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
             className="flex flex-wrap items-center justify-center gap-4">
@@ -345,7 +345,7 @@ export default function ServicesPage() {
         }}
         title="Production-Ready MVPs in 3–14 Days"
         paragraphs={[
-          "We cut every non-essential step so your MVP hits production fast. Built on Next.js, TypeScript, and Supabase — real scalable architecture, not throwaway prototypes. You see builds daily and own 100% of the code from day one.",
+          "We cut every non-essential step so your MVP hits production fast. Built on Next.js, TypeScript, and Supabase: real scalable architecture, not throwaway prototypes. You see builds daily and own 100% of the code from day one.",
         ]}
         features={[
           ['Next.js + TypeScript', 'Auth & payments built-in'],
@@ -353,7 +353,7 @@ export default function ServicesPage() {
         ]}
         deliverables={[
           'Deployed production application',
-          'Full source code — no lock-in',
+          'Full source code, no lock-in',
           'Post-launch support included',
         ]}
         ctaHref="/contact"
@@ -369,7 +369,7 @@ export default function ServicesPage() {
           icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>,
           text: 'UI/UX Design',
         }}
-        title="Interfaces That Convert — Designed Before We Code"
+        title="Interfaces That Convert: Designed Before We Code"
         paragraphs={[
           "Every project starts with wireframes and clickable prototypes. You see exactly how the product works before development begins. Mobile-first, conversion-optimised, and delivered with a design system so your product stays consistent as it scales.",
         ]}
@@ -378,7 +378,7 @@ export default function ServicesPage() {
           ['Design system included', 'Handoff-ready specs'],
         ]}
         deliverables={[
-          'All screens — desktop + mobile',
+          'All screens, desktop + mobile',
           'Clickable prototype for testing or demos',
           'Export-ready assets',
         ]}
@@ -396,7 +396,7 @@ export default function ServicesPage() {
         }}
         title="Complex Features, Clean Code, Zero Compromise"
         paragraphs={[
-          "React/Next.js frontend, Node.js backend, PostgreSQL database. Stripe, SendGrid, Twilio — whatever integrations you need. We ship with tests, CI/CD, and code reviews from day one so your future team can actually maintain it.",
+          "React/Next.js frontend, Node.js backend, PostgreSQL database. Stripe, SendGrid, Twilio, whatever integrations you need. We ship with tests, CI/CD, and code reviews from day one so your future team can actually maintain it.",
         ]}
         features={[
           ['React / Next.js frontend', 'Node.js + PostgreSQL backend'],
@@ -404,7 +404,7 @@ export default function ServicesPage() {
         ]}
         deliverables={[
           'Full codebase with test coverage',
-          'CI/CD pipeline — auto-deploy on push',
+          'CI/CD pipeline, auto-deploy on push',
           'API documentation included',
         ]}
         ctaHref="/contact"
@@ -420,9 +420,9 @@ export default function ServicesPage() {
           icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>,
           text: 'Launch & Scale',
         }}
-        title="Ship to Production — Then Keep It Running"
+        title="Ship to Production, Then Keep It Running"
         paragraphs={[
-          "We deploy to Vercel or AWS with CI/CD, staging environments, and rollback strategies. Uptime monitoring, error tracking, SEO, and analytics are configured before handover — not patched in later.",
+          "We deploy to Vercel or AWS with CI/CD, staging environments, and rollback strategies. Uptime monitoring, error tracking, SEO, and analytics are configured before handover, not patched in later.",
         ]}
         features={[
           ['Vercel / AWS deployment', 'Uptime monitoring'],
@@ -452,7 +452,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl lg:text-5xl font-semibold text-white mt-4">
               The honest comparison
             </h2>
-            <p className="text-neutral-400 text-sm mt-4 max-w-md mx-auto">We're not for everyone. Here's exactly where we win — and where we don't.</p>
+            <p className="text-neutral-400 text-sm mt-4 max-w-md mx-auto">We're not for everyone. Here's exactly where we win, and where we don't.</p>
           </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-6">
@@ -464,7 +464,7 @@ export default function ServicesPage() {
                   '3–14 days to production',
                   'Daily build previews',
                   'Modern stack: Next.js, Supabase, TypeScript',
-                  '100% code ownership — no lock-in',
+                  '100% code ownership, no lock-in',
                   'Fixed-scope, fixed-price packages',
                   'Direct line to the developer building it',
                   'Post-launch support included',
@@ -479,17 +479,17 @@ export default function ServicesPage() {
                   'Monthly reports, no daily visibility',
                   'Legacy stacks, sometimes outsourced',
                   'IP and hosting often retained',
-                  'Hourly billing — scope creep is expensive',
+                  'Hourly billing, scope creep is expensive',
                   'Account managers, not builders',
                   'Support sold separately (retainer)',
-                  'No guarantee — "best efforts"',
+                  'No guarantee, "best efforts"',
                 ],
               },
               {
                 label: 'Freelancer',
                 highlight: false,
                 items: [
-                  'Variable timeline — depends on availability',
+                  'Variable timeline, depends on availability',
                   'Inconsistent communication',
                   'Skill gaps (design OR backend, rarely both)',
                   'Code ownership is fine, but bus-factor = 1',

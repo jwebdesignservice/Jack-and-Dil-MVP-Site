@@ -44,7 +44,7 @@ const projects: Record<string, Project> = {
     tags: ['Gaming', 'AI', 'Social Deduction', 'Multiplayer'],
     delivery: '8 days',
     year: '2026',
-    heroImage: '/Images/work/eliminent.png',
+    heroImage: '/Images/work/eliminent.webp',
     siteUrl: 'https://www.eliminent.com/',
     heroStats: [
       { value: '8', label: 'Day Delivery' },
@@ -52,7 +52,7 @@ const projects: Record<string, Project> = {
       { value: '4-12', label: 'Players Per Game' },
       { value: '<100ms', label: 'Realtime Latency' },
     ],
-    challenge: `Eliminent needed to answer one question: can you tell if you're talking to an AI? The concept was simple and sharp — a social deduction game where real players and an AI agent share the same chat room, debating and voting to eliminate who they think isn't human. The twist: sometimes there's no AI at all. The paranoia alone becomes the game. The technical challenge was significant — real-time multiplayer with sub-100ms latency, a convincing AI agent that could pass as human under pressure, timed discussion and voting mechanics, and an interface minimal enough to keep all the focus on the psychological tension between players.`,
+    challenge: `Eliminent needed to answer one question: can you tell if you're talking to an AI? The concept was simple and sharp: a social deduction game where real players and an AI agent share the same chat room, debating and voting to eliminate who they think isn't human. The twist: sometimes there's no AI at all. The paranoia alone becomes the game. The technical challenge was significant. Real-time multiplayer with sub-100ms latency, a convincing AI agent that could pass as human under pressure, timed discussion and voting mechanics, and an interface minimal enough to keep all the focus on the psychological tension between players.`,
     approach: [
       {
         title: 'Real-Time Game Engine',
@@ -60,28 +60,28 @@ const projects: Record<string, Project> = {
       },
       {
         title: 'Convincing AI Agent',
-        desc: 'The AI agent uses contextual game state, player history, and adaptive language patterns to respond naturally within the 160-character message limit — indistinguishable under pressure.',
+        desc: 'The AI agent uses contextual game state, player history, and adaptive language patterns to respond naturally within the 160-character message limit. Indistinguishable under pressure.',
       },
       {
         title: 'Tension-First Design',
-        desc: 'Every design decision serves psychological tension. No avatars, no colour identifiers — just aliases and text. The UI deliberately gives nothing away.',
+        desc: 'Every design decision serves psychological tension. No avatars, no colour identifiers, just aliases and text. The UI deliberately gives nothing away.',
       },
     ],
     features: [
       { title: 'Quick Play & Private Rooms', desc: 'Jump into a public lobby instantly or create a private room with a code. Games support 4-12 players with automatic host migration.' },
-      { title: 'Timed Discussion Rounds', desc: '30-90 second discussion rounds with guided prompts. 5 messages per player per round, 160 character limit — pressure by design.' },
-      { title: 'Hidden Voting System', desc: 'Players vote to eliminate or propose "No AI Present". Votes are hidden until the simultaneous reveal — no bandwagoning.' },
+      { title: 'Timed Discussion Rounds', desc: '30-90 second discussion rounds with guided prompts. 5 messages per player per round, 160 character limit. Pressure by design.' },
+      { title: 'Hidden Voting System', desc: 'Players vote to eliminate or propose "No AI Present". Votes are hidden until the simultaneous reveal. No bandwagoning.' },
       { title: 'AI Player Agent', desc: 'A live AI agent participates as a player, responding in real time with contextually appropriate, human-like messages calibrated to avoid detection.' },
       { title: 'Zero-Identity Interface', desc: 'No profile pictures, no colours, no history. Just player aliases and messages. Every visual choice reinforces the core uncertainty.' },
-      { title: 'Endgame Reveal', desc: 'All identities revealed at the end — who was human, who was AI (if present), full vote history, and winner stats for every player.' },
-      { title: 'Elimination Flow', desc: 'Dramatic elimination animations with no identity reveal mid-game — the tension stays alive until the very end.' },
-      { title: 'Cross-Device Play', desc: 'Fully playable on desktop, tablet, and mobile. The minimal interface scales perfectly — no app install required.' },
+      { title: 'Endgame Reveal', desc: 'All identities revealed at the end: who was human, who was AI (if present), full vote history, and winner stats for every player.' },
+      { title: 'Elimination Flow', desc: 'Dramatic elimination animations with no identity reveal mid-game. The tension stays alive until the very end.' },
+      { title: 'Cross-Device Play', desc: 'Fully playable on desktop, tablet, and mobile. The minimal interface scales perfectly. No app install required.' },
     ],
     images: [
-      { src: '/Images/work/eliminent.png', alt: 'Eliminent on MacBook' },
-      { src: '/Images/work/eliminent-tablet.png', alt: 'Eliminent on iPad' },
-      { src: '/Images/work/eliminent-desktop.png', alt: 'Eliminent game lobby' },
-      { src: '/Images/work/eliminent-howtoplay.png', alt: 'Eliminent How to Play screen' },
+      { src: '/Images/work/eliminent.webp', alt: 'Eliminent on MacBook' },
+      { src: '/Images/work/eliminent-tablet.webp', alt: 'Eliminent on iPad' },
+      { src: '/Images/work/eliminent-desktop.webp', alt: 'Eliminent game lobby' },
+      { src: '/Images/work/eliminent-howtoplay.webp', alt: 'Eliminent How to Play screen' },
     ],
     results: [
       { value: '2.8k+', label: 'Concurrent players at launch' },
@@ -90,7 +90,7 @@ const projects: Record<string, Project> = {
       { value: '5min', label: 'Average session length' },
     ],
     testimonial: {
-      quote: 'We had a concept that lived entirely in our heads. FastLaunch turned it into a real, playable game with thousands of concurrent users in 8 days. The AI agent is genuinely unsettling — exactly what we wanted.',
+      quote: 'We had a concept that lived entirely in our heads. FastLaunch turned it into a real, playable game with thousands of concurrent users in 8 days. The AI agent is genuinely unsettling. Exactly what we wanted.',
       author: 'Alex Reid',
       role: 'Founder, Eliminent',
     },
@@ -104,7 +104,7 @@ const projects: Record<string, Project> = {
     tags: ['FinTech', 'Trading', 'Real-Time Data', 'AI Signals'],
     delivery: '14 days',
     year: '2026',
-    heroImage: '/Images/work/metalex-phone.png',
+    heroImage: '/Images/work/metalex-phone.webp',
     siteUrl: 'https://www.metalexterminal.com/',
     heroStats: [
       { value: '14', label: 'Day Delivery' },
@@ -138,9 +138,9 @@ const projects: Record<string, Project> = {
       { title: 'Mobile Terminal', desc: 'Full-featured mobile view with the same data density as desktop — spot prices, technicals, charts, and signals in a thumb-friendly layout.' },
     ],
     images: [
-      { src: '/Images/work/metalex-phone.png', alt: 'Metalex Terminal mobile app' },
-      { src: '/Images/work/metalex.png', alt: 'Metalex Terminal on MacBook' },
-      { src: '/Images/work/metalex-dashboard.png', alt: 'Metalex Terminal full dashboard' },
+      { src: '/Images/work/metalex-phone.webp', alt: 'Metalex Terminal mobile app' },
+      { src: '/Images/work/metalex.webp', alt: 'Metalex Terminal on MacBook' },
+      { src: '/Images/work/metalex-dashboard.webp', alt: 'Metalex Terminal full dashboard' },
     ],
     results: [
       { value: '<1s', label: 'Live data latency' },
@@ -163,9 +163,9 @@ const projects: Record<string, Project> = {
     tags: ['Automotive', 'Luxury', 'Community'],
     delivery: '7 days',
     year: '2026',
-    heroImage: '/Images/work/desertfalcons.png',
-    phoneImage: '/Images/work/desertfalcons-phone.png',
-    dashboardImage: '/Images/work/desertfalcons-dashboard.png',
+    heroImage: '/Images/work/desertfalcons.webp',
+    phoneImage: '/Images/work/desertfalcons-phone.webp',
+    dashboardImage: '/Images/work/desertfalcons-dashboard.webp',
     siteUrl: 'https://desert-falcons.vercel.app/',
     heroStats: [
       { value: '7', label: 'Day Delivery' },
@@ -197,10 +197,10 @@ const projects: Record<string, Project> = {
       { title: 'Resource Library', desc: 'Gated library of technical documents, build guides, and exclusive automotive resources.' },
     ],
     images: [
-      { src: '/Images/work/desertfalcons.png', alt: 'Desert Falcons public website' },
-      { src: '/Images/work/desertfalcons-tablet.png', alt: 'Desert Falcons on tablet' },
-      { src: '/Images/work/desertfalcons-dashboard.png', alt: 'Desert Falcons member dashboard' },
-      { src: '/Images/work/desertfalcons-phone.png', alt: 'Desert Falcons mobile view' },
+      { src: '/Images/work/desertfalcons.webp', alt: 'Desert Falcons public website' },
+      { src: '/Images/work/desertfalcons-tablet.webp', alt: 'Desert Falcons on tablet' },
+      { src: '/Images/work/desertfalcons-dashboard.webp', alt: 'Desert Falcons member dashboard' },
+      { src: '/Images/work/desertfalcons-phone.webp', alt: 'Desert Falcons mobile view' },
     ],
     results: [
       { value: '500+', label: 'Members in first 48 hours' },
@@ -223,8 +223,8 @@ const projects: Record<string, Project> = {
     tags: ['Web3', 'DeFi', 'AI', 'Blockchain'],
     delivery: '9 days',
     year: '2025',
-    heroImage: '/Images/work/memorymarket.png',
-    phoneImage: '/Images/work/memorymarket-phone.png',
+    heroImage: '/Images/work/memorymarket.webp',
+    phoneImage: '/Images/work/memorymarket-phone.webp',
     siteUrl: 'https://memory-market.vercel.app/',
     heroStats: [
       { value: '9', label: 'Day Delivery' },
@@ -256,8 +256,8 @@ const projects: Record<string, Project> = {
       { title: 'Knowledge Graph', desc: 'Visual graph explorer showing relationships between memories, their creators, and trading history.' },
     ],
     images: [
-      { src: '/Images/work/memorymarket.png', alt: 'Memory Market trading interface' },
-      { src: '/Images/work/memorymarket-phone.png', alt: 'Memory Market mobile view' },
+      { src: '/Images/work/memorymarket.webp', alt: 'Memory Market trading interface' },
+      { src: '/Images/work/memorymarket-phone.webp', alt: 'Memory Market mobile view' },
     ],
     results: [
       { value: '847', label: 'Memories minted at launch' },
@@ -280,8 +280,8 @@ const projects: Record<string, Project> = {
     tags: ['Real Estate', 'PropTech', 'Investment'],
     delivery: '6 days',
     year: '2025',
-    heroImage: '/Images/work/aramas.png',
-    phoneImage: '/Images/work/aramas-phone.png',
+    heroImage: '/Images/work/aramas.webp',
+    phoneImage: '/Images/work/aramas-phone.webp',
     heroStats: [
       { value: '6', label: 'Day Delivery' },
       { value: '200+', label: 'Properties Listed' },
@@ -312,8 +312,8 @@ const projects: Record<string, Project> = {
       { title: 'Enquiry System', desc: 'Direct enquiry routing to developers with automated follow-up sequences and CRM integration.' },
     ],
     images: [
-      { src: '/Images/work/aramas.png', alt: 'Aramas Property platform' },
-      { src: '/Images/work/aramas-phone.png', alt: 'Aramas Property mobile view' },
+      { src: '/Images/work/aramas.webp', alt: 'Aramas Property platform' },
+      { src: '/Images/work/aramas-phone.webp', alt: 'Aramas Property mobile view' },
     ],
     results: [
       { value: '200+', label: 'Properties at launch' },
@@ -336,7 +336,7 @@ const projects: Record<string, Project> = {
     tags: ['Analytics', 'SaaS', 'Business Intelligence'],
     delivery: '5 days',
     year: '2025',
-    heroImage: '/Images/work/insights.png',
+    heroImage: '/Images/work/insights.webp',
     heroStats: [
       { value: '5', label: 'Day Delivery' },
       { value: '340%', label: 'Faster Reporting' },
@@ -367,7 +367,7 @@ const projects: Record<string, Project> = {
       { title: 'Multi-Source Integration', desc: '12 data connectors including Stripe, HubSpot, GA4, PostgreSQL, Intercom, and Slack — zero manual data entry.' },
     ],
     images: [
-      { src: '/Images/work/insights.png', alt: 'Insights Dashboard analytics view' },
+      { src: '/Images/work/insights.webp', alt: 'Insights Dashboard analytics view' },
     ],
     results: [
       { value: '340%', label: 'Faster than manual reporting' },
@@ -390,7 +390,7 @@ const projects: Record<string, Project> = {
     tags: ['RegTech', 'Compliance', 'FinTech', 'AI'],
     delivery: '10 days',
     year: '2026',
-    heroImage: '/Images/work/ams-tablet.png',
+    heroImage: '/Images/work/ams-tablet.webp',
     heroStats: [
       { value: '10', label: 'Day Delivery' },
       { value: '120+', label: 'Screenings Run' },
@@ -421,10 +421,10 @@ const projects: Record<string, Project> = {
       { title: 'User Management', desc: 'Admin controls for analyst accounts, role assignment, and access levels across the organisation.' },
     ],
     images: [
-      { src: '/Images/work/ams-tablet.png', alt: 'AMS Tool admin dashboard on tablet' },
-      { src: '/Images/work/ams-desktop.png', alt: 'AMS Tool full desktop view' },
-      { src: '/Images/work/ams-screening.png', alt: 'AMS Tool screening details and risk classification' },
-      { src: '/Images/work/ams-laptop.png', alt: 'AMS Tool on laptop' },
+      { src: '/Images/work/ams-tablet.webp', alt: 'AMS Tool admin dashboard on tablet' },
+      { src: '/Images/work/ams-desktop.webp', alt: 'AMS Tool full desktop view' },
+      { src: '/Images/work/ams-screening.webp', alt: 'AMS Tool screening details and risk classification' },
+      { src: '/Images/work/ams-laptop.webp', alt: 'AMS Tool on laptop' },
     ],
     results: [
       { value: '10', label: 'Days to production' },
@@ -447,7 +447,7 @@ const projects: Record<string, Project> = {
     tags: ['EdTech', 'Productivity', 'SaaS'],
     delivery: '7 days',
     year: '2026',
-    heroImage: '/Images/work/speedread-laptop.png',
+    heroImage: '/Images/work/speedread-laptop.webp',
     siteUrl: 'https://speedreadtool-one.vercel.app/',
     heroStats: [
       { value: '7', label: 'Day Delivery' },
@@ -479,10 +479,10 @@ const projects: Record<string, Project> = {
       { title: 'Dark Mode', desc: 'Automatic theme detection. Light for daytime, dark for low-light — no manual toggle needed.' },
     ],
     images: [
-      { src: '/Images/work/speedread-laptop.png', alt: 'Speed Read on laptop' },
-      { src: '/Images/work/speedread-phone.png', alt: 'Speed Read on mobile' },
-      { src: '/Images/work/speedread-library.png', alt: 'Speed Read story library' },
-      { src: '/Images/work/speedread-reader.png', alt: 'Speed Read reader in action' },
+      { src: '/Images/work/speedread-laptop.webp', alt: 'Speed Read on laptop' },
+      { src: '/Images/work/speedread-phone.webp', alt: 'Speed Read on mobile' },
+      { src: '/Images/work/speedread-library.webp', alt: 'Speed Read story library' },
+      { src: '/Images/work/speedread-reader.webp', alt: 'Speed Read reader in action' },
     ],
     results: [
       { value: '7', label: 'Days to production' },

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: 'Fast Launch',
     title: 'Cookie Policy — Fast Launch',
     description: 'How Fast Launch uses cookies on its website.',
-    images: ['https://fastlaunchmvp.com/Images/Hero%20illustration.png'],
+    images: ['https://fastlaunchmvp.com/Images/Hero%20illustration.webp'],
   },
   twitter: {
     card: 'summary_large_image',

@@ -7,21 +7,21 @@ const testimonials = [
   {
     name: 'Alex Reid',
     role: 'Founder, Eliminent',
-    quote: "We had a concept that lived entirely in our heads. FastLaunch turned it into a real, playable game with thousands of concurrent users in 8 days. The AI agent is genuinely unsettling — exactly what we wanted.",
+    quote: "We had a concept that lived entirely in our heads. FastLaunch turned it into a real, playable game with thousands of concurrent users in 8 days. The AI agent is genuinely unsettling. Exactly what we wanted.",
     initials: 'AR',
     color: 'bg-orange-500',
   },
   {
     name: 'James Hartwell',
     role: 'Head of Trading, Metalex',
-    quote: "We've tried every metals terminal out there. Metalex is the first one that gives us Bloomberg-level data without the Bloomberg price tag — and it works perfectly on mobile. FastLaunch built it in 2 weeks.",
+    quote: "We've tried every metals terminal out there. Metalex is the first one that gives us Bloomberg-level data without the Bloomberg price tag, and it works perfectly on mobile. FastLaunch built it in 2 weeks.",
     initials: 'JH',
     color: 'bg-sky-500',
   },
   {
     name: 'Khalid Al-Rashidi',
     role: 'Founder, Desert Falcons Collective',
-    quote: "FastLaunch delivered something we didn't think was possible in this timeframe. The platform looks like it cost 10x what we paid — our members were blown away on launch day.",
+    quote: "FastLaunch delivered something we didn't think was possible in this timeframe. The platform looks like it cost 10x what we paid. Our members were blown away on launch day.",
     initials: 'KA',
     color: 'bg-violet-500',
   },
@@ -42,7 +42,7 @@ const testimonials = [
   {
     name: 'Compliance Lead',
     role: 'AMS Tool',
-    quote: "We went from doing this manually to having a full AI-powered compliance tool in 10 days. The risk scoring alone saves our analysts hours every week — and the audit trail means we can demonstrate compliance instantly.",
+    quote: "We went from doing this manually to having a full AI-powered compliance tool in 10 days. The risk scoring alone saves our analysts hours every week, and the audit trail means we can demonstrate compliance instantly.",
     initials: 'CL',
     color: 'bg-amber-500',
   },

@@ -60,7 +60,7 @@ export default function HeroGraphic() {
       {/* Centre image — LCP element, marked priority for fast load */}
       <div className="hero-center-image">
         <Image
-          src="/Images/Hero illustration.png"
+          src="/Images/Hero illustration.webp"
           alt="Fast Launch — production-ready MVP dashboard illustration"
           width={600}
           height={600}
