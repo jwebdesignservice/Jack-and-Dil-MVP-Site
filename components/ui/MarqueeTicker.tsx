@@ -1,5 +1,6 @@
-'use client'
-
+// Pure-CSS marquee — no useState, no event handlers, no client-only APIs.
+// Removing the `'use client'` directive lets this render as a Server
+// Component, so its JS doesn't ship to the browser at all.
 const TECH_ITEMS = [
   { name: 'React' },
   { name: 'Next.js' },
