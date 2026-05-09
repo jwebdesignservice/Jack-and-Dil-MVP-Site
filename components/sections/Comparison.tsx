@@ -21,42 +21,7 @@ const fastWay = [
 export default function Comparison() {
   return (
     <section className="relative overflow-hidden">
-      {/* Full orange-tinted inverted background */}
-      <div className="absolute inset-0 bg-[#0A0500]" />
-
-      {/* Dramatic grid */}
-      <div className="absolute inset-0 opacity-[0.07]"
-        style={{ backgroundImage: 'linear-gradient(rgba(249,115,22,1) 1px, transparent 1px), linear-gradient(90deg, rgba(249,115,22,1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
-
-      {/* Orange radial bloom */}
-      <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(249,115,22,0.12) 0%, transparent 70%)' }} />
-
-      {/* Top/bottom fade */}
-      <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
-      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#060606] to-transparent z-10 pointer-events-none" />
-
-      {/* Large decorative "VS" watermark — hidden on mobile to prevent overflow */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 hidden md:flex">
-        <span className="text-[320px] font-black text-orange-500/[0.04] leading-none select-none tracking-tighter">VS</span>
-      </div>
-
-      {/* Circuit traces */}
-      <svg className="absolute inset-0 w-full h-full opacity-[0.08] pointer-events-none" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" fill="none">
-        <line x1="0" y1="150" x2="300" y2="150" stroke="#F97316" strokeWidth="1"/>
-        <circle cx="300" cy="150" r="4" fill="#F97316"/>
-        <line x1="300" y1="150" x2="300" y2="300" stroke="#F97316" strokeWidth="1"/>
-        <line x1="300" y1="300" x2="500" y2="300" stroke="#F97316" strokeWidth="1"/>
-        <line x1="900" y1="150" x2="1200" y2="150" stroke="#F97316" strokeWidth="1"/>
-        <circle cx="900" cy="150" r="4" fill="#F97316"/>
-        <line x1="900" y1="150" x2="900" y2="300" stroke="#F97316" strokeWidth="1"/>
-        <line x1="700" y1="300" x2="900" y2="300" stroke="#F97316" strokeWidth="1"/>
-        <line x1="0" y1="450" x2="200" y2="450" stroke="#F97316" strokeWidth="1"/>
-        <circle cx="200" cy="450" r="3" fill="#F97316"/>
-        <line x1="1000" y1="450" x2="1200" y2="450" stroke="#F97316" strokeWidth="1"/>
-        <circle cx="1000" cy="450" r="3" fill="#F97316"/>
-      </svg>
-
-      <div className="container mx-auto px-6 relative z-20 py-28">
+      <div className="container mx-auto px-6 relative z-20 py-10 md:py-16">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="text-center mb-16">
@@ -71,7 +36,7 @@ export default function Comparison() {
 
             {/* Old Way */}
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-              className="relative rounded-t-2xl lg:rounded-tr-none lg:rounded-l-2xl overflow-hidden border border-b-0 lg:border-b lg:border-r-0 border-red-500/30 bg-[#120000]">
+              className="glass-card relative rounded-t-2xl lg:rounded-tr-none lg:rounded-l-2xl !rounded-b-none lg:!rounded-l-2xl lg:!rounded-r-none overflow-hidden !border-red-500/30">
               {/* Strong red tint */}
               <div className="absolute inset-0 bg-gradient-to-br from-red-900/30 via-red-950/20 to-transparent pointer-events-none"/>
               {/* Top red accent bar */}
@@ -107,7 +72,7 @@ export default function Comparison() {
               <div className="hidden lg:block absolute inset-y-0 left-1/2 w-px bg-gradient-to-b from-transparent via-orange-500/40 to-transparent -translate-x-1/2"/>
               {/* Mobile: horizontal line */}
               <div className="lg:hidden absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent -translate-y-1/2"/>
-              <div className="relative z-10 w-14 h-14 rounded-full bg-[#0A0500] border-2 border-orange-500/50 flex items-center justify-center my-2 lg:my-0"
+              <div className="glass-pill relative z-10 w-14 h-14 rounded-full !border-2 !border-orange-500/50 flex items-center justify-center my-2 lg:my-0"
                 style={{ boxShadow: '0 0 24px rgba(249,115,22,0.25)' }}>
                 <span className="text-sm font-black text-orange-400">VS</span>
               </div>
@@ -115,8 +80,8 @@ export default function Comparison() {
 
             {/* Fast Way */}
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-              className="relative rounded-b-2xl lg:rounded-bl-none lg:rounded-r-2xl overflow-hidden border border-t-0 lg:border-t lg:border-l-0 border-orange-500/50 bg-[#0D0900]"
-              style={{ boxShadow: '0 0 60px rgba(249,115,22,0.15), inset 0 0 40px rgba(249,115,22,0.04)' }}>
+              className="glass-card relative rounded-b-2xl lg:rounded-bl-none lg:rounded-r-2xl !rounded-t-none lg:!rounded-r-2xl lg:!rounded-l-none overflow-hidden !border-orange-500/50"
+              style={{ boxShadow: '0 12px 60px -12px rgba(249,115,22,0.30), inset 0 1px 0 0 rgba(255,255,255,0.08)' }}>
               <div className="absolute inset-0 bg-gradient-to-bl from-orange-900/20 via-orange-950/15 to-transparent pointer-events-none"/>
               {/* Top orange accent bar */}
               <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent"/>
@@ -147,7 +112,7 @@ export default function Comparison() {
 
           {/* Speed comparison bar */}
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}
-            className="mt-8 bg-[#0D0800]/60 border border-orange-500/15 rounded-2xl p-6 backdrop-blur-sm">
+            className="glass-card mt-8 p-6">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-4">
               <div>
                 <span className="text-xs font-mono text-neutral-500 tracking-widest uppercase">Speed comparison</span>

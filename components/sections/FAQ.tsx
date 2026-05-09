@@ -27,18 +27,11 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section id="faq" className="py-24 bg-black relative overflow-hidden">
+    <section id="faq" className="py-10 md:py-16 relative overflow-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      {/* Large decorative ? — hidden on mobile to prevent overflow */}
-      <div className="absolute right-10 top-1/2 -translate-y-1/2 text-[300px] font-black text-orange-500/[0.02] select-none pointer-events-none font-mono leading-none hidden md:block">
-        ?
-      </div>
-      {/* Dot matrix */}
-      <div className="absolute inset-0 opacity-[0.03]"
-        style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,1) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
 
       <div className="container mx-auto px-6 relative z-10 max-w-3xl">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -50,7 +43,7 @@ export default function FAQ() {
         <div className="space-y-3">
           {faqs.map((faq, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
-              className={`border rounded-xl overflow-hidden transition-colors ${open === i ? 'border-orange-500/40 bg-[#0A0A0A]' : 'border-[rgba(249,115,22,0.1)] bg-[#080808]'}`}>
+              className={`glass-card overflow-hidden transition-colors !rounded-xl ${open === i ? '!border-orange-500/40' : ''}`}>
               <button className="w-full flex items-center justify-between px-6 py-5 text-left"
                 onClick={() => setOpen(open === i ? null : i)}>
                 <span className={`font-medium transition-colors ${open === i ? 'text-white' : 'text-neutral-300'}`}>{faq.q}</span>

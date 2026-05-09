@@ -1,7 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
@@ -181,7 +180,19 @@ export default function Nav() {
             aria-current={isActive('/') ? 'page' : undefined}
             className="flex items-center gap-2 text-white font-bold text-xl flex-shrink-0"
           >
-            <Image src="/logo.png" alt="" width={32} height={32} className="rounded-md" />
+            <span className="relative flex h-10 w-10 items-center justify-center">
+              {/* Pulsing copy — same bolt, animates outward */}
+              <svg viewBox="0 4 38 38" aria-hidden="true"
+                className="absolute inset-0 w-full h-full animate-ping"
+                style={{ filter: 'blur(1.5px)' }}>
+                <path d="M21.3 10L11 25.7h6.5l-.8 10.3L27 20.3h-6.5L21.3 10z" fill="#F97316" fillOpacity="0.7"/>
+              </svg>
+              {/* Solid bolt — the logo itself, transparent everywhere except the bolt */}
+              <svg viewBox="0 4 38 38" aria-hidden="true"
+                className="relative w-full h-full drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]">
+                <path d="M21.3 10L11 25.7h6.5l-.8 10.3L27 20.3h-6.5L21.3 10z" fill="#F97316"/>
+              </svg>
+            </span>
             <span className="hidden sm:inline">FastLaunch</span>
           </Link>
 
@@ -259,9 +270,9 @@ export default function Nav() {
             aria-controls="mobile-nav-menu"
             type="button"
           >
-            <div className={`w-5 h-0.5 bg-white mb-1 transition-transform ${mobileOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
-            <div className={`w-5 h-0.5 bg-white mb-1 transition-opacity ${mobileOpen ? 'opacity-0' : ''}`} />
-            <div className={`w-5 h-0.5 bg-white transition-transform ${mobileOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+            <div className={`w-5 h-0.5 bg-orange-500 mb-1 transition-transform ${mobileOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+            <div className={`w-5 h-0.5 bg-orange-500 mb-1 transition-opacity ${mobileOpen ? 'opacity-0' : ''}`} />
+            <div className={`w-5 h-0.5 bg-orange-500 transition-transform ${mobileOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
           </button>
         </div>
       </div>
@@ -274,7 +285,7 @@ export default function Nav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
-            className="absolute inset-x-0 mx-auto w-full max-w-[1200px] bg-black/95 backdrop-blur-xl border border-[rgba(249,115,22,0.15)] rounded-b-xl"
+            className="glass-card-strong absolute inset-x-0 mx-auto w-full max-w-[1200px] !rounded-t-none rounded-b-xl"
             onMouseEnter={() => setActiveMenu('services')}
             onMouseLeave={() => setActiveMenu(null)}
           >
@@ -294,7 +305,7 @@ export default function Nav() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setActiveMenu(null)}
-                    className="flex items-start gap-3 p-4 rounded-lg border border-[rgba(249,115,22,0.08)] bg-[#0A0A0A] hover:border-orange-500/30 hover:bg-[#0F0F0F] transition-all group"
+                    className="flex items-start gap-3 p-4 rounded-lg backdrop-blur-md bg-white/[0.04] border border-white/15 hover:border-orange-500/40 hover:bg-white/[0.07] transition-all group shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
                   >
                     <div className="w-9 h-9 rounded-md bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 flex-shrink-0 group-hover:bg-orange-500/15 transition-colors">
                       {item.icon}
@@ -319,7 +330,7 @@ export default function Nav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
-            className="absolute inset-x-0 mx-auto w-full max-w-[1200px] bg-black/95 backdrop-blur-xl border border-[rgba(249,115,22,0.15)] rounded-b-xl"
+            className="glass-card-strong absolute inset-x-0 mx-auto w-full max-w-[1200px] !rounded-t-none rounded-b-xl"
             onMouseEnter={() => setActiveMenu('cases')}
             onMouseLeave={() => setActiveMenu(null)}
           >
@@ -339,7 +350,7 @@ export default function Nav() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setActiveMenu(null)}
-                    className="flex items-start gap-3 p-4 rounded-lg border border-[rgba(249,115,22,0.08)] bg-[#0A0A0A] hover:border-orange-500/30 hover:bg-[#0F0F0F] transition-all group"
+                    className="flex items-start gap-3 p-4 rounded-lg backdrop-blur-md bg-white/[0.04] border border-white/15 hover:border-orange-500/40 hover:bg-white/[0.07] transition-all group shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
                   >
                     <div className="w-9 h-9 rounded-md bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 flex-shrink-0 group-hover:bg-orange-500/15 transition-colors">
                       {item.icon}
@@ -360,7 +371,7 @@ export default function Nav() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-black/95 border-t border-[rgba(249,115,22,0.1)] overflow-hidden max-h-[80vh] overflow-y-auto">
+            className="lg:hidden bg-black/60 backdrop-blur-xl border-t border-white/10 overflow-hidden max-h-[80vh] overflow-y-auto">
             <div className="px-6 py-4 space-y-1">
 
               {/* Home */}

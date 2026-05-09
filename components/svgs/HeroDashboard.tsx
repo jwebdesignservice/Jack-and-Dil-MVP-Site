@@ -3,14 +3,14 @@ import { motion } from 'framer-motion'
 
 export default function HeroDashboard() {
   return (
-    <div className="relative w-full max-w-[580px] mx-auto select-none">
+    <div className="relative w-full max-w-[580px] mx-auto select-none isolate">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="relative"
+        className="relative z-0"
       >
-        <svg viewBox="0 0 580 500" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full drop-shadow-2xl">
+        <svg viewBox="0 0 580 380" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
           <defs>
             <filter id="glow-orange" x="-40%" y="-40%" width="180%" height="180%">
               <feGaussianBlur stdDeviation="4" result="blur"/>
@@ -54,12 +54,12 @@ export default function HeroDashboard() {
           {/* Background glow */}
           <ellipse cx="290" cy="250" rx="280" ry="240" fill="url(#bgGlow)"/>
 
-          {/* ── MAIN CARD ── */}
-          <rect x="40" y="20" width="500" height="370" rx="14" fill="url(#cardBg)" stroke="rgba(249,115,22,0.18)" strokeWidth="1"/>
+          {/* ── MAIN CARD — height shrunk so the bottom income card row sits OUTSIDE this panel ── */}
+          <rect x="40" y="20" width="500" height="350" rx="14" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" strokeWidth="1"/>
 
           {/* Top bar */}
-          <rect x="40" y="20" width="500" height="48" rx="14" fill="#111111"/>
-          <rect x="40" y="54" width="500" height="14" fill="#111111"/>
+          <rect x="40" y="20" width="500" height="48" rx="14" fill="rgba(255,255,255,0.04)"/>
+          <rect x="40" y="54" width="500" height="14" fill="rgba(255,255,255,0.04)"/>
 
           {/* Window dots */}
           <circle cx="66" cy="44" r="5.5" fill="#1A1A1A" stroke="rgba(249,115,22,0.25)" strokeWidth="1"/>
@@ -81,7 +81,7 @@ export default function HeroDashboard() {
           <text x="482" y="47" fill="#F97316" fontSize="9.5" fontFamily="Inter, sans-serif" fontWeight="500">LIVE</text>
 
           {/* ── LEFT: BAR CHART ── */}
-          <rect x="56" y="84" width="216" height="280" rx="10" fill="#0D0D0D" stroke="rgba(249,115,22,0.08)" strokeWidth="0.5"/>
+          <rect x="56" y="84" width="216" height="280" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)" strokeWidth="0.5"/>
 
           {/* Revenue header */}
           <text x="72" y="108" fill="#888" fontSize="10" fontFamily="Inter, sans-serif" fontWeight="400" letterSpacing="0.05em">REVENUE</text>
@@ -122,10 +122,10 @@ export default function HeroDashboard() {
           ))}
 
           {/* ── RIGHT: LINE CHART ── */}
-          <rect x="284" y="84" width="240" height="150" rx="10" fill="#0D0D0D" stroke="rgba(249,115,22,0.08)" strokeWidth="0.5"/>
+          <rect x="284" y="84" width="240" height="150" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)" strokeWidth="0.5"/>
           <text x="300" y="108" fill="#888" fontSize="10" fontFamily="Inter, sans-serif" fontWeight="400" letterSpacing="0.05em">GROWTH</text>
           <text x="300" y="128" fill="#ffffff" fontSize="18" fontFamily="Inter, sans-serif" fontWeight="300">+24%</text>
-          <text x="340" y="128" fill="#4ade80" fontSize="10" fontFamily="Inter, sans-serif" fontWeight="400"> MoM</text>
+          <text x="358" y="128" fill="#4ade80" fontSize="10" fontFamily="Inter, sans-serif" fontWeight="400">MoM</text>
 
           {/* Grid lines */}
           {[0,1,2].map(i => (
@@ -156,7 +156,7 @@ export default function HeroDashboard() {
           <circle cx="516" cy="148" r="2" fill="#fff"/>
 
           {/* ── BOTTOM RIGHT: Donut + Stats ── */}
-          <rect x="284" y="248" width="110" height="116" rx="10" fill="#0D0D0D" stroke="rgba(249,115,22,0.08)" strokeWidth="0.5"/>
+          <rect x="284" y="248" width="110" height="116" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)" strokeWidth="0.5"/>
           <text x="300" y="270" fill="#888" fontSize="10" fontFamily="Inter, sans-serif" fontWeight="400" letterSpacing="0.05em">DELIVERED</text>
           <circle cx="339" cy="316" r="28" stroke="#1A1A1A" strokeWidth="9" fill="none"/>
           <motion.circle cx="339" cy="316" r="28"
@@ -171,7 +171,7 @@ export default function HeroDashboard() {
           <text x="339" y="320" fill="#fff" fontSize="13" fontFamily="Inter, sans-serif" fontWeight="300" textAnchor="middle">82%</text>
 
           {/* Mini stats */}
-          <rect x="406" y="248" width="118" height="116" rx="10" fill="#0D0D0D" stroke="rgba(249,115,22,0.08)" strokeWidth="0.5"/>
+          <rect x="406" y="248" width="118" height="116" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)" strokeWidth="0.5"/>
           <text x="422" y="270" fill="#888" fontSize="10" fontFamily="Inter, sans-serif" fontWeight="400" letterSpacing="0.05em">METRICS</text>
           {[
             { label: 'Clients', value: '142', color: '#F97316' },
@@ -185,30 +185,15 @@ export default function HeroDashboard() {
             </g>
           ))}
 
-          {/* ── BOTTOM STAT CARDS ── */}
-          {[
-            { x: 56,  label: 'Total MVPs',    value: '50+',   sub: 'Since 2022',      color: '#F97316' },
-            { x: 196, label: 'Avg Delivery',  value: '9 days',sub: '↓ 3 days YoY',   color: '#4ade80' },
-            { x: 336, label: 'Satisfaction',  value: '100%',  sub: 'NPS Score: 94',   color: '#F97316' },
-            { x: 416, label: 'Uptime',        value: '99.9%', sub: 'Last 12 months',  color: '#60a5fa' },
-          ].map((card, i) => (
-            <g key={i}>
-              <rect x={card.x} y="380" width="126" height="70" rx="10" fill="#0D0D0D" stroke="rgba(249,115,22,0.07)" strokeWidth="0.5"/>
-              <text x={card.x + 16} y="400" fill="#555" fontSize="9" fontFamily="Inter, sans-serif" fontWeight="400" letterSpacing="0.06em">{card.label.toUpperCase()}</text>
-              <text x={card.x + 16} y="424" fill={card.color} fontSize="18" fontFamily="Inter, sans-serif" fontWeight="300">{card.value}</text>
-              <text x={card.x + 16} y="440" fill="#3a3a3a" fontSize="9" fontFamily="Inter, sans-serif">{card.sub}</text>
-            </g>
-          ))}
-
-          {/* Corner accents */}
-          {[[44,24],[536,24],[44,386],[536,386]].map(([x,y],i) => (
-            <circle key={i} cx={x} cy={y} r="2" fill="rgba(249,115,22,0.25)"/>
-          ))}
         </svg>
 
-        {/* Floating notification */}
+        {/* Floating notification — original spot, on top of main panel */}
         <motion.div
-          className="absolute -right-2 top-20 bg-[#111] border border-orange-500/20 rounded-xl px-4 py-3 shadow-2xl w-52"
+          className="absolute -right-2 top-20 rounded-xl px-4 py-3 w-52 z-50 border border-orange-500/30"
+          style={{
+            background: '#0A0A0A',
+            boxShadow: '0 24px 60px -8px rgba(0,0,0,0.95), 0 0 0 1px rgba(249,115,22,0.20), inset 0 1px 0 0 rgba(255,255,255,0.08)',
+          }}
           animate={{ y: [0, -8, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
         >
@@ -220,14 +205,18 @@ export default function HeroDashboard() {
           <p className="text-neutral-500 text-[9px] mt-1.5">2 mins ago</p>
         </motion.div>
 
-        {/* Floating deploy badge */}
+        {/* Floating deploy badge — original spot */}
         <motion.div
-          className="absolute -left-2 bottom-28 bg-[#111] border border-orange-500/20 rounded-xl px-4 py-3 shadow-2xl"
+          className="absolute -left-2 bottom-28 rounded-xl px-4 py-3 z-50 border border-orange-500/30"
+          style={{
+            background: '#0A0A0A',
+            boxShadow: '0 24px 60px -8px rgba(0,0,0,0.95), 0 0 0 1px rgba(249,115,22,0.20), inset 0 1px 0 0 rgba(255,255,255,0.08)',
+          }}
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
         >
           <div className="flex items-center gap-3">
-            <div className="w-7 h-7 rounded-lg bg-orange-500/15 flex items-center justify-center flex-shrink-0">
+            <div className="w-7 h-7 rounded-lg bg-orange-500/20 border border-orange-500/40 flex items-center justify-center flex-shrink-0">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F97316" strokeWidth="2">
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
               </svg>
@@ -239,6 +228,33 @@ export default function HeroDashboard() {
           </div>
         </motion.div>
       </motion.div>
+
+      {/* Income card row — aligned to main card span (x=40 to x=540 in viewBox), evenly spaced */}
+      <div className="grid grid-cols-4 gap-3 mt-4 mx-[6.9%]">
+        {[
+          { label: 'Total MVPs',   value: '50+',    sub: 'Since 2022',     color: 'text-orange-400' },
+          { label: 'Avg Delivery', value: '9 days', sub: '↓ 3 days YoY',  color: 'text-green-400' },
+          { label: 'Satisfaction', value: '100%',   sub: 'NPS Score: 94',  color: 'text-orange-400' },
+          { label: 'Uptime',       value: '99.9%',  sub: 'Last 12 months', color: 'text-sky-400' },
+        ].map((s, i) => (
+          <motion.div
+            key={s.label}
+            className="rounded-xl px-4 py-3 border border-orange-500/30"
+            style={{
+              background: '#0A0A0A',
+              boxShadow: '0 16px 40px -12px rgba(0,0,0,0.85), 0 0 0 1px rgba(249,115,22,0.18), inset 0 1px 0 0 rgba(255,255,255,0.08)',
+            }}
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: i * 0.4 }}
+          >
+            <div className="text-[9px] font-medium tracking-[0.08em] text-neutral-500 uppercase mb-1">
+              {s.label}
+            </div>
+            <div className={`text-lg font-light ${s.color} mb-0.5`}>{s.value}</div>
+            <div className="text-[9px] text-neutral-500">{s.sub}</div>
+          </motion.div>
+        ))}
+      </div>
     </div>
   )
 }

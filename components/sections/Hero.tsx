@@ -3,40 +3,16 @@ import { motion } from 'framer-motion'
 import HeroDashboard from '@/components/svgs/HeroDashboard'
 import { Button } from '@/components/ui/Button'
 
-const stats = [
-  { value: '50+', label: 'MVPs Built' },
-  { value: '67%', label: 'Built in 4–5 Days' },
-  { value: '100%', label: 'Ownership' },
-  { value: '24/7', label: 'Support' },
-]
-
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-16 pb-4 md:pb-0">
-      {/* Dot grid */}
-      <div className="absolute inset-0"
-        style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-      {/* Breathing animation overlay */}
-      <div className="absolute inset-0 animate-breathe"
-        style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(249,115,22,0.03) 0%, transparent 70%)' }} />
-      {/* Blurred orange circles */}
-      <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full opacity-20"
-        style={{ background: 'radial-gradient(circle, #F97316, transparent 70%)', filter: 'blur(60px)' }} />
-      <div className="absolute -right-40 w-96 h-96 rounded-full opacity-20"
-        style={{ bottom: '60px', background: 'radial-gradient(circle, #EA580C, transparent 70%)', filter: 'blur(60px)' }} />
-      {/* Diagonal lines */}
-      <svg className="absolute inset-0 w-full h-full opacity-5" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <line x1="0" y1="100" x2="100" y2="0" stroke="#F97316" strokeWidth="0.3" />
-        <line x1="-20" y1="100" x2="80" y2="0" stroke="#F97316" strokeWidth="0.2" />
-        <line x1="20" y1="100" x2="120" y2="0" stroke="#F97316" strokeWidth="0.2" />
-      </svg>
+    <section className="relative overflow-hidden pt-28 md:pt-32 pb-8 md:pb-12">
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left */}
           <div className="text-center lg:text-left">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <div className="inline-flex items-center gap-3 border border-orange-500/30 rounded-full px-4 py-1.5 mb-8">
+              <div className="glass-pill inline-flex items-center gap-3 rounded-full px-4 py-1.5 mb-8">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500" />
@@ -46,16 +22,21 @@ export default function Hero() {
             </motion.div>
 
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6">
-              <span className="text-white">Production Ready MVP&apos;s. </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                Built, Shipped and Live in 3–14 Days.
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold leading-[1.1] mb-6">
+              <span className="block whitespace-nowrap text-white">Production Ready MVP&apos;s.</span>
+              <span className="block whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                Built, Shipped and Live
+              </span>
+              <span className="block whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                in 3–14 Days.
               </span>
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
               className="text-neutral-400 text-sm lg:text-base mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              We build production-grade MVPs that launch in days. No fluff, no delays. Fast, high-quality software that gets you to market.
+              We build production-grade MVPs that launch in days. No fluff, no delays.
+              <br />
+              Fast, high-quality software that gets you to market.
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
@@ -63,8 +44,6 @@ export default function Hero() {
               <Button href="/contact" variant="primary">Start Your MVP</Button>
               <Button href="/#process" variant="outline">See Our Process</Button>
             </motion.div>
-
-
           </div>
 
           {/* Right */}
@@ -77,5 +56,3 @@ export default function Hero() {
     </section>
   )
 }
-
-

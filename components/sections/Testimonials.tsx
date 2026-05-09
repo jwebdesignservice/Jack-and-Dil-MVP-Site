@@ -7,21 +7,21 @@ const testimonials = [
   {
     name: 'Alex Reid',
     role: 'Founder, Eliminent',
-    quote: "We had a concept that lived entirely in our heads. FastLaunch turned it into a real, playable game with thousands of concurrent users in 8 days. The AI agent is genuinely unsettling — exactly what we wanted.",
+    quote: "We had a concept that lived entirely in our heads. FastLaunch turned it into a real, playable game with thousands of concurrent users in 8 days. The AI agent is genuinely unsettling. Exactly what we wanted.",
     initials: 'AR',
     color: 'bg-orange-500',
   },
   {
     name: 'James Hartwell',
     role: 'Head of Trading, Metalex',
-    quote: "We've tried every metals terminal out there. Metalex is the first one that gives us Bloomberg-level data without the Bloomberg price tag — and it works perfectly on mobile. FastLaunch built it in 2 weeks.",
+    quote: "We've tried every metals terminal out there. Metalex is the first one that gives us Bloomberg-level data without the Bloomberg price tag, and it works perfectly on mobile. FastLaunch built it in 2 weeks.",
     initials: 'JH',
     color: 'bg-sky-500',
   },
   {
     name: 'Khalid Al-Rashidi',
     role: 'Founder, Desert Falcons Collective',
-    quote: "FastLaunch delivered something we didn't think was possible in this timeframe. The platform looks like it cost 10x what we paid — our members were blown away on launch day.",
+    quote: "FastLaunch delivered something we didn't think was possible in this timeframe. The platform looks like it cost 10x what we paid. Our members were blown away on launch day.",
     initials: 'KA',
     color: 'bg-violet-500',
   },
@@ -42,7 +42,7 @@ const testimonials = [
   {
     name: 'Compliance Lead',
     role: 'AMS Tool',
-    quote: "We went from doing this manually to having a full AI-powered compliance tool in 10 days. The risk scoring alone saves our analysts hours every week — and the audit trail means we can demonstrate compliance instantly.",
+    quote: "We went from doing this manually to having a full AI-powered compliance tool in 10 days. The risk scoring alone saves our analysts hours every week, and the audit trail means we can demonstrate compliance instantly.",
     initials: 'CL',
     color: 'bg-amber-500',
   },
@@ -50,10 +50,8 @@ const testimonials = [
 
 function CornerCard({ children, active = false }: { children: React.ReactNode; active?: boolean }) {
   return (
-    <div className={`relative rounded-2xl p-8 transition-all duration-300 ${active
-      ? 'bg-[#0D0A00] border border-orange-500/35'
-      : 'bg-[#0A0A0A] border border-[rgba(249,115,22,0.1)]'}`}
-      style={active ? { boxShadow: '0 0 40px rgba(249,115,22,0.12)' } : {}}>
+    <div className={`glass-card relative p-8 transition-all duration-300 ${active ? '!border-orange-500/35' : ''}`}
+      style={active ? { boxShadow: '0 16px 50px -16px rgba(249,115,22,0.30), inset 0 1px 0 0 rgba(255,255,255,0.08)' } : undefined}>
       {/* Corner accents — 4px outside the card corners */}
       <span className="absolute -top-[4px] -left-[4px] w-5 h-5 border-t-2 border-l-2 border-orange-500 rounded-tl-sm pointer-events-none"/>
       <span className="absolute -top-[4px] -right-[4px] w-5 h-5 border-t-2 border-r-2 border-orange-500 rounded-tr-sm pointer-events-none"/>
@@ -81,8 +79,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section id="testimonials" className="py-24 bg-[#080808] relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(249,115,22,0.05),transparent_70%)]"/>
+    <section id="testimonials" className="py-10 md:py-16 relative overflow-hidden">
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
@@ -181,7 +178,7 @@ export default function Testimonials() {
         {/* Prev / Next */}
         <div className="flex items-center justify-center gap-5 mt-14" role="group" aria-label="Testimonial carousel controls">
           <button onClick={prev} type="button" aria-label="Previous testimonial"
-            className="w-11 h-11 rounded-full border border-[rgba(249,115,22,0.25)] bg-[#0A0A0A] flex items-center justify-center text-neutral-400 hover:border-orange-500/60 hover:text-white transition-all">
+            className="glass-pill w-11 h-11 rounded-full flex items-center justify-center text-neutral-400 hover:!border-orange-500/60 hover:text-white transition-all">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
           </button>
           <div className="flex gap-2 items-center" role="tablist" aria-label="Select testimonial">
@@ -193,7 +190,7 @@ export default function Testimonials() {
             ))}
           </div>
           <button onClick={next} type="button" aria-label="Next testimonial"
-            className="w-11 h-11 rounded-full border border-[rgba(249,115,22,0.25)] bg-[#0A0A0A] flex items-center justify-center text-neutral-400 hover:border-orange-500/60 hover:text-white transition-all">
+            className="glass-pill w-11 h-11 rounded-full flex items-center justify-center text-neutral-400 hover:!border-orange-500/60 hover:text-white transition-all">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
           </button>
         </div>

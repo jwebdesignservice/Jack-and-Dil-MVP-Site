@@ -32,12 +32,7 @@ const badges = ['Secure Payments', 'Fixed Price', 'No Hidden Fees', '100% Owners
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-24 bg-black relative overflow-hidden">
-      {/* Orange grid lines */}
-      <div className="absolute inset-0 opacity-[0.04]"
-        style={{ backgroundImage: 'linear-gradient(rgba(249,115,22,1) 1px, transparent 1px), linear-gradient(90deg, rgba(249,115,22,1) 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
-      {/* Radial gradient center */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(249,115,22,0.06),transparent_70%)]" />
+    <section id="pricing" className="py-10 md:py-16 relative overflow-hidden">
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -50,10 +45,8 @@ export default function Pricing() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {plans.map((plan, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-              className={`relative rounded-2xl flex flex-col ${plan.popular
-                ? 'bg-[#0D0A00] border-2 border-orange-500/60'
-                : 'bg-[#0A0A0A] border border-[rgba(249,115,22,0.15)]'}`}
-              style={plan.popular ? { boxShadow: '0 0 60px rgba(249,115,22,0.15)' } : {}}>
+              className={`glass-card relative flex flex-col transition-all duration-300 hover:-translate-y-1 ${plan.popular ? '!border-orange-500/50' : ''}`}
+              style={plan.popular ? { boxShadow: '0 16px 60px -16px rgba(249,115,22,0.35), inset 0 1px 0 0 rgba(255,255,255,0.08)' } : undefined}>
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <span className="bg-orange-500 text-white text-xs font-bold px-4 py-1.5 rounded-full">MOST POPULAR</span>
@@ -87,7 +80,7 @@ export default function Pricing() {
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }}
           className="flex flex-wrap justify-center gap-4 mt-16">
           {badges.map(badge => (
-            <div key={badge} className="flex items-center gap-2 border border-[rgba(249,115,22,0.15)] rounded-full px-4 py-2 text-neutral-500 text-sm">
+            <div key={badge} className="glass-pill flex items-center gap-2 rounded-full px-4 py-2 text-neutral-400 text-sm">
               <span className="text-orange-500">✓</span> {badge}
             </div>
           ))}

@@ -4,14 +4,14 @@ import Link from 'next/link'
 import { useRef, useState, useEffect } from 'react'
 
 const works = [
-  { src: '/Images/work/speedread-laptop.png', hoverSrc: '/Images/work/speedread-phone.png', label: 'Speed Read', tag: 'EdTech / Productivity', href: '/work/speed-read' },
-  { src: '/Images/work/eliminent-tablet.png', hoverSrc: '/Images/work/eliminent.png', label: 'Eliminent', tag: 'AI / Gaming', href: '/work/eliminent' },
-  { src: '/Images/work/metalex-phone.png', hoverSrc: '/Images/work/metalex.png', label: 'Metalex Terminal', tag: 'FinTech / Trading', href: '/work/metalex-terminal' },
-  { src: '/Images/work/insights.png', label: 'Insights Dashboard', tag: 'Analytics SaaS', href: '/work/insights-dashboard' },
-  { src: '/Images/work/memorymarket.png', hoverSrc: '/Images/work/memorymarket-phone.png', label: 'Memory Market', tag: 'Web3 / DeFi', href: '/work/memory-market' },
-  { src: '/Images/work/ams-tablet.png', hoverSrc: '/Images/work/ams-laptop.png', label: 'AMS Tool', tag: 'RegTech / Compliance', href: '/work/ams-tool' },
-  { src: '/Images/work/desertfalcons.png', hoverSrc: '/Images/work/desertfalcons-phone.png', label: 'Desert Falcons Collective', tag: 'Automotive / Luxury', href: '/work/desert-falcons' },
-  { src: '/Images/work/aramas.png', hoverSrc: '/Images/work/aramas-phone.png', label: 'Aramas Property', tag: 'Real Estate', href: '/work/aramas-property' },
+  { src: '/Images/work/speedread-laptop.webp', hoverSrc: '/Images/work/speedread-phone.webp', label: 'Speed Read', tag: 'EdTech / Productivity', href: '/work/speed-read' },
+  { src: '/Images/work/eliminent-tablet.webp', hoverSrc: '/Images/work/eliminent.webp', label: 'Eliminent', tag: 'AI / Gaming', href: '/work/eliminent' },
+  { src: '/Images/work/metalex-phone.webp', hoverSrc: '/Images/work/metalex.webp', label: 'Metalex Terminal', tag: 'FinTech / Trading', href: '/work/metalex-terminal' },
+  { src: '/Images/work/insights.webp', label: 'Insights Dashboard', tag: 'Analytics SaaS', href: '/work/insights-dashboard' },
+  { src: '/Images/work/memorymarket.webp', hoverSrc: '/Images/work/memorymarket-phone.webp', label: 'Memory Market', tag: 'Web3 / DeFi', href: '/work/memory-market' },
+  { src: '/Images/work/ams-tablet.webp', hoverSrc: '/Images/work/ams-laptop.webp', label: 'AMS Tool', tag: 'RegTech / Compliance', href: '/work/ams-tool' },
+  { src: '/Images/work/desertfalcons.webp', hoverSrc: '/Images/work/desertfalcons-phone.webp', label: 'Desert Falcons Collective', tag: 'Automotive / Luxury', href: '/work/desert-falcons' },
+  { src: '/Images/work/aramas.webp', hoverSrc: '/Images/work/aramas-phone.webp', label: 'Aramas Property', tag: 'Real Estate', href: '/work/aramas-property' },
 ]
 
 // Duplicates for seamless desktop marquee
@@ -48,11 +48,7 @@ export default function WorkMarquee() {
   // Mobile: Swipeable slider
   if (isMobile) {
     return (
-      <section className="py-8 overflow-hidden relative bg-black" style={{ zIndex: 10000 }}>
-        {/* Dot grid */}
-        <div className="absolute inset-0"
-          style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }}/>
-        
+      <section className="py-8 overflow-hidden relative" style={{ zIndex: 10000 }}>
         {/* Slider container */}
         <div 
           ref={sliderRef}
@@ -103,10 +99,7 @@ export default function WorkMarquee() {
 
   // Desktop: Original marquee
   return (
-    <section className="py-8 overflow-hidden relative bg-black" style={{ zIndex: 10000 }}>
-      {/* Dot grid — continuous from hero/services */}
-      <div className="absolute inset-0"
-        style={{ backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }}/>
+    <section className="py-8 overflow-hidden relative" style={{ zIndex: 10000 }}>
       {/* Edge fades — pure black fading to transparent */}
       <div className="absolute left-0 top-0 bottom-0 w-48 z-20 pointer-events-none" style={{ background: 'linear-gradient(to right, black 0%, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.5) 60%, transparent 100%)' }}/>
       <div className="absolute right-0 top-0 bottom-0 w-48 z-20 pointer-events-none" style={{ background: 'linear-gradient(to left, black 0%, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.5) 60%, transparent 100%)' }}/>

@@ -166,52 +166,44 @@ function BuildSVG() {
 
 function LaunchSVG() {
   return (
-    <svg viewBox="0 0 280 180" fill="none" className="w-full max-w-[360px]">
-      <circle cx="140" cy="88" r="72" stroke="rgba(249,115,22,0.38)" strokeWidth="1.5"/>
-      <ellipse cx="140" cy="88" rx="72" ry="26" stroke="rgba(249,115,22,0.2)" strokeWidth="1"/>
-      <ellipse cx="140" cy="88" rx="72" ry="52" stroke="rgba(249,115,22,0.13)" strokeWidth="1"/>
-      <line x1="140" y1="16" x2="140" y2="160" stroke="rgba(249,115,22,0.1)" strokeWidth="1"/>
+    <svg viewBox="0 0 280 220" fill="none" className="w-full max-w-[360px]">
+      <circle cx="140" cy="78" r="60" stroke="rgba(249,115,22,0.38)" strokeWidth="1.5"/>
+      <ellipse cx="140" cy="78" rx="60" ry="22" stroke="rgba(249,115,22,0.2)" strokeWidth="1"/>
+      <ellipse cx="140" cy="78" rx="60" ry="42" stroke="rgba(249,115,22,0.13)" strokeWidth="1"/>
+      <line x1="140" y1="16" x2="140" y2="138" stroke="rgba(249,115,22,0.1)" strokeWidth="1"/>
       <motion.g animate={{ y: [-4, 4, -4] }} transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}>
-        <path d="M140 36 C140 36 156 46 156 64 C156 78 148 84 140 88 C132 84 124 78 124 64 C124 46 140 36 140 36Z" fill="rgba(249,115,22,0.22)" stroke="#F97316" strokeWidth="2.5"/>
-        <circle cx="140" cy="62" r="9" fill="rgba(96,165,250,0.3)" stroke="#60a5fa" strokeWidth="2"/>
-        <circle cx="140" cy="62" r="4" fill="#60a5fa"/>
-        <path d="M124 69 L113 82 L124 77Z" fill="rgba(249,115,22,0.5)" stroke="#F97316" strokeWidth="1.5"/>
-        <path d="M156 69 L167 82 L156 77Z" fill="rgba(249,115,22,0.5)" stroke="#F97316" strokeWidth="1.5"/>
-        <path d="M131 88 Q 140 102 149 88" stroke="#F97316" strokeWidth="3" fill="none" strokeLinecap="round"/>
-        <motion.path d="M134 94 Q 140 108 146 94" stroke="#f59e0b" strokeWidth="2.5" fill="none"
+        <path d="M140 26 C140 26 156 36 156 54 C156 68 148 74 140 78 C132 74 124 68 124 54 C124 36 140 26 140 26Z" fill="rgba(249,115,22,0.22)" stroke="#F97316" strokeWidth="2.5"/>
+        <circle cx="140" cy="52" r="9" fill="rgba(96,165,250,0.3)" stroke="#60a5fa" strokeWidth="2"/>
+        <circle cx="140" cy="52" r="4" fill="#60a5fa"/>
+        <path d="M124 59 L113 72 L124 67Z" fill="rgba(249,115,22,0.5)" stroke="#F97316" strokeWidth="1.5"/>
+        <path d="M156 59 L167 72 L156 67Z" fill="rgba(249,115,22,0.5)" stroke="#F97316" strokeWidth="1.5"/>
+        <path d="M131 78 Q 140 92 149 78" stroke="#F97316" strokeWidth="3" fill="none" strokeLinecap="round"/>
+        <motion.path d="M134 84 Q 140 98 146 84" stroke="#f59e0b" strokeWidth="2.5" fill="none"
           animate={{ opacity: [0.4,1,0.4] }} transition={{ duration: 0.4, repeat: Infinity }}/>
-        <motion.path d="M137 100 Q 140 114 143 100" stroke="#fde047" strokeWidth="2" fill="none"
+        <motion.path d="M137 90 Q 140 104 143 90" stroke="#fde047" strokeWidth="2" fill="none"
           animate={{ opacity: [0.2,0.8,0.2] }} transition={{ duration: 0.3, repeat: Infinity, delay: 0.1 }}/>
       </motion.g>
-      <path d="M72 52 Q 140 12 208 52" stroke="rgba(249,115,22,0.4)" strokeWidth="1.5" strokeDasharray="5 5" fill="none"/>
-      {[[16,16],[264,16],[16,160],[264,160]].map(([x,y],i)=>(
+      <path d="M72 42 Q 140 4 208 42" stroke="rgba(249,115,22,0.4)" strokeWidth="1.5" strokeDasharray="5 5" fill="none"/>
+      {[[16,16],[264,16],[16,200],[264,200]].map(([x,y],i)=>(
         <circle key={i} cx={x} cy={y} r="3" fill={i%2===0?"#a78bfa":"#60a5fa"}/>
       ))}
-      <rect x="68" y="144" width="144" height="24" rx="12" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.5)" strokeWidth="1.5"/>
-      <circle cx="88" cy="156" r="4" fill="#22c55e"/>
-      <text x="148" y="160" fill="#22c55e" fontSize="8.5" fontFamily="monospace" textAnchor="middle">LIVE ON VERCEL ✓</text>
+      <rect x="68" y="180" width="144" height="24" rx="12" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.5)" strokeWidth="1.5"/>
+      <circle cx="88" cy="192" r="4" fill="#22c55e"/>
+      <text x="148" y="196" fill="#22c55e" fontSize="8.5" fontFamily="monospace" textAnchor="middle">LIVE ON VERCEL ✓</text>
     </svg>
   )
 }
 
 const steps = [
   { num: '01', label: 'SCOPE',  title: 'Discovery & Scope',    day: 'Day 1',     desc: 'We start with a focused kick-off to define your core features, eliminate scope creep, and align on success metrics. Everything is agreed and signed off before a single line of code is written.', details: ['Feature prioritisation', 'Tech stack decision', 'Timeline locked', 'Spec doc signed'], SVG: ScopeSVG },
-  { num: '02', label: 'DESIGN', title: 'Architecture & Design', day: 'Days 2–3',  desc: 'UI wireframes, database schema, and API contracts are all designed upfront. You review and approve everything before development begins — no surprises later.', details: ['Figma wireframes', 'Database schema', 'API contract', 'Client approval'], SVG: DesignSVG },
-  { num: '03', label: 'BUILD',  title: 'Build & Iterate',       day: 'Days 4–12', desc: 'Daily standups and code shipped every 24 hours. You see real progress each day — not a black box. Issues are caught early, not at the end.', details: ['Daily progress updates', 'Feature branches', 'Code review cycle', 'QA on each PR'], SVG: BuildSVG },
+  { num: '02', label: 'DESIGN', title: 'Architecture & Design', day: 'Days 2–3',  desc: 'UI wireframes, database schema, and API contracts are all designed upfront. You review and approve everything before development begins. No surprises later.', details: ['Figma wireframes', 'Database schema', 'API contract', 'Client approval'], SVG: DesignSVG },
+  { num: '03', label: 'BUILD',  title: 'Build & Iterate',       day: 'Days 4–12', desc: 'Daily standups and code shipped every 24 hours. You see real progress each day, not a black box. Issues are caught early, not at the end.', details: ['Daily progress updates', 'Feature branches', 'Code review cycle', 'QA on each PR'], SVG: BuildSVG },
   { num: '04', label: 'LAUNCH', title: 'Go Live',               day: 'Day 14',    desc: 'Production deployment, monitoring configured, full documentation written, and complete knowledge transfer. You own 100% of the code from minute one.', details: ['Production deploy', 'Monitoring live', 'Full documentation', '100% code ownership'], isLast: true, SVG: LaunchSVG },
 ]
 
 export default function Process() {
   return (
-    <section id="process" className="pt-20 pb-28 bg-[#060606] relative overflow-hidden">
-      {/* Star field */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(18)].map((_,i)=>(
-          <div key={i} className="absolute rounded-full bg-white/10 animate-float"
-            style={{ width:`${1+(i*.3)%2}px`, height:`${1+(i*.3)%2}px`, left:`${(i*37)%100}%`, top:`${(i*53)%100}%`, animationDelay:`${(i*.7)%8}s`, animationDuration:`${5+(i*.4)%5}s` }}/>
-        ))}
-      </div>
-
+    <section id="process" className="py-10 md:py-16 relative overflow-hidden">
 
 
       <div className="container mx-auto px-6 relative z-10">
