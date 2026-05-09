@@ -1,18 +1,7 @@
 import type { MetadataRoute } from 'next'
+import { CASE_STUDY_SLUGS } from '@/lib/case-studies'
 
 const SITE_URL = 'https://fastlaunchmvp.com'
-
-// Keep this in sync with the projects array in app/work/[slug]/page.tsx
-const CASE_STUDY_SLUGS = [
-  'eliminent',
-  'metalex-terminal',
-  'desert-falcons',
-  'memory-market',
-  'aramas-property',
-  'insights-dashboard',
-  'ams-tool',
-  'speed-read',
-]
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date()
@@ -27,6 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/cookies`,         lastModified, changeFrequency: 'yearly',  priority: 0.3 },
   ]
 
+  // Case study slugs come from a single source of truth (lib/case-studies.ts)
+  // so the sitemap can never drift from the actual generated routes.
   const caseStudyRoutes: MetadataRoute.Sitemap = CASE_STUDY_SLUGS.map((slug) => ({
     url: `${SITE_URL}/work/${slug}`,
     lastModified,
