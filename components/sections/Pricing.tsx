@@ -1,7 +1,6 @@
 'use client'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { motion } from 'framer-motion'
-import CountUp from '@/components/ui/CountUp'
 import { Button } from '@/components/ui/Button'
 
 const plans = [
