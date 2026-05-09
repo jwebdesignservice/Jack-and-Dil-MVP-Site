@@ -2,9 +2,15 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { Button } from '@/components/ui/Button'
 import { SectionLabel } from '@/components/ui/SectionLabel'
-import CTA from '@/components/sections/CTA'
+
+// CTA sits below the projects grid — defer it so the initial JS bundle for
+// /work focuses on the LCP image and grid hydration. Keeping ssr enabled
+// means the HTML for the CTA still renders on first paint; only the JS
+// chunk is split out.
+const CTA = dynamic(() => import('@/components/sections/CTA'))
 
 const projects = [
   {

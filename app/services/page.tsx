@@ -1,8 +1,13 @@
 'use client'
 import { motion } from 'framer-motion'
+import dynamic from 'next/dynamic'
 import { Button } from '@/components/ui/Button'
 import { SectionLabel } from '@/components/ui/SectionLabel'
-import CTA from '@/components/sections/CTA'
+
+// CTA is the very last section on the services page. Splitting it out keeps
+// the initial JS focused on the four service modules above. SSR stays on
+// so the CTA's HTML still ships on first paint.
+const CTA = dynamic(() => import('@/components/sections/CTA'))
 
 const dotGrid = {
   backgroundImage: 'radial-gradient(rgba(249,115,22,0.15) 1px, transparent 1px)',
