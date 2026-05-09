@@ -115,23 +115,47 @@ export const metadata: Metadata = {
 }
 
 // ── Structured Data: Organization + WebSite ────────────────────────────────
+// Promoted to ProfessionalService (a more specific subtype of Organization +
+// LocalBusiness) so search engines can surface us as a service business while
+// still rolling up under the same #organization @id used elsewhere on the site.
 const organizationJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': ['Organization', 'ProfessionalService'],
   '@id': `${SITE_URL}#organization`,
   name: SITE_NAME,
-  alternateName: 'Fast Launch MVP',
+  alternateName: ['Fast Launch MVP', 'FastLaunch'],
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${SITE_URL}/logo.png`,
+    width: 512,
+    height: 512,
+  },
+  image: DEFAULT_OG_IMAGE,
   description: DEFAULT_DESCRIPTION,
-  email: 'support@fastlaunch.com',
+  slogan: 'Premium custom websites and MVPs in 3-14 days.',
+  email: 'support@fastlaunchmvp.com',
   telephone: '+44 7917 328155',
   founder: { '@type': 'Person', name: 'Jack Wilson' },
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'GB',
   },
-  areaServed: 'Worldwide',
+  areaServed: [
+    { '@type': 'Place', name: 'Worldwide' },
+    { '@type': 'Country', name: 'United Kingdom' },
+  ],
+  knowsAbout: [
+    'Custom website design',
+    'MVP development',
+    'Next.js development',
+    'Full-stack development',
+    'UI/UX design',
+    'Conversion-focused web design',
+    'Startup websites',
+    'SaaS product development',
+  ],
+  priceRange: '££',
   sameAs: [
     'https://www.linkedin.com/company/fastlaunchmvp',
     'https://www.instagram.com/fastlaunchmvp',
@@ -141,7 +165,16 @@ const organizationJsonLd = {
     {
       '@type': 'ContactPoint',
       contactType: 'customer service',
-      email: 'support@fastlaunch.com',
+      email: 'support@fastlaunchmvp.com',
+      telephone: '+44 7917 328155',
+      areaServed: 'Worldwide',
+      availableLanguage: ['English'],
+    },
+    {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      email: 'support@fastlaunchmvp.com',
+      url: `${SITE_URL}/contact`,
       areaServed: 'Worldwide',
       availableLanguage: ['English'],
     },
@@ -154,9 +187,21 @@ const websiteJsonLd = {
   '@id': `${SITE_URL}#website`,
   url: SITE_URL,
   name: SITE_NAME,
+  alternateName: 'FastLaunch',
   description: DEFAULT_DESCRIPTION,
   publisher: { '@id': `${SITE_URL}#organization` },
   inLanguage: 'en-GB',
+  // Helps search engines understand the site search action (if a sitelinks
+  // searchbox ever becomes eligible). The /work page is the closest thing
+  // we have to a search-style index.
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${SITE_URL}/work?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -172,10 +217,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
-        {/* Preconnect for performance */}
+        {/* Preconnect / dns-prefetch for performance — hint browsers to set up
+            connections to third-party origins early so first paint isn't
+            blocked waiting on TLS handshakes. */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://wa.me" />
+        <link rel="dns-prefetch" href="https://www.linkedin.com" />
+        <link rel="dns-prefetch" href="https://www.instagram.com" />
       </head>
       <body className="bg-transparent text-white antialiased">
         {/* Page-wide background video — sits behind every section so glass cards have something to blur */}
