@@ -5,6 +5,7 @@ const TITLE = 'Contact — Start your Fast Launch project'
 const DESCRIPTION =
   'Get in touch with Fast Launch to brief your project. Custom websites and MVPs delivered in 3–14 working days. Quick replies, no agency overhead.'
 const URL = `${SITE_URL}/contact`
+const OG_IMAGE = `${SITE_URL}/og-image.png`
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -16,9 +17,10 @@ export const metadata: Metadata = {
     siteName: 'Fast Launch',
     title: TITLE,
     description: DESCRIPTION,
+    locale: 'en_GB',
     images: [
       {
-        url: `${SITE_URL}/Images/Hero%20illustration.webp`,
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: 'Get in touch with Fast Launch',
@@ -29,7 +31,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: TITLE,
     description: DESCRIPTION,
-    images: [`${SITE_URL}/Images/Hero%20illustration.webp`],
+    images: [OG_IMAGE],
+    creator: '@fastlaunchmvp',
   },
   keywords: [
     'contact Fast Launch',

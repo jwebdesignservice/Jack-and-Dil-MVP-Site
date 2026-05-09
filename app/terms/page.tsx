@@ -11,12 +11,22 @@ export const metadata: Metadata = {
     siteName: 'Fast Launch',
     title: 'Terms & Conditions — Fast Launch',
     description: 'Terms and conditions for using Fast Launch services.',
-    images: ['https://fastlaunchmvp.com/Images/Hero%20illustration.webp'],
+    locale: 'en_GB',
+    images: [
+      {
+        url: 'https://fastlaunchmvp.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fast Launch terms and conditions',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Terms & Conditions — Fast Launch',
     description: 'Terms and conditions for using Fast Launch services.',
+    images: ['https://fastlaunchmvp.com/og-image.png'],
+    creator: '@fastlaunchmvp',
   },
   robots: { index: true, follow: true },
 }

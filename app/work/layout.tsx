@@ -4,6 +4,7 @@ const SITE_URL = 'https://fastlaunchmvp.com'
 const TITLE = 'Our Work — Custom websites & MVPs delivered in days'
 const DESCRIPTION =
   'Selected case studies from Fast Launch — premium custom websites and production-ready MVPs shipped in 3–14 days. Eliminent, Aramas Property, Metalex Terminal, Desert Falcons and more.'
+const OG_IMAGE = `${SITE_URL}/og-image.png`
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -15,9 +16,10 @@ export const metadata: Metadata = {
     siteName: 'Fast Launch',
     title: TITLE,
     description: DESCRIPTION,
+    locale: 'en_GB',
     images: [
       {
-        url: `${SITE_URL}/Images/Hero%20illustration.webp`,
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: 'Fast Launch case studies and portfolio',
@@ -28,7 +30,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: TITLE,
     description: DESCRIPTION,
-    images: [`${SITE_URL}/Images/Hero%20illustration.webp`],
+    images: [OG_IMAGE],
+    creator: '@fastlaunchmvp',
   },
   keywords: [
     'web design portfolio',

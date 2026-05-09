@@ -11,12 +11,22 @@ export const metadata: Metadata = {
     siteName: 'Fast Launch',
     title: 'Privacy Policy — Fast Launch',
     description: 'How Fast Launch collects, uses and protects your personal data.',
-    images: ['https://fastlaunchmvp.com/Images/Hero%20illustration.webp'],
+    locale: 'en_GB',
+    images: [
+      {
+        url: 'https://fastlaunchmvp.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fast Launch privacy policy',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Privacy Policy — Fast Launch',
     description: 'How Fast Launch collects, uses and protects your personal data.',
+    images: ['https://fastlaunchmvp.com/og-image.png'],
+    creator: '@fastlaunchmvp',
   },
   robots: { index: true, follow: true },
 }

@@ -11,12 +11,22 @@ export const metadata: Metadata = {
     siteName: 'Fast Launch',
     title: 'Cookie Policy — Fast Launch',
     description: 'How Fast Launch uses cookies on its website.',
-    images: ['https://fastlaunchmvp.com/Images/Hero%20illustration.webp'],
+    locale: 'en_GB',
+    images: [
+      {
+        url: 'https://fastlaunchmvp.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fast Launch cookie policy',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Cookie Policy — Fast Launch',
     description: 'How Fast Launch uses cookies on its website.',
+    images: ['https://fastlaunchmvp.com/og-image.png'],
+    creator: '@fastlaunchmvp',
   },
   robots: { index: true, follow: true },
 }
