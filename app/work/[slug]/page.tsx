@@ -2,11 +2,16 @@
 import { notFound } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { useParams } from 'next/navigation'
 import { SectionLabel } from '@/components/ui/SectionLabel'
-import { Button } from '@/components/ui/Button'
-import CTA from '@/components/sections/CTA'
-import HeroSlideshow from '@/components/ui/HeroSlideshow'
+
+// CTA renders far below the fold and HeroSlideshow only displays once
+// the user reaches the gallery. Lazy-loading both removes ~all of the
+// associated JS from the case-study LCP path. ssr stays on so the HTML
+// is still server-rendered for crawlers and instant first paint.
+const CTA = dynamic(() => import('@/components/sections/CTA'))
+const HeroSlideshow = dynamic(() => import('@/components/ui/HeroSlideshow'))
 
 /* ─── Types ─── */
 interface Stat { value: string; label: string }

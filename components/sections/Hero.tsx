@@ -1,7 +1,15 @@
 'use client'
 import { motion } from 'framer-motion'
-import HeroDashboard from '@/components/svgs/HeroDashboard'
+import dynamic from 'next/dynamic'
 import { Button } from '@/components/ui/Button'
+
+// HeroDashboard is rendered only at lg+ breakpoints (hidden via Tailwind
+// `hidden lg:block`). Lazy-loading it means phone/tablet visitors never
+// download the framer-motion-heavy SVG dashboard JS at all.
+//
+// SSR stays enabled so desktop users still get HTML on first paint;
+// only the client JS for the bar/line/donut animations is split out.
+const HeroDashboard = dynamic(() => import('@/components/svgs/HeroDashboard'))
 
 export default function Hero() {
   return (

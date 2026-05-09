@@ -149,9 +149,16 @@ export default function Nav() {
     return pathname?.startsWith(href) ?? false
   }
 
+  // Scroll handler: passive listener (browser hint that we're not calling
+  // preventDefault, lets the scroll thread keep running) and only setState
+  // when the boolean actually flips, so React doesn't re-render the whole
+  // nav tree on every scroll event.
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll)
+    const handleScroll = () => {
+      const next = window.scrollY > 20
+      setScrolled((prev) => (prev === next ? prev : next))
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 

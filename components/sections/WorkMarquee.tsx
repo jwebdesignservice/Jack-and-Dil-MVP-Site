@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, useCallback } from 'react'
 
 const works = [
   { src: '/Images/work/speedread-laptop.webp', hoverSrc: '/Images/work/speedread-phone.webp', label: 'Speed Read', tag: 'EdTech / Productivity', href: '/work/speed-read' },
@@ -22,28 +22,41 @@ export default function WorkMarquee() {
   const sliderRef = useRef<HTMLDivElement>(null)
   const [currentSlide, setCurrentSlide] = useState(0)
 
+  // Use matchMedia instead of a raw resize listener: matchMedia fires
+  // exactly once when the viewport crosses the 768px threshold, instead
+  // of on every pixel of a window resize. Result: zero React re-renders
+  // during typical scroll/zoom interactions.
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768)
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
+    const mql = window.matchMedia('(max-width: 767px)')
+    const update = () => setIsMobile(mql.matches)
+    update()
+    mql.addEventListener('change', update)
+    return () => mql.removeEventListener('change', update)
   }, [])
 
-  const scrollToSlide = (index: number) => {
+  const scrollToSlide = useCallback((index: number) => {
     if (sliderRef.current) {
       const slideWidth = sliderRef.current.offsetWidth * 0.9 + 16 // 90vw + gap
       sliderRef.current.scrollTo({ left: slideWidth * index, behavior: 'smooth' })
       setCurrentSlide(index)
     }
-  }
+  }, [])
 
-  const handleScroll = () => {
-    if (sliderRef.current) {
-      const slideWidth = sliderRef.current.offsetWidth * 0.9 + 16
-      const newIndex = Math.round(sliderRef.current.scrollLeft / slideWidth)
-      setCurrentSlide(newIndex)
-    }
-  }
+  // rAF-throttle the scroll handler so setState fires at most once per
+  // animation frame rather than per scroll event (mobile scroll events
+  // can fire >100 times a second). Functionally identical, much cheaper.
+  const rafIdRef = useRef<number | null>(null)
+  const handleScroll = useCallback(() => {
+    if (rafIdRef.current !== null) return
+    rafIdRef.current = requestAnimationFrame(() => {
+      rafIdRef.current = null
+      if (sliderRef.current) {
+        const slideWidth = sliderRef.current.offsetWidth * 0.9 + 16
+        const newIndex = Math.round(sliderRef.current.scrollLeft / slideWidth)
+        setCurrentSlide((prev) => (prev === newIndex ? prev : newIndex))
+      }
+    })
+  }, [])
 
   // Mobile: Swipeable slider
   if (isMobile) {
