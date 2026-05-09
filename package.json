@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lhci": "npx --yes @lhci/cli@0.14.x autorun"
   },
   "dependencies": {
     "clsx": "^2.1.1",
