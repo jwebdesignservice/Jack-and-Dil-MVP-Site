@@ -9,42 +9,42 @@ const testimonials = [
     role: 'Founder, Eliminent',
     quote: "We had a concept that lived entirely in our heads. FastLaunch turned it into a real, playable game with thousands of concurrent users in 8 days. The AI agent is genuinely unsettling. Exactly what we wanted.",
     initials: 'AR',
-    color: 'bg-orange-500',
+    color: 'bg-orange-600',
   },
   {
     name: 'James Hartwell',
     role: 'Head of Trading, Metalex',
     quote: "We've tried every metals terminal out there. Metalex is the first one that gives us Bloomberg-level data without the Bloomberg price tag, and it works perfectly on mobile. FastLaunch built it in 2 weeks.",
     initials: 'JH',
-    color: 'bg-sky-500',
+    color: 'bg-sky-700',
   },
   {
     name: 'Khalid Al-Rashidi',
     role: 'Founder, Desert Falcons Collective',
     quote: "FastLaunch delivered something we didn't think was possible in this timeframe. The platform looks like it cost 10x what we paid. Our members were blown away on launch day.",
     initials: 'KA',
-    color: 'bg-violet-500',
+    color: 'bg-violet-600',
   },
   {
     name: 'Zara Okonkwo',
     role: 'Co-Founder, Memory Market',
     quote: "We had a concept that most devs told us couldn't ship in under a month. FastLaunch had us live in 9 days with a product that actually works. The on-chain integration is rock solid.",
     initials: 'ZO',
-    color: 'bg-emerald-500',
+    color: 'bg-emerald-700',
   },
   {
     name: 'Ahmed Al-Mansoori',
     role: 'Director, Aramas Property',
     quote: "We went from a static brochure site to a full property marketplace in 6 days. The search functionality alone has already converted 3 international buyers in the first week.",
     initials: 'AA',
-    color: 'bg-rose-500',
+    color: 'bg-rose-600',
   },
   {
     name: 'Compliance Lead',
     role: 'AMS Tool',
     quote: "We went from doing this manually to having a full AI-powered compliance tool in 10 days. The risk scoring alone saves our analysts hours every week, and the audit trail means we can demonstrate compliance instantly.",
     initials: 'CL',
-    color: 'bg-amber-500',
+    color: 'bg-amber-700',
   },
 ]
 
@@ -186,7 +186,9 @@ export default function Testimonials() {
               <button key={i} onClick={() => setActive(i)} type="button" role="tab"
                 aria-selected={active === i}
                 aria-label={`Go to testimonial ${i + 1}`}
-                className={`h-1.5 rounded-full transition-all duration-300 ${active === i ? 'w-7 bg-orange-500' : 'w-1.5 bg-neutral-700 hover:bg-neutral-500'}`}/>
+                className="inline-flex items-center justify-center h-6 -my-2 px-1">
+                <span aria-hidden className={`block h-1.5 rounded-full transition-all duration-300 ${active === i ? 'w-7 bg-orange-500' : 'w-1.5 bg-neutral-700 hover:bg-neutral-500'}`} />
+              </button>
             ))}
           </div>
           <button onClick={next} type="button" aria-label="Next testimonial"

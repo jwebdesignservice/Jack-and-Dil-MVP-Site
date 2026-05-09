@@ -53,7 +53,7 @@ export default function FAQ() {
                 {open === i && (
                   <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2 }}>
                     <div className="px-6 pb-5 border-l-2 border-orange-500/50 ml-6">
-                      <p className="text-neutral-500 text-sm leading-relaxed">{faq.a}</p>
+                      <p className="text-neutral-400 text-sm leading-relaxed">{faq.a}</p>
                     </div>
                   </motion.div>
                 )}

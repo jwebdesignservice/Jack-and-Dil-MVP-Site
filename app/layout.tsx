@@ -238,16 +238,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="dns-prefetch" href="https://wa.me" />
         <link rel="dns-prefetch" href="https://www.linkedin.com" />
         <link rel="dns-prefetch" href="https://www.instagram.com" />
-
-        {/* Preload hero LCP image — AVIF with WebP fallback via next/image
-            content negotiation. fetchPriority=high keeps LCP ahead of JS. */}
-        <link
-          rel="preload"
-          as="image"
-          href="/Images/Hero illustration.avif"
-          type="image/avif"
-          fetchPriority="high"
-        />
       </head>
       <body className="bg-transparent text-white antialiased">
         {/* Page-wide background video — sits behind every section so glass cards have something to blur */}

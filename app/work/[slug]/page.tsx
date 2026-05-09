@@ -733,7 +733,7 @@ export default function CaseStudyPage() {
                   <IconZap />
                 </div>
                 <h3 className="text-white font-semibold text-base mb-2">{card.title}</h3>
-                <p className="text-neutral-500 text-sm leading-relaxed">{card.desc}</p>
+                <p className="text-neutral-400 text-sm leading-relaxed">{card.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -782,7 +782,7 @@ export default function CaseStudyPage() {
                 </div>
                 <div>
                   <h3 className="text-white font-semibold text-sm mb-1.5 group-hover:text-orange-400 transition-colors">{feature.title}</h3>
-                  <p className="text-neutral-500 text-sm leading-relaxed">{feature.desc}</p>
+                  <p className="text-neutral-400 text-sm leading-relaxed">{feature.desc}</p>
                 </div>
               </motion.div>
             ))}

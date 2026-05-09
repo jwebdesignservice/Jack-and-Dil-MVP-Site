@@ -48,16 +48,16 @@ export default function Pricing() {
               style={plan.popular ? { boxShadow: '0 16px 60px -16px rgba(249,115,22,0.35), inset 0 1px 0 0 rgba(255,255,255,0.08)' } : undefined}>
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="bg-orange-500 text-white text-xs font-bold px-4 py-1.5 rounded-full">MOST POPULAR</span>
+                  <span className="bg-orange-600 text-white text-xs font-bold px-4 py-1.5 rounded-full">MOST POPULAR</span>
                 </div>
               )}
               <div className="p-8 flex-1">
                 <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
-                <p className="text-neutral-500 text-sm mb-6">{plan.desc}</p>
+                <p className="text-neutral-400 text-sm mb-6">{plan.desc}</p>
                 <div className="text-3xl font-bold text-white mb-1">
                   {plan.priceRange}
                 </div>
-                <div className="text-neutral-500 text-sm mb-8">fixed price</div>
+                <div className="text-neutral-400 text-sm mb-8">fixed price</div>
                 <ul className="space-y-3">
                   {plan.features.map(f => (
                     <li key={f} className="flex items-start gap-2 text-neutral-400 text-sm">

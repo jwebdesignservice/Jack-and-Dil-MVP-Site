@@ -41,7 +41,7 @@ export default function TermsAndConditions() {
           <Link href="/" className="text-orange-500 hover:text-orange-400 text-sm transition-colors">← Back to Home</Link>
         </div>
         <h1 className="text-4xl font-bold text-white mb-2">Terms &amp; Conditions</h1>
-        <p className="text-neutral-500 text-sm mb-12">Last updated: March 2026</p>
+        <p className="text-neutral-400 text-sm mb-12">Last updated: March 2026</p>
 
         <div className="prose prose-invert prose-sm max-w-none space-y-8 text-neutral-400 leading-relaxed">
 

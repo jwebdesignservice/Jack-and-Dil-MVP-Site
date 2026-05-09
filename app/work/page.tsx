@@ -209,7 +209,7 @@ export default function WorkPage() {
                       <span>{project.year}</span>
                     </div>
                   </div>
-                  <p className="text-neutral-500 text-sm leading-relaxed mb-4">{project.desc}</p>
+                  <p className="text-neutral-400 text-sm leading-relaxed mb-4">{project.desc}</p>
                   <div className="flex items-center justify-between">
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map(tag => (
