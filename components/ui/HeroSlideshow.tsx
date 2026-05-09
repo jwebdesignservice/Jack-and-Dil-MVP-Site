@@ -104,7 +104,9 @@ export default function HeroSlideshow({ images, heroImage, title }: HeroSlidesho
             <button key={i} onClick={() => goTo(i)} type="button" role="tab"
               aria-selected={i === current}
               aria-label={`Go to slide ${i + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? 'w-7 bg-orange-500' : 'w-1.5 bg-neutral-700 hover:bg-neutral-500'}`} />
+              className="inline-flex items-center justify-center h-6 -my-2 px-1">
+              <span aria-hidden className={`block h-1.5 rounded-full transition-all duration-300 ${i === current ? 'w-7 bg-orange-500' : 'w-1.5 bg-neutral-700 group-hover:bg-neutral-500'}`} />
+            </button>
           ))}
         </div>
       )}

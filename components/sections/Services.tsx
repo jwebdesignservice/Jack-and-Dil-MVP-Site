@@ -132,7 +132,7 @@ export default function Services() {
               {/* Content */}
               <div className="relative z-10">
                 <h3 className="text-lg font-bold text-white mb-2 group-hover:text-orange-100 transition-colors">{svc.title}</h3>
-                <p className="text-neutral-500 text-sm leading-relaxed mb-5">{svc.description}</p>
+                <p className="text-neutral-400 text-sm leading-relaxed mb-5">{svc.description}</p>
 
                 {/* Feature list */}
                 <ul className="grid grid-cols-2 gap-x-4 gap-y-2 mb-6">

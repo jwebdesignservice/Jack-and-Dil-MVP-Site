@@ -16,7 +16,7 @@ export default function Footer() {
               </svg>
               FastLaunch
             </Link>
-            <p className="text-neutral-500 text-sm leading-relaxed mb-6 max-w-xs">Production-ready MVPs in days, not months. Built by developers, for founders.</p>
+            <p className="text-neutral-400 text-sm leading-relaxed mb-6 max-w-xs">Production-ready MVPs in days, not months. Built by developers, for founders.</p>
             {/* Social / WhatsApp — icon-only links carry aria-labels for SR users. */}
             <div className="flex items-center gap-3">
               <a
@@ -42,7 +42,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm">Navigation</h4>
+            <h3 className="text-white font-semibold mb-4 text-sm">Navigation</h3>
             <div className="space-y-2.5">
               {[
                 { href: '/', label: 'Home' },
@@ -60,7 +60,7 @@ export default function Footer() {
 
           {/* Get Started */}
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm">Get Started</h4>
+            <h3 className="text-white font-semibold mb-4 text-sm">Get Started</h3>
             <div className="space-y-2.5">
               {[
                 { href: '/contact', label: 'Book a Call' },
@@ -79,7 +79,7 @@ export default function Footer() {
               styling is unchanged, the element is just non-italic by default
               via Tailwind's preflight reset. */}
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm">Contact</h4>
+            <h3 className="text-white font-semibold mb-4 text-sm">Contact</h3>
             <address className="not-italic space-y-3">
               <a
                 href="mailto:support@fastlaunchmvp.com"
@@ -101,11 +101,11 @@ export default function Footer() {
                 </svg>
                 WhatsApp
               </a>
-              <div className="flex items-center gap-2 text-neutral-500 text-sm">
+              <div className="flex items-center gap-2 text-neutral-400 text-sm">
                 <svg className="w-4 h-4 flex-shrink-0" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 UK Based
               </div>
-              <div className="flex items-center gap-2 text-neutral-500 text-sm">
+              <div className="flex items-center gap-2 text-neutral-400 text-sm">
                 <svg className="w-4 h-4 flex-shrink-0" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 24/7 Support
               </div>
@@ -125,7 +125,7 @@ export default function Footer() {
 
       {/* Line + Copyright — below the large text */}
       <div className="h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent mx-6"/>
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-neutral-500 text-sm py-6 px-6">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-neutral-400 text-sm py-6 px-6">
         <span>© 2026 FastLaunch. All rights reserved.</span>
         <div className="flex items-center gap-4">
           <Link href="/privacy-policy" className="hover:text-neutral-400 transition-colors">Privacy Policy</Link>

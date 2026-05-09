@@ -103,7 +103,7 @@ export default function ContactPage() {
             { icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/></svg>, text: 'No commitment required' },
             { icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>, text: 'support@fastlaunchmvp.com' },
           ].map((item, i) => (
-            <div key={i} className="flex items-center gap-2 text-neutral-500 text-sm">
+            <div key={i} className="flex items-center gap-2 text-neutral-400 text-sm">
               <span className="text-orange-500">{item.icon}</span>
               <span>{item.text}</span>
             </div>

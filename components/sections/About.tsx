@@ -49,8 +49,8 @@ export default function About() {
               {/* Team members */}
               <div className="px-5 py-4 border-b border-[rgba(249,115,22,0.08)] flex items-center gap-4">
                 {[
-                  { initials: 'JW', name: 'Jack W.', role: 'Full-Stack', color: 'bg-orange-500' },
-                  { initials: 'DM', name: 'Dil M.', role: 'Full-Stack', color: 'bg-sky-500' },
+                  { initials: 'JW', name: 'Jack W.', role: 'Full-Stack', color: 'bg-orange-600' },
+                  { initials: 'DM', name: 'Dil M.', role: 'Full-Stack', color: 'bg-sky-700' },
                 ].map((dev, i) => (
                   <div key={i} className="flex items-center gap-2.5">
                     <div className={`w-8 h-8 rounded-full ${dev.color} flex items-center justify-center text-white text-xs font-bold`}>{dev.initials}</div>
@@ -98,7 +98,7 @@ export default function About() {
                     <span className="text-[10px] font-mono text-orange-500/50 w-12 flex-shrink-0">{c.hash}</span>
                     <span className="text-[11px] text-neutral-400 flex-1 truncate">{c.msg}</span>
                     <span className="text-[10px] font-mono text-neutral-500 flex-shrink-0">{c.time}</span>
-                    <div className={`w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-white text-[9px] font-bold ${c.author === 'JW' ? 'bg-orange-500' : 'bg-sky-500'}`}>{c.author}</div>
+                    <div className={`w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-white text-[9px] font-bold ${c.author === 'JW' ? 'bg-orange-600' : 'bg-sky-700'}`}>{c.author}</div>
                   </div>
                 ))}
               </div>

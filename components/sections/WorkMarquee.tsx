@@ -75,7 +75,7 @@ export default function WorkMarquee() {
               href={item.href} 
               className="relative flex-shrink-0 w-[90vw] aspect-[693/429] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] snap-center block"
             >
-              <Image src={item.src} alt={item.label} fill sizes="90vw" className="object-cover"/>
+              <Image src={item.src} alt={item.label} fill sizes="90vw" priority={i === 0} className="object-cover"/>
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"/>
               <div className="absolute bottom-0 left-0 right-0 p-5">
@@ -100,10 +100,15 @@ export default function WorkMarquee() {
               role="tab"
               aria-selected={currentSlide === i}
               aria-label={`Go to slide ${i + 1}`}
-              className={`w-2 h-2 rounded-full transition-all ${
-                currentSlide === i ? 'bg-orange-500 w-4' : 'bg-neutral-600'
-              }`}
-            />
+              className="inline-flex items-center justify-center w-6 h-6 -mx-2"
+            >
+              <span
+                aria-hidden
+                className={`block h-2 rounded-full transition-all ${
+                  currentSlide === i ? 'bg-orange-500 w-4' : 'bg-neutral-600 w-2'
+                }`}
+              />
+            </button>
           ))}
         </div>
       </section>
@@ -122,7 +127,7 @@ export default function WorkMarquee() {
         <div className="flex gap-6 animate-marquee-left group-hover:[animation-play-state:paused] shrink-0">
           {marqueeWorks.map((item, i) => (
             <Link key={`a-${i}`} href={item.href} className="relative flex-shrink-0 w-[500px] md:w-[693px] h-[310px] md:h-[429px] rounded-lg overflow-hidden border border-[rgba(249,115,22,0.12)] group/card block">
-              <Image src={item.src} alt={item.label} fill sizes="(max-width: 768px) 500px, 693px" className={`object-cover transition-opacity duration-500 ${item.hoverSrc ? 'group-hover/card:opacity-0' : ''}`}/>
+              <Image src={item.src} alt={item.label} fill sizes="(max-width: 768px) 500px, 693px" priority={i === 0} className={`object-cover transition-opacity duration-500 ${item.hoverSrc ? 'group-hover/card:opacity-0' : ''}`}/>
               {item.hoverSrc && <Image src={item.hoverSrc} alt={`${item.label} mobile`} fill sizes="(max-width: 768px) 500px, 693px" className="object-cover opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"/>}
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"/>
