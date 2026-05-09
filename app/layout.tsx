@@ -12,15 +12,14 @@ import WhatsAppFloating from '@/components/ui/WhatsAppFloating'
 // is not allowed in Server Components, which this layout is).
 import CookieBannerLazy from '@/components/ui/CookieBannerLazy'
 
+// Inter is a variable font on next/font, so leaving `weight` unspecified
+// gives us the single variable WOFF2 file (covers every weight in one
+// asset) rather than several per-weight files. `display: 'swap'` already
+// avoids FOIT, and `preload: true` is the default for next/font.
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
-  preload: true,
-  // Tell next/font we only need normal + medium + bold weights;
-  // Inter ships variable so we still get full tunability, but the
-  // subset stays small and we skip italic.
-  weight: ['400', '500', '600', '700'],
 })
 
 const SITE_URL = 'https://fastlaunchmvp.com'
