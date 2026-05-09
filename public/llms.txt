@@ -1,53 +1,88 @@
 # Fast Launch
 
-> Fast Launch is a UK web studio building premium, conversion-focused custom websites and production-ready MVPs in 3-14 days. No agencies, no retainers, fully owned by you.
+> Fast Launch is a UK web studio building premium, conversion-focused custom websites and production-ready MVPs in 3-14 days. Fixed-scope, fixed-price, with daily build previews and 100% code ownership from day one. No agencies. No retainers. Fully owned by you.
 
-Fast Launch (fastlaunchmvp.com) is run by Jack Wilson. We ship modern, scalable products on Next.js, TypeScript, Supabase, PostgreSQL and Vercel. Every engagement is fixed-scope, fixed-price, with daily build previews and 100% code ownership from day one.
+Fast Launch (fastlaunchmvp.com) is run by Jack Wilson and a small team of senior engineers. We ship modern, scalable products on Next.js, TypeScript, Supabase, PostgreSQL, Tailwind and Vercel. Every engagement is fixed scope, fixed price, with daily build previews and full IP transfer on delivery. The studio is UK-based and serves clients worldwide. Stack and process are documented at [/services](https://fastlaunchmvp.com/services), pricing at [/#pricing](https://fastlaunchmvp.com/#pricing), and case studies at [/work](https://fastlaunchmvp.com/work).
 
 ## Core URLs
 
-- [Home](https://fastlaunchmvp.com/): Overview, positioning, services, pricing, testimonials, FAQ.
-- [Services](https://fastlaunchmvp.com/services): MVP development, UI/UX design, full-stack development, launch & scale — with deliverables and tech stack.
-- [Work](https://fastlaunchmvp.com/work): Selected case studies of shipped products.
+- [Home](https://fastlaunchmvp.com/): Overview, positioning, services, process, pricing, testimonials, FAQ.
+- [Services](https://fastlaunchmvp.com/services): MVP development, UI/UX design, full-stack development, launch & scale — with deliverables, tech stack, and an honest comparison vs. agencies and freelancers.
+- [Work](https://fastlaunchmvp.com/work): All shipped case studies with delivery time, results and tech stack.
 - [Contact](https://fastlaunchmvp.com/contact): Project brief intake form. Reply within 24 hours.
 
 ## Services
 
-- Production-Ready MVPs in 3-14 days (Next.js + TypeScript, auth & payments, daily build previews, 100% code ownership).
-- UI/UX Design (wireframes, clickable prototypes, mobile-first layouts, design systems).
-- Full-Stack Development (React/Next.js frontend, Node.js + PostgreSQL backend, Stripe/SendGrid/Twilio integrations, CI/CD + tests).
-- Launch & Scale (Vercel/AWS deploys, uptime monitoring, error tracking, SEO + analytics, post-launch support).
+- [MVP Development](https://fastlaunchmvp.com/services#mvp): Production-ready MVPs in 3-14 days. Next.js + TypeScript, auth & payments built in, daily build previews, 100% code ownership.
+- [UI/UX Design](https://fastlaunchmvp.com/services#design): Wireframes, clickable prototypes, mobile-first layouts, design system included, handoff-ready specs.
+- [Full-Stack Development](https://fastlaunchmvp.com/services#fullstack): React/Next.js frontend, Node.js + PostgreSQL backend, Stripe/SendGrid/Twilio integrations, CI/CD and tests included.
+- [Launch & Scale](https://fastlaunchmvp.com/services#launch): Vercel/AWS deploys, uptime monitoring, error tracking, SEO + analytics, post-launch support up to 3 months.
+
+## Pricing
+
+- Starter — £2,500-£5,000. Up to 5 core features, 1-4 day delivery, 2 weeks post-launch support.
+- Growth — £5,000-£10,000 (most popular). Up to 12 features, 4-10 day delivery, 1 month support, custom UI/UX, payments + advanced auth, analytics dashboard.
+- Scale — £10,000-£20,000. Unlimited features, full design system, complex integrations, 14-day delivery, 3 months support, dedicated Slack channel.
+
+All pricing is fixed (no hourly billing). 50% upfront, 50% on delivery. Money-back guarantee.
+
+## Process
+
+Concept to production in up to 14 days, in four stages:
+
+1. Day 1 — Discovery & Scope: feature prioritisation, tech stack decision, timeline locked, spec doc signed.
+2. Days 2-3 — Architecture & Design: Figma wireframes, database schema, API contract, client approval before any code is written.
+3. Days 4-12 — Build & Iterate: daily progress updates, feature branches, code review cycle, QA on each PR.
+4. Day 14 — Go Live: production deploy, monitoring live, full documentation, 100% code ownership transferred.
+
+## Tech Stack
+
+Next.js, React, TypeScript, Node.js, PostgreSQL, Supabase, Stripe, Vercel, Tailwind CSS, Prisma, Redis, AWS. We pick the stack that ships fast and scales further.
 
 ## Case Studies
 
-- [Eliminent](https://fastlaunchmvp.com/work/eliminent): AI-powered social deduction game. Real-time multiplayer, 4-12 players, sub-100ms latency. Shipped in 8 days.
-- [Metalex Terminal](https://fastlaunchmvp.com/work/metalex-terminal): Professional-grade precious metals trading terminal with live spot prices, AI signals, futures curves. Shipped in 14 days.
-- [Desert Falcons Collective](https://fastlaunchmvp.com/work/desert-falcons): Premium automotive community platform for the Middle East luxury car scene. Shipped in 7 days.
-- [Memory Market](https://fastlaunchmvp.com/work/memory-market): Web3 marketplace where AI memory becomes a tradeable on-chain asset on Solana. Shipped in 9 days.
-- [Aramas Property](https://fastlaunchmvp.com/work/aramas-property): UAE off-plan property marketplace with advanced search and developer profiles. Shipped in 6 days.
-- [Insights Dashboard](https://fastlaunchmvp.com/work/insights-dashboard): Real-time business KPI dashboard pulling from Stripe, HubSpot, GA4, PostgreSQL. Shipped in 5 days.
-- [AMS Tool](https://fastlaunchmvp.com/work/ams-tool): AI-powered adverse media screening platform for compliance teams. Shipped in 10 days.
-- [Speed Read](https://fastlaunchmvp.com/work/speed-read): RSVP-powered speed reading tool with browser extension. Shipped in 7 days.
+- [Eliminent](https://fastlaunchmvp.com/work/eliminent): AI-powered social deduction game. Real-time multiplayer (4-12 players), sub-100ms WebSocket latency, AI agent participating as a player. Shipped in 8 days. Stack: Next.js, TypeScript, WebSockets, OpenAI, Supabase.
+- [Metalex Terminal](https://fastlaunchmvp.com/work/metalex-terminal): Professional-grade precious metals trading terminal. Live spot prices for XAU/XAG/XPT/XPD, AI signals, futures curves, mobile terminal. Shipped in 14 days. Stack: Next.js, TradingView, MetalpriceAPI.
+- [Desert Falcons Collective](https://fastlaunchmvp.com/work/desert-falcons): Premium automotive community platform for Saudi Arabia. Public site + private member portal, role-based auth, forums, events, resource library. Shipped in 7 days. Stack: Next.js, Supabase, PostgreSQL.
+- [Memory Market](https://fastlaunchmvp.com/work/memory-market): Web3 marketplace where AI memory becomes a tradeable on-chain asset on Solana. Wallet integration, custom order matching engine, on-chain verification, decentralised storage on Arweave. Shipped in 9 days.
+- [Aramas Property](https://fastlaunchmvp.com/work/aramas-property): UAE off-plan property marketplace with advanced multi-parameter search, developer profiles, market insights. Shipped in 6 days. Stack: Next.js, Supabase, PostgreSQL.
+- [Insights Dashboard](https://fastlaunchmvp.com/work/insights-dashboard): Real-time business KPI dashboard pulling from Stripe, HubSpot, GA4, PostgreSQL. 12 data integrations. Shipped in 5 days. 340% faster than manual reporting.
+- [AMS Tool](https://fastlaunchmvp.com/work/ams-tool): AI-powered adverse media screening platform for compliance teams. Risk classification, structured review queue, audit log. Shipped in 10 days.
+- [Speed Read](https://fastlaunchmvp.com/work/speed-read): RSVP-powered speed reading SaaS with browser extension and adaptive training mode. Up to 1200 WPM. Shipped in 7 days.
 
 ## Positioning
 
-- 3-14 days to production vs. 3-6 month agency timelines.
-- Fixed-scope, fixed-price packages. No retainers. No hourly billing surprises.
+- 3-14 days to production vs. 3-6 month agency timelines (~12× faster).
+- Fixed-scope, fixed-price packages. No retainers, no hourly billing surprises.
 - Direct line to the developer building it. No account managers.
 - Modern stack only: Next.js, TypeScript, React, Supabase, PostgreSQL, Tailwind, Vercel.
 - 100% code ownership and IP transfer on delivery.
 - Post-launch support included. Money-back guarantee.
+- 50+ MVPs shipped. 9-day average delivery. 99.9% uptime. 100% client satisfaction.
+
+## FAQ
+
+- How long does it take to build an MVP? 3-14 days depending on complexity. Simple MVPs ship in 3-7 days; complex platforms with multiple integrations take up to 14 days.
+- What tech stack do you use? Next.js, React, TypeScript, Node.js, PostgreSQL, Supabase, and Stripe by default. We adapt to client needs.
+- Do I own the code after the project? 100%. All code, design assets, and infrastructure are handed over at project end.
+- What is included in post-launch support? Bug fixes, performance monitoring, and feature adjustments. Duration depends on plan (2 weeks to 3 months).
+- Can you work with an existing codebase? Yes — we audit, refactor, or extend existing codebases. Code review available before quoting.
+- How do payments work? 50% upfront, 50% on delivery. Bank transfer or card via Stripe.
 
 ## Contact
 
 - Website: https://fastlaunchmvp.com
-- Email: support@fastlaunch.com
-- WhatsApp: +44 7917 328155
+- Email: support@fastlaunchmvp.com
+- WhatsApp / Phone: +44 7917 328155
 - LinkedIn: https://www.linkedin.com/company/fastlaunchmvp
 - Instagram: https://www.instagram.com/fastlaunchmvp
+- TikTok: https://www.tiktok.com/@fastlaunchmvp
+
+Reply within 24 hours, Mon-Fri. Free 30-minute discovery call, no commitment.
 
 ## Optional
 
+- [llms-full.txt](https://fastlaunchmvp.com/llms-full.txt) — extended company overview, full case-study summaries, testimonials, technical detail.
 - [Privacy Policy](https://fastlaunchmvp.com/privacy-policy)
 - [Terms & Conditions](https://fastlaunchmvp.com/terms)
 - [Cookie Policy](https://fastlaunchmvp.com/cookies)

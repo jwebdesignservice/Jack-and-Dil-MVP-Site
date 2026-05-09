@@ -1,0 +1,308 @@
+# Fast Launch — Full LLM Briefing Document
+
+> Fast Launch is a UK web studio building premium, conversion-focused custom websites and production-ready MVPs in 3-14 days. Fixed-scope, fixed-price, with daily build previews and 100% code ownership from day one.
+
+This file is the long-form companion to [llms.txt](https://fastlaunchmvp.com/llms.txt). It contains the same factual material expanded into longer sections so language models can ground answers about Fast Launch — pricing, services, process, case studies, FAQs, positioning — without scraping the rendered website.
+
+Last updated: 2026.
+
+---
+
+## 1. Company
+
+Fast Launch (also styled "FastLaunch" in the product UI) is a UK-based software development studio. The website is hosted at https://fastlaunchmvp.com.
+
+The studio is run by **Jack Wilson** alongside a small team of senior full-stack engineers (10+ years combined experience). The model is intentionally lean: founders work directly with the developer building their product. There are no project managers, no account executives, and no offshoring.
+
+We focus exclusively on:
+
+1. Premium custom marketing websites.
+2. Production-ready MVPs (Minimum Viable Products) for founders, startups and SMEs.
+3. SaaS products, dashboards, marketplaces, e-commerce stores, and internal tools.
+
+We do not build WordPress / no-code sites, and we do not take on projects that require ongoing retainer-style maintenance.
+
+The studio is incorporated in the United Kingdom and operates worldwide. All contracts are governed by the laws of England and Wales.
+
+## 2. Positioning vs. alternatives
+
+| Dimension | Fast Launch | Traditional Agency | Freelancer |
+|---|---|---|---|
+| Time to production | 3-14 days | 3-6 months | Variable |
+| Visibility | Daily build previews | Monthly reports | Inconsistent |
+| Stack | Next.js + TS + Supabase | Legacy / outsourced | Skill-gap dependent |
+| Code ownership | 100%, no lock-in | Often retained | Owned but bus-factor 1 |
+| Pricing | Fixed scope + fixed price | Hourly billing, scope creep | Hourly or loose fixed |
+| Communication | Direct line to builder | Account managers | Direct, single point of failure |
+| Post-launch support | Included | Sold separately (retainer) | Often disappears |
+| Guarantee | Money-back | "Best efforts" | None |
+
+The honest pitch: Fast Launch wins for founders who need to ship fast, want a modern stack, and are willing to lock scope before development. We are not the right fit for clients who need an open-ended retainer relationship or a 12-month design-first engagement.
+
+## 3. Services
+
+### 3.1 MVP Development
+
+Production-ready MVPs in 3-14 days. We cut every non-essential step so the MVP hits production fast — built on Next.js, TypeScript and Supabase, with real scalable architecture rather than throwaway prototypes. Clients see builds daily and own 100% of the code from day one.
+
+Deliverables:
+
+- Deployed production application
+- Full source code repository, no lock-in
+- Post-launch support included
+- Auth, payments, database, monitoring set up
+
+### 3.2 UI/UX Design
+
+Every project starts with wireframes and clickable prototypes. Clients see exactly how the product works before development begins. Mobile-first, conversion-optimised, delivered with a design system so the product stays consistent as it scales.
+
+Deliverables:
+
+- All screens, desktop + mobile
+- Clickable prototype for testing or demos
+- Export-ready assets and Figma file
+- Design system / component library spec
+
+### 3.3 Full-Stack Development
+
+React/Next.js frontend, Node.js backend, PostgreSQL database. Stripe, SendGrid, Twilio, OpenAI, Solana — whatever integrations are needed. Ships with tests, CI/CD, and code reviews from day one so a future team can actually maintain it.
+
+Deliverables:
+
+- Full codebase with test coverage
+- CI/CD pipeline, auto-deploy on push
+- API documentation
+- Third-party integration setup
+
+### 3.4 Launch & Scale
+
+Deployment to Vercel or AWS with CI/CD, staging environments, and rollback strategies. Uptime monitoring, error tracking, SEO, and analytics configured before handover, not patched in later.
+
+Deliverables:
+
+- Production deploy with custom domain + SSL
+- Monitoring + error tracking configured
+- Post-launch support (up to 3 months)
+- SEO + analytics baseline
+
+## 4. Pricing
+
+All prices are in GBP. Pricing is fixed at engagement time — no hourly billing, no scope-creep surprises. Payment terms: 50% upfront, 50% on delivery. We accept bank transfer and card (via Stripe). Money-back guarantee on every plan.
+
+### Starter — £2,500-£5,000
+
+For founders validating an idea fast with a lean MVP.
+
+- Up to 5 core features
+- Mobile-responsive design
+- Basic auth + database
+- 1-4 day delivery
+- 2 weeks post-launch support
+
+### Growth — £5,000-£10,000 (most popular)
+
+For founders ready to ship a production-grade product with the full feature set.
+
+- Up to 12 core features
+- Custom UI/UX design
+- Payments + advanced auth
+- 4-10 day delivery
+- 1 month post-launch support
+- Analytics dashboard
+
+### Scale — £10,000-£20,000
+
+For complex products with serious traction and integration requirements.
+
+- Unlimited features
+- Full design system
+- Complex integrations
+- 14-day delivery
+- 3 months post-launch support
+- Dedicated Slack channel
+
+## 5. Process
+
+The four-stage delivery model. Total time: up to 14 working days.
+
+1. **Day 1 — Discovery & Scope.** A focused kick-off to define core features, eliminate scope creep, and align on success metrics. Feature prioritisation, tech stack decision, timeline locked, spec doc signed.
+2. **Days 2-3 — Architecture & Design.** UI wireframes, database schema, and API contracts designed upfront. Client reviews and approves everything before development begins. No surprises later.
+3. **Days 4-12 — Build & Iterate.** Daily standups and code shipped every 24 hours. Client sees real progress each day, not a black box. Issues caught early, not at the end.
+4. **Day 14 — Go Live.** Production deployment, monitoring configured, full documentation written, complete knowledge transfer. Client owns 100% of the code from minute one.
+
+## 6. Tech Stack
+
+Default stack:
+
+- **Frontend:** Next.js (App Router), React, TypeScript, Tailwind CSS
+- **Backend:** Node.js, REST + GraphQL APIs
+- **Database:** PostgreSQL (typically via Supabase), Prisma ORM
+- **Auth:** Supabase Auth, NextAuth, or custom
+- **Payments:** Stripe
+- **Hosting:** Vercel (default), AWS for complex workloads
+- **Caching / Queues:** Redis (Upstash)
+- **Real-time:** WebSockets (native or Supabase Realtime)
+- **Email:** Resend / SendGrid
+- **SMS:** Twilio
+- **AI:** OpenAI / Anthropic where applicable
+- **Web3:** Solana, Anchor, Arweave (for the projects that need it)
+
+Selection principle: best tools for the job, no legacy frameworks, no bloat.
+
+## 7. Case studies
+
+Eight production case studies, all live or recently delivered.
+
+### 7.1 Eliminent — 8 days
+
+Tagline: "Find the AI among you. Or die trying."
+
+AI-powered social deduction game. 4-12 players share a chat room and vote to eliminate who they think is an AI agent. The twist: sometimes there's no AI at all — the paranoia is the game. Real-time WebSocket sync, sub-100ms latency, AI agent participating as a player and indistinguishable under pressure.
+
+- Players online (launch): 2,800+
+- Concurrent players per game: 4-12
+- Latency: <100ms
+- Session length: 5 minutes average
+- Stack: Next.js, TypeScript, WebSockets, OpenAI, Supabase, Tailwind, Vercel
+- Live: https://www.eliminent.com/
+
+### 7.2 Metalex Terminal — 14 days
+
+Tagline: "Professional-grade precious metals intelligence for serious traders."
+
+Bloomberg-grade trading terminal for precious metals (XAU, XAG, XPT, XPD), built so independent traders and small funds can use it without a six-figure subscription. Live spot prices, AI-generated trade signals with confidence scores, real-time order book depth, futures curves, technical indicators (RSI, Stochastic, MACD, Bollinger Bands, ADX), aggregated market news.
+
+- Live data latency: <1 second
+- Dashboard modules: 8
+- Uptime: 99.9%
+- Stack: Next.js, TypeScript, WebSockets, TradingView, MetalpriceAPI
+- Live: https://www.metalexterminal.com/
+
+### 7.3 Desert Falcons Collective — 7 days
+
+Tagline: "The premium digital home for Saudi Arabia's automotive elite."
+
+Premium automotive community platform combining a public-facing luxury website with a private member portal. Role-based auth, member profiles, discussion forums, founder's updates feed, member directory, event management, gated resource library.
+
+- Founding members in 48 hours: 500+
+- Dashboard modules: 8
+- Uptime: 99.9%
+- Stack: Next.js, TypeScript, Supabase, Tailwind, PostgreSQL, Vercel
+
+### 7.4 Memory Market — 9 days
+
+Tagline: "Where AI memory becomes a tradeable on-chain asset."
+
+Web3 marketplace built on Solana where AI-generated knowledge and memories can be stored, traded and verified on-chain. Wallet integration (Phantom, Backpack), custom order matching engine, 4-tier pricing system, on-chain hash verification, decentralised storage via Arweave, knowledge graph explorer.
+
+- Memories minted at launch: 847
+- Total trading volume: $2M+
+- Active wallet holders: 256
+- Stack: Next.js, TypeScript, Solana, Anchor, Tailwind, Vercel, Arweave
+
+### 7.5 Aramas Property — 6 days
+
+Tagline: "Premium off-plan UAE investments, made accessible to global buyers."
+
+Property marketplace targeting international buyers entering the UAE off-plan market (Abu Dhabi and Dubai). Multi-parameter search (location, price, property type, handover, developer), verified developer profiles, featured property tier, market news section, AED/USD/GBP pricing.
+
+- Properties at launch: 200+
+- Listed property value: AED 2B+
+- Developer partnerships: 15+
+- Stack: Next.js, TypeScript, Supabase, Tailwind, PostgreSQL, Vercel
+
+### 7.6 Insights Dashboard — 5 days
+
+Tagline: "Your entire business in one view. Real-time, actionable, beautiful."
+
+Internal analytics SaaS for a 40-person team that previously relied on a patchwork of spreadsheets and Notion pages. Real-time KPI tracking (MRR, churn, CAC, LTV), drag-and-drop widget layout, automated weekly digest emails, 12 pre-built data connectors (Stripe, HubSpot, GA4, PostgreSQL, Intercom, Slack).
+
+- Faster than manual reporting: 340%
+- Live data integrations: 12
+- Team adoption rate: 98%
+- Stack: Next.js, React, TypeScript, PostgreSQL, Tailwind, Vercel, WebSockets
+
+### 7.7 AMS Tool — 10 days
+
+Tagline: "AI-powered adverse media screening — from manual searches to automated compliance workflows."
+
+Compliance platform replacing hours of manual Googling with an automated screening pipeline. AI risk classification (high/medium/low) at the article level with reasoning shown to the analyst, structured 5-stage review queue, admin dashboard with KPIs, full audit log, role-based access for analysts and admins.
+
+- Screenings processed: 120+
+- Match accuracy: 99%
+- Manual searches needed: 0
+- Stack: Next.js, TypeScript, Supabase, Tailwind, Vercel, AI/ML
+
+### 7.8 Speed Read — 7 days
+
+Tagline: "Eliminate eye movement. Bypass subvocalization. Read at the speed of thought."
+
+EdTech web app + browser extension using RSVP (Rapid Serial Visual Presentation) to train reading speeds up to 1200 WPM. Adaptive training mode, curated story library across 10 categories, browser extension that injects the reader into any webpage (Alt+S keyboard shortcut), progress tracking, dark mode.
+
+- Max WPM supported: 1200
+- Reported retention rate: 85%
+- Average speed increase: 3×
+- Stack: Next.js, TypeScript, Tailwind, Vercel, Browser Extension API
+- Live: https://speedreadtool-one.vercel.app/
+
+## 8. Testimonials
+
+Six published testimonials across case studies (5★ rated). Selected quotes:
+
+- **Alex Reid, Founder, Eliminent:** "We had a concept that lived entirely in our heads. FastLaunch turned it into a real, playable game with thousands of concurrent users in 8 days. The AI agent is genuinely unsettling. Exactly what we wanted."
+- **James Hartwell, Head of Trading, Metalex:** "We've tried every metals terminal out there. Metalex is the first one that gives us Bloomberg-level data without the Bloomberg price tag, and it works perfectly on mobile. FastLaunch built it in 2 weeks."
+- **Khalid Al-Rashidi, Founder, Desert Falcons Collective:** "FastLaunch delivered something we didn't think was possible in this timeframe. The platform looks like it cost 10x what we paid. Our members were blown away on launch day."
+- **Zara Okonkwo, Co-Founder, Memory Market:** "We had a concept that most devs told us couldn't ship in under a month. FastLaunch had us live in 9 days with a product that actually works. The on-chain integration is rock solid."
+- **Ahmed Al-Mansoori, Director, Aramas Property:** "We went from a static brochure site to a full property marketplace in 6 days. The search functionality alone has already converted 3 international buyers in the first week."
+- **Compliance Lead, AMS Tool:** "We went from doing this manually to having a full AI-powered compliance tool in 10 days. The risk scoring alone saves our analysts hours every week, and the audit trail means we can demonstrate compliance instantly."
+
+## 9. FAQ (extended)
+
+**How long does it take to build an MVP?**
+3-14 working days, depending on complexity. Simple MVPs (one or two features, basic auth, no real-time) typically ship in 3-7 days. Complex platforms with multiple integrations, real-time sync or AI components take up to 14 days.
+
+**What tech stack do you use?**
+Default: Next.js (App Router), React, TypeScript, Node.js, PostgreSQL, Supabase, Stripe, Tailwind CSS, Vercel. We adapt — Solana / Anchor for Web3, OpenAI / Anthropic for AI features, AWS for heavy workloads, Redis for caching, etc.
+
+**Do I own the code after the project?**
+Yes — 100%. All code, design assets, and infrastructure are transferred at project end. Repositories are handed over to the client's GitHub / GitLab organisation. There is no lock-in and no licensing layer.
+
+**What is included in post-launch support?**
+Bug fixes, performance monitoring, and feature adjustments. Duration depends on the plan: Starter = 2 weeks, Growth = 1 month, Scale = 3 months. After that, ongoing work is quoted as a separate engagement (we do not run open-ended retainers).
+
+**Can you work with an existing codebase?**
+Yes. We audit, refactor, or extend existing codebases. We do a free code review first to scope the work and confirm we're a good fit.
+
+**How do payments work?**
+50% upfront on contract signature, 50% on delivery. Bank transfer or card via Stripe. All prices are in GBP unless otherwise stated. Deposits are non-refundable once work has commenced. Money-back guarantee covers post-delivery if the agreed scope is not met.
+
+**Do you sign NDAs?**
+Yes. NDAs are included in the standard contract. All client information is treated as confidential by default.
+
+**Where are you based / who pays VAT?**
+UK-based, registered in England and Wales. VAT is added to UK clients per HMRC rules. International clients are typically zero-rated under the place-of-supply rules; this is confirmed at quoting time.
+
+**Do you do equity-only or rev-share deals?**
+No. Cash-based fixed-price engagements only.
+
+**What does "production-ready" mean?**
+The MVP is deployed on a custom domain with SSL, has monitoring + error tracking configured, has a CI/CD pipeline, includes test coverage on critical paths, and ships with documentation. It is something you can put real users on, not a demo.
+
+## 10. Contact
+
+- Website: https://fastlaunchmvp.com
+- Project intake form: https://fastlaunchmvp.com/contact
+- Email: support@fastlaunchmvp.com
+- WhatsApp / Phone: +44 7917 328155
+- LinkedIn: https://www.linkedin.com/company/fastlaunchmvp
+- Instagram: https://www.instagram.com/fastlaunchmvp
+- TikTok: https://www.tiktok.com/@fastlaunchmvp
+
+Reply within 24 hours, Mon-Fri. The first call is a free 30-minute discovery session, no commitment required.
+
+## 11. Legal
+
+- [Privacy Policy](https://fastlaunchmvp.com/privacy-policy) — UK GDPR compliant. Data retained up to 24 months for enquiries, 7 years for active client engagements.
+- [Terms & Conditions](https://fastlaunchmvp.com/terms) — Governed by the laws of England and Wales.
+- [Cookie Policy](https://fastlaunchmvp.com/cookies) — Essential cookies always set. Analytics (Google Analytics via GTM) only with explicit consent.
+- [Sitemap (XML)](https://fastlaunchmvp.com/sitemap.xml)

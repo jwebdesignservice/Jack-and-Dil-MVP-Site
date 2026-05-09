@@ -5,6 +5,7 @@ const TITLE = 'Services — Custom websites, MVPs, e-commerce & more'
 const DESCRIPTION =
   'Fast Launch builds premium custom websites, production-ready MVPs, e-commerce stores, dashboards and SaaS products — all delivered in 3–14 working days. No agencies, no retainers.'
 const URL = `${SITE_URL}/services`
+const OG_IMAGE = `${SITE_URL}/og-image.png`
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -16,9 +17,10 @@ export const metadata: Metadata = {
     siteName: 'Fast Launch',
     title: TITLE,
     description: DESCRIPTION,
+    locale: 'en_GB',
     images: [
       {
-        url: `${SITE_URL}/Images/Hero%20illustration.webp`,
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: 'Fast Launch services — custom websites, MVPs, e-commerce, dashboards',
@@ -29,7 +31,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: TITLE,
     description: DESCRIPTION,
-    images: [`${SITE_URL}/Images/Hero%20illustration.webp`],
+    images: [OG_IMAGE],
+    creator: '@fastlaunchmvp',
   },
   keywords: [
     'web design services',

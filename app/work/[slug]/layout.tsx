@@ -1,74 +1,13 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { CASE_STUDIES, getCaseStudy } from '@/lib/case-studies'
 
 const SITE_URL = 'https://fastlaunchmvp.com'
 
-// Project metadata catalogue — keep slugs in sync with app/work/[slug]/page.tsx
-// and app/sitemap.ts.
-const PROJECTS: Record<
-  string,
-  { title: string; tagline: string; image: string; tags: string[]; delivery: string }
-> = {
-  'eliminent': {
-    title: 'Eliminent',
-    tagline: 'Find the AI among you. Or die trying.',
-    image: '/Images/work/eliminent.webp',
-    tags: ['Gaming', 'AI', 'Multiplayer', 'Real-Time'],
-    delivery: '8 days',
-  },
-  'metalex-terminal': {
-    title: 'Metalex Terminal',
-    tagline: 'Professional-grade precious metals intelligence for serious traders.',
-    image: '/Images/work/metalex.webp',
-    tags: ['Fintech', 'Real-Time Data', 'Trading'],
-    delivery: '12 days',
-  },
-  'desert-falcons': {
-    title: 'Desert Falcons Collective',
-    tagline: "The premium digital home for Saudi Arabia's automotive elite.",
-    image: '/Images/work/desertfalcons.webp',
-    tags: ['Membership', 'Luxury', 'Community'],
-    delivery: '6 days',
-  },
-  'memory-market': {
-    title: 'Memory Market',
-    tagline: 'Where AI memory becomes a tradeable on-chain asset.',
-    image: '/Images/work/memorymarket.webp',
-    tags: ['Web3', 'Marketplace', 'AI'],
-    delivery: '10 days',
-  },
-  'aramas-property': {
-    title: 'Aramas Property',
-    tagline: 'Premium off-plan UAE investments, made accessible to global buyers.',
-    image: '/Images/work/aramas.webp',
-    tags: ['Real Estate', 'Marketplace', 'UAE'],
-    delivery: '6 days',
-  },
-  'insights-dashboard': {
-    title: 'Insights Dashboard',
-    tagline: 'Your entire business in one view — real-time, actionable, beautiful.',
-    image: '/Images/work/insights.webp',
-    tags: ['Dashboard', 'SaaS', 'Analytics'],
-    delivery: '9 days',
-  },
-  'ams-tool': {
-    title: 'AMS Tool',
-    tagline: 'AI-powered adverse media screening — from manual searches to automated compliance workflows.',
-    image: '/Images/work/ams-desktop.webp',
-    tags: ['Compliance', 'AI', 'B2B SaaS'],
-    delivery: '11 days',
-  },
-  'speed-read': {
-    title: 'Speed Read',
-    tagline: 'Eliminate eye movement. Bypass subvocalization. Read at the speed of thought.',
-    image: '/Images/work/speedread-desktop.webp',
-    tags: ['Productivity', 'Reading', 'Web App'],
-    delivery: '5 days',
-  },
-}
-
 export async function generateStaticParams() {
-  return Object.keys(PROJECTS).map((slug) => ({ slug }))
+  // Use the shared slug catalogue so sitemap, generateStaticParams and
+  // metadata always agree on which case studies exist.
+  return CASE_STUDIES.map(({ slug }) => ({ slug }))
 }
 
 export async function generateMetadata({
@@ -77,7 +16,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const project = PROJECTS[slug]
+  const project = getCaseStudy(slug)
   if (!project) return { title: 'Case Study Not Found' }
 
   const url = `${SITE_URL}/work/${slug}`
@@ -102,6 +41,7 @@ export async function generateMetadata({
       title,
       description,
       images: [image],
+      creator: '@fastlaunchmvp',
     },
     keywords: [
       project.title,
@@ -123,13 +63,15 @@ export default async function CaseStudyLayout({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const project = PROJECTS[slug]
+  const project = getCaseStudy(slug)
   if (!project) notFound()
 
   const url = `${SITE_URL}/work/${slug}`
   const image = `${SITE_URL}${project.image}`
 
-  // CreativeWork JSON-LD for the case study itself
+  // CreativeWork JSON-LD for the case study itself.
+  // We keep @type as CreativeWork (not Article) because these are portfolio
+  // pieces rather than journalism — Article/NewsArticle would be misleading.
   const caseStudyJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
@@ -146,6 +88,8 @@ export default async function CaseStudyLayout({
     isPartOf: { '@id': `${SITE_URL}#website` },
     inLanguage: 'en-GB',
     timeRequired: project.delivery,
+    datePublished: project.year,
+    about: project.tags.map((tag) => ({ '@type': 'Thing', name: tag })),
   }
 
   // BreadcrumbList JSON-LD: Home > Work > [Project]
