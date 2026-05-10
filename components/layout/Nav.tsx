@@ -175,7 +175,7 @@ export default function Nav() {
   return (
     <nav
       aria-label="Primary navigation"
-      className={`fixed top-0 left-0 right-0 transition-all duration-300 ${scrolled ? 'bg-black/90 backdrop-blur-xl' : 'bg-transparent'}`}
+      className={`fixed top-0 left-0 right-0 transition-all duration-300 ${scrolled || mobileOpen ? 'bg-black/95 backdrop-blur-xl' : 'bg-transparent'}`}
       style={{ zIndex: 99999, borderBottom: '1px solid rgba(249,115,22,0.2)' }}
       ref={menuRef}
     >
@@ -378,7 +378,7 @@ export default function Nav() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-black/60 backdrop-blur-xl border-t border-white/10 overflow-hidden max-h-[80vh] overflow-y-auto">
+            className="lg:hidden bg-black backdrop-blur-xl border-t border-[rgba(249,115,22,0.1)] overflow-hidden max-h-[80vh] overflow-y-auto">
             <div className="px-6 py-4 space-y-1">
 
               {/* Home */}
