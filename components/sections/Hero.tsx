@@ -30,12 +30,12 @@ export default function Hero() {
             </motion.div>
 
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold leading-[1.1] mb-6">
-              <span className="block whitespace-nowrap text-white">Production Ready MVP&apos;s.</span>
-              <span className="block whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold leading-[1.1] mb-6 max-w-[16ch] lg:max-w-none mx-auto lg:mx-0">
+              <span className="block text-white">Production Ready MVP&apos;s.</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                 Built, Shipped and Live
               </span>
-              <span className="block whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                 in 3–14 Days.
               </span>
             </motion.h1>
