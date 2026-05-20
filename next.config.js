@@ -31,6 +31,17 @@ const nextConfig = {
 
   devIndicators: false,
 
+  // Clean URLs for client agreements stored as static HTML in /public/agreements/[slug]/index.html
+  // Lets us send clients e.g. fastlaunchmvp.com/agreements/pecola-naturals (no /index.html, no .html)
+  async rewrites() {
+    return [
+      {
+        source: '/agreements/:slug',
+        destination: '/agreements/:slug/index.html',
+      },
+    ]
+  },
+
   // Long-cache static media + Next build artefacts.
   // /_next/static/* is already content-hashed so 1y immutable is safe.
   // /Images/* and /hero-bg.mp4 are stable assets — long cache + must-revalidate
