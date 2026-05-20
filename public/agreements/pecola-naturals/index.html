@@ -274,9 +274,32 @@
       ul, p { orphans: 3; widows: 3; }
     }
 
-  </style></head>
-<body>
-  <div class="page">
+    .signature-text {
+      font-family: 'Caveat', 'Brush Script MT', cursive;
+      font-size: 30px;
+      font-weight: 700;
+      color: #111111;
+      line-height: 1;
+      letter-spacing: 0.5px;
+    }
+    /* === Dark site-matching background (kept off-page during print) === */
+    .site-bg-dark {
+      background-color: #000000;
+      background-image:
+        radial-gradient(ellipse 90% 60% at 50% 0%, rgba(249, 115, 22, 0.08), transparent 60%);
+      min-height: 100vh;
+    }
+    /* Strengthen card shadow on dark surface */
+    .page-elevated {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 2px 12px rgba(249, 115, 22, 0.08) !important;
+    }
+
+  </style>  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body class="site-bg-dark">
+  <div class="page page-elevated">
 
     <!-- Header -->
     <div class="header">
@@ -447,8 +470,8 @@
         <div class="sig-block">
           <p class="role">Developer</p>
           <p class="name">Jack Wilson</p>
-          <p class="field">Signature: <span class="sig-line">&nbsp;</span></p>
-          <p class="field">Date: <span class="sig-line">&nbsp;</span></p>
+          <p class="field">Signature: <span class="sig-line"><span class="signature-text">Jack Wilson</span></span></p>
+          <p class="field">Date: <span class="sig-line">20 / 05 / 2026</span></p>
         </div>
         <div class="sig-block">
           <p class="role">Client</p>
