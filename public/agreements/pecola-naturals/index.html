@@ -1,0 +1,636 @@
+<!--
+============================================================
+  FASTLAUNCHMVP WEB DEVELOPMENT AGREEMENT TEMPLATE
+  ============================================================
+  To customise this agreement for a new client:
+    1. Save as a copy: agreement-[client-name].html
+    2. Open Find & Replace (Ctrl+H)
+    3. Replace every [[PLACEHOLDER]] with the relevant copy
+    4. Save, open in Chrome > Ctrl+P > Save as PDF
+    5. Upload PDF to Dropbox Sign for both parties to sign
+
+  Governing law: England & Wales (UK)
+  Brand colours: Orange #FF6B1A | Black #000000
+  See BRAND-GUIDE.md for full styling reference
+============================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Development & Online Store Agreement for Pecola Naturals</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #111111;
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .header {
+      background: #000000;
+      padding: 32px 48px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .header img { display: block; }
+    .header .wordmark {
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .header .wordmark .accent { color: #FF6B1A; }
+    .content { padding: 48px; }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #FF6B1A;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+    }
+    h1 {
+      margin: 0 0 32px 0;
+      font-size: 28px;
+      line-height: 1.3;
+      color: #000000;
+      font-weight: 700;
+    }
+    .meta {
+      background: #fafafa;
+      border-left: 3px solid #FF6B1A;
+      padding: 18px 22px;
+      margin: 0 0 36px 0;
+      font-size: 14px;
+      color: #333333;
+    }
+    .meta p { margin: 4px 0; }
+    .meta .label {
+      font-weight: 600;
+      color: #000000;
+      display: inline-block;
+      width: 110px;
+    }
+    h2 {
+      margin: 32px 0 12px 0;
+      font-size: 15px;
+      color: #000000;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      border-bottom: 1px solid #eeeeee;
+      padding-bottom: 8px;
+    }
+    h2 .num { color: #FF6B1A; }
+    h3 {
+      margin: 22px 0 8px 0;
+      font-size: 14px;
+      color: #000000;
+      font-weight: 700;
+    }
+    p { margin: 0 0 12px 0; font-size: 14px; color: #333333; }
+    ul { margin: 0 0 14px 0; padding-left: 20px; font-size: 14px; color: #333333; }
+    li { margin-bottom: 6px; }
+    .note {
+      font-style: italic;
+      color: #666666;
+      font-size: 13px;
+    }
+    .fees-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 20px 0;
+    }
+    .fees-table td {
+      padding: 10px 14px;
+      border-top: 1px solid #eeeeee;
+      font-size: 14px;
+    }
+    .fees-table tr:last-child td {
+      border-bottom: 1px solid #eeeeee;
+      font-weight: 700;
+      background: #fafafa;
+    }
+    .fees-table td:last-child { text-align: right; }
+    .signatures {
+      display: flex;
+      gap: 32px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .sig-block {
+      flex: 1;
+      min-width: 260px;
+      border-top: 2px solid #000000;
+      padding-top: 12px;
+    }
+    .sig-block .role {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #FF6B1A;
+      font-weight: 600;
+      margin: 0 0 4px 0;
+    }
+    .sig-block .name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #000000;
+      margin: 0 0 4px 0;
+    }
+    .sig-block .field {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #666666;
+    }
+    .sig-line {
+      display: inline-block;
+      min-width: 200px;
+      border-bottom: 1px solid #cccccc;
+      padding: 6px 0;
+      color: #111111;
+    }
+    .footer-band {
+      background: #fafafa;
+      border-top: 1px solid #eeeeee;
+      padding: 18px 48px;
+      text-align: center;
+      font-size: 12px;
+      color: #999999;
+      letter-spacing: 0.4px;
+    }
+    
+    @media (max-width: 720px) {
+      .content { padding: 28px; }
+      .header { padding: 24px 28px; }
+      .footer-band { padding: 16px 28px; }
+      h1 { font-size: 22px; }
+    }
+
+    /* === Signature feature === */
+    .signature-canvas {
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      background: #ffffff;
+      cursor: crosshair;
+      touch-action: none;
+      display: block;
+      width: 100%;
+      max-width: 280px;
+      height: 80px;
+      margin: 6px 0;
+    }
+    .sig-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 4px 0 14px 0;
+    }
+    .clear-btn {
+      background: #ffffff;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      padding: 5px 12px;
+      font-size: 12px;
+      color: #666666;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .clear-btn:hover { background: #fafafa; border-color: #999; color: #111; }
+    .date-input {
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      padding: 6px 10px;
+      font-size: 14px;
+      font-family: inherit;
+      color: #111;
+      background: #ffffff;
+    }
+    .download-section {
+      text-align: center;
+      padding: 28px 0 8px 0;
+      margin-top: 18px;
+    }
+    .download-btn {
+      background: #FF6B1A;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      padding: 14px 32px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      font-family: inherit;
+    }
+    .download-btn:hover { background: #e55c10; }
+    .download-btn:disabled { background: #999; cursor: not-allowed; }
+    .download-hint {
+      margin: 10px 0 0 0;
+      font-size: 12px;
+      color: #999;
+    }
+
+
+    /* === Print / PDF rules (used by window.print) === */
+    @page {
+      size: A4 portrait;
+      margin: 12mm;
+    }
+    @media print {
+      html, body {
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .page {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+      .no-print { display: none !important; }
+      h2, h3 { page-break-after: avoid; break-after: avoid; }
+      .sig-block, .download-section, .fees-table, .meta, .signatures {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+      ul, p { orphans: 3; widows: 3; }
+    }
+
+  </style></head>
+<body>
+  <div class="page">
+
+    <!-- Header -->
+    <div class="header">
+      <img src="data:image/png;base64,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" alt="FastLaunchMVP" width="36" height="36" />
+      <span class="wordmark">FastLaunch<span class="accent">MVP</span></span>
+    </div>
+
+    <div class="content">
+
+      <p class="eyebrow">Web Development Services Agreement</p>
+      <h1>Web Development & Online Store Agreement for Pecola Naturals</h1>
+
+      <!-- Meta block -->
+      <div class="meta">
+        <p><span class="label">Prepared for:</span> Kendra, Pecola Naturals</p>
+        <p><span class="label">Created by:</span> Jack Wilson, FastLaunchMVP</p>
+        <p><span class="label">Date:</span> 20 May 2026</p>
+      </div>
+
+      <!-- 01. Project Overview -->
+      <h2><span class="num">01.</span> Project Overview</h2>
+      <p>The project, titled <em>"Pecola Naturals Online Store"</em>, involves creating a fully custom Shopify storefront for Pecola Naturals — a black-and-white branded skincare business specialising in natural, non-toxic, vegan body butters. The primary goal is to deliver a premium, minimal online shopping experience that reflects the Pecola Naturals brand identity and gives the Client full control over orders, customers and product management from day one.</p>
+
+      <!-- 02. Scope of Work -->
+      <h2><span class="num">02.</span> Scope of Work</h2>
+      <!-- EDIT: Replace bullets below with scope items specific to this project -->
+      <ul>
+        <li>Full website design and front-end build, including complete Shopify store setup</li>
+        <li>Custom branding — black-and-white identity, refined typography, considered product photography placement</li>
+        <li>Product setup — initial catalogue of up to 7 products uploaded with content supplied by the Client</li>
+        <li>Payment integration — Shopify payment gateway and shipping configuration</li>
+        <li>Shopify admin configuration so the Client can seamlessly track orders, customer data and sales in one place</li>
+        <li>Mobile optimisation — fully responsive across mobile, tablet and desktop</li>
+        <li>Guidance — on managing products, orders, customers and the Shopify admin after handover</li>
+      </ul>
+      <p class="note">Anything outside this scope requires written agreement.</p>
+
+      <!-- 03. Deliverables -->
+      <h2><span class="num">03.</span> Deliverables</h2>
+      <p>Upon completion, the Client will receive:</p>
+      <!-- EDIT: Replace bullets below with deliverables specific to this project -->
+      <ul>
+        <li>A fully functional custom-built Shopify storefront with integrated online shop</li>
+        <li>Custom branded design across home, shop, product, about, contact, and order tracking pages</li>
+        <li>Initial product catalogue setup (up to 7 products from supplied content)</li>
+        <li>Payment and shipping systems configured for the Shopify store</li>
+        <li>Shopify admin configured for clear order tracking, customer data visibility and product management</li>
+        <li>Guidance and ongoing help on how to manage orders and product information</li>
+      </ul>
+
+      <!-- Optional: Website Functionality (custom features clarification) -->
+      <h3>Website Functionality &amp; Custom Features</h3>
+      <p>The Developer will implement features and functionality designed to meet the needs outlined in the Scope of Work. The exact structure and capabilities of any custom feature will be based on the data and requirements provided by the Client and the technical capabilities of the chosen platform. The Client acknowledges that:</p>
+      <ul>
+        <li>Accurate output depends on correct data, tagging, and organisation provided by the Client</li>
+        <li>Ongoing management of content, data, and configuration is the Client's responsibility after handover</li>
+        <li>Advanced or custom features beyond the agreed scope may require additional development and cost</li>
+      </ul>
+
+      <!-- 04. Hosting, Ownership & Website Transfer -->
+      <h2><span class="num">04.</span> Hosting, Ownership &amp; Website Transfer</h2>
+
+      <h3>Development &amp; Hosting Environment</h3>
+      <p>All work produced by the Developer, including but not limited to website design, code, configurations, and content, remains the sole property of the Developer until full and final payment has been received. Until such payment is made, the Client is granted a limited, non-transferable, and revocable licence to access the website for review purposes only. The Client shall have no ownership rights prior to full payment.</p>
+
+      <h3>Transfer of Ownership</h3>
+      <p>Upon receipt of full and final payment, the Developer will transfer the website or application to an account or environment owned and controlled by the Client. Ownership of the website and its associated assets will pass to the Client only upon successful completion of this transfer.</p>
+
+      <h3>Client Account &amp; Ongoing Costs</h3>
+      <p>The Client is responsible for:</p>
+      <ul>
+        <li>Creating or providing the appropriate hosting or platform account in their own name for transfer</li>
+        <li>Selecting and paying for any required platform subscription, hosting plan, or service fees</li>
+        <li>Paying for any third-party apps, themes, plugins, services, or APIs required for the live website</li>
+        <li>Managing domain registration and associated costs unless otherwise agreed in writing</li>
+      </ul>
+      <p>The Client acknowledges that certain features or applications used during development may require separate purchase or subscription under their own account after transfer.</p>
+
+      <h3>Handover Process</h3>
+      <p>The Developer will initiate the transfer of the website within a reasonable timeframe after final payment is received. The Client agrees to accept the transfer promptly and within fourteen (14) days of notification. Failure to do so does not delay the transfer of responsibility.</p>
+
+      <h3>Post-Transfer Responsibility</h3>
+      <p>Once the website has been transferred, the Client assumes full responsibility for:</p>
+      <ul>
+        <li>Hosting, platform subscription, and billing</li>
+        <li>Website management, updates, and maintenance</li>
+        <li>Security, backups, and compliance</li>
+      </ul>
+      <p>The Developer shall have no ongoing responsibility or liability for the website after transfer, unless a separate maintenance or support agreement has been agreed in writing.</p>
+
+      <h3>Access &amp; Permissions</h3>
+      <p>During development, the Developer may provide the Client with preview or limited access for feedback purposes. Administrative or ownership-level access will not be granted until full payment has been received and the transfer process is complete.</p>
+
+      <h3>Backup &amp; Portfolio Rights</h3>
+      <p>The Developer reserves the right to retain a copy of the website for backup, record-keeping, and portfolio purposes, unless otherwise agreed in writing.</p>
+
+      <!-- 05. Timelines -->
+      <h2><span class="num">05.</span> Timelines</h2>
+      <p><strong>Start Date:</strong> 27 May 2026 (upon receipt of deposit)</p>
+      <ul>
+        <li>Estimated Completion: 10 June 2026 (approximately 1-2 weeks from start date)</li>
+        <li>Milestones will be agreed upon during the project</li>
+        <li>Note: Delays caused by the Client may affect the timeline</li>
+      </ul>
+
+      <!-- 06. Fees & Payment -->
+      <h2><span class="num">06.</span> Fees &amp; Payment</h2>
+      <table class="fees-table">
+        <tr>
+          <td>Deposit (50%)</td>
+          <td>$1,250</td>
+        </tr>
+        <tr>
+          <td>Balance on completion (50%)</td>
+          <td>$1,250</td>
+        </tr>
+        <tr>
+          <td>TOTAL</td>
+          <td>$2,500</td>
+        </tr>
+      </table>
+      <ul>
+        <li>Payment schedule: 50% upfront, 50% on completion</li>
+        <li>Payment terms: Invoices are due within 7 days</li>
+        <li>Invoices unpaid after 7 days of the due date will accrue statutory interest at 8% above the Bank of England base rate per annum under the Late Payment of Commercial Debts (Interest) Act 1998, plus fixed compensation of £40-£100 per invoice.</li>
+      </ul>
+
+      <!-- 07. Revision Policy -->
+      <h2><span class="num">07.</span> Revision Policy</h2>
+      <p><strong>Revisions included:</strong> 15 rounds</p>
+      <ul>
+        <li>Additional Revisions: $50 per revision</li>
+        <li>A revision constitutes changes to the design or functionality as initially agreed</li>
+      </ul>
+
+      <!-- 08. Intellectual Property -->
+      <h2><span class="num">08.</span> Intellectual Property</h2>
+      <p>Intellectual Property remains with the Contractor until full payment is received, at which point it transfers to the Client. The Contractor retains portfolio rights unless the Client objects in writing. Third-party assets remain under their respective licences.</p>
+      <p><strong>(IR35 &amp; UK STATUS):</strong> Both parties acknowledge this is a genuinely self-employed engagement. The Contractor is solely responsible for their own tax and National Insurance. This agreement does not create an employment relationship.</p>
+
+      <!-- 09. Confidentiality -->
+      <h2><span class="num">09.</span> Confidentiality</h2>
+      <p>Both parties agree to keep confidential information private during and after the Agreement, except where:</p>
+      <ul>
+        <li>(a) the information is publicly available;</li>
+        <li>(b) the information is independently developed;</li>
+        <li>(c) disclosure is legally compelled.</li>
+      </ul>
+
+      <!-- 10. Termination -->
+      <h2><span class="num">10.</span> Termination</h2>
+      <p><strong>Notice period:</strong> 7 days</p>
+      <ul>
+        <li>Deposit is non-refundable on client termination</li>
+        <li>Work to date will be invoiced on termination</li>
+        <li>All outstanding invoices become immediately due on termination.</li>
+      </ul>
+
+      <!-- 11. Governing Law -->
+      <h2><span class="num">11.</span> Governing Law &amp; Jurisdiction</h2>
+      <p>This Agreement shall be governed by the laws of England and Wales. Both parties submit to the exclusive jurisdiction of the courts of England and Wales.</p>
+
+      <!-- Signatures -->
+      <h2>Acceptance &amp; Signatures</h2>
+      <p>By signing below, both parties confirm they have read, understood, and agree to all terms set out in this Agreement.</p>
+
+      <div class="signatures">
+        <div class="sig-block">
+          <p class="role">Developer</p>
+          <p class="name">Jack Wilson</p>
+          <p class="field">Signature: <span class="sig-line">&nbsp;</span></p>
+          <p class="field">Date: <span class="sig-line">&nbsp;</span></p>
+        </div>
+        <div class="sig-block">
+          <p class="role">Client</p>
+          <p class="name">Kendra</p>
+          <p class="field">Signature:</p>
+          <canvas id="client-signature" class="signature-canvas"></canvas>
+          <div class="sig-controls no-print">
+            <button type="button" onclick="clearSignature()" class="clear-btn">Clear signature</button>
+          </div>
+          <p class="field">Date: <input type="date" id="client-date" class="date-input"></p>
+        </div>
+      </div>
+
+      <div class="download-section no-print">
+        <button type="button" onclick="downloadSignedPDF()" id="download-btn" class="download-btn">Download Signed Agreement (PDF)</button>
+        <p class="download-hint">Sign above with mouse or finger, then click to download</p>
+      </div>
+
+    </div>
+
+    <div class="footer-band">
+      FastLaunchMVP &nbsp;·&nbsp; Web Development Services Agreement &nbsp;·&nbsp; Pecola Naturals
+    </div>
+
+  </div>
+
+  <script>
+    // Auto-fill today's date
+    (function() {
+      var d = document.getElementById('client-date');
+      if (d) d.value = new Date().toISOString().split('T')[0];
+    })();
+
+    // Signature pad — mouse + touch
+    (function() {
+      var canvas = document.getElementById('client-signature');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      function size() {
+        var r = window.devicePixelRatio || 1;
+        var rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width * r;
+        canvas.height = rect.height * r;
+        ctx.scale(r, r);
+        ctx.strokeStyle = '#111';
+        ctx.lineWidth = 2;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+      }
+      size();
+      var drawing = false;
+      function pos(e) {
+        var rect = canvas.getBoundingClientRect();
+        var t = e.touches ? e.touches[0] : e;
+        return { x: t.clientX - rect.left, y: t.clientY - rect.top };
+      }
+      function start(e) {
+        e.preventDefault();
+        drawing = true;
+        var p = pos(e);
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+      }
+      function move(e) {
+        if (!drawing) return;
+        e.preventDefault();
+        var p = pos(e);
+        ctx.lineTo(p.x, p.y);
+        ctx.stroke();
+      }
+      function end(e) { if (e) e.preventDefault(); drawing = false; }
+      canvas.addEventListener('mousedown', start);
+      canvas.addEventListener('mousemove', move);
+      canvas.addEventListener('mouseup', end);
+      canvas.addEventListener('mouseleave', end);
+      canvas.addEventListener('touchstart', start, { passive: false });
+      canvas.addEventListener('touchmove', move, { passive: false });
+      canvas.addEventListener('touchend', end, { passive: false });
+    })();
+
+    function clearSignature() {
+      var c = document.getElementById('client-signature');
+      if (!c) return;
+      var ctx = c.getContext('2d');
+      ctx.clearRect(0, 0, c.width, c.height);
+    }
+
+    function downloadSignedPDF() {
+      var canvas = document.getElementById('client-signature');
+      var dateInput = document.getElementById('client-date');
+
+      if (canvas) {
+        var blank = document.createElement('canvas');
+        blank.width = canvas.width;
+        blank.height = canvas.height;
+        if (canvas.toDataURL() === blank.toDataURL()) {
+          alert('Please sign the document before downloading.');
+          return;
+        }
+      }
+      if (dateInput && !dateInput.value) {
+        alert('Please add the date before downloading.');
+        return;
+      }
+
+      // Show pre-print instruction modal (one-time guidance)
+      showPrintInstructions(function() {
+        // Swap canvas for static image so signature renders in print
+        var tempImg, tempDateText;
+        if (canvas) {
+          tempImg = document.createElement('img');
+          tempImg.src = canvas.toDataURL('image/png');
+          tempImg.style.cssText = 'display:block; width:280px; height:80px; border:1px solid #cccccc; border-radius:4px; background:#fff; margin:6px 0;';
+          canvas.style.display = 'none';
+          canvas.parentNode.insertBefore(tempImg, canvas);
+        }
+        if (dateInput) {
+          var v = dateInput.value;
+          var parts = v.split('-');
+          var formatted = parts.length === 3 ? parts[2] + '/' + parts[1] + '/' + parts[0] : v;
+          tempDateText = document.createElement('span');
+          tempDateText.textContent = formatted;
+          tempDateText.style.cssText = 'color:#111; font-size:14px; padding:6px 0; display:inline-block;';
+          dateInput.style.display = 'none';
+          dateInput.parentNode.insertBefore(tempDateText, dateInput);
+        }
+
+        var originalTitle = document.title;
+        document.title = 'agreement-signed';
+
+        function cleanup() {
+          if (tempImg) tempImg.remove();
+          if (canvas) canvas.style.display = '';
+          if (tempDateText) tempDateText.remove();
+          if (dateInput) dateInput.style.display = '';
+          document.title = originalTitle;
+          window.removeEventListener('afterprint', cleanup);
+        }
+        window.addEventListener('afterprint', cleanup);
+        setTimeout(function() {
+          if (tempImg && tempImg.parentNode) cleanup();
+        }, 60000);
+
+        setTimeout(function() { window.print(); }, 50);
+      });
+    }
+
+    function showPrintInstructions(onContinue) {
+      // Build modal
+      var overlay = document.createElement('div');
+      overlay.className = 'no-print';
+      overlay.style.cssText = 'position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:9999; display:flex; align-items:center; justify-content:center; padding:20px;';
+
+      var modal = document.createElement('div');
+      modal.style.cssText = 'background:#fff; border-radius:10px; max-width:460px; width:100%; padding:28px; box-shadow:0 10px 40px rgba(0,0,0,0.2); font-family:inherit;';
+
+      modal.innerHTML = ''
+        + '<h3 style="margin:0 0 12px 0; font-size:18px; color:#000; font-weight:700;">Before saving as PDF</h3>'
+        + '<p style="margin:0 0 12px 0; font-size:14px; color:#333; line-height:1.5;">When the print dialog opens:</p>'
+        + '<ol style="margin:0 0 16px 0; padding-left:20px; font-size:14px; color:#333; line-height:1.7;">'
+        + '<li>Set <strong>Destination</strong> to <strong>Save as PDF</strong></li>'
+        + '<li>Click <strong>More settings</strong></li>'
+        + '<li>Uncheck <strong>Headers and footers</strong><br><span style="font-size:12px; color:#666;">(removes the date &amp; title at the top AND the file path &amp; page numbers at the bottom)</span></li>'
+        + '<li>Click <strong>Save</strong></li>'
+        + '</ol>'
+        + '<div style="text-align:right; margin-top:18px;">'
+        + '<button id="print-cancel-btn" style="background:#fff; border:1px solid #ccc; border-radius:6px; padding:10px 18px; font-size:14px; color:#666; cursor:pointer; margin-right:8px; font-family:inherit;">Cancel</button>'
+        + '<button id="print-continue-btn" style="background:#FF6B1A; color:#fff; border:none; border-radius:6px; padding:10px 20px; font-size:14px; font-weight:600; cursor:pointer; font-family:inherit;">Continue to Print</button>'
+        + '</div>';
+
+      overlay.appendChild(modal);
+      document.body.appendChild(overlay);
+
+      function close() { overlay.remove(); }
+
+      document.getElementById('print-cancel-btn').onclick = close;
+      document.getElementById('print-continue-btn').onclick = function() {
+        close();
+        onContinue();
+      };
+      overlay.onclick = function(e) { if (e.target === overlay) close(); };
+    }
+  </script>
+</body>
+</html>
