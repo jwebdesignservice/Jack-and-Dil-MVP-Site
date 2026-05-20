@@ -279,11 +279,18 @@
       }
       .no-print { display: none !important; }
       h2, h3 { page-break-after: avoid; break-after: avoid; }
-      .sig-block, .download-section, .fees-table, .meta, .signatures {
+      .sig-block.download-section.fees-table.meta.signatures {
         page-break-inside: avoid;
         break-inside: avoid;
       }
       ul, p { orphans: 3; widows: 3; }
+      .page-elevated {
+        box-shadow: none !important;
+      }
+      .site-bg-dark {
+        background: #ffffff !important;
+        background-image: none !important;
+      }
     }
 
     /* === Dark site-matching background (kept off-page during print) === */
@@ -334,16 +341,16 @@
       <!-- 02. Scope of Work -->
       <h2><span class="num">02.</span> Scope of Work</h2>
       <ul>
-        <li>Full website design — including the Shopify setup</li>
-        <li>Custom branding — logo, colours, overall identity</li>
-        <li>Product setup — initial catalogue of 300-500 products via Excel import</li>
-        <li>Payment integration — local methods and cash on delivery</li>
-        <li>myPOS payment system — integrated into the Shopify backend via API and backend integration</li>
+        <li>Full website design, including the Shopify setup</li>
+        <li>Custom branding, logo, colours, overall identity</li>
+        <li>Product setup, initial catalogue of 300-500 products via Excel import</li>
+        <li>Payment integration, local methods and cash on delivery</li>
+        <li>myPOS payment system, integrated into the Shopify backend via API and backend integration</li>
         <li>Shipping and delivery setup</li>
-        <li>Bulk discount system — for larger buyers</li>
-        <li>AI assisted features — AI customer navigation and recommendations</li>
-        <li>Mobile optimisation — fully responsive across all platforms</li>
-        <li>Guidance — on managing products, orders, and sales</li>
+        <li>Bulk discount system, for larger buyers</li>
+        <li>AI assisted features, AI customer navigation and recommendations</li>
+        <li>Mobile optimisation, fully responsive across all platforms</li>
+        <li>Guidance, on managing products, orders, and sales</li>
       </ul>
       <p class="note">Anything outside this scope requires written agreement.</p>
 
@@ -516,7 +523,7 @@
       if (d) d.value = new Date().toISOString().split('T')[0];
     })();
 
-    // Signature pad — mouse + touch
+    // Signature pad, mouse + touch
     (function() {
       var canvas = document.getElementById('client-signature');
       if (!canvas) return;

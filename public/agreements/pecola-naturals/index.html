@@ -267,11 +267,18 @@
       }
       .no-print { display: none !important; }
       h2, h3 { page-break-after: avoid; break-after: avoid; }
-      .sig-block, .download-section, .fees-table, .meta, .signatures {
+      .sig-block.download-section.fees-table.meta.signatures {
         page-break-inside: avoid;
         break-inside: avoid;
       }
       ul, p { orphans: 3; widows: 3; }
+      .page-elevated {
+        box-shadow: none !important;
+      }
+      .site-bg-dark {
+        background: #ffffff !important;
+        background-image: none !important;
+      }
     }
 
     .signature-text {
@@ -328,19 +335,19 @@
 
       <!-- 01. Project Overview -->
       <h2><span class="num">01.</span> Project Overview</h2>
-      <p>The project, titled <em>"Pecola Naturals Online Store"</em>, involves creating a fully custom Shopify storefront for Pecola Naturals — a black-and-white branded skincare business specialising in natural, non-toxic, vegan body butters. The primary goal is to deliver a premium, minimal online shopping experience that reflects the Pecola Naturals brand identity and gives the Client full control over orders, customers and product management from day one.</p>
+      <p>The project, titled <em>"Pecola Naturals Online Store"</em>, involves creating a fully custom Shopify storefront for Pecola Naturals, a black-and-white branded skincare business specialising in natural, non-toxic, vegan body butters. The primary goal is to deliver a premium, minimal online shopping experience that reflects the Pecola Naturals brand identity and gives the Client full control over orders, customers and product management from day one.</p>
 
       <!-- 02. Scope of Work -->
       <h2><span class="num">02.</span> Scope of Work</h2>
       <!-- EDIT: Replace bullets below with scope items specific to this project -->
       <ul>
         <li>Full website design and front-end build, including complete Shopify store setup</li>
-        <li>Custom branding — black-and-white identity, refined typography, considered product photography placement</li>
-        <li>Product setup — initial catalogue of up to 7 products uploaded with content supplied by the Client</li>
-        <li>Payment integration — Shopify payment gateway and shipping configuration</li>
+        <li>Custom branding, black-and-white identity, refined typography, considered product photography placement</li>
+        <li>Product setup, initial catalogue of up to 7 products uploaded with content supplied by the Client</li>
+        <li>Payment integration, Shopify payment gateway and shipping configuration</li>
         <li>Shopify admin configuration so the Client can seamlessly track orders, customer data and sales in one place</li>
-        <li>Mobile optimisation — fully responsive across mobile, tablet and desktop</li>
-        <li>Guidance — on managing products, orders, customers and the Shopify admin after handover</li>
+        <li>Mobile optimisation, fully responsive across mobile, tablet and desktop</li>
+        <li>Guidance, on managing products, orders, customers and the Shopify admin after handover</li>
       </ul>
       <p class="note">Anything outside this scope requires written agreement.</p>
 
@@ -512,7 +519,7 @@
       if (d) d.value = new Date().toISOString().split('T')[0];
     })();
 
-    // Signature pad — mouse + touch
+    // Signature pad, mouse + touch
     (function() {
       var canvas = document.getElementById('client-signature');
       if (!canvas) return;
