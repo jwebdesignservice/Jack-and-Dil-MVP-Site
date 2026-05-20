@@ -251,23 +251,26 @@
       margin: 12mm;
     }
     @media print {
-      html, body {
+      html, body, body.site-bg-dark {
         background: #ffffff !important;
+        background-color: #ffffff !important;
+        background-image: none !important;
         margin: 0 !important;
         padding: 0 !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
-      .page {
+      .page, .page-elevated {
         box-shadow: none !important;
         border-radius: 0 !important;
         margin: 0 !important;
         max-width: 100% !important;
         width: 100% !important;
+        background: #ffffff !important;
       }
       .no-print { display: none !important; }
       h2, h3 { page-break-after: avoid; break-after: avoid; }
-      .sig-block.download-section.fees-table.meta.signatures {
+      .sig-block, .download-section, .fees-table, .meta, .signatures {
         page-break-inside: avoid;
         break-inside: avoid;
       }
